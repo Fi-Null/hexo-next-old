@@ -1,0 +1,1273 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-01T13:17:39+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">XK Blog</title><subtitle>Less is more.</subtitle><author><name>Ke Xiang</name></author><entry><title type="html">给h5ai开启二维码、搜索、选择功能</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro/" rel="alternate" type="text/html" title="给h5ai开启二维码、搜索、选择功能" /><published>2019-03-21T11:44:00+08:00</published><updated>2019-03-21T11:44:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro/">&lt;p&gt;&lt;strong&gt;说明：&lt;/strong&gt;现在越来越多的人使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h5ai&lt;/code&gt;了，毕竟精巧，美观等，之前介绍过&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h5ai&lt;/code&gt;安装方法，参考：&lt;a href=&quot;https://www.moerats.com/archives/121/&quot;&gt;一款不错的PHP目录列表程序：h5ai安装教程&lt;/a&gt;，其实有的人虽然用上了，可是却不知道里面还有很多功能都没使用上，这里就说下开启其中几种适用的功能方法。&lt;/p&gt;
+
+&lt;h2 id=&quot;方法&quot;&gt;方法&lt;/h2&gt;
+
+&lt;p&gt;以下均在配置文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/www.xx.com/_h5ai/private/conf/options.json&lt;/code&gt;修改&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;1、开启选择功能&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;select&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;clickndrag&quot;: true,
+        &quot;checkboxes&quot;: true
+    },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;将&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;修改为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;，即：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;select&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;clickndrag&quot;: true,
+        &quot;checkboxes&quot;: true
+    },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;该功能可方便我们进行批量下载。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2、开启搜索功能&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;search&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;advanced&quot;: true,
+        &quot;debounceTime&quot;: 300,
+        &quot;ignorecase&quot;: true
+    },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;将&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;修改为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;，即：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;search&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;advanced&quot;: true,
+        &quot;debounceTime&quot;: 300,
+        &quot;ignorecase&quot;: true
+    },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;开启后我们可以更快的找到文件了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3、开启二维码功能&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;info&quot;: {
+        &quot;enabled&quot;: false,
+        &quot;show&quot;: false,
+        &quot;qrcode&quot;: true,
+        &quot;qrFill&quot;: &quot;#999&quot;,
+        &quot;qrBack&quot;: &quot;#fff&quot;
+    },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;将&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;false&lt;/code&gt;修改为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;，即：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;info&quot;: {
+        &quot;enabled&quot;: true,
+        &quot;show&quot;: true,
+        &quot;qrcode&quot;: true,
+        &quot;qrFill&quot;: &quot;#999&quot;,
+        &quot;qrBack&quot;: &quot;#fff&quot;
+    },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;开启二维码后，我们可以直接手机扫描二维码下载，很方便。&lt;/p&gt;
+
+&lt;p&gt;原文链接：&lt;a href=&quot;https://www.moerats.com/archives/395/&quot;&gt;https://www.moerats.com/archives/395/&lt;/a&gt;&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="linux," /><category term="vps," /><category term="技术" /><summary type="html">说明：现在越来越多的人使用h5ai了，毕竟精巧，美观等，之前介绍过h5ai安装方法，参考：一款不错的PHP目录列表程序：h5ai安装教程，其实有的人虽然用上了，可是却不知道里面还有很多功能都没使用上，这里就说下开启其中几种适用的功能方法。</summary></entry><entry><title type="html">VPS允许root免密登录</title><link href="http://localhost:4000/posts/2019-03-20-enable-vps-root" rel="alternate" type="text/html" title="VPS允许root免密登录" /><published>2019-03-20T11:44:00+08:00</published><updated>2019-03-20T11:44:00+08:00</updated><id>http://localhost:4000/posts/vps%E5%85%81%E8%AE%B8root%E5%85%8D%E5%AF%86%E7%99%BB%E5%BD%95</id><content type="html" xml:base="http://localhost:4000/posts/2019-03-20-enable-vps-root">&lt;h2 id=&quot;配置vps&quot;&gt;配置&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vps&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190320110529.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 将本地主机的ssh公钥粘贴在&lt;/span&gt;
+/root/.ssh/authorized_keys
+&lt;span class=&quot;c&quot;&gt;# 如上图所示&lt;/span&gt;
+
+&lt;span class=&quot;nb&quot;&gt;sudo&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; 
+vi /etc/ssh/sshd_config
+修改
+&lt;span class=&quot;c&quot;&gt;# Authentication:&lt;/span&gt;
+PermitRootLogin &lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt; //默认为no，需要开启root用户访问改为yes
+&lt;span class=&quot;c&quot;&gt;# Change to no to disable tunnelled clear text passwords&lt;/span&gt;
+PasswordAuthentication &lt;span class=&quot;nb&quot;&gt;yes&lt;/span&gt; //默认为no，改为yes开启密码登陆
+
+passwd root
+/etc/init.d/ssh restart
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;本地新建config&quot;&gt;本地新建&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.ssh.config&lt;/code&gt;中&lt;/p&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;host ecs
+   user root
+   &lt;span class=&quot;nb&quot;&gt;hostname &lt;/span&gt;47.117.128.212
+   port 22
+   identityfile ~/.ssh/id_rsa
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这样本地主机就可以不用输入&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ip&lt;/code&gt;和密码直接用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ssh ecs&lt;/code&gt;登录&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;vps&lt;/code&gt;了&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="linux," /><category term="vps," /><category term="技术" /><summary type="html">配置vps</summary></entry><entry><title type="html">解决阿里云Debian新机update问题</title><link href="http://localhost:4000/posts/2019-03-19-fix-debian-update" rel="alternate" type="text/html" title="解决阿里云Debian新机update问题" /><published>2019-03-19T13:44:00+08:00</published><updated>2019-03-19T13:44:00+08:00</updated><id>http://localhost:4000/posts/%E8%A7%A3%E5%86%B3%E9%98%BF%E9%87%8C%E4%BA%91debian%E6%96%B0%E6%9C%BAupdate%E9%97%AE%E9%A2%98</id><content type="html" xml:base="http://localhost:4000/posts/2019-03-19-fix-debian-update">&lt;ul&gt;
+  &lt;li&gt;阿里云自带了一些无用的安全源，删除掉即可（ubuntu/debian系统）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; /root/.pip /root/.pydistutils.cfg /etc/apt/sources.list.d/sources-aliyun-0.list /etc/apt/sources.list.d/sources-aliyun&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; /var/lib/apt/lists/&lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;根据&lt;a href=&quot;http://mirrors.aliyun.com/&quot;&gt;阿里云官方源&lt;/a&gt;的建议，修改源&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;deb http://mirrors.cloud.aliyuncs.com/debian/ jessie main contrib non-free
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie main contrib non-free
+deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib
+deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-updates main contrib non-free
+deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-updates main contrib non-free
+ 
+&lt;span class=&quot;c&quot;&gt;## Uncomment the following two lines to add software from the 'backports'&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;## repository.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;##&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;## N.B. software from this repository may not have been tested as&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;## extensively as that contained in the main release, although it includes&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;## newer versions of some applications which may provide useful features.&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-backports main contrib non-free&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;#deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-backports main contrib non-free&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;更新镜像，搞定&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apt-get clean
+apt-get update
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;套路云还是套路云，服气！！！&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="linux," /><category term="vps," /><category term="技术" /><summary type="html">阿里云自带了一些无用的安全源，删除掉即可（ubuntu/debian系统） rm -rf /root/.pip /root/.pydistutils.cfg /etc/apt/sources.list.d/sources-aliyun-0.list /etc/apt/sources.list.d/sources-aliyun* /var/lib/apt/lists/* 根据阿里云官方源的建议，修改源 deb http://mirrors.cloud.aliyuncs.com/debian/ jessie main contrib non-free deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie main contrib non-free deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-proposed-updates main non-free contrib deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-updates main contrib non-free deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-updates main contrib non-free ## Uncomment the following two lines to add software from the 'backports' ## repository. ## ## N.B. software from this repository may not have been tested as ## extensively as that contained in the main release, although it includes ## newer versions of some applications which may provide useful features. #deb http://mirrors.cloud.aliyuncs.com/debian/ jessie-backports main contrib non-free #deb-src http://mirrors.cloud.aliyuncs.com/debian/ jessie-backports main contrib non-free 更新镜像，搞定 apt-get clean apt-get update 套路云还是套路云，服气！！！</summary></entry><entry><title type="html">Jekyll 博客 Netlify CMS 后台部署</title><link href="http://localhost:4000/posts/2019-03-18-jekyll-netlify-cms-admin" rel="alternate" type="text/html" title="Jekyll 博客 Netlify CMS 后台部署" /><published>2019-03-18T21:55:07+08:00</published><updated>2019-03-18T21:55:07+08:00</updated><id>http://localhost:4000/posts/jekyll-%E5%8D%9A%E5%AE%A2-netlify-cms-%E5%90%8E%E5%8F%B0%E9%83%A8%E7%BD%B2</id><content type="html" xml:base="http://localhost:4000/posts/2019-03-18-jekyll-netlify-cms-admin">&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netlify&lt;/code&gt; 后台：https://app.netlify.com/&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netlify config&lt;/code&gt; 配置文档：https://www.netlifycms.org/docs/intro/&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github OAuth&lt;/code&gt;网址：https://github.com/settings/developers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;获取client-id和secret&quot;&gt;获取&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Client ID&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Secret&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;a href=&quot;https://github.com/settings/developers&quot;&gt;Github OAuth&lt;/a&gt; 页面新建一个 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;app&lt;/code&gt; 获取 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Client ID&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Secret&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318211649.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;其中&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Authorization callback URL&lt;/code&gt;必须填这个：https://api.netlify.com/auth/done ，其余随意。&lt;/p&gt;
+
+&lt;h2 id=&quot;去netlify--后台绑定-github-的-repositorie&quot;&gt;去&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netlify&lt;/code&gt;  后台绑定 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GitHub&lt;/code&gt; 的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;repositorie&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;绑定成功是这个样子的：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318212022.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这个时候出现的错误暂时不要管。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setting-&amp;gt;Domain management&lt;/code&gt; ，添加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github&lt;/code&gt;自带的二级域名，如果在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github&lt;/code&gt;上面自定义了域名，也要加上，不要管 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;DNS&lt;/code&gt; 验证.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318212309.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;在github新建netlify分支&quot;&gt;在GitHub新建netlify分支&lt;/h2&gt;
+
+&lt;p&gt;内容可以参考我的 &lt;a href=&quot;https://github.com/ds19991999/ds19991999.github.io/tree/netlify&quot;&gt;netlify&lt;/a&gt; 分支，其中 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config.yml&lt;/code&gt;文件里的域名改成你的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;github&lt;/code&gt; 二级域名，如果自定义了域名请填自定义的域名&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318212923.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;在主分支master创建admin文件夹&quot;&gt;在主分支&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;创建&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt;文件夹&lt;/h2&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;admin
+ ├ index.html
+ └ config.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;我的就是：&lt;a href=&quot;https://github.com/ds19991999/ds19991999.github.io/tree/master/admin&quot;&gt;admin&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;配置admin里的config&quot;&gt;配置&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;admin&lt;/code&gt;里的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;config&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;我这个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;jekyll&lt;/code&gt;只用到发布文章的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;post&lt;/code&gt;，所以后台也只需要这个简单的功能，只需要加一点这个文章头部的选项，每个人不一样，需要自己写。官方文档可以参考：&lt;a href=&quot;https://www.netlifycms.org/docs/intro/&quot;&gt;netlifycms-docs&lt;/a&gt;!
+&lt;img src=&quot;http://image.creat.kim/picgo/20190318215940.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;到这里，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GitHub&lt;/code&gt;仓库的修改基本上完成了。&lt;/p&gt;
+
+&lt;h2 id=&quot;去-netlify-后台配置编译&quot;&gt;去 netlify 后台配置编译&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;setting-&amp;gt;Buil &amp;amp; deploy-&amp;gt;Deploy contexts&lt;/code&gt;，将&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Production branch&lt;/code&gt;改成&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;netlify&lt;/code&gt;分支，将&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Branch deploys&lt;/code&gt;改成&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;master&lt;/code&gt;分支。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318213955.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;然后就可以编译了：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214303.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214359.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;登录博客后台&quot;&gt;登录博客后台&lt;/h2&gt;
+
+&lt;p&gt;进入 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;https://网站域名/admin&lt;/code&gt; 后台登陆，大概就是这样子。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214528.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214712.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214900.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214954.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="jekyll," /><category term="jetlify-cms" /><summary type="html">netlify 后台：https://app.netlify.com/ netlify config 配置文档：https://www.netlifycms.org/docs/intro/ Github OAuth网址：https://github.com/settings/developers</summary></entry><entry><title type="html">✍GitBook👉高级配置</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/26/use-gitbook/" rel="alternate" type="text/html" title="✍GitBook👉高级配置" /><published>2018-08-26T07:29:08+08:00</published><updated>2018-08-26T07:29:08+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/26/use-gitbook</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/26/use-gitbook/">&lt;blockquote&gt;
+  &lt;p&gt;先留链接防丢失：&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/zhangjikai/gitbook-use/tree/master&quot;&gt;gitbook-use&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/ds19991999/article/details/81275458&quot;&gt;使用GitBook打造自己的出版平台&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;安装&quot;&gt;安装💦&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;NodeJS(v4.0.0及以上)&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install gitbook-cli -g&lt;/code&gt; ， &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook-cli&lt;/code&gt;是gitbook的一个命令行工具, 通过它可以在电脑上安装和管理gitbook的多个版本.&lt;/li&gt;
+  &lt;li&gt;预览书籍：
+    &lt;ul&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook serve&lt;/code&gt; : 在书籍的文件夹中生成一个 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_book&lt;/code&gt; 文件夹，里面的内容即为生成的 html 文件， 通过&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:4000/&lt;/code&gt;可以预览书籍。&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook build&lt;/code&gt; : 仅生成 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_book&lt;/code&gt; 里的html，不开启服务器。&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;常用命令&quot;&gt;常用命令💦&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;ol&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook-cli&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook&lt;/code&gt; 是两个软件;&lt;/li&gt;
+    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook-cli&lt;/code&gt; 会将下载的 gitbook 的不同版本放到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.gitbook&lt;/code&gt;中, 可以通过设置&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GITBOOK_DIR&lt;/code&gt;环境变量来指定另外的文件夹.&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;生成静态网页&lt;/strong&gt;：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook build&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;生成静态网页并运行服务器&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook serve&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;生成时指定gitbook的版本, 本地没有会先下载&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook build ----gitbook=2.6.7&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;列出本地所有的gitbook版本&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook ls&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;列出远程可用的gitbook版本&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook ls-remote&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;更新到gitbook的最新版本&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook update&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;卸载对应的gitbook版本&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook uninstall 2.6.7&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;目录结构&quot;&gt;目录结构💦&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.
+├── book.json
+├── README.md
+├── SUMMARY.md
+├── chapter-1/
+|   ├── README.md
+|   └── something.md
+└── chapter-2/
+    ├── README.md
+    └── something.md
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;summary&quot;&gt;Summary💦&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;示例1：&lt;/strong&gt;以后会经常用到的&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Summary
+* [Introduction](README.md)-------------------------------1.1
+----
+### [Part I](folder1/README.md)
+
+* [Writing is nice](folder1/writing.md)-------------------2.1.
+* [GitBook is nice](folder1/gitbook.md)-------------------2.2.
+
+### Part II
+
+* [We love feedback](folder2/feedback_please.md)----------3.1.
+* [Better tools for authors](folder2/better_tools.md)-----3.2.
+
+----
+
+* [Last part without title](title.md)---------------------4.1.
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;示例2：&lt;/strong&gt;以后会用的但不常用的&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Summary
+
+### Part I(part1/README.md)---------------------------1.
+
+* [section1](part1/section1/README.md)----------------1.1.
+	* [Writing is nice](part1/section1/writing.md)----1.1.1
+	* [GitBook is nice](part1/section1/gitbook.md)----1.1.2
+* [We love feedback](part1/title1.md)-----------------1.2
+* [Better tools for authors](part1/title2.md)---------1.3
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;示例3&lt;/strong&gt;：最简版本&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Summary
+### Part I
+* [Introduction](README.md)
+* [Writing is nice](writing.md)
+* [GitBook is nice](gitbook.md)
+
+### Part II
+
+* [We love feedback](feedback_please.md)
+* [Better tools for authors](better_tools.md)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;glossary&quot;&gt;Glossary💦&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GLOSSARY.md&lt;/code&gt;。该文件主要存储词汇信息，如果在其他页面中出现了该文件中的词汇，鼠标放到词汇上会给出词汇示意。&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GLOSSARY.md&lt;/code&gt; 格式：&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## Git-----------------词汇
+分散式版本控制软件--------词汇示意
+
+## Markdown
+Aaron Swartz 跟John Gruber共同设计的排版语言
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;bookjson&quot;&gt;book.json💦&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;book.json&lt;/code&gt; 最重要，故单独作为一节。&lt;/p&gt;
+
+&lt;h3 id=&quot;title设置书本的标题&quot;&gt;title：设置书本的标题💦&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Gitbook Use&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;author作者的相关信息&quot;&gt;author：作者的相关信息💦&lt;/h3&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;author&quot; : &quot;ds&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;description本书的简单描述&quot;&gt;description：本书的简单描述💦&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;记录Gitbook的配置和一些插件的使用&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;languagegitbook使用的语言&quot;&gt;language：Gitbook使用的语言💦&lt;/h3&gt;
+
+&lt;p&gt;版本2.6.4中可选的语言如下：&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;en,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ar,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;bn,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;cs,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;de,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;en,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;es,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fa,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fi,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fr,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;he,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;it,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ja,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ko,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;no,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pl,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pt,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ro,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ru,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;sv,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;uk,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;vi,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;zh-hans,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;zh-tw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;配置使用简体中文:&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;language&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;zh-hans&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;gitbook-指定使用的gitbook版本&quot;&gt;gitbook: 指定使用的gitbook版本💦&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gitbook&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;3.2.2&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gitbook&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=3.0.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;root指定根目录&quot;&gt;root：指定根目录💦&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;root&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;links左侧导航栏添加链接信息&quot;&gt;links：左侧导航栏添加链接信息💦&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;links&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;sidebar&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;个人主页&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://www.ds-vip.top&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;styles自定义页面样式&quot;&gt;styles：自定义页面样式💦&lt;/h3&gt;
+
+&lt;p&gt;默认情况下各&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;generator&lt;/code&gt;对应的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;css&lt;/code&gt;文件：&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;styles&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;website&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/website.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ebook&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/ebook.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;pdf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/pdf.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;mobi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/mobi.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;epub&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/epub.css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;例如使&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt; &amp;lt;h2&amp;gt;&lt;/code&gt;标签有下边框， 可以在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;website.css&lt;/code&gt;中设置，这个可以有。&lt;/p&gt;
+
+&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#EFEAEA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;plugins配置使用的插件&quot;&gt;plugins：配置使用的插件💦&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-j&amp;#39;so&quot;&gt;&quot;plugins&quot;: [
+    &quot;disqus&quot;
+]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;例如上面添加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;disqus&lt;/code&gt;插件：之后需要运行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook install&lt;/code&gt;来安装新的插件。&lt;/li&gt;
+  &lt;li&gt;Gitbook默认带有5个插件：highlight、search、sharing、font-settings、livereload&lt;/li&gt;
+  &lt;li&gt;如果要去除自带的插件， 可以在插件名称前面加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;plugins&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-search&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;pluginsconfig配置插件的属性&quot;&gt;pluginsConfig：配置插件的属性💦&lt;/h3&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;pluginsConfig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;fontsettings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;theme&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sepia&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;family&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;serif&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;上面就是配置Gitbook界面那个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;按钮的默认属性。&lt;/p&gt;
+
+&lt;h3 id=&quot;structure&quot;&gt;structure💦&lt;/h3&gt;
+
+&lt;p&gt;指定 Readme、Summary、Glossary 和 Languages 对应的文件名，下面是这几个文件对应变量以及默认值：&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;变量&lt;/th&gt;
+      &lt;th&gt;含义和默认值&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;structure.readme&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Readme file name (defaults to README.md)&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;structure.summary&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Summary file name (defaults to SUMMARY.md)&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;structure.glossary&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Glossary file name (defaults to GLOSSARY.md)&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;structure.languages&lt;/code&gt;&lt;/td&gt;
+      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Languages file name (defaults to LANGS.md)&lt;/code&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h2 id=&quot;gitbook插件&quot;&gt;GitBook插件💦&lt;/h2&gt;
+
+&lt;p&gt;可以指定插件的版本可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin@0.3.1&lt;/code&gt; ， 下面的插件在 GitBook 的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3.2.3&lt;/code&gt; 版本中可以正常工作，&lt;a href=&quot;https://plugins.gitbook.com/&quot;&gt;插件官网&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;具体介绍看这里：https://github.com/zhangjikai/gitbook-use/blob/master/plugins.md&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Summary插件：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install -g gitbook-summary&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;book sm&lt;/code&gt;，一个完整的目录文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SUMMARY.md&lt;/code&gt;就生成了 ，之后根据自己的需要修改，进一步的命令就不需要了。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;主题&quot;&gt;主题💦&lt;/h2&gt;
+
+&lt;p&gt;我们常用的就是 Book 文档模式，所以只看这部分。&lt;/p&gt;
+
+&lt;h3 id=&quot;theme-default&quot;&gt;theme-default💦&lt;/h3&gt;
+
+&lt;p&gt;默认的 Book 主题。将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;showLevel&lt;/code&gt; 设为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;， 就可以显示标题前面的数字索引，默认不显示。&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;theme-default&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;showLevel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;theme-comscore&quot;&gt;theme-comscore💦&lt;/h3&gt;
+
+&lt;p&gt;这个主题为标题添加了颜色&lt;/p&gt;
+
+&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;plugins&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;theme-comscore&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;bookjson配置文件&quot;&gt;book.json配置文件💦&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;👉&lt;a href=&quot;https://github.com/ds19991999/useful-file/blob/master/GitBook&quot;&gt;看这里&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Ke Xiang</name></author><category term="GitBook" /><category term="技术" /><summary type="html">先留链接防丢失： gitbook-use 使用GitBook打造自己的出版平台</summary></entry><entry><title type="html">Emoji😆😆😆</title><link href="http://localhost:4000/%E7%B4%A0%E6%9D%90/interesting/2018/08/25/emojicopy/" rel="alternate" type="text/html" title="Emoji😆😆😆" /><published>2018-08-25T07:29:08+08:00</published><updated>2018-08-25T07:29:08+08:00</updated><id>http://localhost:4000/%E7%B4%A0%E6%9D%90/interesting/2018/08/25/emojicopy</id><content type="html" xml:base="http://localhost:4000/%E7%B4%A0%E6%9D%90/interesting/2018/08/25/emojicopy/">&lt;blockquote&gt;
+  &lt;p&gt;官网地址：&lt;a href=&quot;https://www.emojicopy.com/&quot;&gt;emojicopy&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;声明：此emoji仅限个人使用，绝不涉及商业范畴，如有侵权，可直接联系我，立马删除😇😇😇。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;😀😃😄😁😆😅😂🤣☺😊😇🙂🙃😉😌😍😘😗😙😚😋😛😝😜🤪🤨🧐🤓😎🤩😏😒😞😔😟😕🙁☹😣😖😫😩😢😭😤😠😡🤬🤯😳😪🤤😴😲😮😧😦😯🙄😬😑😐😶🤥🤫🤭🤔🤗😓😥😰😨😱😵🤐🤢🤮🤧😷🤒🤕🤑🤠😈👿👹👺🤡💩👻💀☠👽👾🤖🎃😺😸😹😻😼😽🙀😿😾🤲👐🙌👏🤝👍👎👊✊🤛🤜🤞✌🤟🤘👌👈👉👆👇☝🤚🖐🖖👋🤙💪🖕✍🙏&lt;/p&gt;
+
+&lt;p&gt;🐤🐣🐥🌞🐒🙊🐶🙉🙈🐵☀⛅🌥☁🌦🌧⛈🌩🌨❄⭐⭐⭐💦💦🦉🦉&lt;/p&gt;
+
+&lt;p&gt;🍉🍑🍌🎻🎖🏅🥉🎸🎺🎷🥁🚲🚗🚔✈🛫🛩🔪🗡⚔🚬💊🔨🎎❤💛🧡💔&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="interesting" /><category term="emoji" /><category term="素材" /><summary type="html">官网地址：emojicopy</summary></entry><entry><title type="html">互联网协议入门😇</title><link href="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/IPS/" rel="alternate" type="text/html" title="互联网协议入门😇" /><published>2018-08-22T07:29:08+08:00</published><updated>2018-08-22T07:29:08+08:00</updated><id>http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/IPS</id><content type="html" xml:base="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/IPS/">&lt;p&gt;互联网的核心是一系列协议，总称为”互联网协议”（Internet Protocol Suite）。它们对电脑如何连接和组网，做出了详尽的规定。理解了这些协议，就理解了互联网的原理。&lt;/p&gt;
+
+&lt;h2 id=&quot;概述&quot;&gt;概述&lt;/h2&gt;
+
+&lt;h3 id=&quot;五层模型&quot;&gt;五层模型&lt;/h3&gt;
+
+&lt;p&gt;互联网的实现，分成好几层。每一层都有自己的功能，就像建筑物一样，每一层都靠下一层支持。&lt;/p&gt;
+
+&lt;p&gt;用户接触到的，只是最上面的一层，根本没有感觉到下面的层。要理解互联网，必须从最下层开始，自下而上理解每一层的功能。&lt;/p&gt;
+
+&lt;p&gt;如何分层有不同的模型，有的模型分七层，有的分四层。我觉得，把互联网分成五层，比较容易解释。&lt;/p&gt;
+
+&lt;p&gt;如上图所示，最底下的一层叫做”实体层”（Physical Layer），最上面的一层叫做”应用层”（Application Layer），中间的三层（自下而上）分别是”链接层”（Link Layer）、”网络层”（Network Layer）和”传输层”（Transport Layer）。越下面的层，越靠近硬件；越上面的层，越靠近用户。&lt;/p&gt;
+
+&lt;h3 id=&quot;层与协议&quot;&gt;层与协议&lt;/h3&gt;
+
+&lt;p&gt;每一层都是为了完成一种功能。为了实现这些功能，就需要大家都遵守共同的规则。大家都遵守的规则，就叫做”协议”（protocol）。&lt;/p&gt;
+
+&lt;p&gt;互联网的每一层，都定义了很多协议。这些协议的总称，就叫做”互联网协议”（Internet Protocol Suite）。它们是互联网的核心，下面介绍每一层的功能，主要就是介绍每一层的主要协议。&lt;/p&gt;
+
+&lt;h2 id=&quot;实体层物理层&quot;&gt;实体层(物理层)&lt;/h2&gt;
+
+&lt;p&gt;电脑要组网，第一件事要干什么？当然是先把电脑连起来，可以用光缆、电缆、双绞线、无线电波等方式。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821221334.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这就叫做”实体层”，它就是把电脑连接起来的物理手段。它主要规定了网络的一些电气特性，作用是负责传送0和1的电信号。&lt;/p&gt;
+
+&lt;h2 id=&quot;链接层&quot;&gt;链接层&lt;/h2&gt;
+
+&lt;h3 id=&quot;定义&quot;&gt;定义&lt;/h3&gt;
+
+&lt;p&gt;单纯的0和1没有任何意义，必须规定解读方式：多少个电信号算一组？每个信号位有何意义？这就是”链接层”的功能，它在”实体层”的上方，确定了0和1的&lt;strong&gt;分组方式。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;以太网协议&quot;&gt;以太网协议&lt;/h3&gt;
+
+&lt;p&gt;早期的时候，每家公司都有自己的电信号分组方式。逐渐地，一种叫做”以太网”（Ethernet）的协议，占据了主导地位。&lt;/p&gt;
+
+&lt;p&gt;以太网规定，一组电信号构成一个数据包，叫做”帧”（Frame）。每一帧分成两个部分：标头（Head）和数据（Data）。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821221452.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;“标头”包含数据包的一些说明项，比如发送者、接受者、数据类型等等；”数据”则是数据包的具体内容。&lt;/p&gt;
+
+&lt;p&gt;“标头”的长度，固定为18字节。”数据”的长度，最短为46字节，最长为1500字节。因此，整个”帧”最短为64字节，最长为1518字节。如果数据很长，就必须分割成多个帧进行发送。&lt;/p&gt;
+
+&lt;h3 id=&quot;mac地址&quot;&gt;MAC地址&lt;/h3&gt;
+
+&lt;p&gt;上面提到，以太网数据包的”标头”，包含了发送者和接受者的信息。那么，发送者和接受者是如何标识呢？&lt;/p&gt;
+
+&lt;p&gt;以太网规定，连入网络的所有设备，都必须具有&lt;strong&gt;“网卡”接口&lt;/strong&gt;。数据包必须是从一块网卡，传送到另一块网卡。&lt;strong&gt;网卡的地址，就是数据包的发送地址和接收地址，这叫做MAC地址。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821221549.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;每块网卡出厂的时候，都有一个&lt;strong&gt;全世界独一无二的MAC地址&lt;/strong&gt;，长度是48个二进制位，通常用&lt;strong&gt;12个十六进制数表示&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821221635.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;前6个十六进制数是厂商编号，后6个是该厂商的网卡流水号。有了MAC地址，就可以定位网卡和数据包的路径了。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;广播&quot;&gt;广播&lt;/h3&gt;
+
+&lt;p&gt;定义地址只是第一步，后面还有更多的步骤。&lt;/p&gt;
+
+&lt;p&gt;首先，一块网卡怎么会知道另一块网卡的MAC地址？&lt;/p&gt;
+
+&lt;p&gt;回答是有一种ARP协议，可以解决这个问题。以太网数据包必须知道接收方的MAC地址，然后才能发送。&lt;/p&gt;
+
+&lt;p&gt;其次，就算有了MAC地址，系统怎样才能把数据包准确送到接收方？&lt;/p&gt;
+
+&lt;p&gt;回答是以太网采用了一种很”原始”的方式，&lt;strong&gt;它不是把数据包准确送到接收方，而是向本网络内所有计算机发送，让每台计算机自己判断，是否为接收方。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821221800.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;上图中，1号计算机向2号计算机发送一个数据包，同一个子网络的3号、4号、5号计算机都会收到这个包。它们读取这个包的”标头”，找到接收方的MAC地址，然后与自身的MAC地址相比较，如果两者相同，就接受这个包，做进一步处理，否则就丢弃这个包。这种发送方式就叫做”广播”（broadcasting）。&lt;/p&gt;
+
+&lt;p&gt;有了&lt;strong&gt;数据包的定义、网卡的MAC地址、广播的发送方式&lt;/strong&gt;，”链接层”就可以在多台计算机之间传送数据了。&lt;/p&gt;
+
+&lt;h2 id=&quot;网络层&quot;&gt;网络层&lt;/h2&gt;
+
+&lt;h3 id=&quot;网络层的由来&quot;&gt;网络层的由来&lt;/h3&gt;
+
+&lt;p&gt;以太网协议，依靠MAC地址发送数据。理论上，单单依靠MAC地址，上海的网卡就可以找到洛杉矶的网卡了，技术上是可以实现的。&lt;/p&gt;
+
+&lt;p&gt;但是，这样做有一个重大的缺点。以太网采用广播方式发送数据包，所有成员人手一”包”，不仅效率低，而且局限在发送者所在的子网络。&lt;strong&gt;也就是说，如果两台计算机不在同一个子网络，广播是传不过去的。这种设计是合理的，否则互联网上每一台计算机都会收到所有包，那会引起灾难。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;因此，必须找到一种方法，能够区分哪些MAC地址属于同一个子网络，哪些不是。&lt;strong&gt;如果是同一个子网络，就采用广播方式发送，否则就采用”路由”方式发送。&lt;/strong&gt;（”路由”的意思，就是指&lt;strong&gt;如何向不同的子网络分发数据包&lt;/strong&gt;）遗憾的是，MAC地址本身无法做到这一点。它只与厂商有关，与所处网络无关。&lt;/p&gt;
+
+&lt;p&gt;这就导致了”网络层”的诞生。它的作用是&lt;strong&gt;引进一套新的地址&lt;/strong&gt;，使得我们能够区分不同的计算机是否属于同一个子网络。&lt;strong&gt;这套地址就叫做”网络地址”，简称”网址”。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;于是，”网络层”出现以后，每台计算机有了两种地址，一种是MAC地址，另一种是网络地址。两种地址之间没有任何联系，MAC地址是绑定在网卡上的，网络地址则是管理员分配的，它们只是随机组合在一起。&lt;/p&gt;
+
+&lt;p&gt;网络地址帮助我们确定计算机所在的子网络，MAC地址则将数据包送到该子网络中的目标网卡。因此，从逻辑上可以推断，必定是先处理网络地址，然后再处理MAC地址。&lt;/p&gt;
+
+&lt;h3 id=&quot;ip协议&quot;&gt;IP协议&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;规定网络地址的协议，叫做IP协议&lt;/strong&gt;。它所定义的地址，就被称为IP地址。&lt;/p&gt;
+
+&lt;p&gt;目前，广泛采用的是IP协议第四版，简称IPv4。这个版本规定，网络地址由&lt;strong&gt;32个二进制位组成。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821222118.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;习惯上，我们用分成&lt;strong&gt;四段的十进制数表示IP地址&lt;/strong&gt;，从0.0.0.0一直到255.255.255.255。&lt;/p&gt;
+
+&lt;p&gt;互联网上的每一台计算机，都会分配到一个IP地址。这个地址分成两个部分，&lt;strong&gt;前一部分代表网络，后一部分代表主机。&lt;/strong&gt;比如，IP地址172.16.254.1，这是一个32位的地址，假定它的网络部分是&lt;strong&gt;前24位（172.16.254），那么主机部分就是后8位（最后的那个1）&lt;/strong&gt;。处于同一个子网络的电脑，它们IP地址的网络部分必定是相同的，也就是说172.16.254.2应该与172.16.254.1处在同一个子网络。&lt;/p&gt;
+
+&lt;p&gt;但是，问题在于&lt;strong&gt;单单从IP地址，我们无法判断网络部分&lt;/strong&gt;。还是以172.16.254.1为例，它的网络部分，到底是前24位，还是前16位，甚至前28位，从IP地址上是看不出来的。&lt;/p&gt;
+
+&lt;p&gt;那么，怎样才能从IP地址，判断两台计算机是否属于同一个子网络呢？这就要用到另一个参数&lt;strong&gt;“子网掩码”（subnet mask）&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;所谓”子网掩码”，就是&lt;strong&gt;表示子网络特征的一个参数&lt;/strong&gt;。它在形式上等同于IP地址，也是一个32位二进制数字，它的网络部分全部为1，主机部分全部为0。比如，IP地址172.16.254.1，如果已知网络部分是前24位，主机部分是后8位，那么子网络掩码就是11111111.11111111.11111111.00000000，写成十进制就是255.255.255.0。&lt;/p&gt;
+
+&lt;p&gt;知道”子网掩码”，我们就能判断，任意两个IP地址是否处在同一个子网络。方法是将&lt;strong&gt;两个IP地址与子网掩码分别进行AND运算（两个数位都为1，运算结果为1，否则为0）&lt;/strong&gt;，然后比较结果是否相同，如果是的话，就表明它们在同一个子网络中，否则就不是。&lt;/p&gt;
+
+&lt;p&gt;比如，已知IP地址172.16.254.1和172.16.254.233的子网掩码都是255.255.255.0，请问它们是否在同一个子网络？两者与子网掩码分别进行AND运算，结果都是172.16.254.0，因此它们在同一个子网络。&lt;/p&gt;
+
+&lt;p&gt;总结一下，IP协议的作用主要有两个，&lt;strong&gt;一个是为每一台计算机分配IP地址，另一个是确定哪些地址在同一个子网络。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;ip数据包&quot;&gt;IP数据包&lt;/h3&gt;
+
+&lt;p&gt;根据IP协议发送的数据，就叫做IP数据包。不难想象，其中必定包括IP地址信息。&lt;/p&gt;
+
+&lt;p&gt;但是前面说过，以太网数据包只包含MAC地址，并没有IP地址的栏位。那么是否需要修改数据定义，再添加一个栏位呢？&lt;/p&gt;
+
+&lt;p&gt;回答是不需要，我们可以把&lt;strong&gt;IP数据包直接放进以太网数据包的”数据”部分&lt;/strong&gt;，因此完全不用修改以太网的规格。这就是互联网分层结构的好处：上层的变动完全不涉及下层的结构。&lt;/p&gt;
+
+&lt;p&gt;具体来说，IP数据包也分为”标头”和”数据”两个部分。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821222515.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“标头”部分主要包括版本、长度、IP地址等信息，”数据”部分则是IP数据包的具体内容。&lt;/strong&gt;它放进以太网数据包后，以太网数据包就变成了下面这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821222544.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;arp协议&quot;&gt;ARP协议&lt;/h3&gt;
+
+&lt;p&gt;因为IP数据包是放在以太网数据包里发送的，所以我们必须同时知道两个地址，一个是对方的MAC地址，另一个是对方的IP地址。通常情况下，对方的IP地址是已知的（后文会解释），但是我们不知道它的MAC地址。&lt;/p&gt;
+
+&lt;p&gt;所以，我们需要一种机制，能够从IP地址得到MAC地址。&lt;/p&gt;
+
+&lt;p&gt;这里又可以分成两种情况。第一种情况，如果&lt;strong&gt;两台主机不在同一个子网络&lt;/strong&gt;，那么事实上没有办法得到对方的MAC地址，只能把数据包传送到两个子网络连接处的”网关”（gateway），&lt;strong&gt;让网关去处理&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;第二种情况，如果两台主机在同一个子网络，那么我们可以用ARP协议，得到对方的&lt;strong&gt;MAC地址&lt;/strong&gt;。ARP协议也是发出一个数据包（包含在以太网数据包中），其中包含它所要查询主机的IP地址，在对方的MAC地址这一栏，填的是FF:FF:FF:FF:FF:FF，表示这是一个”广播”地址。它所在子网络的每一台主机，都会收到这个数据包，从中取出IP地址，与自身的IP地址进行比较。&lt;strong&gt;如果两者相同，都做出回复，向对方报告自己的MAC地址，否则就丢弃这个包。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;总之，有了&lt;strong&gt;ARP协议之后，我们就可以得到同一个子网络内的主机MAC地址，可以把数据包发送到任意一台主机之上了。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;传输层&quot;&gt;传输层&lt;/h3&gt;
+
+&lt;h3 id=&quot;传输层的由来&quot;&gt;传输层的由来&lt;/h3&gt;
+
+&lt;p&gt;有了MAC地址和IP地址，我们已经可以在互联网上任意两台主机上建立通信。&lt;/p&gt;
+
+&lt;p&gt;接下来的问题是，同一台主机上有许多程序都需要用到网络，比如，你一边浏览网页，一边与朋友在线聊天。当一个数据包从互联网上发来的时候，你怎么知道，它是表示网页的内容，还是表示在线聊天的内容？&lt;/p&gt;
+
+&lt;p&gt;也就是说，我们还&lt;strong&gt;需要一个参数，表示这个数据包到底供哪个程序（进程）使用。这个参数就叫做”端口”（port）&lt;/strong&gt;，它其实是每一个使用网卡的程序的编号。每个数据包都发到主机的特定端口，所以不同的程序就能取到自己所需要的数据。&lt;/p&gt;
+
+&lt;p&gt;“端口”是0到65535之间的一个整数，正好&lt;strong&gt;16个二进制位。0到1023的端口被系统占用，用户只能选用大于1023的端口&lt;/strong&gt;。不管是浏览网页还是在线聊天，应用程序会随机选用一个端口，然后与服务器的相应端口联系。&lt;/p&gt;
+
+&lt;p&gt;“传输层”的功能，就是建立&lt;strong&gt;“端口到端口”的通信&lt;/strong&gt;。相比之下，”网络层”的功能是建立&lt;strong&gt;“主机到主机”的通信&lt;/strong&gt;。只要确定主机和端口，我们就能实现程序之间的交流。因此，Unix系统就把&lt;strong&gt;主机+端口，叫做”套接字”（socket）&lt;/strong&gt;。有了它，就可以进行网络应用程序开发了。&lt;/p&gt;
+
+&lt;h3 id=&quot;udp协议&quot;&gt;UDP协议&lt;/h3&gt;
+
+&lt;p&gt;现在，我们必须在数据包中加入端口信息，这就需要新的协议。最简单的实现叫做UDP协议，它的格式几乎就是在数据前面，加上端口号。&lt;/p&gt;
+
+&lt;p&gt;UDP数据包，也是由”标头”和”数据”两部分组成。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821222849.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;“标头”部分主要定义了发出端口和接收端口，”数据”部分就是具体的内容。然后，把整个UDP数据包放入IP数据包的&lt;strong&gt;“数据”部分&lt;/strong&gt;，而前面说过，IP数据包又是放在以太网数据包之中的，所以整个以太网数据包现在变成了下面这样：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821222934.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;UDP数据包非常简单，”标头”部分一共只有8个字节，总长度不超过65,535字节，正好放进一个IP数据包。&lt;/p&gt;
+
+&lt;h3 id=&quot;tcp协议&quot;&gt;TCP协议&lt;/h3&gt;
+
+&lt;p&gt;UDP协议的优点是比较简单，容易实现，但是缺点是可靠性较差，一旦数据包发出，无法知道对方是否收到。&lt;/p&gt;
+
+&lt;p&gt;为了解决这个问题，提高网络可靠性，TCP协议就诞生了。这个协议非常复杂，但可以近似认为，它就是有确认机制的UDP协议，每发出一个数据包都要求确认。如果有一个数据包遗失，就收不到确认，发出方就知道有必要重发这个数据包了。&lt;/p&gt;
+
+&lt;p&gt;因此，TCP协议能够确保数据不会遗失。它的缺点是过程复杂、实现困难、消耗较多的资源。&lt;/p&gt;
+
+&lt;p&gt;TCP数据包和UDP数据包一样，都是内嵌在IP数据包的”数据”部分。TCP数据包没有长度限制，理论上可以无限长，但是为了保证网络的效率，通常TCP数据包的长度不会超过IP数据包的长度，以确保单个TCP数据包不必再分割。&lt;/p&gt;
+
+&lt;h2 id=&quot;应用层&quot;&gt;应用层&lt;/h2&gt;
+
+&lt;p&gt;应用程序收到”传输层”的数据，接下来就要进行解读。由于互联网是开放架构，数据来源五花八门，必须事先规定好格式，否则根本无法解读。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;“应用层”的作用，就是规定应用程序的数据格式。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;举例来说，TCP协议可以为各种各样的程序传递数据，比如Email、WWW、FTP等等。那么，必须有不同协议规定电子邮件、网页、FTP数据的格式，这些应用程序协议就构成了”应用层”。&lt;/p&gt;
+
+&lt;p&gt;这是最高的一层，直接面对用户。它的数据就放在TCP数据包的”数据”部分。因此，现在的以太网的数据包就变成下面这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821223100.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：&lt;a href=&quot;https://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html&quot;&gt;互联网入门协议&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Ke Xiang</name></author><category term="TCP/IP" /><category term="计算机网络" /><summary type="html">互联网的核心是一系列协议，总称为”互联网协议”（Internet Protocol Suite）。它们对电脑如何连接和组网，做出了详尽的规定。理解了这些协议，就理解了互联网的原理。</summary></entry><entry><title type="html">Sorket😇</title><link href="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/socket/" rel="alternate" type="text/html" title="Sorket😇" /><published>2018-08-22T07:29:08+08:00</published><updated>2018-08-22T07:29:08+08:00</updated><id>http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/socket</id><content type="html" xml:base="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/socket/">&lt;h2 id=&quot;io模型&quot;&gt;I/O模型&lt;/h2&gt;
+
+&lt;p&gt;一个输入操作通常包括两个阶段：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;等待数据准备好&lt;/li&gt;
+  &lt;li&gt;从内核向进程复制数据&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;对于一个套接字上的输入操作，第一步通常涉及等待数据从网络中到达。当所等待分组到达时，它被复制到内核中的某个缓冲区。第二步就是把数据从内核缓冲区复制到应用进程缓冲区。&lt;/p&gt;
+
+&lt;p&gt;Unix 下有五种 I/O 模型：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;阻塞式 I/O&lt;/li&gt;
+  &lt;li&gt;非阻塞式 I/O&lt;/li&gt;
+  &lt;li&gt;I/O 复用（select 和 poll）&lt;/li&gt;
+  &lt;li&gt;信号驱动式 I/O（SIGIO）&lt;/li&gt;
+  &lt;li&gt;异步 I/O（AIO）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;阻塞式-io&quot;&gt;阻塞式 I/O&lt;/h2&gt;
+
+&lt;p&gt;应用进程被阻塞，直到数据复制到应用进程缓冲区中才返回。&lt;/p&gt;
+
+&lt;p&gt;应该注意到，在阻塞的过程中，其它程序还可以执行，因此阻塞不意味着整个操作系统都被阻塞。因为其他程序还可以执行，因此不消耗 CPU 时间，这种模型的执行效率会比较高。&lt;/p&gt;
+
+&lt;p&gt;下图中，recvfrom 用于接收 Socket 传来的数据，并复制到应用进程的缓冲区 buf 中。这里把 recvfrom() 当成系统调用。&lt;/p&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;ssize_t&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;recvfrom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sockfd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;void&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;buf&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;size_t&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;flags&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sockaddr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;src_addr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;socklen_t&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;addrlen&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;非阻塞式-io&quot;&gt;非阻塞式 I/O&lt;/h2&gt;
+
+&lt;p&gt;应用进程执行系统调用之后，内核返回一个错误码。应用进程可以继续执行，但是需要不断的执行系统调用来获知 I/O 是否完成，这种方式称为轮询（polling）。&lt;/p&gt;
+
+&lt;p&gt;由于 CPU 要处理更多的系统调用，因此这种模型是比较低效的。&lt;/p&gt;
+
+&lt;h2 id=&quot;io-复用&quot;&gt;I/O 复用&lt;/h2&gt;
+
+&lt;p&gt;使用 select 或者 poll 等待数据，并且可以等待多个套接字中的任何一个变为可读，这一过程会被阻塞，当某一个套接字可读时返回。之后再使用 recvfrom 把数据从内核复制到进程中。&lt;/p&gt;
+
+&lt;p&gt;它可以让单个进程具有处理多个 I/O 事件的能力。又被称为 Event Driven I/O，即事件驱动 I/O。&lt;/p&gt;
+
+&lt;p&gt;如果一个 Web 服务器没有 I/O 复用，那么每一个 Socket 连接都需要创建一个线程去处理。如果同时有几万个连接，那么就需要创建相同数量的线程。并且相比于多进程和多线程技术，I/O 复用不需要进程线程创建和切换的开销，系统开销更小。&lt;/p&gt;
+
+&lt;h2 id=&quot;信号驱动-io&quot;&gt;信号驱动 I/O&lt;/h2&gt;
+
+&lt;p&gt;应用进程使用 sigaction 系统调用，内核立即返回，应用进程可以继续执行，也就是说等待数据阶段应用进程是非阻塞的。内核在数据到达时向应用进程发送 SIGIO 信号，应用进程收到之后在信号处理程序中调用 recvfrom 将数据从内核复制到应用进程中。&lt;/p&gt;
+
+&lt;p&gt;相比于非阻塞式 I/O 的轮询方式，信号驱动 I/O 的 CPU 利用率更高。&lt;/p&gt;
+
+&lt;h2 id=&quot;异步-io&quot;&gt;异步 I/O&lt;/h2&gt;
+
+&lt;p&gt;进行 aio_read 系统调用会立即返回，应用进程继续执行，不会被阻塞，内核会在所有操作完成之后向应用进程发送信号。&lt;/p&gt;
+
+&lt;p&gt;异步 I/O 与信号驱动 I/O 的区别在于，异步 I/O 的信号是通知应用进程 I/O 完成，而信号驱动 I/O 的信号是通知应用进程可以开始 I/O。&lt;/p&gt;
+
+&lt;h2 id=&quot;同步-io-与异步-io&quot;&gt;同步 I/O 与异步 I/O&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;同步 I/O：应用进程在调用 recvfrom 操作时会阻塞。&lt;/li&gt;
+  &lt;li&gt;异步 I/O：不会阻塞。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;阻塞式 I/O、非阻塞式 I/O、I/O 复用和信号驱动 I/O 都是同步 I/O，虽然非阻塞式 I/O 和信号驱动 I/O 在等待数据阶段不会阻塞，但是在之后的将数据从内核复制到应用进程这个操作会阻塞。&lt;/p&gt;
+
+&lt;h2 id=&quot;五大-io-模型比较&quot;&gt;五大 I/O 模型比较&lt;/h2&gt;
+
+&lt;p&gt;前四种 I/O 模型的主要区别在于第一个阶段，而第二个阶段是一样的：将数据从内核复制到应用进程过程中，应用进程会被阻塞。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821225406.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;io-复用-1&quot;&gt;I/O 复用&lt;/h2&gt;
+
+&lt;p&gt;select/poll/epoll 都是 I/O 多路复用的具体实现，select 出现的最早，之后是 poll，再是 epoll。&lt;/p&gt;
+
+&lt;h3 id=&quot;select&quot;&gt;select&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fd_set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;readfds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fd_set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;writefds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fd_set&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exceptfds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeval&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;有三种类型的描述符类型：readset、writeset、exceptset，分别对应读、写、异常条件的描述符集合。fd_set 使用数组实现，数组大小使用 FD_SETSIZE 定义。&lt;/p&gt;
+
+&lt;p&gt;timeout 为超时参数，调用 select 会一直阻塞直到有描述符的事件到达或者等待的时间超过 timeout。&lt;/p&gt;
+
+&lt;p&gt;成功调用返回结果大于 0，出错返回结果为 -1，超时返回结果为 0。&lt;/p&gt;
+
+&lt;h3 id=&quot;poll&quot;&gt;poll&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;poll&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pollfd&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;unsigned&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nfds&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;pollfd 使用链表实现。&lt;/p&gt;
+
+&lt;h3 id=&quot;比较&quot;&gt;比较&lt;/h3&gt;
+
+&lt;h4 id=&quot;功能&quot;&gt;功能&lt;/h4&gt;
+
+&lt;p&gt;select 和 poll 的功能基本相同，不过在一些实现细节上有所不同。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;select 会修改描述符，而 poll 不会；&lt;/li&gt;
+  &lt;li&gt;select 的描述符类型使用数组实现，FD_SETSIZE 大小默认为 1024，因此默认只能监听 1024 个描述符。如果要监听更多描述符的话，需要修改 FD_SETSIZE 之后重新编译；而 poll 的描述符类型使用链表实现，没有描述符的数量的限制；&lt;/li&gt;
+  &lt;li&gt;poll 提供了更多的事件类型，并且对描述符的重复利用上比 select 高。&lt;/li&gt;
+  &lt;li&gt;如果一个线程对某个描述符调用了 select 或者 poll，另一个线程关闭了该描述符，会导致调用结果不确定。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;速度&quot;&gt;速度&lt;/h4&gt;
+
+&lt;p&gt;select 和 poll 速度都比较慢。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;select 和 poll 每次调用都需要将全部描述符从应用进程缓冲区复制到内核缓冲区。&lt;/li&gt;
+  &lt;li&gt;select 和 poll 的返回结果中没有声明哪些描述符已经准备好，所以如果返回值大于 0 时，应用进程都需要使用轮询的方式来找到 I/O 完成的描述符。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;可移植性&quot;&gt;可移植性&lt;/h4&gt;
+
+&lt;p&gt;几乎所有的系统都支持 select，但是只有比较新的系统支持 poll。&lt;/p&gt;
+
+&lt;h3 id=&quot;epoll&quot;&gt;epoll&lt;/h3&gt;
+
+&lt;div class=&quot;language-c highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;epoll_create&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;epoll_ctl&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epfd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;op&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoll_event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;event&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;；&lt;/span&gt;
+&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoll_wait&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epfd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;struct&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;epoll_event&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;events&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;maxevents&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;int&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;timeout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;epoll_ctl() 用于向内核注册新的描述符或者是改变某个文件描述符的状态。已注册的描述符在内核中会被维护在一棵红黑树上，通过回调函数内核会将 I/O 准备好的描述符加入到一个链表中管理，进程调用 epoll_wait() 便可以得到事件完成的描述符。&lt;/p&gt;
+
+&lt;p&gt;从上面的描述可以看出，epoll 只需要将描述符从进程缓冲区向内核缓冲区拷贝一次，并且进程不需要通过轮询来获得事件完成的描述符。&lt;/p&gt;
+
+&lt;p&gt;epoll 仅适用于 Linux OS。&lt;/p&gt;
+
+&lt;p&gt;epoll 比 select 和 poll 更加灵活而且没有描述符数量限制。&lt;/p&gt;
+
+&lt;p&gt;epoll 对多线程编程更有友好，一个线程调用了 epoll_wait() 另一个线程关闭了同一个描述符也不会产生像 select 和 poll 的不确定情况。&lt;/p&gt;
+
+&lt;h2 id=&quot;工作模式&quot;&gt;工作模式&lt;/h2&gt;
+
+&lt;p&gt;epoll 的描述符事件有两种触发模式：LT（level trigger）和 ET（edge trigger）。&lt;/p&gt;
+
+&lt;h3 id=&quot;lt-模式&quot;&gt;LT 模式&lt;/h3&gt;
+
+&lt;p&gt;当 epoll_wait() 检测到描述符事件到达时，将此事件通知进程，进程可以不立即处理该事件，下次调用 epoll_wait() 会再次通知进程。是默认的一种模式，并且同时支持 Blocking 和 No-Blocking。&lt;/p&gt;
+
+&lt;h3 id=&quot;et-模式&quot;&gt;ET 模式&lt;/h3&gt;
+
+&lt;p&gt;和 LT 模式不同的是，通知之后进程必须立即处理事件，下次再调用 epoll_wait() 时不会再得到事件到达的通知。&lt;/p&gt;
+
+&lt;p&gt;很大程度上减少了 epoll 事件被重复触发的次数，因此效率要比 LT 模式高。只支持 No-Blocking，以避免由于一个文件句柄的阻塞读/阻塞写操作把处理多个文件描述符的任务饿死。&lt;/p&gt;
+
+&lt;h2 id=&quot;应用场景&quot;&gt;应用场景&lt;/h2&gt;
+
+&lt;p&gt;很容易产生一种错觉认为只要用 epoll 就可以了，select 和 poll 都已经过时了，其实它们都有各自的使用场景。&lt;/p&gt;
+
+&lt;h3 id=&quot;select-应用场景&quot;&gt;select 应用场景&lt;/h3&gt;
+
+&lt;p&gt;select 的 timeout 参数精度为 1ns，而 poll 和 epoll 为 1ms，因此 select 更加适用于实时要求更高的场景，比如核反应堆的控制。&lt;/p&gt;
+
+&lt;p&gt;select 可移植性更好，几乎被所有主流平台所支持。&lt;/p&gt;
+
+&lt;h3 id=&quot;poll-应用场景&quot;&gt;poll 应用场景&lt;/h3&gt;
+
+&lt;p&gt;poll 没有最大描述符数量的限制，如果平台支持并且对实时性要求不高，应该使用 poll 而不是 select。&lt;/p&gt;
+
+&lt;p&gt;需要同时监控小于 1000 个描述符，就没有必要使用 epoll，因为这个应用场景下并不能体现 epoll 的优势。&lt;/p&gt;
+
+&lt;p&gt;需要监控的描述符状态变化多，而且都是非常短暂的，也没有必要使用 epoll。因为 epoll 中的所有描述符都存储在内核中，造成每次需要对描述符的状态改变都需要通过 epoll_ctl() 进行系统调用，频繁系统调用降低效率。并且epoll 的描述符存储在内核，不容易调试。&lt;/p&gt;
+
+&lt;h3 id=&quot;epoll-应用场景&quot;&gt;epoll 应用场景&lt;/h3&gt;
+
+&lt;p&gt;只需要运行在 Linux 平台上，并且有非常大量的描述符需要同时轮询，而且这些连接最好是长连接。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;来源：&lt;a href=&quot;https://github.com/CyC2018/CS-Notes/blob/master/notes/Socket.md&quot;&gt;Sorket&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</content><author><name>Ke Xiang</name></author><category term="Sorket" /><category term="计算机网络" /><summary type="html">I/O模型</summary></entry><entry><title type="html">TCP/IP协议😇</title><link href="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip/" rel="alternate" type="text/html" title="TCP/IP协议😇" /><published>2018-08-22T07:29:08+08:00</published><updated>2018-08-22T07:29:08+08:00</updated><id>http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip</id><content type="html" xml:base="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip/">&lt;h2 id=&quot;tcpip协议&quot;&gt;TCP/IP协议&lt;i class=&quot;fa fa-internet-explorer&quot; aria-hidden=&quot;true&quot;&gt;&lt;/i&gt;&lt;/h2&gt;
+
+&lt;p&gt;TCP/IP不是一个协议，而是一个协议族的统称。里面包括IP协议、IMCP协议、TCP协议。&lt;/p&gt;
+
+&lt;p&gt;TCP/IP分层：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215017.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这里有几个需要注意的知识点：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;互联网地址：也就是IP地址，一般为网络号+子网号+主机号&lt;/li&gt;
+  &lt;li&gt;域名系统：通俗的来说，就是一个数据库，可以将主机名转换成IP地址&lt;/li&gt;
+  &lt;li&gt;RFC：TCP/IP协议的标准文档&lt;/li&gt;
+  &lt;li&gt;端口号：一个逻辑号码，IP包所带有的标记&lt;/li&gt;
+  &lt;li&gt;Socket：应用编程接口&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;数据链路层的工作特性：&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;为IP模块发送和接收IP数据报&lt;/li&gt;
+  &lt;li&gt;为ARP模块发送ARP请求和接收ARP应答（ARP：地址解析协议，将IP地址转换成MAC地址）&lt;/li&gt;
+  &lt;li&gt;为RARP发送RARP请求和接收RARP应答&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;接下来我们了解一下TCP/IP的工作流程：&lt;/p&gt;
+
+&lt;p&gt;数据链路层从ARP得到数据的传递信息，再从IP得到具体的数据信息&lt;/p&gt;
+
+&lt;h2 id=&quot;ip协议&quot;&gt;IP协议&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215250.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;IP协议头当中，最重要的就是TTL（IP允许通过的最大网段数量）字段（八位），规定该数据包能穿过几个路由之后才会被抛弃。&lt;/p&gt;
+
+&lt;h2 id=&quot;ip路由选择&quot;&gt;IP路由选择&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215336.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;arp协议工作原理&quot;&gt;ARP协议工作原理&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215402.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;icmp协议网络控制文协议&quot;&gt;ICMP协议（网络控制文协议）&lt;/h2&gt;
+
+&lt;p&gt;将IP数据包不能传送的错误信息传送给主机&lt;/p&gt;
+
+&lt;p&gt;查询报文&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ping查询：主机是否可达，通过计算间隔时间和传送多少个包的数量&lt;/li&gt;
+  &lt;li&gt;子网掩码&lt;/li&gt;
+  &lt;li&gt;时间戳：获得当前时间&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;差错报文&lt;/p&gt;
+
+&lt;p&gt;不产生的情况：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;ICMP差错报文不产生差错报文&lt;/li&gt;
+  &lt;li&gt;源地址为零地址、环目地址、广播地址、多播地址&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;ip路由器选择协议&quot;&gt;IP路由器选择协议&lt;/h2&gt;
+
+&lt;h3 id=&quot;静态路由选择&quot;&gt;静态路由选择&lt;/h3&gt;
+
+&lt;p&gt;先来看路由选择工作流程：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215524.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;配置接口以默认方式生成路由表项，或者使用route add手动添加表项&lt;/li&gt;
+  &lt;li&gt;ICMP报文（ICMP重定向报文）更新表项&lt;/li&gt;
+  &lt;li&gt;动态路由选择（只使用在路由之间）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;rip路由信息协议&quot;&gt;RIP（路由信息协议）&lt;/h3&gt;
+
+&lt;p&gt;分布式的基于距离向量（路由器到每一个目的网络的距离记录）的路由选择协议&lt;/p&gt;
+
+&lt;p&gt;router承担的工作：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;给每一个已知路由器发送RIP请求报文，要求给出完整的路由表&lt;/li&gt;
+  &lt;li&gt;如果接受请求，就将自己的路由表交给请求者；如果没有，就处理IP请求表项（自己部分+跳数/没有的部分+16）&lt;/li&gt;
+  &lt;li&gt;接受回应，更新路由表&lt;/li&gt;
+  &lt;li&gt;定期更新路由表（一般为30s，只能说太频繁~）&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;ospf开放最短路径优先协议&quot;&gt;OSPF（开放最短路径优先协议）&lt;/h3&gt;
+
+&lt;p&gt;分布式链路状态（和这两个路由器都有接口的网络）协议&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;当链路状态发生变化时，采用可靠的洪泛法，向所有的路由器发送信息（相邻的所有路由器的链路状态）&lt;/li&gt;
+  &lt;li&gt;最终会建立一个全网的拓扑结构图&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;tcpip的三次握手四次分手&quot;&gt;TCP/IP的三次握手，四次分手&lt;/h3&gt;
+
+&lt;p&gt;首先我们先来了解TCP报文段：&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215736.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;三次握手的过程&quot;&gt;三次握手的过程&lt;/h3&gt;
+
+&lt;p&gt;客户端我们用A表示，服务器端用B表示，前提：A主动打开，B被动打开。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215953.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在建立连接之前，B先创建TCB（传输控制块），准备接受客户进程的连接请求，处于LISTEN（监听）状态&lt;/li&gt;
+  &lt;li&gt;A首先创建TCB，然后向B发出连接请求，SYN置1，同时选择初始序号seq=x，进入SYN-SEND（同步已发送）状态&lt;/li&gt;
+  &lt;li&gt;B收到连接请求后向A发送确认，SYN置1，ACK置1，同时产生一个确认序号ack=x+1。同时随机选择初始序号seq=y，进入SYN-RCVD（同步收到）状态&lt;/li&gt;
+  &lt;li&gt;A收到确认连接请求后，ACK置1，确认号ack=y+1，seq=x+1，进入到ESTABLISHED（已建立连接）状态。向B发出确认连接，最后B也进入到ESTABLISHED（已建立连接）状态。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;简单来说，就是&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;建立连接时，客户端发送SYN包（SYN=i）到服务器，并进入到SYN-SEND状态，等待服务器确认&lt;/li&gt;
+  &lt;li&gt;服务器收到SYN包，必须确认客户的SYN（ack=i+1）,同时自己也发送一个SYN包（SYN=k）,即SYN+ACK包，此时服务器进入SYN-RECV状态&lt;/li&gt;
+  &lt;li&gt;客户端收到服务器的SYN+ACK包，向服务器发送确认报ACK（ack=k+1）,此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;在此穿插一个知识点就是SYN攻击，那么什么是SYN攻击？发生的条件是什么？怎么避免？&lt;/p&gt;
+
+&lt;p&gt;在三次握手过程中，Server发送SYN-ACK之后，收到Client的ACK之前的TCP连接称为半连接（half-open connect），此时Server处于SYN_RCVD状态，当收到ACK后，Server转入ESTABLISHED状态。SYN攻击就是 Client在短时间内伪造大量不存在的IP地址，并向Server不断地发送SYN包，Server回复确认包，并等待Client的确认，由于源地址 是不存在的，因此，Server需要不断重发直至超时，这些伪造的SYN包将产时间占用未连接队列，导致正常的SYN请求因为队列满而被丢弃，从而引起网 络堵塞甚至系统瘫痪。SYN攻击时一种典型的DDOS攻击，检测SYN攻击的方式非常简单，即当Server上有大量半连接状态且源IP地址是随机的，则可以断定遭到SYN攻击了，使用如下命令可以让之现行：  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#netstat -nap | grep SYN_RECV&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;四次分手的过程&quot;&gt;四次分手的过程&lt;/h3&gt;
+
+&lt;p&gt;客户端我们用A表示，服务器端用B表示。由于TCP连接时是全双工的，因此每个方向都必须单独进行关闭。这一原则是当一方完成数据发送任务后，发送一个FIN来终止这一方向的链接。收到一个FIN只是意味着这一方向上没有数据流动，既不会在收到数据，但是在这个TCP连接上仍然能够发送数据，知道这一方向也发送了FIN，首先进行关闭的一方将执行主动关闭，而另一方则执行被动关闭。&lt;/p&gt;
+
+&lt;p&gt;前提：A主动关闭，B被动关闭&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821220149.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;为什么连接的时候是三次握手，而断开连接的时候需要四次挥手？&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;这是因为服务端在LISTEN状态下，收到建立连接请求的SYN报文后，把ACK和SYN放在一个报文里发送给客户端。而关闭连接时，当收到对方的FIN 报文时，仅仅表示对方不再发送数据了但是还能接收数据，己方也未必全部数据都发送给对方了，所以己方可以立即close，也可以发送一些数据给对方后，再 发送FIN报文给对方来表示同意现在关闭连接，因此，己方ACK和FIN一般都会分开发送。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;A发送一个FIN，用来关闭A到B的数据传送，A进入FIN_WAIT_1状态。&lt;/li&gt;
+  &lt;li&gt;B收到FIN后，发送一个ACK给A，确认序号为收到序号+1（与SYN相同，一个FIN占用一个序号），B进入CLOSE_WAIT状态。&lt;/li&gt;
+  &lt;li&gt;B发送一个FIN，用来关闭B到A的数据传送，B进入LAST_ACK状态。&lt;/li&gt;
+  &lt;li&gt;A收到FIN后，A进入TIME_WAIT状态，接着发送一个ACK给B，确认序号为收到序号+1，B进入CLOSED状态，完成四次挥手。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;简单来说就是&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;客户端A发送一个FIN，用来关闭客户A到服务器B的数据传送（报文段4）。&lt;/li&gt;
+  &lt;li&gt;服务器B收到这个FIN，它发回一个ACK，确认序号为收到的序号加1（报文段5）。和SYN一样，一个FIN将占用一个序号。&lt;/li&gt;
+  &lt;li&gt;服务器B关闭与客户端A的连接，发送一个FIN给客户端A（报文段6）。&lt;/li&gt;
+  &lt;li&gt;客户端A发回ACK报文确认，并将确认序号设置为收到序号加1（报文段7）。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A在进入到TIME-WAIT状态后，并不会马上释放TCP，必须经过时间等待计时器设置的时间2MSL（最长报文段寿命），A才进入到CLOSED状态。为什么？&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;为了保证A发送的最后一个ACK报文段能够到达B&lt;/li&gt;
+  &lt;li&gt;防止“已失效的连接请求报文段”出现在本连接中&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;总结&quot;&gt;总结&lt;/h2&gt;
+
+&lt;h3 id=&quot;三次握手流程&quot;&gt;三次握手流程&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;客户端发个请求“开门呐，我要进来”给服务器&lt;/li&gt;
+  &lt;li&gt;服务器发个“进来吧，我去给你开门”给客户端&lt;/li&gt;
+  &lt;li&gt;客户端有很客气的发个“谢谢，我要进来了”给服务器&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;四次挥手流程&quot;&gt;四次挥手流程&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;客户端发个“时间不早了，我要走了”给服务器，等服务器起身送他&lt;/li&gt;
+  &lt;li&gt;服务器听到了，发个“我知道了，那我送你出门吧”给客户端，等客户端走&lt;/li&gt;
+  &lt;li&gt;服务器把门关上后，发个“我关门了”给客户端，然后等客户端走（尼玛~矫情啊）&lt;/li&gt;
+  &lt;li&gt;客户端发个“我知道了，我走了”，之后自己就走了。&lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Ke Xiang</name></author><category term="TCP/IP" /><category term="计算机网络" /><summary type="html">TCP/IP协议</summary></entry><entry><title type="html">Google技巧😍</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/22/google-tips/" rel="alternate" type="text/html" title="Google技巧😍" /><published>2018-08-22T07:29:08+08:00</published><updated>2018-08-22T07:29:08+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/22/google-tips</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/22/google-tips/">&lt;blockquote&gt;
+  &lt;p&gt;留个链接：&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;&lt;a href=&quot;https://zybuluo.com/Hopelessness/note/728755#google%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4&quot;&gt;Google搜索命令&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://support.google.com/websearch#topic=&quot;&gt;Google搜索帮助&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://lvii.gitbooks.io/outman/content/&quot;&gt;科学上网漫游指南&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://my-space.readthedocs.io/zh/latest/gfw_is_shit/&quot;&gt;科学上网&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://strivebo.com/2018/02/12/2018-02-12%E3%80%90%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E3%80%91%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E6%80%BB%E7%BB%93v1.0/&quot;&gt;科学上网总结&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://github.com/firewallTutor/firewallTutor&quot;&gt;自建梯子教程&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://book.gitlore.com/darren/%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E8%87%AA%E6%88%91%E4%BF%AE%E5%85%BB/effciency/great-fire-wall.html&quot;&gt;如何翻墙&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href=&quot;https://crifan.github.io/scientific_network_summary/website/&quot;&gt;科学上网相关知识总结&lt;/a&gt;&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;先娱乐一下&quot;&gt;先娱乐一下😴&lt;/h2&gt;
+
+&lt;p&gt;1、搜索“399999999999999-399999999999998”。你将会得到0。&lt;/p&gt;
+
+&lt;p&gt;2、搜索“do a barrel roll”或者“Z or R twice”，让你的页面旋转360°&lt;/p&gt;
+
+&lt;p&gt;3、搜索”the Answer to Life, the Universe and Everything”。生命，宇宙以及一切的答案是什么？是42！&lt;/p&gt;
+
+&lt;p&gt;4、搜索”zerg rush”。会从页面上方降下很多圆圈，每个圆圈你都要三击它们才会将它们消灭，不然随着圆圈的降落，它们会把搜索出来的结果一个个融化掉，最后剩下空白的页面。&lt;/p&gt;
+
+&lt;p&gt;圆圈正在融化搜索结果中。&lt;/p&gt;
+
+&lt;p&gt;全部融化完毕，剩下空白的页面。&lt;/p&gt;
+
+&lt;p&gt;5、搜索“Google in 1998”，你就可以看到1998年的谷歌究竟是长什么样子的。&lt;/p&gt;
+
+&lt;p&gt;6、搜索“Google Gravity”，让你无视牛顿万有引力。&lt;/p&gt;
+
+&lt;p&gt;单击红色方框的网站。&lt;/p&gt;
+
+&lt;p&gt;你将看到Google所有的东西都克服了万有引力，全部瘫倒在地了，尽情地虐待它们吧！！！&lt;/p&gt;
+
+&lt;p&gt;7、搜索“Google Sphere”，，你将会看到所有的东西围绕Google Search旋转。&lt;/p&gt;
+
+&lt;p&gt;点击红色方框的网站。&lt;/p&gt;
+
+&lt;p&gt;它们都在旋转中。&lt;/p&gt;
+
+&lt;p&gt;8、搜索”Google Pacman”，你就可以在网页上玩一个类似于贪吃蛇的小游戏，但是你要尽量避免碰到那些彩色的东西，因为它们会把你吃掉。&lt;/p&gt;
+
+&lt;p&gt;点击“Click to Play”&lt;/p&gt;
+
+&lt;p&gt;这个游戏主要是利用上下左右的方向键进行操作的，请你尽情享受。&lt;/p&gt;
+
+&lt;p&gt;9、在Google images搜索“atari breakout”&lt;/p&gt;
+
+&lt;p&gt;这个游戏是不是始（shi)料(niao)未及？好好玩耍吧。&lt;/p&gt;
+
+&lt;h2 id=&quot;seo相关技巧&quot;&gt;SEO相关技巧&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;熟悉正则表达式很重要。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;1、双引号&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;把搜索词放在双引号中，代表完全匹配搜索，也就是说搜索结果返回的页面包含双引号中出现的所有的词，连顺序也必须完全匹配。bd和Google 都支持这个指令。例如搜索： “seo方法图片”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2、减号&lt;/strong&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;减号代表搜索不包含减号后面的词的页面。使用这个指令时减号前面必须是空格，减号后面没有空格，紧跟着需要排除的词。Google 和bd都支持这个指令。
+例如：搜索 -引擎
+返回的则是包含“搜索”这个词，却不包含“引擎”这个词的结果&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;3、星号&lt;/strong&gt; &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;
+星号&lt;em&gt;是常用的通配符，也可以用在搜索中。百度不支持&lt;/em&gt;号搜索指令。
+比如在Google 中搜索：搜索&lt;em&gt;擎
+其中的&lt;/em&gt;号代表任何文字。返回的结果就不仅包含“搜索引擎”，还包含了“搜索收擎”，“搜索巨擎”等内容。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;4、inurl&lt;/strong&gt;
+inurl: 指令用于搜索查询词出现在url 中的页面。bd和Google 都支持inurl 指令。inurl 指令支持中文和英文。
+比如搜索：inurl:搜索引擎优化&lt;/p&gt;
+
+&lt;p&gt;返回的结果都是网址url 中包含“搜索引擎优化”的页面。由于关键词出现在url 中对排名有一定影响，使用inurl:搜索可以更准确地找到竞争对手。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;5、inanchor&lt;/strong&gt;
+inanchor:指令返回的结果是导入链接锚文字中包含搜索词的页面。百度不支持inanchor。
+比如在Google 搜索 ：inanchor:点击这里
+返回的结果页面本身并不一定包含“点击这里”这四个字，而是指向这些页面的链接锚文字中出现了“点击这里”这四个字。
+可以用来找到某个关键词的竞争对收，而且这些竞争对手往往是做过SEO 的。研究竞争对手页面有哪些外部链接，就可以找到很多链接资源。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;6、intitle&lt;/strong&gt;
+intitle: 指令返回的是页面title 中包含关键词的页面。Google 和bd都支持intitle 指令。
+使用intitle 指令找到的文件是更准确的竞争页面。如果关键词只出现在页面可见文字中，而没有出现在title 中，大部分情况是并没有针对关键词进行优化，所以也不是有力的竞争对手。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;7、allintitle&lt;/strong&gt;
+allintitle:搜索返回的是页面标题中包含多组关键词的文件。
+例如 ：allintitle:SEO 搜索引擎优化
+就相当于：intitle:SEO intitle:搜索引擎优化
+返回的是标题中中既包含“SEO”，也包含“搜索引擎优化”的页面&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;8、allinurl&lt;/strong&gt;
+与allintitle: 类似。
+allinurl:SEO 搜索引擎优化
+就相当于 ：inurl:SEO inurl:搜索引擎优化&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;9、filetype&lt;/strong&gt;
+用于搜索特定文件格式。Google 和bd都支持filetype 指令。
+比如搜索filetype:pdf SEO
+返回的就是包含SEO 这个关键词的所有pdf 文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;10、site&lt;/strong&gt;
+site:是SEO 最熟悉的高级搜索指令，用来搜索某个域名下的所有文件。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;11、linkdomain&lt;/strong&gt;
+linkdomain:指令只适用于雅虎，返回的是某个域名的反向链接。雅虎的反向链接数据还比较准
+确，是SEO 人员研究竞争对手外部链接情况的重要工具之一。
+比如搜索&lt;/p&gt;
+
+&lt;p&gt;linkdomain:&lt;a href=&quot;https://link.zhihu.com/?target=http%3A//cnseotool.com&quot;&gt;http://cnseotool.com&lt;/a&gt; -site:&lt;a href=&quot;https://link.zhihu.com/?target=http%3A//cnseotool.com&quot;&gt;http://cnseotool.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;得到的就是点石网站的外部链接，因为-site:&lt;a href=&quot;https://link.zhihu.com/?target=http%3A//cnseotool.com&quot;&gt;http://cnseotool.com&lt;/a&gt; 已经排除了点石本身的页面，也就是内部
+链接，剩下的就都是外部链接了。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;12、related&lt;/strong&gt;
+related:指令只适用于Google，返回的结果是与某个网站有关联的页面。比如搜索&lt;/p&gt;
+
+&lt;p&gt;related:&lt;a href=&quot;https://link.zhihu.com/?target=http%3A//cnseotool.com&quot;&gt;http://cnseotool.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;我们就可以得到Google 所认为的与点石网站有关联的其他页面。 这种关联到底指的是什么，Google 并没有明确说明，一般认为指的是有共同外部链接的网站。&lt;/p&gt;
+
+&lt;h2 id=&quot;高级技巧&quot;&gt;高级技巧&lt;/h2&gt;
+
+&lt;h3 id=&quot;日常生活类&quot;&gt;&lt;strong&gt;日常生活类。&lt;/strong&gt;&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;1、搜索语法&lt;/strong&gt;：&lt;strong&gt;weather／time／sunrise／sundown+城市名（英语）&lt;/strong&gt;。即时结果：返回各个城市的天气／所在时区的时间／日出时间／日落时间。例如：weather／time／sunrise／sundown guangzhou(广州），就可以即时看到广州的天气、时间、日出日落时间。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180822000404.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2、搜索语法：&lt;strong&gt;歌手名字(英语）+music/songs&lt;/strong&gt; 即时结果：返回歌手的各首歌曲。&lt;/p&gt;
+
+&lt;p&gt;例如：Jay Chow music&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180822000942.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3、搜索语法：国家（英语）/省+capital 即时结果：返回这个国家的首都或者省会&lt;/p&gt;
+
+&lt;p&gt;例如：Guangdong capital，广东的省会即为广州。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180822001138.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;4、搜索语法：[货币一]+in+[货币二]&lt;/p&gt;
+
+&lt;p&gt;即时结果：返回货币一可以兑换多少货币二，还能给出汇率的走势。&lt;/p&gt;
+
+&lt;p&gt;你也可以在搜索栏中直接将各种货币相加，e.g:100usd+50eur+250inr=rmb，就可以直接得出多少人民币。&lt;/p&gt;
+
+&lt;p&gt;例如：1 usd in rmb&lt;/p&gt;
+
+&lt;p&gt;甚至可以进行计算：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;100usd+50eur+250inr=rmb&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180822001608.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;5、搜索语法：Set timer XX seconds/minutes/hours，XX表示具体的数字。&lt;/p&gt;
+
+&lt;p&gt;即时结果：设置XX秒/分/小时的计时器。&lt;/p&gt;
+
+&lt;p&gt;例如：set timer 30 minutes，设置倒数时间为30分钟的计时器。&lt;/p&gt;
+
+&lt;p&gt;6、搜索语法：城市名+to+城市名+distance&lt;/p&gt;
+
+&lt;p&gt;即时结果：返回两个城市相距的距离。&lt;/p&gt;
+
+&lt;p&gt;例如：Paris to Rome distance，即时看到巴黎到罗马的距离。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;7、搜索语法：what’s my location/IP&lt;/strong&gt; 即时结果：返回你所在的地址以及电脑的IP地址。&lt;/p&gt;
+
+&lt;h3 id=&quot;学术类&quot;&gt;学术类&lt;/h3&gt;
+
+&lt;h3 id=&quot;各国的gdp增长率&quot;&gt;各国的GDP增长率&lt;/h3&gt;
+
+&lt;p&gt;搜索语法：country GDP growth。例如搜索“Japan GDP growth”和“China GDP growth”。嗯，不错，一对比就知道我天朝一派欣欣向荣。（数据来源于世界银行）&lt;/p&gt;
+
+&lt;h3 id=&quot;绘制多元方程以及复杂的方程式&quot;&gt;😍👍绘制多元方程以及复杂的方程式&lt;/h3&gt;
+
+&lt;p&gt;搜索语法：graph for +方程式子&lt;/p&gt;
+
+&lt;p&gt;例如：graph for x^8，graph for sin(x)+tan(x)，graph for x^8+y^8。请你多多探索。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180822002434.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;追踪词汇的来源以及演变&quot;&gt;追踪词汇的来源以及演变&lt;/h3&gt;
+
+&lt;p&gt;搜索语法：Word etymology，word代表你想要搜索的单词。&lt;/p&gt;
+
+&lt;p&gt;例如：coffee etymology。你就可以看到咖啡这个单词是怎么演变的了。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180822002751.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;搜索透明图片&quot;&gt;搜索透明图片&lt;/h3&gt;
+
+&lt;p&gt;透明图片，就是不要白底的那种。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180822003831.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;明天继续更新。。。&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="科学上网" /><category term="google" /><category term="教程" /><summary type="html">留个链接： Google搜索命令 Google搜索帮助 科学上网漫游指南 科学上网 科学上网总结 自建梯子教程 如何翻墙 科学上网相关知识总结</summary></entry></feed>

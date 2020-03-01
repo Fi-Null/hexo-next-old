@@ -1,0 +1,2024 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/assets/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/assets/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="TCP/IP,计算机网络," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XK Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="介绍TCP/IP协议相关知识">
+<meta name="keywords" content="TCP/IP, 计算机网络">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TCP/IP协议😇">
+<meta property="og:url" content="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip/">
+<meta property="og:site_name" content="XK Blog">
+<meta property="og:description" content="介绍TCP/IP协议相关知识">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821214133.jpg">
+<meta property="og:updated_time" content="2018-08-22T07:29:08+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TCP/IP协议😇">
+<meta name="twitter:description" content="介绍TCP/IP协议相关知识">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821214133.jpg">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://localhost:4000/"/>
+
+
+
+
+
+  <title>TCP/IP协议😇 | XK Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-123686345-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c72906569503c06a12a6edc7b7c66149";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-6459493734251675",
+		enable_page_level_ads: true
+	  });
+	</script>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XK Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Less is more.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/pages/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-resume">
+          <a href="http://fi-null.github.io/resumeWeb" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-handshake-o"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/pages/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/pages/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/pages/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-top">
+          <a href="/pages/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br />
+            
+            TopX
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-photo " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ke Xiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XK Blog">
+    </span>
+    
+      	<!-- 心知天气固定插件 -->
+		<div align="center" id="tp-weather-widget"></div>
+		<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+		<script>tpwidget("init", {
+			"flavor": "slim",
+			"location": "WS0E9D8WN298",
+			"geolocation": "enabled",
+			"language": "en",
+			"unit": "c",
+			"theme": "chameleon",
+			"container": "tp-weather-widget",
+			"bubble": "enabled",
+			"alarmType": "badge",
+			"uid": "U81EB522D4",
+			"hash": "6b972a5f25f3cc4e8beb25e2feab9d4b"
+		});
+		tpwidget("show");</script>  
+
+    
+      <header class="post-header">    
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+          
+          
+            TCP/IP协议😇
+          
+        </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T07:29:08+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-22">
+                2018-08-22
+              </time>
+            
+          </span>	
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80" itemprop="url" rel="index">
+                    <span itemprop="name">计算机基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip/" class="leancloud_visitors" data-flag-title="TCP/IP协议😇">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃ | </span>
+             </span>
+          
+
+          
+
+          
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  2230
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  11
+                </span>
+              
+            </div>
+          
+
+          
+            
+                <div class="post-description">
+                    介绍TCP/IP协议相关知识
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+	<!-- 网易云音乐 -->
+	
+		<br>
+		<!-- cloud music -->
+<!-- auto=1 可以控制自动播放与否，当值为 1 即打开网页就自动播放，值为 0 时需要访客手动点击播放 -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+        src="//music.163.com/outchain/player?type=2&id=116493&auto=0&height=66">
+</iframe>
+
+	 
+	
+	<!-- 谷歌广告投放-->
+		<div>
+    
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	
+	
+	<!-- 数学公式插件 -->
+		
+	
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821214133.jpg" rel="gallery_"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821214133.jpg" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          
+          </div>
+
+        </div>
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="tcpip协议">TCP/IP协议<i class="fa fa-internet-explorer" aria-hidden="true"></i></h2>
+
+<p>TCP/IP不是一个协议，而是一个协议族的统称。里面包括IP协议、IMCP协议、TCP协议。</p>
+
+<p>TCP/IP分层：</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215017.png" alt="" /></p>
+
+<p>这里有几个需要注意的知识点：</p>
+
+<ul>
+  <li>互联网地址：也就是IP地址，一般为网络号+子网号+主机号</li>
+  <li>域名系统：通俗的来说，就是一个数据库，可以将主机名转换成IP地址</li>
+  <li>RFC：TCP/IP协议的标准文档</li>
+  <li>端口号：一个逻辑号码，IP包所带有的标记</li>
+  <li>Socket：应用编程接口</li>
+</ul>
+
+<p>数据链路层的工作特性：</p>
+
+<ul>
+  <li>为IP模块发送和接收IP数据报</li>
+  <li>为ARP模块发送ARP请求和接收ARP应答（ARP：地址解析协议，将IP地址转换成MAC地址）</li>
+  <li>为RARP发送RARP请求和接收RARP应答</li>
+</ul>
+
+<p>接下来我们了解一下TCP/IP的工作流程：</p>
+
+<p>数据链路层从ARP得到数据的传递信息，再从IP得到具体的数据信息</p>
+
+<h2 id="ip协议">IP协议</h2>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215250.png" alt="" /></p>
+
+<p>IP协议头当中，最重要的就是TTL（IP允许通过的最大网段数量）字段（八位），规定该数据包能穿过几个路由之后才会被抛弃。</p>
+
+<h2 id="ip路由选择">IP路由选择</h2>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215336.png" alt="" /></p>
+
+<h2 id="arp协议工作原理">ARP协议工作原理</h2>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215402.png" alt="" /></p>
+
+<h2 id="icmp协议网络控制文协议">ICMP协议（网络控制文协议）</h2>
+
+<p>将IP数据包不能传送的错误信息传送给主机</p>
+
+<p>查询报文</p>
+
+<ol>
+  <li>ping查询：主机是否可达，通过计算间隔时间和传送多少个包的数量</li>
+  <li>子网掩码</li>
+  <li>时间戳：获得当前时间</li>
+</ol>
+
+<p>差错报文</p>
+
+<p>不产生的情况：</p>
+
+<ol>
+  <li>ICMP差错报文不产生差错报文</li>
+  <li>源地址为零地址、环目地址、广播地址、多播地址</li>
+</ol>
+
+<h2 id="ip路由器选择协议">IP路由器选择协议</h2>
+
+<h3 id="静态路由选择">静态路由选择</h3>
+
+<p>先来看路由选择工作流程：</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215524.png" alt="" /></p>
+
+<ol>
+  <li>配置接口以默认方式生成路由表项，或者使用route add手动添加表项</li>
+  <li>ICMP报文（ICMP重定向报文）更新表项</li>
+  <li>动态路由选择（只使用在路由之间）</li>
+</ol>
+
+<h3 id="rip路由信息协议">RIP（路由信息协议）</h3>
+
+<p>分布式的基于距离向量（路由器到每一个目的网络的距离记录）的路由选择协议</p>
+
+<p>router承担的工作：</p>
+
+<ol>
+  <li>给每一个已知路由器发送RIP请求报文，要求给出完整的路由表</li>
+  <li>如果接受请求，就将自己的路由表交给请求者；如果没有，就处理IP请求表项（自己部分+跳数/没有的部分+16）</li>
+  <li>接受回应，更新路由表</li>
+  <li>定期更新路由表（一般为30s，只能说太频繁~）</li>
+</ol>
+
+<h3 id="ospf开放最短路径优先协议">OSPF（开放最短路径优先协议）</h3>
+
+<p>分布式链路状态（和这两个路由器都有接口的网络）协议</p>
+
+<ol>
+  <li>当链路状态发生变化时，采用可靠的洪泛法，向所有的路由器发送信息（相邻的所有路由器的链路状态）</li>
+  <li>最终会建立一个全网的拓扑结构图</li>
+</ol>
+
+<h3 id="tcpip的三次握手四次分手">TCP/IP的三次握手，四次分手</h3>
+
+<p>首先我们先来了解TCP报文段：</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215736.png" alt="" /></p>
+
+<h3 id="三次握手的过程">三次握手的过程</h3>
+
+<p>客户端我们用A表示，服务器端用B表示，前提：A主动打开，B被动打开。</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821215953.png" alt="" /></p>
+
+<ol>
+  <li>在建立连接之前，B先创建TCB（传输控制块），准备接受客户进程的连接请求，处于LISTEN（监听）状态</li>
+  <li>A首先创建TCB，然后向B发出连接请求，SYN置1，同时选择初始序号seq=x，进入SYN-SEND（同步已发送）状态</li>
+  <li>B收到连接请求后向A发送确认，SYN置1，ACK置1，同时产生一个确认序号ack=x+1。同时随机选择初始序号seq=y，进入SYN-RCVD（同步收到）状态</li>
+  <li>A收到确认连接请求后，ACK置1，确认号ack=y+1，seq=x+1，进入到ESTABLISHED（已建立连接）状态。向B发出确认连接，最后B也进入到ESTABLISHED（已建立连接）状态。</li>
+</ol>
+
+<p>简单来说，就是</p>
+
+<ol>
+  <li>建立连接时，客户端发送SYN包（SYN=i）到服务器，并进入到SYN-SEND状态，等待服务器确认</li>
+  <li>服务器收到SYN包，必须确认客户的SYN（ack=i+1）,同时自己也发送一个SYN包（SYN=k）,即SYN+ACK包，此时服务器进入SYN-RECV状态</li>
+  <li>客户端收到服务器的SYN+ACK包，向服务器发送确认报ACK（ack=k+1）,此包发送完毕，客户端和服务器进入ESTABLISHED状态，完成三次握手</li>
+</ol>
+
+<p>在此穿插一个知识点就是SYN攻击，那么什么是SYN攻击？发生的条件是什么？怎么避免？</p>
+
+<p>在三次握手过程中，Server发送SYN-ACK之后，收到Client的ACK之前的TCP连接称为半连接（half-open connect），此时Server处于SYN_RCVD状态，当收到ACK后，Server转入ESTABLISHED状态。SYN攻击就是 Client在短时间内伪造大量不存在的IP地址，并向Server不断地发送SYN包，Server回复确认包，并等待Client的确认，由于源地址 是不存在的，因此，Server需要不断重发直至超时，这些伪造的SYN包将产时间占用未连接队列，导致正常的SYN请求因为队列满而被丢弃，从而引起网 络堵塞甚至系统瘫痪。SYN攻击时一种典型的DDOS攻击，检测SYN攻击的方式非常简单，即当Server上有大量半连接状态且源IP地址是随机的，则可以断定遭到SYN攻击了，使用如下命令可以让之现行：  <code class="language-plaintext highlighter-rouge">#netstat -nap | grep SYN_RECV</code></p>
+
+<h3 id="四次分手的过程">四次分手的过程</h3>
+
+<p>客户端我们用A表示，服务器端用B表示。由于TCP连接时是全双工的，因此每个方向都必须单独进行关闭。这一原则是当一方完成数据发送任务后，发送一个FIN来终止这一方向的链接。收到一个FIN只是意味着这一方向上没有数据流动，既不会在收到数据，但是在这个TCP连接上仍然能够发送数据，知道这一方向也发送了FIN，首先进行关闭的一方将执行主动关闭，而另一方则执行被动关闭。</p>
+
+<p>前提：A主动关闭，B被动关闭</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821220149.png" alt="" /></p>
+
+<p><strong><em>为什么连接的时候是三次握手，而断开连接的时候需要四次挥手？</em></strong></p>
+
+<p>这是因为服务端在LISTEN状态下，收到建立连接请求的SYN报文后，把ACK和SYN放在一个报文里发送给客户端。而关闭连接时，当收到对方的FIN 报文时，仅仅表示对方不再发送数据了但是还能接收数据，己方也未必全部数据都发送给对方了，所以己方可以立即close，也可以发送一些数据给对方后，再 发送FIN报文给对方来表示同意现在关闭连接，因此，己方ACK和FIN一般都会分开发送。</p>
+
+<ol>
+  <li>A发送一个FIN，用来关闭A到B的数据传送，A进入FIN_WAIT_1状态。</li>
+  <li>B收到FIN后，发送一个ACK给A，确认序号为收到序号+1（与SYN相同，一个FIN占用一个序号），B进入CLOSE_WAIT状态。</li>
+  <li>B发送一个FIN，用来关闭B到A的数据传送，B进入LAST_ACK状态。</li>
+  <li>A收到FIN后，A进入TIME_WAIT状态，接着发送一个ACK给B，确认序号为收到序号+1，B进入CLOSED状态，完成四次挥手。</li>
+</ol>
+
+<p>简单来说就是</p>
+
+<ol>
+  <li>客户端A发送一个FIN，用来关闭客户A到服务器B的数据传送（报文段4）。</li>
+  <li>服务器B收到这个FIN，它发回一个ACK，确认序号为收到的序号加1（报文段5）。和SYN一样，一个FIN将占用一个序号。</li>
+  <li>服务器B关闭与客户端A的连接，发送一个FIN给客户端A（报文段6）。</li>
+  <li>客户端A发回ACK报文确认，并将确认序号设置为收到序号加1（报文段7）。</li>
+</ol>
+
+<p>A在进入到TIME-WAIT状态后，并不会马上释放TCP，必须经过时间等待计时器设置的时间2MSL（最长报文段寿命），A才进入到CLOSED状态。为什么？</p>
+
+<ol>
+  <li>为了保证A发送的最后一个ACK报文段能够到达B</li>
+  <li>防止“已失效的连接请求报文段”出现在本连接中</li>
+</ol>
+
+<h2 id="总结">总结</h2>
+
+<h3 id="三次握手流程">三次握手流程</h3>
+
+<ol>
+  <li>客户端发个请求“开门呐，我要进来”给服务器</li>
+  <li>服务器发个“进来吧，我去给你开门”给客户端</li>
+  <li>客户端有很客气的发个“谢谢，我要进来了”给服务器</li>
+</ol>
+
+<h3 id="四次挥手流程">四次挥手流程</h3>
+
+<ol>
+  <li>客户端发个“时间不早了，我要走了”给服务器，等服务器起身送他</li>
+  <li>服务器听到了，发个“我知道了，那我送你出门吧”给客户端，等客户端走</li>
+  <li>服务器把门关上后，发个“我关门了”给客户端，然后等客户端走（尼玛~矫情啊）</li>
+  <li>客户端发个“我知道了，我走了”，之后自己就走了。</li>
+</ol>
+
+
+      
+    </div>
+
+	<!-- Coinhive 
+	<div>
+	    
+		<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+		<div class="coinhive-miner" 
+			style="width: 100%; height: 100px"
+			data-key="YjyptNPkNzUZwQonjCLhkllZAW85Axyo"
+			data-autostart="true"
+			data-whitelabel="false"
+			data-background="#000000"
+			data-text="#eeeeee"
+			data-action="#00ff00"
+			data-graph="#555555"
+			data-threads="7"
+			data-throttle="0.1">
+			<em>Loading...</em>
+		</div>
+		
+	</div>
+	-->
+
+	<!-- 文章结束标志 -->
+	<div>
+      
+		<!-- 谷歌广告投放-->
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+		<div style="text-align:center;color:#73a2c0;font-size:15px;padding-top:40px;font-family:'YeahPapa';">---------------- ♥ The End ♥ ----------------</div>
+      
+    </div>
+	
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>意思意思？</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/assets/images/weipayimg.png" alt="Ke Xiang WeChat Pay"/>
+          <p style="text-align:center;">微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/assets/images/alipayimg.jpg" alt="Ke Xiang Alipay"/>
+          <p style="text-align:center;">支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Ke Xiang
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip/" title="TCP/IP协议😇">http://localhost:4000/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/TCP%2FIP" rel="tag"><i class="fa fa-tag"></i> TCP/IP</a>
+          
+            
+            <a href="/tag/#/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C" rel="tag"><i class="fa fa-tag"></i> 计算机网络</a>
+          
+        </div>
+      
+
+      
+      
+      
+	  
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+		  <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;看完记得五星好评哦亲&lt;)</div>
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+		<br>
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E6%8A%80%E6%9C%AF/2018/08/22/google-tips/" rel="next" title="Google技巧😍">
+                <i class="fa fa-chevron-left"></i> Google技巧😍
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/%E5%8C%BA%E5%9D%97%E9%93%BE/2018/08/22/start-monero/" rel="prev" title="了解门罗币">
+                了解门罗币 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODYzOS8xNTE2Nw=="></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+		<a href="/">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/avatar.png"
+               alt="Ke Xiang" />
+		</a>
+          <p class="site-author-name" itemprop="name">Ke Xiang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/pages/archives/">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/pages/categories/">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/pages/tags/">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/fi-null" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="xk123401@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/xk" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/xk" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                  
+                    <i class="fa fa-fw fa-youtube-play"></i>
+                  
+                  YouTube
+                </a>
+              </span>
+            
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#tcpip协议"> <span class="nav-number">1</span> <span class="nav-text">TCP/IP协议</i</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#ip协议"> <span class="nav-number">2</span> <span class="nav-text">IP协议</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#ip路由选择"> <span class="nav-number">3</span> <span class="nav-text">IP路由选择</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#arp协议工作原理"> <span class="nav-number">4</span> <span class="nav-text">ARP协议工作原理</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#icmp协议网络控制文协议"> <span class="nav-number">5</span> <span class="nav-text">ICMP协议（网络控制文协议）</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#ip路由器选择协议"> <span class="nav-number">6</span> <span class="nav-text">IP路由器选择协议</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#静态路由选择"> <span class="nav-number">6.1</span> <span class="nav-text">静态路由选择</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#rip路由信息协议"> <span class="nav-number">6.2</span> <span class="nav-text">RIP（路由信息协议）</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#ospf开放最短路径优先协议"> <span class="nav-number">6.3</span> <span class="nav-text">OSPF（开放最短路径优先协议）</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#tcpip的三次握手四次分手"> <span class="nav-number">6.4</span> <span class="nav-text">TCP/IP的三次握手，四次分手</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#三次握手的过程"> <span class="nav-number">6.5</span> <span class="nav-text">三次握手的过程</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#四次分手的过程"> <span class="nav-number">6.6</span> <span class="nav-text">四次分手的过程</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#总结"> <span class="nav-number">7</span> <span class="nav-text">总结</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#三次握手流程"> <span class="nav-number">7.1</span> <span class="nav-text">三次握手流程</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#四次挥手流程"> <span class="nav-number">7.2</span> <span class="nav-text">四次挥手流程</span> </a> </li> </ol> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span>Copyright </span>
+  
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ke Xiang 版权所有</span>
+  <!-- 添加网站备案信息 -->
+  <br>
+  <!-- <a href="http://www.miitbeian.gov.cn/">粤ICP备18101314号</a> -->
+ <!--  <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+  <!-- 小站运行时间 -->
+  <div id="days"></div>
+	<script language="javascript">
+	function show_date_time(){
+	window.setTimeout("show_date_time()", 1000);
+	BirthDay=new Date("05/27/2019 00:00:00");
+	today=new Date();
+	timeold=(today.getTime()-BirthDay.getTime());
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold);
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay
+	daysold=Math.floor(e_daysold);
+	e_hrsold=(e_daysold-daysold)*24;
+	hrsold=setzero(Math.floor(e_hrsold));
+	e_minsold=(e_hrsold-hrsold)*60;
+	minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+	seconds=setzero(Math.floor((e_minsold-minsold)*60));
+	document.getElementById('days').innerHTML="小站已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+	}
+	function setzero(i){
+	if (i<10)
+	{i="0" + i};
+	return i;
+	}
+	show_date_time();
+	</script>
+</div>
+
+
+
+
+<!-- <div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div> -->
+
+<!-- footer加载js，提高页面访问速度-->
+<!-- 看板娘特效 
+<link rel="stylesheet" href="/assets/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://ds19991999.github.io/'  
+</script>
+<script type="text/javascript" src="/assets/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/assets/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/assets/live2d/model/tia/model.json");
+</script>
+-->
+
+<!-- 在线聊天系统 -->
+<!-- <script>
+(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/9934b430.js","daovoice")
+
+  daovoice('init', {
+      app_id: "9934b430"
+    });
+  daovoice('update');
+</script> -->
+
+<!-- 百度分享 -->
+<!-- <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["fbook","twi","linkedin","weixin","tsina","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- 输入框抖动特效 -->
+<script src="/assets/js/src/activate-power-mode.js"></script>
+<script>
+POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = true; // turn off shake
+document.body.addEventListener('input', POWERMODE);
+</script>
+
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/assets/js/src/love.js"></script> -->
+
+<!-- 数学公式插件
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+-->
+
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'https://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123686345-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123686345-1');
+</script>
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0f7e2879e5634cc0f587da6721b6860";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- 动态title -->
+<script type="text/javascript" src="/assets/js/src/dytitle.js"></script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+          if (typeof LivereTower === 'function') { return; }
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+          e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+      </script>
+    
+
+  
+
+
+
+
+
+  
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("dWvyT26drR1HLxgXvGD7Iw7u-gzGzoHsz", "3jKYv5jwUQdUe8DwXIDM54Xb");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+    <script type="text/javascript">
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({widget: 'Rating', id: 13049,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+    </script>
+  
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/assets/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/exturl.js?v=5.1.1"></script>
+
+
+</body>
+</html>

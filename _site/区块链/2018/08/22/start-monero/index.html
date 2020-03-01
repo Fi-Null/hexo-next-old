@@ -1,0 +1,2042 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/assets/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/assets/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="XMR,门罗币,区块链," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XK Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="介绍门罗币的相关基础知识。">
+<meta name="keywords" content="XMR, 门罗币, 区块链">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解门罗币">
+<meta property="og:url" content="http://localhost:4000/%E5%8C%BA%E5%9D%97%E9%93%BE/2018/08/22/start-monero/">
+<meta property="og:site_name" content="XK Blog">
+<meta property="og:description" content="介绍门罗币的相关基础知识。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821112307.png">
+<meta property="og:updated_time" content="2018-08-22T07:29:08+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="了解门罗币">
+<meta name="twitter:description" content="介绍门罗币的相关基础知识。">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821112307.png">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://localhost:4000/"/>
+
+
+
+
+
+  <title>了解门罗币 | XK Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-123686345-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c72906569503c06a12a6edc7b7c66149";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-6459493734251675",
+		enable_page_level_ads: true
+	  });
+	</script>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XK Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Less is more.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/pages/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-resume">
+          <a href="http://fi-null.github.io/resumeWeb" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-handshake-o"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/pages/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/pages/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/pages/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-top">
+          <a href="/pages/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br />
+            
+            TopX
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-photo " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/%E5%8C%BA%E5%9D%97%E9%93%BE/2018/08/22/start-monero/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ke Xiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XK Blog">
+    </span>
+    
+      	<!-- 心知天气固定插件 -->
+		<div align="center" id="tp-weather-widget"></div>
+		<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+		<script>tpwidget("init", {
+			"flavor": "slim",
+			"location": "WS0E9D8WN298",
+			"geolocation": "enabled",
+			"language": "en",
+			"unit": "c",
+			"theme": "chameleon",
+			"container": "tp-weather-widget",
+			"bubble": "enabled",
+			"alarmType": "badge",
+			"uid": "U81EB522D4",
+			"hash": "6b972a5f25f3cc4e8beb25e2feab9d4b"
+		});
+		tpwidget("show");</script>  
+
+    
+      <header class="post-header">    
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+          
+          
+            了解门罗币
+          
+        </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-22T07:29:08+08:00">
+                2018-08-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2018-08-22">
+                2018-08-22
+              </time>
+            
+          </span>	
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/%E5%8C%BA%E5%9D%97%E9%93%BE" itemprop="url" rel="index">
+                    <span itemprop="name">区块链</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/%E5%8C%BA%E5%9D%97%E9%93%BE/2018/08/22/start-monero/" class="leancloud_visitors" data-flag-title="了解门罗币">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度 </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+				 <span>℃ | </span>
+             </span>
+          
+
+          
+
+          
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3982
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  19
+                </span>
+              
+            </div>
+          
+
+          
+            
+                <div class="post-description">
+                    介绍门罗币的相关基础知识。
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+	<!-- 网易云音乐 -->
+	
+		<br>
+		<!-- cloud music -->
+<!-- auto=1 可以控制自动播放与否，当值为 1 即打开网页就自动播放，值为 0 时需要访客手动点击播放 -->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86
+        src="//music.163.com/outchain/player?type=2&id=5308001&auto=0&height=66">
+</iframe>
+
+	 
+	
+	<!-- 谷歌广告投放-->
+		<div>
+    
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	
+	
+	<!-- 数学公式插件 -->
+		
+	
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821112307.png" rel="gallery_"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821112307.png" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          
+          </div>
+
+        </div>
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <blockquote>
+  <p>参考：<a href="https://liuchengxu.gitbooks.io/blockchain-tutorial/content/">《区块链教程》</a></p>
+</blockquote>
+
+<p>根据 <a href="https://getmonero.org/">Monero（门罗） 官网</a>: Monero 是一个安全，隐私和不可追踪的加密货币。通过使用密码学中一种特殊的方法，门罗确保了所有交易保持 100% 的不可关联和不可追溯性(unlinkable and untraceable)。</p>
+
+<p>尽管 bytecoin 十分有前景，但是人们也注意到发生了很多负面的事情，并且鉴于它已经产出了 80% 的币。所以，决定将 bytocin 分叉，新链上的币叫做 Bitmonero，最终被重新命名为 Monero（门罗），在世界语（Esperanto）中叫做“coin”，硬币的意思。门罗的出块时间为两分钟。</p>
+
+<p>门罗由一个 7 人的开发者团队领导，其中 5 人匿名，另 2 人已公开。他们是 David Latapie 和 Riccardo Spagni aka “Fluffypony”。项目是开源众筹的形式进行。</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821100611.jpg" alt="" /></p>
+
+<h2 id="门罗的特别之处">门罗的特别之处</h2>
+
+<p>门罗采用CrytoNote算法，使得它具有以下几个特性。</p>
+
+<ul>
+  <li>你的钱就是你的：你对交易有着绝对的控制权。你为你的钱负责。因为你的身份是私有的（private），没有人能够看到你把钱花到了哪儿。</li>
+  <li>可替代性：所谓可替换性，指的是一个商品或资产与其他同类型个体商品或资产的互换性。</li>
+</ul>
+
+<p>加密货币中理想的可替代性是什么？</p>
+
+<blockquote>
+  <p>以 <a href="https://blockgeeks.com/guides/what-is-bitcoin-a-step-by-step-guide/">bitcoin</a> 为例，它引以为豪的一点就是比特币是开放的账本，但是，这也意味着每个人都可以看到里面的每一笔交易，更重要的是，每个人都可以看到交易的踪迹。简单来说，如果你拥有一个曾经用于某个非法交易的比特币，比如购买毒品，那么它的交易细节里面将会永远有这样的印记。实际上，这“污染（taint）”了你的比特币。</p>
+
+  <p>在某些比特币服务提供商和交易所中，这些“被污染”的币与“干净的”币永远都不会被一视同仁。这就泯灭了可替换性（fungibility），这也是比特币经常为人所诟病的一点。毕竟，为什么别人做了错事，需要你来买单呢？</p>
+</blockquote>
+
+<p>于是门罗诞生了。由于所有数据和交易都是不公开的，没有人能够知道你的门罗币在之前经历了哪些交易，也无法知道你的门罗币会用来购买什么。</p>
+
+<ul>
+  <li>动态扩展性：比特币协议限定了区块大小为 1 Mb（译者注：扩容，BCH 等为后话）。在早期，比特币并没有任何区块大小的限制，但是后来为了防止垃圾交易，就施加了大小限制。门罗并没有任何“预先设定”的限制，系统有一个区块奖励的惩罚（block reward penalty）。工作方式如下：
+    <ul>
+      <li>首先，最后 100 个区块大小的中位数叫做 M100。假设矿工挖出了一个新的块，大小记为 NBS（New Block Size）。如果 NBS &gt; M100，那么区块奖励会随着 NBS 超过 M100 的平方递减。</li>
+      <li>也就是说，如果 NBS 大于 M100 [10%, 50%, 80%, 100%]，那么区块奖励随之减少 [1%, 25%, 64%, 100%]. 通常来说，区块大小超过 2 倍的 M100 是不被允许的，同时如果区块小于等于 60kb 则会免于任何的区块奖励惩罚。</li>
+    </ul>
+  </li>
+  <li>防 ASIC：门罗不算是严格的“ASIC resistant”，但是制作针对门罗的 ASIC 将会成本高昂，以至于不值得如此操作。当我们说门罗基于 CryptoNote 系统时，已经使得它与比特币截然不同。在基于 CtryptoNote 的系统中所用的哈希算法叫做 “CryptoNight”。
+    <ul>
+      <li>创造 Cryptonight 是为了构建一个更加公平，更加去中心化的货币系统。利用 cryptonight 的加密货币无法用 ASIC 挖矿。它的目的是希望可以杜绝出现矿池的出现，并使得货币分散地更均匀。</li>
+      <li>Crytponight 需要 2 MB 的快速内存来工作。这意味着并行哈希会被一个芯片可以分配多少内存限制，同时保持尽可能地低成本，以免“入不敷出”。2 MB 的内存要比 SHA256 电路要耗费多得多的硅。</li>
+      <li>Cryptonight 是 CPU 和 GPU 友好型，因为它利用了 AES-Ni 指令集。基本上，如果你用的是没那么老的机器，由 Cryptonight 所完成的一些工作已经在硬件层完成。</li>
+      <li>已经有不少说法说，想要把门罗从工作量证明算法切换至“Cuckoo Cycle”（一种不同于工作量证明的哈希）。如果这种切换真的发生，那么在 R&amp;D 门罗 ASIC 友好型所耗费的所有工作都将付之东流。</li>
+    </ul>
+  </li>
+  <li>多密钥：
+    <ul>
+      <li><strong>view key：门罗有一个 public view key 和 private view key。</strong>public view key 用于生成一次性的 stealth public address(隐匿的公开地址)，资金将会通过这个地址发送给接收者。private view key 用于接收者扫描区块链来找到发送给他们的资金。</li>
+      <li><strong>spend key： 如果 view key 大多是为了交易接收方，那么 spend key 就是全部有关于发送方。跟上面一样，有两个 spend key：public spend key 和 private spend key。</strong>public spend key 帮助发送方参与环交易（ring transaction），并验证密钥镜像(key image)的签名。private spend key 帮助创建密钥镜像，密钥镜像能够使得他们能够发送交易。</li>
+      <li>门罗地址是一个 95 个字符的字符串，分别由 public spend key 和 public view key 构成。</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="加密货币交易的工作方式">加密货币交易的工作方式</h2>
+
+<p>假设 Alice 需要给 Bob 发送一些比特币，交易看起来是怎样的？</p>
+
+<h3 id="交易输入">交易输入</h3>
+
+<p>每个币都来源于之前的交易。所以，Alice 可以将之前交易的输出作为新交易的输入。Alice 需要从下列交易从获得输入，比如 TX(0), TX(1) 和 TX(2)。这三笔交易会被一起包含到这笔交易，并有一个交易输出 TX(Input)。</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821102809.png" alt="" /></p>
+
+<h3 id="交易输出">交易输出</h3>
+
+<p>输出就是 Bob 可以在之后交易花费的钱，也可能会出现找零，找零会返回给 Alice。找零会成为 Alice 未来任意交易的输入。</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821102931.png" alt="" /></p>
+
+<p>有了公钥加密以后，比特币交易才成为可能。为了对它有一个基本的理解，请看下图：</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821103045.png" alt="" /></p>
+
+<p>比特币用户首先选择私钥，公钥由私钥衍生而来。将公钥进行哈希得到一个公开的地址公布出去。如果 Alice 要给 Bob 发送 BTC，Alice 直接给 Bob 公开的地址发送即可。</p>
+
+<p>门罗团队给出的“电子现金三角（Electronic cash triangle）”</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821103218.png" alt="" /></p>
+
+<p>正如他们所说，一个理想的电子现金应该满足三个前提：<strong>电子的、去中心化的、隐私的</strong></p>
+
+<p>门罗背后的哲学就是完全隐私和不透明性。发送方隐私由环签名（Ring Signature）实现。</p>
+
+<ul>
+  <li>Ring Signatures(环签名)保证了发送方隐私</li>
+  <li>Condidential Address(隐匿地址)保证了接收方隐私</li>
+  <li>Ring CT(Ring Confidential Transaction, 环隐匿交易)保证了交易隐私</li>
+</ul>
+
+<h2 id="门罗密码学">门罗密码学</h2>
+
+<h3 id="ring-signatures">Ring Signatures</h3>
+
+<p>环签名，简单来说就是交易过程中把几个人签名混合在一起，然后得到一个独一无二的签名，这样就没人知道这个签名是否是你本人的。</p>
+
+<p>假设，Alice 发送 1000 XMR(XMR 即门罗币) 给 Bob，系统会如何使用环签名来隐藏她的身份？</p>
+
+<p>首先，Alice 会确认她的“ring size（环大小）”。ring size 是取自区块链的随机输出，它等于 Alice 的输出值，即 1000 XMR。ring size 越大，交易越大，继而交易费越高。然后，她用 private spend key 对输出进行签名，并发给到区块链。另一点要注意的是，Alice 不需要向之前交易的所有者发送请求来使用这些输出。</p>
+
+<p>假设 Alice 选择的 ring size 为 5 ，也就是说 4 个 decoy output（诱骗输出） 和它自己的交易，从外面看起来就像这样：</p>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821104337.png" alt="" /></p>
+
+<p>在一个环签名交易中，任意一个 decoy 就像真实输出一样，因为任何不相关的第三方（包括矿工）都无法知道发送方是谁。</p>
+
+<p><strong>防止双花：</strong></p>
+
+<p>矿工要做的一个重要的事情就是防止“双花”。双花就是指在同一时间，同一笔钱出现在两笔，甚至更多的交易中。双花被矿工所解决。在一个区块链中，只有当矿工将交易包含在区块并出块，交易才算完成。假设 A 打算给 B 发送一个比特币，然后它发送同样一个币给 C，矿工会把其中一笔交易放到块里，并在处理过程中覆盖另一笔交易，防止双花。但是在门罗中，由于环签名这些都是不可见的。那么要如何防止双花呢？</p>
+
+<p>门罗的每一笔交易都有它自己的唯一的<strong>密钥镜像（key image）</strong>，鉴于密钥镜像对于每个交易都是不同的，矿工就可以非常容易地检测，判断是否双花。</p>
+
+<h3 id="stealth-address">stealth address</h3>
+
+<p>门罗的最大一个卖点就是交易的不可关联性（unlinkability）。基本上，如果有人发送给你 200 XMR，应该没有人知道这笔钱是发送给你的。如果 Alice 要给 Bob 发送门罗币，除了 Alice，应该没人任何人知道 Bob 就是这笔钱的接收者。</p>
+
+<p><strong>门罗要如何保证 Bob 的隐私？</strong></p>
+
+<p>Bob 有两个 public key：public view key 和 public send key。为了推进交易，Alice 的钱包会用 Bob 的 public view key 和 public send key 来生成一次性独一无二的 public key。</p>
+
+<p><strong>one-time public key （P） 的计算方式：</strong> $ P = H(rA)G + B $</p>
+
+<p>其中：</p>
+
+<ul>
+  <li>r = Random scalar chosen by Alice. Alice 选取的一个随机的标量</li>
+  <li>A = Bob’s public view key. Bob 的 public view key</li>
+  <li>G = Cryptographic constant. 密码学常数</li>
+  <li>B = Bob’s public spend key. Bob 的 public spend key</li>
+  <li>H() = The Keccak hashing algorithm used by Monero. 门罗所使用的 Keccak 哈希算法</li>
+</ul>
+
+<p>由这种方法生成一次性公钥，然后再生成在区块链里一次性的公开地址，这样的地址就叫做“stealth address”，Alice 就通过它给 Bob 发送门罗币。现在，Bob 要如何从数据的随机分布中解锁收到的门罗币呢?</p>
+
+<p>Bob 也有一个 private spend key。private spend key 就是用来帮助 Bob 扫描区块链找到他的相关交易。当 Bob 找到这笔交易，他可以通过一个 private key 取回他的门罗币，这个 private key 与一次性的 public key 相关。因此 Alice 付给 Bob 门罗币，无人知晓。</p>
+
+<p><strong>key image</strong></p>
+
+<p>计算方式：$I = xH(P)$</p>
+
+<ul>
+  <li>x 为发送方的 private spend key</li>
+  <li>P是one-time public key</li>
+</ul>
+
+<p>从 key image “I” 计算出一次性的 public address P 十分困难(这是密码学哈希函数的一个属性，正着算很容易，反推很难)，因此 Alice 的身份永远也不会暴露。</p>
+
+<p>当 P 被哈希的时候，永远都会返回同一个值，意味着 H(P) 也总是同一个值。既然 x 的值对于 Alice 来说是个常数，她也就是永远也无法生成多个 I 值。这使得 key image 对于每一笔交易都是不同的。</p>
+
+<h3 id="ring-confidential-transactions">Ring Confidential Transactions</h3>
+
+<p>基于 Gergory Maxwell 的研究实现了 Ring CT，Ring CT保证了交易本身的匿名性，它在链上隐藏了交易的数额。这也意味着所有的交易输入都不需要再被拆分为已知的面额，钱包现在可以从任意的 Ring CT 输出中选择 ring 成员。</p>
+
+<p>环形加密技术的基础仍旧是与比特币一样的基于Hash值的公钥+私钥加解机制。只是比特币是用接受者的公钥加密，接受者用与之配对的私钥解密验证。而环形加密则使用了多个公钥进行加密，并用接受者的私钥进行解密验证。</p>
+
+<h4 id="kovri-and-i2p">Kovri and I2P</h4>
+
+<p>I2P 是一个路由系统，它能够让应用秘密地互相发送信息而无须任何外部干涉。Kovri 是 I2P 的 C++ 实现，它也会被集成到门罗里面。<strong>Kovri 将会隐藏你的网络流量</strong>，如此一来，被动的网络监控就根本不会暴露你正在使用门罗。为此，你的所有门罗流量将会被加密并通过 I2P 节点路由。节点就像瞎的看门人，它们会知道你的信息通过，但是<strong>不知道这些去向哪儿以及信息的具体内容</strong>。</p>
+
+<h3 id="门罗价值和市值">门罗价值和市值</h3>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821111312.jpg" alt="" /></p>
+
+<p>目前，XMR流通市值$1,522,148,966，流通量16,335,709 XMR每个XMR￥637，占全球总市场0.7%，排名10。门罗总量为 1840 万，挖矿奖励会持续到 2022 年 5 月 31。之后，系统设定为 0.3 XMR/min 的奖励。这是为了矿工能过持续的激励挖矿，而不仅仅依赖于交易费，毕竟门罗已经被挖完了。</p>
+
+<h3 id="门罗的优势与劣势">门罗的优势与劣势</h3>
+
+<h3 id="优势">优势</h3>
+
+<ul>
+  <li>隐私性最好的几个加密货币之一</li>
+  <li>交易之间不可联系</li>
+  <li>交易不可跟踪</li>
+  <li>区块链没有区块限制，并且可动态扩展</li>
+  <li>即使当门罗的供应耗尽，也会有 0.3 XMR/min 的供应量激励矿工</li>
+  <li>经济上已经获得了巨大增长</li>
+  <li>其透明性实可选的。如果有人想要交易对某些人可见，比如给审计人员查看密钥。这也使得门罗是可审计的加密货币。</li>
+  <li>有一个非常有能力的强大开发团队领导工作</li>
+</ul>
+
+<h3 id="劣势">劣势</h3>
+
+<ul>
+  <li>尽管门罗已经被设计为防 ASIC 来避免中心化，但是门罗接近 43% 的算力仍然为 3 个矿池所有：</li>
+</ul>
+
+<p><img src="https://raw.githubusercontent.com/ds19991999/githubimg/master/picgo/20180821112000.png" alt="" /></p>
+
+<ul>
+  <li>比起其他加密货币，由于涉及了很多的加密操作，门罗的交易大小要大得多。</li>
+  <li>门罗的钱包兼容性不强。事实上，门罗至今没有硬件钱包（截止成文之时）。</li>
+  <li>入门有难度，并且尚未被广泛接纳。</li>
+  <li>因为它并非是基于比特币的货币，门罗面临的问题是向其中加入一些元素相对更困难。</li>
+</ul>
+
+<p><strong>毫无疑问，未来会更加开放和去中心化，门罗也会因其隐私性而越具吸引力。特别有趣之处在于，它是少数几个不是基于比特币的币，却是同时有着真正价值的“潜力股”。对门罗来说，随着它已经经历了惊人的增长，未来依旧光明一片。当实现 Kovri 以后，相信一切会变得更加有趣.</strong></p>
+
+<p><strong>注：<a href="https://github.com/cryptonotefoundation/cryptonote">cryptonote系统</a>、<a href="https://getmonero.org/">monero</a></strong></p>
+
+
+
+      
+    </div>
+
+	<!-- Coinhive 
+	<div>
+	    
+		<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+		<div class="coinhive-miner" 
+			style="width: 100%; height: 100px"
+			data-key="YjyptNPkNzUZwQonjCLhkllZAW85Axyo"
+			data-autostart="true"
+			data-whitelabel="false"
+			data-background="#000000"
+			data-text="#eeeeee"
+			data-action="#00ff00"
+			data-graph="#555555"
+			data-threads="7"
+			data-throttle="0.1">
+			<em>Loading...</em>
+		</div>
+		
+	</div>
+	-->
+
+	<!-- 文章结束标志 -->
+	<div>
+      
+		<!-- 谷歌广告投放-->
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+		<div style="text-align:center;color:#73a2c0;font-size:15px;padding-top:40px;font-family:'YeahPapa';">---------------- ♥ The End ♥ ----------------</div>
+      
+    </div>
+	
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>意思意思？</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/assets/images/weipayimg.png" alt="Ke Xiang WeChat Pay"/>
+          <p style="text-align:center;">微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/assets/images/alipayimg.jpg" alt="Ke Xiang Alipay"/>
+          <p style="text-align:center;">支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Ke Xiang
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://localhost:4000/%E5%8C%BA%E5%9D%97%E9%93%BE/2018/08/22/start-monero/" title="了解门罗币">http://localhost:4000/%E5%8C%BA%E5%9D%97%E9%93%BE/2018/08/22/start-monero/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/XMR" rel="tag"><i class="fa fa-tag"></i> XMR</a>
+          
+            
+            <a href="/tag/#/%E9%97%A8%E7%BD%97%E5%B8%81" rel="tag"><i class="fa fa-tag"></i> 门罗币</a>
+          
+            
+            <a href="/tag/#/%E5%8C%BA%E5%9D%97%E9%93%BE" rel="tag"><i class="fa fa-tag"></i> 区块链</a>
+          
+        </div>
+      
+
+      
+      
+      
+	  
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+		  <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;看完记得五星好评哦亲&lt;)</div>
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+		<br>
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/tcp-ip/" rel="next" title="TCP/IP协议😇">
+                <i class="fa fa-chevron-left"></i> TCP/IP协议😇
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/2018/08/22/socket/" rel="prev" title="Sorket😇">
+                Sorket😇 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODYzOS8xNTE2Nw=="></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+		<a href="/">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/avatar.png"
+               alt="Ke Xiang" />
+		</a>
+          <p class="site-author-name" itemprop="name">Ke Xiang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/pages/archives/">
+                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/pages/categories/">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/pages/tags/">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/fi-null" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="xk123401@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/xk" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/xk" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                  
+                    <i class="fa fa-fw fa-youtube-play"></i>
+                  
+                  YouTube
+                </a>
+              </span>
+            
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#门罗的特别之处"> <span class="nav-number">1</span> <span class="nav-text">门罗的特别之处</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#加密货币交易的工作方式"> <span class="nav-number">2</span> <span class="nav-text">加密货币交易的工作方式</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#交易输入"> <span class="nav-number">2.1</span> <span class="nav-text">交易输入</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#交易输出"> <span class="nav-number">2.2</span> <span class="nav-text">交易输出</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#门罗密码学"> <span class="nav-number">3</span> <span class="nav-text">门罗密码学</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#ring-signatures"> <span class="nav-number">3.1</span> <span class="nav-text">Ring Signatures</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#stealth-address"> <span class="nav-number">3.2</span> <span class="nav-text">stealth address</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#ring-confidential-transactions"> <span class="nav-number">3.3</span> <span class="nav-text">Ring Confidential Transactions</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#kovri-and-i2p"> <span class="nav-number">3.3.1</span> <span class="nav-text">Kovri and I2P</span> </a> </li> </ol> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#门罗价值和市值"> <span class="nav-number">3.4</span> <span class="nav-text">门罗价值和市值</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#门罗的优势与劣势"> <span class="nav-number">3.5</span> <span class="nav-text">门罗的优势与劣势</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#优势"> <span class="nav-number">3.6</span> <span class="nav-text">优势</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#劣势"> <span class="nav-number">3.7</span> <span class="nav-text">劣势</span> </a> </li> </ol> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span>Copyright </span>
+  
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ke Xiang 版权所有</span>
+  <!-- 添加网站备案信息 -->
+  <br>
+  <!-- <a href="http://www.miitbeian.gov.cn/">粤ICP备18101314号</a> -->
+ <!--  <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+  <!-- 小站运行时间 -->
+  <div id="days"></div>
+	<script language="javascript">
+	function show_date_time(){
+	window.setTimeout("show_date_time()", 1000);
+	BirthDay=new Date("05/27/2019 00:00:00");
+	today=new Date();
+	timeold=(today.getTime()-BirthDay.getTime());
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold);
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay
+	daysold=Math.floor(e_daysold);
+	e_hrsold=(e_daysold-daysold)*24;
+	hrsold=setzero(Math.floor(e_hrsold));
+	e_minsold=(e_hrsold-hrsold)*60;
+	minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+	seconds=setzero(Math.floor((e_minsold-minsold)*60));
+	document.getElementById('days').innerHTML="小站已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+	}
+	function setzero(i){
+	if (i<10)
+	{i="0" + i};
+	return i;
+	}
+	show_date_time();
+	</script>
+</div>
+
+
+
+
+<!-- <div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div> -->
+
+<!-- footer加载js，提高页面访问速度-->
+<!-- 看板娘特效 
+<link rel="stylesheet" href="/assets/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://ds19991999.github.io/'  
+</script>
+<script type="text/javascript" src="/assets/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/assets/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/assets/live2d/model/tia/model.json");
+</script>
+-->
+
+<!-- 在线聊天系统 -->
+<!-- <script>
+(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/9934b430.js","daovoice")
+
+  daovoice('init', {
+      app_id: "9934b430"
+    });
+  daovoice('update');
+</script> -->
+
+<!-- 百度分享 -->
+<!-- <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["fbook","twi","linkedin","weixin","tsina","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- 输入框抖动特效 -->
+<script src="/assets/js/src/activate-power-mode.js"></script>
+<script>
+POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = true; // turn off shake
+document.body.addEventListener('input', POWERMODE);
+</script>
+
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/assets/js/src/love.js"></script> -->
+
+<!-- 数学公式插件
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+-->
+
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'https://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123686345-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123686345-1');
+</script>
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0f7e2879e5634cc0f587da6721b6860";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- 动态title -->
+<script type="text/javascript" src="/assets/js/src/dytitle.js"></script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+          if (typeof LivereTower === 'function') { return; }
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+          e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+      </script>
+    
+
+  
+
+
+
+
+
+  
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("dWvyT26drR1HLxgXvGD7Iw7u-gzGzoHsz", "3jKYv5jwUQdUe8DwXIDM54Xb");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+    <script type="text/javascript">
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({widget: 'Rating', id: 13049,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+    </script>
+  
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/assets/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/exturl.js?v=5.1.1"></script>
+
+
+</body>
+</html>

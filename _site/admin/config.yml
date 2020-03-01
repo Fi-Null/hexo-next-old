@@ -1,0 +1,35 @@
+backend:
+  name: github
+  repo: ds19991999/ds19991999.github.io
+  branch: master # Branch to update (master by default)
+
+# display_url: 
+media_folder: "uploads" # Folder where user uploaded files should go
+# slug:
+#   encoding: "ascii"
+#   clean_accents: true
+# publish_mode: editorial_workflow
+
+collections: # A list of collections the CMS should be able to edit
+  - name: "post" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Post" # Used in the UI, ie.: "New Post"
+    folder: "/_posts" # The path to the folder where the documents are stored
+    sort: "date:desc" # Default is title:asc
+    create: true # Allow users to create new documents in this collection
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields: # The fields each document in this collection have
+      - {label: "标题", name: "title", widget: "string", tagname: "h1"}
+      - {label: "永久链接", name: "permalink", widget: "string", default: "/posts/new", required: true}
+      - {label: "简述", name: "description", widget: "string", required: true}  
+      - {label: "数学公式", name: "math", widget: "select", options: ["0", "1"], default: "0"}
+      - {label: "标签", name: "tags", widget: "string", required: true}
+      - {label: "归档", name: "categories", widget: "string", required: true}
+      - {label: "网易云音乐", name: "music-id", widget: "string", required: false}
+      - {label: "发布时间", name: "date", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss Z"}
+      - {label: "更新时间", name: "updated", widget: "datetime", format: "YYYY-MM-DD HH:mm:ss Z"} 
+      - {label: "加密", name: "password", widget: "string", required: false}
+      - {label: "首页照片", name: "photos", widget: "string", required: false}
+      - {label: "文章照片", name: "image", widget: "string", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+      
+    meta: # Meta data fields. Just like fields, but without any preview element
