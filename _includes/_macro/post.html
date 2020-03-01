@@ -30,7 +30,7 @@
 			"flavor": "slim",
 			"location": "WS0E9D8WN298",
 			"geolocation": "enabled",
-			"language": "en",
+			"language": "zh-chs",
 			"unit": "c",
 			"theme": "chameleon",
 			"container": "tp-weather-widget",
@@ -390,21 +390,10 @@
 		<script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
 		</script>	
-		<div style="text-align:center;color:#73a2c0;font-size:15px;padding-top:40px;font-family:'YeahPapa';">---------------- ♥ The End ♥ ----------------</div>
+		<div style="text-align:center;color:#73a2c0;font-size:15px;padding-top:20px;font-family:'YeahPapa';">---------------- ♥ The End ♥ ----------------</div>
       {% endunless %}
     </div>
-	
-    <div>
-      {% unless is_index %}
-        {% include _macro/wechat-subscriber.html %}
-      {% endunless %}
-    </div>
-
-    <div>
-      {% unless is_index %}
-        {% include _macro/reward.html %}
-      {% endunless %}
-    </div>
+  
     <div>
       {% unless is_index %}
         {% include _macro/post-copyright.html %}

@@ -62,10 +62,10 @@
   box-sizing: border-box;
   padding: $content-desktop-padding;
   width: calc(100% - 260px);
-  background: rgba(255,255,255,0.8);
+  //background: rgba(255,255,255,0.8);
   min-height: 700px;
-  box-shadow: $box-shadow-inner;
-  border-radius: $border-radius-inner;
+  //box-shadow: $box-shadow-inner;
+  //border-radius: $border-radius-inner;
 
   @include tablet() {
     width: 100%;

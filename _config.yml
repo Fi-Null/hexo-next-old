@@ -5,8 +5,8 @@
 
 # Site
 title: XK Blog
-subtitle: Less is more.
-description: Less is more.
+subtitle: Do more, Learn more, Be more.
+description: Do more, Learn more, Be more.
 author: Ke Xiang
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
 language: zh-Hans
@@ -62,10 +62,6 @@ defaults:
       layout: "post"
       comments: true
 
-# Atom feed
-feed:
-  path: atom.xml
-
 # Plugins
 ## Docs: https://help.github.com/articles/configuring-jekyll-plugins/
 plugins:
@@ -84,11 +80,6 @@ favicon: /assets/favicon.png
 
 # Set default keywords (Use a comma to separate)
 keywords: "Jekyll, NexT"
-
-# Set rss to false to disable feed link.
-# Leave rss as empty to use site's feed link.
-# Set rss to specific value if you have burned your feed already.
-rss:
 
 # Specify the date when the site was setup
 since: 2018

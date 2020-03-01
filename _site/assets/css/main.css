@@ -577,7 +577,7 @@ pre .k, pre .kd, pre .kn, pre .kp, pre .kr, pre .kt, pre .javascript .function {
 .links-of-author { margin-top: 20px; }
 
 .links-of-author a { display: inline-block; vertical-align: middle; margin-right: 10px; margin-bottom: 10px; border-bottom-color: #555; font-size: 13px; }
-.links-of-author a:before { display: inline-block; vertical-align: middle; margin-right: 3px; content: " "; width: 4px; height: 4px; border-radius: 50%; background: magenta; }
+.links-of-author a:before { display: inline-block; vertical-align: middle; margin-right: 3px; content: " "; width: 4px; height: 4px; border-radius: 50%; background: yellow; }
 
 .links-of-blogroll { font-size: 13px; }
 
@@ -814,7 +814,7 @@ pre .k, pre .kd, pre .kn, pre .kp, pre .kr, pre .kt, pre .javascript .function {
 @media (min-width: 768px) and (max-width: 991px) { .container .main-inner { width: auto; } }
 @media (max-width: 767px) { .container .main-inner { width: auto; } }
 
-.content-wrap { float: right; box-sizing: border-box; padding: 40px; width: calc(100% - 260px); background: rgba(255, 255, 255, 0.8); min-height: 700px; box-shadow: initial; border-radius: initial; }
+.content-wrap { float: right; box-sizing: border-box; padding: 40px; width: calc(100% - 260px); min-height: 700px; }
 @media (min-width: 768px) and (max-width: 991px) { .content-wrap { width: 100%; padding: 20px; border-radius: initial; } }
 @media (max-width: 767px) { .content-wrap { width: 100%; padding: 20px; min-height: auto; border-radius: initial; } }
 
@@ -912,19 +912,17 @@ pre .k, pre .kd, pre .kn, pre .kp, pre .kr, pre .kt, pre .javascript .function {
 
 @media (max-width: 767px) { .post-body { text-align: justify; } }
 
-.content-wrap { background: rgba(255, 255, 255, 0.8); }
+.content-wrap { background: #fff; }
 
-.sidebar { background: rgba(255, 255, 255, 0.1); box-shadow: 0 2px 6px #dbdbdb; }
+.sidebar { background: #f5f7f9; box-shadow: 0 2px 6px #dbdbdb; }
 
 .site-nav { box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8); }
 
-.sidebar-inner { background: rgba(255, 255, 255, 0.8); box-shadow: 0 2px 6px #dbdbdb; }
+.sidebar-inner { box-shadow: 0 2px 6px #dbdbdb; }
 
-.header-inner { background: rgba(255, 255, 255, 0.8); box-shadow: 0 2px 6px #dbdbdb; }
+.header-inner { box-shadow: 0 2px 6px #dbdbdb; }
 
 .footer { font-size: 14px; color: #434343; }
-
-.container { background-color: rgba(0, 0, 0, 0.7); }
 
 .comments { background-color: rgba(255, 255, 255, 0); box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.8); margin: 80px 0px 40px 0px; }
 
@@ -943,7 +941,7 @@ pre .k, pre .kd, pre .kn, pre .kp, pre .kr, pre .kt, pre .javascript .function {
 
 .brand { background-color: rgba(255, 255, 255, 0); margin-top: 15px; padding: 0px; }
 
-.menu { text-align: center; margin-top: 0px; margin-bottom: 0px; padding: 5px; background-color: rgba(255, 255, 255, 0.1); box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1); }
+.menu { text-align: center; margin-top: 0px; margin-bottom: 0px; padding: 5px; background-color: #fff; box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1); }
 
 .menu .menu-item a { font-size: 15px; }
 
@@ -1117,7 +1115,7 @@ span#inline-toc { display: inline-block; border-radius: 80% 100% 90% 20%; backgr
 
 .weixin-menu:hover .weixin-description { opacity: 1; }
 
-body { background: url(/assets/background/18041.jpg); background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center; }
+body { background-size: cover; background-repeat: no-repeat; background-attachment: fixed; background-position: center; }
 
 .links-of-blogroll-title { text-align: center; }
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/atom.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-01T15:32:40+08:00</updated><id>http://localhost:4000/atom.xml</id><title type="html">XK Blog</title><subtitle>Less is more.</subtitle><author><name>Ke Xiang</name></author><entry><title type="html">不如写个small-springMvc</title><link href="http://localhost:4000/java/2019/12/23/small-springMvc%E5%AE%9E%E7%8E%B0/" rel="alternate" type="text/html" title="不如写个small-springMvc" /><published>2019-12-23T23:00:09+08:00</published><updated>2019-12-23T23:00:09+08:00</updated><id>http://localhost:4000/java/2019/12/23/small-springMvc%E5%AE%9E%E7%8E%B0</id><content type="html" xml:base="http://localhost:4000/java/2019/12/23/small-springMvc%E5%AE%9E%E7%8E%B0/">&lt;h2 id=&quot;web开发基础知识&quot;&gt;WEB开发基础知识&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.8.5">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2020-03-01T19:08:46+08:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">XK Blog</title><subtitle>Do more, Learn more, Be more.</subtitle><author><name>Ke Xiang</name></author><entry><title type="html">不如写个small-springMvc</title><link href="http://localhost:4000/java/2019/12/23/small-springMvc%E5%AE%9E%E7%8E%B0/" rel="alternate" type="text/html" title="不如写个small-springMvc" /><published>2019-12-23T23:00:09+08:00</published><updated>2019-12-23T23:00:09+08:00</updated><id>http://localhost:4000/java/2019/12/23/small-springMvc%E5%AE%9E%E7%8E%B0</id><content type="html" xml:base="http://localhost:4000/java/2019/12/23/small-springMvc%E5%AE%9E%E7%8E%B0/">&lt;h2 id=&quot;web开发基础知识&quot;&gt;WEB开发基础知识&lt;/h2&gt;
 
 &lt;h3 id=&quot;基础知识&quot;&gt;基础知识&lt;/h3&gt;
 
@@ -2719,7 +2719,862 @@ mapper实例，将connection和statement写sql，获取resultSet等操作织入�
   &lt;li&gt;AOP中，所有非AOP实例运行接口方法时，会按照invocationHandler.invoke(methodInterceptor.invoke(methodInvocation))逻辑进行调用，从而实现织入。&lt;/li&gt;
   &lt;li&gt;AOP中，因为JDK代理只能针对接口，因此引入Cglib技术，实现类的动态代理。通过在cglib包的methodInterceptor中调用org.aopalliance.intercept.MethodInterceptor，实现了xml中配置的methodInterceptor对接口和类都可以使用。&lt;/li&gt;
   &lt;li&gt;AOP中，最终通过三级缓存彻底解决了单例setter注入下的循环依赖。&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Ke Xiang</name></author><category term="Spring" /><summary type="html">IOC</summary></entry><entry><title type="html">给h5ai开启二维码、搜索、选择功能</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro/" rel="alternate" type="text/html" title="给h5ai开启二维码、搜索、选择功能" /><published>2019-03-21T11:44:00+08:00</published><updated>2019-03-21T11:44:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro/">&lt;p&gt;&lt;strong&gt;说明：&lt;/strong&gt;现在越来越多的人使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h5ai&lt;/code&gt;了，毕竟精巧，美观等，之前介绍过&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h5ai&lt;/code&gt;安装方法，参考：&lt;a href=&quot;https://www.moerats.com/archives/121/&quot;&gt;一款不错的PHP目录列表程序：h5ai安装教程&lt;/a&gt;，其实有的人虽然用上了，可是却不知道里面还有很多功能都没使用上，这里就说下开启其中几种适用的功能方法。&lt;/p&gt;
+&lt;/ul&gt;</content><author><name>Ke Xiang</name></author><category term="Spring" /><summary type="html">IOC</summary></entry><entry><title type="html">完善small-图床以及在线分享演示文稿</title><link href="http://localhost:4000/tool/2019/08/29/%E5%9B%BE%E5%BA%8A%E4%BB%A5%E5%8F%8A%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB%E6%BC%94%E7%A4%BA%E6%96%87%E7%A8%BF/" rel="alternate" type="text/html" title="完善small-图床以及在线分享演示文稿" /><published>2019-08-29T21:09:00+08:00</published><updated>2019-08-29T21:09:00+08:00</updated><id>http://localhost:4000/tool/2019/08/29/%E5%9B%BE%E5%BA%8A%E4%BB%A5%E5%8F%8A%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB%E6%BC%94%E7%A4%BA%E6%96%87%E7%A8%BF</id><content type="html" xml:base="http://localhost:4000/tool/2019/08/29/%E5%9B%BE%E5%BA%8A%E4%BB%A5%E5%8F%8A%E5%9C%A8%E7%BA%BF%E5%88%86%E4%BA%AB%E6%BC%94%E7%A4%BA%E6%96%87%E7%A8%BF/">&lt;h2 id=&quot;关于图床&quot;&gt;关于图床&lt;/h2&gt;
+
+&lt;h3 id=&quot;什么是图床&quot;&gt;什么是图床？&lt;/h3&gt;
+
+&lt;p&gt;这并不是一个多么高大上的名词概念！用比较通俗的话来说，当你在撰写新文章时，你需要去插入图片以使得你的文章内容更加直观、易懂，这个时候有以下几种办法：&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;在博客根目录的 source 文件夹下新建一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;image&lt;/code&gt;文件夹专门存放图片，在博文中引用的图片路径为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/image/图片名.后缀&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;![](图片路径)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;对于那些想要更有规律地提供图片和其他资源以及想要将他们的资源分布在各个文章上的人来说，Hexo也提供了更组织化的方式来管理资源，将站点配置文件中的&lt;strong&gt;post_ asset _folder&lt;/strong&gt; 选项设为 true 来打开文章资源文件夹&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;post _asset_folder: true&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;然后再博文中通过相对路径引用&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; { asset _img 图片文件名%}&lt;/code&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;我们知道Github的主机还在国外，虽说目前访问速度还不算慢的，可是不论是Github还是Coding，项目容量都是有限的，不可能放入太多图片文件。 如果在项目文件中以相对路径引用的话，会出现跳转页面时一些图片路径会错误；使用绝对路径引用的话，会出现重定向的问题，浏览器可能会报&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;302异常&lt;/code&gt;，使浏览器上的绿色小锁头不见了(这个不能忍……)。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;使用第三方云服务储存，把图片放在国内的图床上是个更好的选择，虽然绝大多数云服务提供商都是收费(或是会有会员免费体验期或是按月分发一些免费容量)的，但在这个巨大的网络缝隙中，还是能找到其他一些可取的方法去满足我们(贫穷的学生党，嘤嘤嘤~~)，下面我会列出一些我所找到的可取之径：&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&quot;国内&quot;&gt;国内&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cn.aliyun.com/&quot;&gt;阿里云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.tencent.com/&quot;&gt;腾讯云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://cloud.baidu.com/&quot;&gt;百度云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.163yun.com/&quot;&gt;网易云&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.qiniu.com/&quot;&gt;七牛云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.upyun.com/&quot;&gt;又拍云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.fangcloud.com/&quot;&gt;亿方云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianguoyun.com/&quot;&gt;坚果云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://500px.com/&quot;&gt;500px&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://photo.weibo.com/upload/index?prel=p0_1&quot;&gt;上传照片到微博微相册&lt;/a&gt;
+QQ空间相册其实也是可以的，只是这类处理方法也比较麻烦lo…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;上面这些都是目前国内一些在云服务方面较为主流的、实力也比较可靠的服务提供商，很多带有CDN加速处理，加载起来会更快。但可能有时候会因为容量太少的问题等，给劳苦大众带来一些不愉快，所以啊，还是广泛地搜集了一波国内其他一些的图床服务，其实这也是为了应对自己的不时之需，毕竟国内做图床服务这方面的不稳定性真的是…跌宕起伏&lt;/p&gt;
+
+&lt;p&gt;(哎，抬头看向窗外，长城的方向)&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;p&gt;| 图床服务 | 个人评价 |
+|:-:|:-:|
+|&lt;a href=&quot;https://sm.ms/&quot;&gt;SM.MS&lt;/a&gt; |⭐⭐⭐⭐|
+|&lt;a href=&quot;https://www.tuchuang001.com/&quot;&gt;cheveieto&lt;/a&gt;|⭐⭐⭐⭐|
+| &lt;a href=&quot;https://imgchr.com/&quot;&gt;路过图床&lt;/a&gt;	|⭐⭐⭐|
+|&lt;a href=&quot;http://upload.otar.im/&quot;&gt;uploader&lt;/a&gt;	|⭐⭐⭐|
+|&lt;a href=&quot;http://www.tietuku.com/&quot;&gt;贴图库&lt;/a&gt;	|⭐⭐⭐|
+|&lt;a href=&quot;http://www.clantu.com/&quot;&gt;Clantu云相册&lt;/a&gt;	|⭐⭐⭐|
+|&lt;a href=&quot;http://zs.mtkan.cc/&quot;&gt;淡然图床&lt;/a&gt;	|⭐⭐⭐|
+|&lt;a href=&quot;http://www.suiyiyun.cn/&quot;&gt;随意云&lt;/a&gt;|⭐⭐⭐|
+|&lt;a href=&quot;http://mpic.lzhaofu.cn/&quot;&gt;MPic-图床神器&lt;/a&gt;|⭐⭐⭐|
+|&lt;a href=&quot;https://tu.aixinxi.net/index.php&quot;&gt;爱信息图床&lt;/a&gt;	|⭐⭐⭐|
+|&lt;a href=&quot;https://pic.gimhoy.com/&quot;&gt;Gimhoy图床&lt;/a&gt;	|⭐⭐|
+|&lt;a href=&quot;https://loli.io/signin&quot;&gt;萝莉图床&lt;/a&gt;|⭐⭐|&lt;/p&gt;
+
+&lt;h3 id=&quot;国外&quot;&gt;国外&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://app.cl.ly/drops&quot;&gt;CloudApp&lt;/a&gt;————国内可访问，个人很推荐这个应用&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.dropbox.com/h&quot;&gt;Dropbox&lt;/a&gt;————墙了&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.flickr.com/&quot;&gt;Flickr&lt;/a&gt;————墙了&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;h2 id=&quot;关于在线分享演示文稿&quot;&gt;关于在线分享演示文稿&lt;/h2&gt;
+
+&lt;h3 id=&quot;在线分享演示文稿&quot;&gt;在线分享演示文稿&lt;/h3&gt;
+
+&lt;p&gt;在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;在线分享演示文稿&lt;/code&gt;这个标题的选择上，斟酌了好久，🙊就感觉怎么用最少的汉字来准确完整地将这项&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;design tool &lt;/code&gt;的作用与应用领域给表达出来…&lt;/p&gt;
+
+&lt;p&gt;直接用一个实例展示一下吧~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;//slides.com/zhouie/deck/embed?style=dark&quot;&gt;点击查看&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;工具分享&quot;&gt;工具分享&lt;/h3&gt;
+&lt;p&gt;目前我遇到的主要就是这两个，以后要是遇到相关的、喜欢的会再补充。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://speakerdeck.com&quot;&gt;SpeakerDeck&lt;/a&gt;————墙了&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://slides.com&quot;&gt;Slides&lt;/a&gt;————国内可访问，个人很推荐这个应用&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;待补充&quot;&gt;待补充&lt;/h3&gt;
+&lt;p&gt;…&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="Markdown" /><summary type="html">关于图床</summary></entry><entry><title type="html">走进Markdown园子</title><link href="http://localhost:4000/tool/2019/04/12/%E8%B5%B0%E8%BF%9BMarkdown%E5%9B%AD%E5%AD%90/" rel="alternate" type="text/html" title="走进Markdown园子" /><published>2019-04-12T07:00:09+08:00</published><updated>2019-04-12T07:00:09+08:00</updated><id>http://localhost:4000/tool/2019/04/12/%E8%B5%B0%E8%BF%9BMarkdown%E5%9B%AD%E5%AD%90</id><content type="html" xml:base="http://localhost:4000/tool/2019/04/12/%E8%B5%B0%E8%BF%9BMarkdown%E5%9B%AD%E5%AD%90/">&lt;blockquote&gt;
+  &lt;p&gt;起初也就是打算简单一些Markdown在编辑Blog方面的一些常用操作和注意事项，没想到，一下没刹住，毫无防备地闯进了这个好趣的园子….&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&quot;1-认识-markdown&quot;&gt;1. 认识 Markdown&lt;/h2&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;HTML(HyperText Markup Language)作为一种超文本标记语言(markup language)应运而生，无数的网页从此有了主次分明，层次清晰的格式。如果将HTML比作一架重机枪，那么Markdown就是一把手枪，满足了主要的文本格式标记的需求，可是操作性却大大简化。秉承&lt;strong&gt;「易读易写」&lt;/strong&gt;的宗旨，Markdown作为一种轻量级标记语言(lightweight markup language)，让无数的程序猿和文字工作者爱不释手。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;11-markdown的优点&quot;&gt;1.1 Markdown的优点&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;专注你的文字内容而不是排版样式，安心写作。&lt;/li&gt;
+  &lt;li&gt;轻松的导出 HTML、PDF 和本身的 .md 文件。&lt;/li&gt;
+  &lt;li&gt;纯文本内容，兼容所有的文本编辑器与字处理软件。&lt;/li&gt;
+  &lt;li&gt;随时修改你的文章版本，不必像字处理软件生成若干文件版本导致混乱。&lt;/li&gt;
+  &lt;li&gt;可读、直观、学习成本低。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;12-对markdown的误解&quot;&gt;1.2 对Markdown的误解&lt;/h3&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;We believe that writing is about content, about what you want to say – not about fancy formatting.&lt;/strong&gt;
+我们坚信写作写的是内容，所思所想，而不是花样格式。    —-  Ulysses for Mac&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Markdown 旨在简洁、高效，也由于 Markdown 的易读易写，人们用不同的编程语言实现了多个版本的解析器和生成器。这就导致了目前不同的 Markdown 工具集成了不同的功能（基础功能大致相同），例如流程图与时序图，复杂表格与复杂公式的呈现。&lt;/p&gt;
+
+&lt;p&gt;虽然功能的丰富并没有什么本质的缺点，但终归有些背离初衷，何况在编写的过程中很费神，不如使用专业的工具撰写来的更有效率，所以如果你需实现复杂功能，专业的图形界面工具会更加方便。&lt;/p&gt;
+
+&lt;p&gt;当然，如果你对折腾这些不同客户端对 Markdown 的定制所带来高阶功能感到愉悦的话，那也是无可厚非的。&lt;/p&gt;
+
+&lt;h3 id=&quot;13-markdown官方文档&quot;&gt;1.3 Markdown官方文档&lt;/h3&gt;
+&lt;p&gt;官方的 Markdown 语法规则文档，当然，后文我也会用自己的方式，阐述这些语法在实际使用中的用法。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;http://daringfireball.net/projects/markdown/syntax&quot;&gt;创始人 John Gruber 的 Markdown 语法说明&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wowubuntu.com/markdown/#list&quot;&gt;Markdown 中文版语法说明&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;2-使用markdown&quot;&gt;2. 使用Markdown&lt;/h2&gt;
+
+&lt;h3 id=&quot;21-标题&quot;&gt;2.1 标题&lt;/h3&gt;
+
+&lt;p&gt;Markdown通过在行首添加1-6个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt;符号来定义不同级别的标题，最多到六级标题。注意&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#&lt;/code&gt;后需要加一个空格。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#h1
+##h2二级标题
+######h6六级标题
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;特别的，还可使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt;(高阶标题)和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;(次阶标题)标记一级和二级标题。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;这是高阶标题(效果和一级标题一样)
+=
+这是次阶标题(效果和二级标题一样)
+-
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;
+&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;标记标题时，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;=&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;的个数在不同的编辑器中都有不同，只要1个或者大于等于两个又或者必须要三个(含三个)以上的才可以表示，这倒不是多大的问题了，简单试试就知道了。&lt;/p&gt;
+
+&lt;h3 id=&quot;22-加粗斜体和删除线&quot;&gt;2.2 加粗、斜体和删除线&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;markdown使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_&lt;/code&gt;来强调文本，使用一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_&lt;/code&gt;包围的文本会被转化为斜体，而用两个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;和&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_&lt;/code&gt;包围的文本则会被转化成加粗，使用两个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~&lt;/code&gt;包围的文本会被转化为删除线。&lt;/li&gt;
+  &lt;li&gt;但是如果你的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt; 、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; _&lt;/code&gt;和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~&lt;/code&gt; 两边都有空白的话，它们就只会被当成普通的符号&lt;/li&gt;
+  &lt;li&gt;如果要在文字前后直接插入普通的星号或底线，你可以用反斜线&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*斜体文字*
+_斜体文字_
+**加粗文字**
+__加粗文字__
+~~删除内容~~
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;br /&gt;
+&lt;em&gt;斜体文字&lt;/em&gt;&lt;br /&gt;
+&lt;em&gt;斜体文字&lt;/em&gt;&lt;br /&gt;
+&lt;strong&gt;加粗文字&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;加粗文字&lt;/strong&gt;&lt;br /&gt;
+&lt;del&gt;删除内容&lt;/del&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;23-列表&quot;&gt;2.3 列表&lt;/h3&gt;
+&lt;p&gt;Markdown支持无序列表和有序列表。无序列表可以使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;+&lt;/code&gt;，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;三者中任意符号来标记；有序列表则使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;数字&lt;/code&gt;加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt;来标记。&lt;strong&gt;注意标记后面需要加上一个空格，有序列表的数字会被按顺序自动更正&lt;/strong&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**有序列表**
+
+1. 第一点
+2. 第二点
+4. 第三点
+
+**无序列表**
+
+- 这是无序列表项目
++ 这是无序列表项目
+* 这是无序列表项目
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;
+&lt;strong&gt;有序列表&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;第一点&lt;/li&gt;
+  &lt;li&gt;第二点&lt;/li&gt;
+  &lt;li&gt;第三点&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;无序列表&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;这是无序列表项目&lt;/li&gt;
+  &lt;li&gt;这是无序列表项目&lt;/li&gt;
+  &lt;li&gt;这是无序列表项目&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;两个列表之间不能相邻，否则会解释为嵌套的列表。下面这个是嵌套的列表&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;* 呵呵
+    + 嘉嘉
+    + 嘻嘻
+    + 吼吼
+        - 嘎嘎
+        - 桀桀
+* 哈哈
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;呵呵
+    &lt;ul&gt;
+      &lt;li&gt;嘉嘉&lt;/li&gt;
+      &lt;li&gt;嘻嘻&lt;/li&gt;
+      &lt;li&gt;吼吼
+        &lt;ul&gt;
+          &lt;li&gt;嘎嘎&lt;/li&gt;
+          &lt;li&gt;桀桀&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;哈哈&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;标记后面最少有一个空格或制表符。&lt;/li&gt;
+  &lt;li&gt;若不在引用区块中，必须和前方段落之间存在空行，后面最好还是空一行，否则会解释为嵌套的列表。&lt;/li&gt;
+  &lt;li&gt;有序列表标记不是按照你写的数字进行显示的，而是根据当前有序列表标记所在位置显示的，如示例1所示。&lt;/li&gt;
+  &lt;li&gt;无序列表的项目符号是按照实心圆、空心圆、实心方格的层级关系递进的。通常情况下，同一层级使用同一种标记表示，便于自己查看和管理。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;24-引用&quot;&gt;2.4 引用&lt;/h3&gt;
+&lt;p&gt;在段落前添加一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;符号即可将该段落标记为引用，注意&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;后需要添加一个空格。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; 这是引用
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;这是引用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;繁琐一点，你也可以在引用段落的每一行都加上&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;符号。并且&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;可以迭代使用，表示引用中的引用效果。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; 这是一级引用
+&amp;gt;&amp;gt; 这是二级引用
+&amp;gt;&amp;gt;&amp;gt; 这是三级引用
+
+&amp;gt; 这是一级引用
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;这是一级引用&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;这是二级引用&lt;/p&gt;
+
+    &lt;blockquote&gt;
+      &lt;p&gt;这是三级引用&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;这是一级引用&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;再如：&lt;strong&gt;书写格式若如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; 这是一级引用
+&amp;gt;&amp;gt; 这是二级引用
+&amp;gt;&amp;gt;&amp;gt; 这是三级引用
+&amp;gt; 这是一级引用
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果则：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;这是一级引用&lt;/p&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;这是二级引用&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;这是三级引用
+这是一级引用&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;从上面两例可看出，如果&amp;gt;、»和»&amp;gt;等嵌套使用的话，从»&amp;gt;退到&amp;gt;时，必须之间要加上一个空行作为过渡，否则默认为下一行和上一行是同一级别的引用。如上例所示。&lt;/li&gt;
+  &lt;li&gt;引用完之后，必须再空一行，重新一个新的开始，否则，以后的文字都将在引用的范围内，不要问我为什么，实践出真知。&lt;/li&gt;
+  &lt;li&gt;引用的区块内也可以使用其他的 Markdown 语法，包括标题、列表、代码区块等(见下面的解析效果)：&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;即，&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;gt; ## 这是一个标题。
+&amp;gt;
+&amp;gt; 1.   这是第一行列表项。
+&amp;gt; 2.   这是第二行列表项。
+&amp;gt;
+&amp;gt; 给出一些例子代码：
+&amp;gt;
+&amp;gt;     return shell_exec(&quot;echo $input | $markdown_script&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果则：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;h2 id=&quot;这是一个标题&quot;&gt;这是一个标题。&lt;/h2&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;这是第一行列表项。&lt;/li&gt;
+    &lt;li&gt;这是第二行列表项。&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;给出一些例子代码：&lt;/p&gt;
+
+  &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  return shell_exec(&quot;echo $input | $markdown_script&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;  &lt;/div&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;25-分割线&quot;&gt;2.5 分割线&lt;/h3&gt;
+&lt;p&gt;分割线最常使用就是三个或以上*，还可以使用-和_。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;***
+___
+
+---
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下&lt;/strong&gt;*&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;hr /&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;只要&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;*&lt;/code&gt;或者&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;大于等于三个就可组成一条平行线。&lt;/li&gt;
+  &lt;li&gt;使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;---&lt;/code&gt;作为水平分割线时，要在它的前后都空一行，防止&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;---&lt;/code&gt;被当成标题标记的表示方式。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;26-插入链接&quot;&gt;2.6 插入链接&lt;/h3&gt;
+&lt;p&gt;markdown文本中插入链接非常方便，有文内链接和引用链接两种方式。注意如果链接的是本地资源，则链接地址为当地资源的路径。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**文内链接**
+这是一个文内链接的[例子](http://example.com/ &quot;鼠标悬浮此处显示的标题&quot;)。
+[这个](http://example.net/)链接在鼠标悬浮时没有标题。
+[这个](/about/)链接是本地资源。
+
+**引用链接**
+这是一个引用链接的[例子][id]。
+[id]: http://example.com/  &quot;鼠标悬浮标题（可选）&quot;
+
+**注意，这里的id没有大小写区分，如果省略id，则前面方括号的内容会被用作id。**
+
+我常用的网站包括[Google][1] ，[Yahoo][2] 和 [MSN][3]。
+[1]:	http://google.com/        &quot;Google&quot;
+[2]:	http://search.yahoo.com/  &quot;Yahoo Search&quot;
+[3]:	http://search.msn.com/    &quot;MSN Search&quot;
+
+**也可以写成**
+
+我常用的网站包括[Google][]，[Yahoo][]和[MSN][]。
+[google]: http://google.com/        &quot;Google&quot;
+[yahoo]:  http://search.yahoo.com/  &quot;Yahoo Search&quot;
+[msn]:    http://search.msn.com/    &quot;MSN Search&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;文内链接&lt;/strong&gt;&lt;br /&gt;
+这是一个文内链接的&lt;a href=&quot;http://example.com/&quot; title=&quot;鼠标悬浮此处显示的标题&quot;&gt;例子&lt;/a&gt;。&lt;br /&gt;
+&lt;a href=&quot;http://example.net/&quot;&gt;这个&lt;/a&gt;链接在鼠标悬浮时没有标题。&lt;br /&gt;
+&lt;a href=&quot;/about/&quot;&gt;这个&lt;/a&gt;链接是本地资源。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;引用链接&lt;/strong&gt;&lt;br /&gt;
+这是一个引用链接的[例子][id]。&lt;br /&gt;
+[id]: http://example.com/  “鼠标悬浮标题（可选）”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意，这里的id没有大小写区分，如果省略id，则前面方括号的内容会被用作id。&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我常用的网站包括[Google] [1] ，[Yahoo] [2] 和 [MSN] [3]。&lt;br /&gt;
+[1]: http://google.com/        “Google”
+[2]: http://search.yahoo.com/  “Yahoo Search”
+[3]: http://search.msn.com/    “MSN Search”&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;也可以写成&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;我常用的网站包括&lt;a href=&quot;http://google.com/&quot; title=&quot;Google&quot;&gt;Google&lt;/a&gt;，&lt;a href=&quot;http://search.yahoo.com/&quot; title=&quot;Yahoo Search&quot;&gt;Yahoo&lt;/a&gt;和&lt;a href=&quot;http://search.msn.com/&quot; title=&quot;MSN Search&quot;&gt;MSN&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;上述的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[1]: http://google.com/  &quot;Google&quot;、[google]: http://google.com/        &quot;Google&quot;&lt;/code&gt;等等之类不会出现在区块中。&lt;/li&gt;
+  &lt;li&gt;文内链接和引用链接显示效果是一样的。但是在编辑状态下的使用情况不一样。文内链接紧跟链接文字，可以在看到链接文字的同时清楚的知道链接地址，但是不便于多次重复利用。引用链接可以重复使用，但一般都是将一些链接放在一起统一管理，如一段文字后面或文章结尾，因此在找到链接和链接文字的对应关系上有些麻烦。各有利弊了，分情况使用。&lt;/li&gt;
+  &lt;li&gt;我原以为所有Markdown编辑器都支持这种引用链接的，经过测试，发现CSDN中是支持的，但后来惊奇地发现，引用链接这种方式在&lt;a href=&quot;https://www.jianshu.com/&quot;&gt;简书&lt;/a&gt;的Markdown编辑工具下以及在我的这个GitHub Pages中是无法解析的。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;27-插入图片&quot;&gt;2.7 插入图片&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;插入图片和插入链接非常类似，只是在方括号前多一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;插入图片&lt;strong&gt;语法&lt;/strong&gt;：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;![Alt text](/path/to/img.jpg &quot;Optional title&quot;)&lt;/code&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;ul&gt;
+    &lt;li&gt;Alt text为如果图片无法显示时显示的文字。&lt;/li&gt;
+    &lt;li&gt;/path/to/img.jpg为图片所在路径。&lt;/li&gt;
+    &lt;li&gt;Optional title为显示标题。显示效果为在你将鼠标放到图片上后，会显示一个小框提示，提示的内容就是Optional title。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;**文内链接：**
+![图灵社区](http://www.turingbook.com/Content/img/Turing.Gif)
+
+**引用链接**
+[图灵社区][1]
+![图灵社区Logo][2]
+[1]: http://www.ituring.com.cn
+[2]: http://www.turingbook.com/Content/img/Turing.Gif
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;br /&gt;
+&lt;strong&gt;文内链接：&lt;/strong&gt;&lt;br /&gt;
+&lt;img src=&quot;http://www.turingbook.com/Content/img/Turing.Gif&quot; alt=&quot;图灵社区&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;引用链接&lt;/strong&gt;&lt;br /&gt;
+[图灵社区][1]&lt;br /&gt;
+![图灵社区Logo][2]&lt;br /&gt;
+[1]: http://www.ituring.com.cn
+[2]: http://www.turingbook.com/Content/img/Turing.Gif&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;同上节链接一样，引用链接这种方式在&lt;a href=&quot;https://www.jianshu.com/&quot;&gt;简书&lt;/a&gt;的Markdown编辑工具下以及我的这个GitHub Pages中是无法解析的。&lt;/li&gt;
+  &lt;li&gt;同时，注意一点：到目前为止， Markdown 还没有办法指定图片的宽高。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;28-表格&quot;&gt;2.8 表格&lt;/h3&gt;
+&lt;p&gt;表格的书写格式一目了然，还是很方便简洁的。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;| 左对齐 | 中间对齐 | 右对齐 |
+| :-     |  :-:     |   -:   |
+| 左1    |  中1     |  右1   |
+| 左2    |  中2     |  右3   |
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;左对齐&lt;/th&gt;
+      &lt;th style=&quot;text-align: center&quot;&gt;中间对齐&lt;/th&gt;
+      &lt;th style=&quot;text-align: right&quot;&gt;右对齐&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;左1&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;中1&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;右1&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;左2&lt;/td&gt;
+      &lt;td style=&quot;text-align: center&quot;&gt;中2&lt;/td&gt;
+      &lt;td style=&quot;text-align: right&quot;&gt;右3&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;简书、CSDN中都是能够完整正确解析出表格的；&lt;/li&gt;
+  &lt;li&gt;但不知道为什么，CSDN中表格中的居中、居右不能正确解析出来…sad&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;29-脚标-脚注&quot;&gt;2.9 脚标 (脚注)&lt;/h3&gt;
+&lt;p&gt;不同于链接，这里的脚标内容会被放在文末，点击可以实现跳转，使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;[^]&lt;/code&gt;来定义脚注。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;使用 Markdown[^1]可以效率的书写文档, 可以使用 Leanote[^Le] 编辑器进行书写.
+[^1]:Markdown是一种纯文本标记语言
+[^Le]:开源笔记平台，支持Markdown和笔记直接发为博文
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;br /&gt;
+使用 Markdown&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;可以效率的书写文档,可以使用 Leanote&lt;sup id=&quot;fnref:Le&quot;&gt;&lt;a href=&quot;#fn:Le&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; 编辑器进行书写.&lt;/p&gt;
+
+&lt;h3 id=&quot;210-其他&quot;&gt;2.10 其他&lt;/h3&gt;
+&lt;h4 id=&quot;2101-上下标&quot;&gt;2.10.1 上下标&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;E = mc&amp;lt;sup&amp;gt;2&amp;lt;/sup&amp;gt;
+Water: H&amp;lt;sub&amp;gt;2&amp;lt;/sub&amp;gt;O
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;E = mc&lt;sup&gt;2&lt;/sup&gt; &lt;br /&gt;
+Water: H&lt;sub&gt;2&lt;/sub&gt;O&lt;/p&gt;
+
+&lt;h4 id=&quot;2102-直接链接与邮箱&quot;&gt;2.10.2 直接链接与邮箱&lt;/h4&gt;
+&lt;p&gt;在markdown中将链接地址或邮箱地址用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;&amp;gt;&lt;/code&gt;包围，则会被自动转换成可点击的链接。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;http://haoeric.com&amp;gt;
+&amp;lt;haoeric0520@gmail.com&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://haoeric.com&quot;&gt;http://haoeric.com&lt;/a&gt;&lt;br /&gt;
+&lt;a href=&quot;mailto:haoeric0520@gmail.com&quot;&gt;haoeric0520@gmail.com&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;
+之前在简书、CSDN中测试都是没有问题的，现在我在Cmd Mardown中重新编辑测试，这里的邮箱竟然会出问题（显示不出来），可能这就是不同平台编辑器下的区别吧…&lt;/p&gt;
+
+&lt;h4 id=&quot;2103-换行&quot;&gt;2.10.3 换行&lt;/h4&gt;
+&lt;p&gt;使用html标签&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;br/&amp;gt;&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;br&amp;gt;&lt;/code&gt;换行&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;第一行hahaha&amp;lt;br/&amp;gt;第二行6666
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;br /&gt;
+第一行hahaha&lt;br /&gt;第二行6666&lt;/p&gt;
+
+&lt;h4 id=&quot;2104-反斜杠&quot;&gt;2.10.4 反斜杠&lt;/h4&gt;
+&lt;p&gt;如果需要避免文本中的符号被当做markdown标识符而发生不必要的格式转化，可以在符号前加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt;来避免。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\*不是斜体\*
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;* 不是斜体 *&lt;/p&gt;
+
+&lt;p&gt;给出&lt;strong&gt;Markdown支持的转义字符列表：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;\   反斜线
+`   反引号
+*   星号
+_   底线
+{}  花括号
+[]  方括号
+()  括弧
+#   井字号
++   加号
+-   减号
+.   英文句点
+!   惊叹号
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;2105-代码高亮&quot;&gt;2.10.5 代码高亮&lt;/h4&gt;
+&lt;p&gt;使用栅栏标记代码块的一个好处是可以标明代码的语种，然后实现代码的高亮。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;`&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ruby     
+    require 'redcarpet'  
+    markdown = Redcarpet.new(&quot;Hello World!&quot;)  
+    puts markdown.to_html  
+\&lt;/code&gt;`&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-ruby highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;require&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'redcarpet'&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;markdown&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;Redcarpet&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;new&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Hello World!&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;markdown&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nf&quot;&gt;to_html&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;貌似目前&lt;a href=&quot;https://www.jianshu.com/&quot;&gt;简书&lt;/a&gt;还没有支持代码高亮….sad&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2106--关于锚点&quot;&gt;2.10.6  关于锚点&lt;/h4&gt;
+&lt;p&gt;网页中，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;锚点&lt;/code&gt;其实就是页内超链接，也就是链接本文档内部的某些元素，实现当前页面中的跳转，&lt;strong&gt;可参考Github&lt;/strong&gt;。比如我这里写下一个锚点，点击回到目录，就能跳转到目录。 在目录中点击这一节，就能跳过来。在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Github&lt;/code&gt;的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;md&lt;/code&gt; 文件中，会为每个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h1~h6&lt;/code&gt;标签，自动塞入一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;标签，并渲染好&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;比如：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# h1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;以上md语言被渲染成html如下：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-HTML&quot;&gt;&amp;lt;h1&amp;gt;
+	&amp;lt;a id=&quot;user-content-h1&quot; class=&quot;anchor&quot; href=&quot;#h1&quot; aria-hidden=&quot;true&quot;&amp;gt;
+		&amp;lt;svg aria-hidden=&quot;true&quot; class=&quot;octicon octicon-link&quot; height=&quot;16&quot; role=&quot;img&quot; version=&quot;1.1&quot; viewBox=&quot;0 0 16 16&quot; width=&quot;16&quot;&amp;gt;
+			&amp;lt;path d=&quot;M4 9h1v1h-1c-1.5 0-3-1.69-3-3.5s1.55-3.5 3-3.5h4c1.45 0 3 1.69 3 3.5 0 1.41-0.91 2.72-2 3.25v-1.16c0.58-0.45 1-1.27 1-2.09 0-1.28-1.02-2.5-2-2.5H4c-0.98 0-2 1.22-2 2.5s1 2.5 2 2.5z m9-3h-1v1h1c1 0 2 1.22 2 2.5s-1.02 2.5-2 2.5H9c-0.98 0-2-1.22-2-2.5 0-0.83 0.42-1.64 1-2.09v-1.16c-1.09 0.53-2 1.84-2 3.25 0 1.81 1.55 3.5 3 3.5h4c1.45 0 3-1.69 3-3.5s-1.5-3.5-3-3.5z&quot;&amp;gt;
+			&amp;lt;/path&amp;gt;
+		&amp;lt;/svg&amp;gt;
+	&amp;lt;/a&amp;gt;
+	h1
+&amp;lt;/h1&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;不去管&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;svg&lt;/code&gt;部分，可以看到&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h1&lt;/code&gt;标签内嵌入了一个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;id&lt;/code&gt;为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&quot;user-content-h1&quot;&lt;/code&gt;的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;标签，如果标题为&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;# h5&lt;/code&gt;，那么id就会是 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;user-content-h5 &lt;/code&gt;。这样就可以用类似下面的语句对其进行跳转定位：&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;#user-content-h1&quot;&gt;快点我&lt;/a&gt;，我要跳转到h1所在的位置&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;效果:&lt;/strong&gt;  一点击&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;快点我，我要跳转到h1所在的位置&lt;/code&gt;,即跳转到h1所在的位置。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;还有一种常见的书写格式如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; ## &amp;lt;span id=a&amp;gt; 标题a &amp;lt;/span&amp;gt;
+跳转到[标题a](#a)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;解析效果如下：&lt;/strong&gt;&lt;br /&gt;
+ ## &amp;lt;span id=a&amp;gt; 标题a &amp;lt;/span&amp;gt;
+跳转到&lt;a href=&quot;#a&quot;&gt;标题a&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;尽管在某些Markdown编辑工具下是无法解析的，比如&lt;a href=&quot;https://www.jianshu.com/&quot;&gt;简书&lt;/a&gt;。&lt;/li&gt;
+  &lt;li&gt;我已经分别在GitHub和CSDN上测试过以上两种锚点方式，结果&lt;strong&gt;可行&lt;/strong&gt;！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;211-markdown的局限性&quot;&gt;2.11 Markdown的局限性&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Markdown没有居中和右对齐功能，除非做扩展.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;不同的Markdown工具功能会不一样，高级功能并不是都有的.&lt;/strong&gt;&lt;/li&gt;
+  &lt;li&gt;部分Markdown工具不支持语法高亮，不显示代码行号.&lt;/li&gt;
+  &lt;li&gt;目录索引很重要，写技术类文章条理很重要，在开篇有个目录，非常有必要.&lt;/li&gt;
+  &lt;li&gt;部分Markdown工具不支持编辑 LaTex数学公式，这是非常必要的功能.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;212-细节要点updating&quot;&gt;2.12 细节要点（updating…）&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;首行缩进：在段首加入&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;emsp;&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;ensp;&lt;/code&gt;、&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;nbsp;&lt;/code&gt;来输入空格，其中，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;emsp;&lt;/code&gt;是一个中文字符，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;ensp;&lt;/code&gt;是半个中文字符 ，&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;amp;nbsp;&lt;/code&gt;是1/4中文字符。&lt;/li&gt;
+  &lt;li&gt;[数字] + &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt; + [空格]的形式会呼出有序的项目列表。因此如果你在正文中恰好出现这种形式，那么可以在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.&lt;/code&gt;的前面加上&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;\&lt;/code&gt;来避免出现有序列表。&lt;/li&gt;
+  &lt;li&gt;引用区块&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;gt;&lt;/code&gt;和代码区块&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; &lt;/code&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;`有不同的用途：`&amp;gt;`引用区块中的文本保留Markdown语法，而`&lt;/code&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt; &lt;/code&gt;代码块中的文本不保留Markdown语法。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;213-补充updating&quot;&gt;2.13 补充（updating…）&lt;/h3&gt;
+&lt;h4 id=&quot;2131-图片图床&quot;&gt;2.13.1 图片图床&lt;/h4&gt;
+&lt;p&gt;插入图片的地址需要图床(什么是图床呢???)，这里推荐&lt;a href=&quot;https://link.jianshu.com/?t=http://weibotuchuang.sinaapp.com/&quot;&gt;围脖图床修复计划&lt;/a&gt;与&lt;a href=&quot;https://link.jianshu.com/?t=https://www.getcloudapp.com/&quot;&gt;CloudApp&lt;/a&gt;的服务，生成URL地址即可。
+&lt;strong&gt;图床&lt;/strong&gt;，顾名思义，图片床，即大量图片汇聚地，每一张图片都有一个url,供所需站点使用。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;推荐工具&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://link.jianshu.com/?t=http://www.qiniu.com/&quot;&gt;七牛云&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://link.jianshu.com/?t=http://weibotuchuang.sinaapp.com/&quot;&gt;围脖图床修复计划&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://link.jianshu.com/?t=https://www.getcloudapp.com/&quot;&gt;CloudApp&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2132-latex公式&quot;&gt;2.13.2 LaTeX公式&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$&lt;/code&gt;表示行内公式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;例子如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;爱因斯坦发明的质能方程是：$E=mc^2$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;显示效果：&lt;/strong&gt;
+爱因斯坦发明的质能方程是：$E=mc^2$&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;$$&lt;/code&gt;表示整行公式&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;例子如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$$\sum_{i=1}^n a_i=0$$  
+$$f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2 $$
+$$\sum^{j-1}_{k=0}{\widehat{\gamma}_{kj} z_k}$$
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;显示效果：&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\sum_{i=1}^n a_i=0&lt;/script&gt;&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;f(x_1,x_x,\ldots,x_n) = x_1^2 + x_2^2 + \cdots + x_n^2&lt;/script&gt;&lt;br /&gt;
+&lt;script type=&quot;math/tex&quot;&gt;\sum^{j-1}*{k=0}{\widehat{\gamma}*{kj} z_k}&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;访问&lt;a href=&quot;http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;MathJax&lt;/a&gt;参考更多使用方法；&lt;/li&gt;
+  &lt;li&gt;CSDN、Cmd Markdown这里都是可以解析的，But在某些Markdown编辑工具下是无法解析的，比如&lt;a href=&quot;https://www.jianshu.com/&quot;&gt;简书&lt;/a&gt;、我的这个GitHub Pages中。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2133-流程图&quot;&gt;2.13.3 流程图&lt;/h4&gt;
+
+&lt;p&gt;&lt;strong&gt;例子如下：&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;flow
+st=&amp;gt;start: Start:&amp;gt;https://www.zybuluo.com
+io=&amp;gt;inputoutput: verification
+op=&amp;gt;operation: Your Operation
+cond=&amp;gt;condition: Yes or No?
+sub=&amp;gt;subroutine: Your Subroutine
+e=&amp;gt;end
+st-&amp;gt;io-&amp;gt;op-&amp;gt;cond
+cond(yes)-&amp;gt;e
+cond(no)-&amp;gt;sub-&amp;gt;io
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;显示效果：&lt;/strong&gt;&lt;br /&gt;
+flow&lt;br /&gt;
+st=&amp;gt;start: Start:&amp;gt;&lt;a href=&quot;https://link.jianshu.com?t=https://www.zybuluo.com&quot;&gt;https://www.zybuluo.com&lt;/a&gt; &lt;br /&gt;
+io=&amp;gt;inputoutput: verification&lt;br /&gt;
+op=&amp;gt;operation: Your Operation&lt;br /&gt;
+cond=&amp;gt;condition: Yes or No?&lt;br /&gt;
+sub=&amp;gt;subroutine: Your Subroutine &lt;br /&gt;
+e=&amp;gt;end&lt;br /&gt;
+st-&amp;gt;io-&amp;gt;op-&amp;gt;cond&lt;br /&gt;
+cond(yes)-&amp;gt;e&lt;br /&gt;
+cond(no)-&amp;gt;sub-&amp;gt;io&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;注意：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;更多语法参考&lt;/strong&gt;: &lt;a href=&quot;http://adrai.github.io/flowchart.js/&quot;&gt;流程图语法参考&lt;/a&gt;；&lt;/li&gt;
+  &lt;li&gt;在某些Markdown编辑工具下是无法解析的，比如CSDN、Cmd Markdown、&lt;a href=&quot;https://www.jianshu.com/&quot;&gt;简书&lt;/a&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4 id=&quot;2134-其他某些平台特有语法updating&quot;&gt;2.13.4 其他某些平台特有语法(updating…)&lt;/h4&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;GitHub&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Github中的emoji表情&lt;br /&gt;
+Github的Markdown语法支持添加emoji表情，输入不同的符号码（两个冒号包围的字符）可以显示出不同的表情。&lt;br /&gt;
+比如 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:blush:&lt;/code&gt;，可以显示 :blush:&lt;br /&gt;
+  &lt;strong&gt;更多表情符号点这里：&lt;/strong&gt;&lt;a href=&quot;https://github.com/Javef/README/blob/master/emoji.md&quot; title=&quot;visit javef's Github&quot;&gt;emoji&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;3-markdown-工具的选择&quot;&gt;3. Markdown 工具的选择&lt;/h2&gt;
+
+&lt;h3 id=&quot;31-mac-平台&quot;&gt;3.1 Mac 平台&lt;/h3&gt;
+
+&lt;p&gt;在 Mac OS X 上，用  &lt;a href=&quot;http://25.io/mou/&quot;&gt;Mou&lt;/a&gt; 这款免费且十分好用的 Markdown 编辑器，它支持实时预览，既左边是你编辑 Markdown 语言，右边会实时的生成预览效果。&lt;/p&gt;
+
+&lt;p&gt;其次还有很多同类选择。如果你是个编辑作者，建议你购买 &lt;a href=&quot;http://www.ulyssesapp.com/&quot;&gt;Ulysses Ⅲ&lt;/a&gt;，这款应用入围了苹果2013年 Mac App Store 的 The Best of 2013，相比 Mou 它支持更多的写作格式、多文档的支持。Mou、iA Writer 这些应用都是基于单文档的管理方式，而 Ulysses Ⅲ 支持 Folder、Filter 的管理，一个 Folder 里面可以创建多个 Sheet，Sheet 之间还可以进行 Combine 处理。&lt;/p&gt;
+
+&lt;h3 id=&quot;32-linux-平台&quot;&gt;3.2 Linux 平台&lt;/h3&gt;
+
+&lt;p&gt;ReText、&lt;a href=&quot;https://www.zybuluo.com/cmd/&quot;&gt;Cmd Markdown&lt;/a&gt;、vim、 &lt;a href=&quot;https://github.com/egrcc/Mango&quot;&gt;Mango&lt;/a&gt;、&lt;a href=&quot;http://pad.haroopress.com/user.html&quot;&gt;Haroopad&lt;/a&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;strong&gt;以vim为例&lt;/strong&gt;
+&lt;br /&gt;
+在vim中写markdown，首先安装语法高亮的插件－－&lt;a href=&quot;https://github.com/plasticboy/vim-markdown&quot;&gt;vim-markdown&lt;/a&gt;．至于预览，则有很多方式：&lt;/p&gt;
+  &lt;ol&gt;
+    &lt;li&gt;使用vim插件－－&lt;a href=&quot;https://github.com/suan/vim-instant-markdown&quot;&gt;vim-instant-markdown&lt;/a&gt; 
+   此方法可以实现markdown实时预览，不过得首先安装nodejs和npm．详细的安装过程见&lt;a href=&quot;http://blog.csdn.net/u012948976/article/details/48227713&quot;&gt;vim插件汇总－－Markdown插件&lt;/a&gt;．&lt;/li&gt;
+    &lt;li&gt;vim其他插件－－&lt;a href=&quot;https://github.com/isnowfy/python-vim-instant-markdown&quot;&gt;python-vim-instant-markdown&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;通过＂Markdown.pl＂转换成html在浏览器预览 
+   见博文&lt;a href=&quot;http://blog.chinaunix.net/uid-20147410-id-3611957.html&quot;&gt; vim与markdown &lt;/a&gt;．该方式得手动预览．&lt;/li&gt;
+    &lt;li&gt;使用Pandoc 
+   &lt;a href=&quot;http://www.jmlog.com/use-pandoc-to-preview-markdown-in-vim/&quot;&gt;利用 Pandoc 预览 VIM 中书写的 Markdown&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;
+      &lt;p&gt;chrome插件－－Markdown Preview Plus 
+   &lt;a href=&quot;http://howiefh.github.io/2013/05/16/vim-markdown-preview/&quot;&gt;vim编辑markdown时实现预览&lt;/a&gt;
+&lt;br /&gt;&lt;br /&gt;
+   关于产生文章目录的几种方式&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;安装完插件－－&lt;a href=&quot;https://github.com/plasticboy/vim-markdown&quot;&gt;vim-markdown&lt;/a&gt;后，在vim中直接输入命令&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;:Toc&lt;/code&gt;即可打开显示目录的窗口。&lt;/li&gt;
+    &lt;li&gt;安装插件－－&lt;a href=&quot;https://github.com/majutsushi/tagbar&quot;&gt;tagbar&lt;/a&gt;，并参考&lt;a href=&quot;https://github.com/majutsushi/tagbar/wiki#markdown&quot;&gt;markdown配置&lt;/a&gt;设置即可，注意  &lt;br /&gt;
+g:tagbar_type_markdown 和 ‘ctagstype’: ‘markdown’ 这两个地方需要和你的 vim 所识别的 markdown 格式匹配。检测自己的 vim 所识别的 markdown 文本的格式的方式是在 vim 中输入 :set filetype? ，所显示的 filetype= 后面的内容如果不是markdown，则需要用来替换上面两个地方。&lt;/li&gt;
+  &lt;/ol&gt;
+
+  &lt;p&gt;并且&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;'ctagsbin' : '/path/to/markdown2ctags.py',&lt;/code&gt;中的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;/path/to&lt;/code&gt;必须替换成自己的路径。&lt;/p&gt;
+
+  &lt;ol&gt;
+    &lt;li&gt;安装插件－－&lt;a href=&quot;https://github.com/vim-voom/VOoM&quot;&gt;VOoM&lt;/a&gt;和&lt;a href=&quot;https://xbeta.info/vim-voof.htm&quot;&gt;VOoM(原VOOF)：vim实现带折叠双栏树状文本管理&lt;/a&gt;。&lt;/li&gt;
+    &lt;li&gt;如果想将markdown转为带目录的html文件并在浏览器中预览，可使用githhub项目－－&lt;a href=&quot;https://github.com/i5ting/i5ting_ztree_toc&quot;&gt;i5ting_ztree_toc&lt;/a&gt;。&lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&quot;33-window-平台&quot;&gt;3.3 Window 平台&lt;/h3&gt;
+
+&lt;p&gt;Windows 下的 Markdown 工具，有两款还算不错，一款叫  &lt;a href=&quot;http://markdownpad.com/&quot;&gt;MarkdownPad&lt;/a&gt; ，另一款叫 &lt;a href=&quot;http://markpad.fluid.impa.br/&quot;&gt;MarkPad&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;就我知道的，还有&lt;a href=&quot;https://maxiang.io/client_zh&quot; title=&quot;马克飞象，专为印象笔记打造的 Markdown 编辑器&quot;&gt;马克飞象&lt;/a&gt;、&lt;a href=&quot;https://www.zybuluo.com/mdeditor&quot;&gt;Cmd Markdown&lt;/a&gt;相关编辑器。&lt;/p&gt;
+
+&lt;h3 id=&quot;34-ios平台&quot;&gt;3.4 IOS平台&lt;/h3&gt;
+
+&lt;p&gt;iOS 端已有相当多的 app 支持 Markdown 语法编辑，例如 Drafts、Day One、iA Writer 等。&lt;/p&gt;
+
+&lt;h3 id=&quot;35-web平台&quot;&gt;3.5 Web平台&lt;/h3&gt;
+
+&lt;p&gt;Web 端上，推荐 &lt;a href=&quot;https://www.jianshu.com/&quot; title=&quot;创作你的创作，一个优质创作社区&quot;&gt;简书&lt;/a&gt;这款产品，上面有无数热爱文字的人在不停的创造、分享。简书的Web 端使用 Markdown 很舒服，它同样支持左右两栏的实时预览，字体优雅、简洁。&lt;/p&gt;
+
+&lt;p&gt;同样是 Web 端， &lt;a href=&quot;https://draftin.com/&quot;&gt;Draftin&lt;/a&gt; 、 &lt;a href=&quot;http://maxiang.info/&quot; title=&quot;马克飞象，专为印象笔记打造的 Markdown 编辑器&quot;&gt;马克飞象&lt;/a&gt;、 &lt;a href=&quot;http://dillinger.io/&quot;&gt;Dillinger.io&lt;/a&gt; 、&lt;a href=&quot;https://www.zybuluo.com/mdeditor&quot;&gt;Cmd Markdown&lt;/a&gt;、&lt;a href=&quot;https://markable.in/&quot;&gt;Markable.in&lt;/a&gt;这些在线 MD 编辑器也还都不错。&lt;/p&gt;
+
+&lt;h3 id=&quot;36-高级应用&quot;&gt;3.6 高级应用&lt;/h3&gt;
+
+&lt;p&gt;当然，这里不能少了一款非常精巧的文本编辑器，适合编写代码、做笔记、写文章。它用户界面十分整洁，功能非同凡响，性能快得出奇。它就是 &lt;a href=&quot;http://www.sublimetext.com/&quot;&gt;Sublime&lt;/a&gt;！！！
+具体可阅览Sublime通过插件实现自如编辑Markdown文档的 &lt;a href=&quot;https://blog.csdn.net/jave_f/article/details/79894028&quot;&gt;教程&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;如有更好的 Markdown 免费编辑器推荐，请到&lt;a href=&quot;https://github.com/Javef/Markdown/issues&quot;&gt;这里留言反馈&lt;/a&gt;，谢谢！&lt;/strong&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+&lt;h2 id=&quot;4-更多链接&quot;&gt;4. 更多链接&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/564bdf3a9462?utm_campaign=maleskine&amp;amp;utm_content=note&amp;amp;utm_medium=seo_notes&amp;amp;utm_source=recommendation&quot;&gt;MarkDown学习笔记&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.zybuluo.com/liayun/note/371635&quot;&gt;首次使用MarkDown好激动&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/d7d6da4b7c60?utm_campaign=maleskine&amp;amp;utm_content=note&amp;amp;utm_medium=seo_notes&amp;amp;utm_source=recommendation&quot;&gt;让你的Markdown用起来得心应手&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://www.jianshu.com/p/34c92cbd0aaf/&quot;&gt;一段JS代码让Markdown自动生成侧边栏目录&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;http://wowubuntu.com/markdown/index.html&quot;&gt;Markdown 语法说明 (简体中文版)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;hr /&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Markdown是一种纯文本标记语言 &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:Le&quot;&gt;
+      &lt;p&gt;开源笔记平台，支持Markdown和笔记直接发为博文 &lt;a href=&quot;#fnref:Le&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>Ke Xiang</name></author><category term="Markdown" /><summary type="html">起初也就是打算简单一些Markdown在编辑Blog方面的一些常用操作和注意事项，没想到，一下没刹住，毫无防备地闯进了这个好趣的园子….</summary></entry><entry><title type="html">给h5ai开启二维码、搜索、选择功能</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro/" rel="alternate" type="text/html" title="给h5ai开启二维码、搜索、选择功能" /><published>2019-03-21T11:44:00+08:00</published><updated>2019-03-21T11:44:00+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro/">&lt;p&gt;&lt;strong&gt;说明：&lt;/strong&gt;现在越来越多的人使用&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h5ai&lt;/code&gt;了，毕竟精巧，美观等，之前介绍过&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;h5ai&lt;/code&gt;安装方法，参考：&lt;a href=&quot;https://www.moerats.com/archives/121/&quot;&gt;一款不错的PHP目录列表程序：h5ai安装教程&lt;/a&gt;，其实有的人虽然用上了，可是却不知道里面还有很多功能都没使用上，这里就说下开启其中几种适用的功能方法。&lt;/p&gt;
 
 &lt;h2 id=&quot;方法&quot;&gt;方法&lt;/h2&gt;
 
@@ -2928,307 +3783,4 @@ apt-get update
 
 &lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214900.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214954.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="jekyll," /><category term="jetlify-cms" /><summary type="html">netlify 后台：https://app.netlify.com/ netlify config 配置文档：https://www.netlifycms.org/docs/intro/ Github OAuth网址：https://github.com/settings/developers</summary></entry><entry><title type="html">✍GitBook👉高级配置</title><link href="http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/26/use-gitbook/" rel="alternate" type="text/html" title="✍GitBook👉高级配置" /><published>2018-08-26T07:29:08+08:00</published><updated>2018-08-26T07:29:08+08:00</updated><id>http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/26/use-gitbook</id><content type="html" xml:base="http://localhost:4000/%E6%8A%80%E6%9C%AF/2018/08/26/use-gitbook/">&lt;blockquote&gt;
-  &lt;p&gt;先留链接防丢失：&lt;/p&gt;
-
-  &lt;ol&gt;
-    &lt;li&gt;&lt;a href=&quot;https://github.com/zhangjikai/gitbook-use/tree/master&quot;&gt;gitbook-use&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href=&quot;https://blog.csdn.net/ds19991999/article/details/81275458&quot;&gt;使用GitBook打造自己的出版平台&lt;/a&gt;&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;安装&quot;&gt;安装💦&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;NodeJS(v4.0.0及以上)&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install gitbook-cli -g&lt;/code&gt; ， &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook-cli&lt;/code&gt;是gitbook的一个命令行工具, 通过它可以在电脑上安装和管理gitbook的多个版本.&lt;/li&gt;
-  &lt;li&gt;预览书籍：
-    &lt;ul&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook serve&lt;/code&gt; : 在书籍的文件夹中生成一个 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_book&lt;/code&gt; 文件夹，里面的内容即为生成的 html 文件， 通过&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;http://localhost:4000/&lt;/code&gt;可以预览书籍。&lt;/li&gt;
-      &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook build&lt;/code&gt; : 仅生成 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;_book&lt;/code&gt; 里的html，不开启服务器。&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;常用命令&quot;&gt;常用命令💦&lt;/h2&gt;
-
-&lt;blockquote&gt;
-  &lt;ol&gt;
-    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook-cli&lt;/code&gt; 和 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook&lt;/code&gt; 是两个软件;&lt;/li&gt;
-    &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook-cli&lt;/code&gt; 会将下载的 gitbook 的不同版本放到 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;~/.gitbook&lt;/code&gt;中, 可以通过设置&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GITBOOK_DIR&lt;/code&gt;环境变量来指定另外的文件夹.&lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;生成静态网页&lt;/strong&gt;：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook build&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;生成静态网页并运行服务器&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook serve&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;生成时指定gitbook的版本, 本地没有会先下载&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook build ----gitbook=2.6.7&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;列出本地所有的gitbook版本&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook ls&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;列出远程可用的gitbook版本&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook ls-remote&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;更新到gitbook的最新版本&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook update&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;卸载对应的gitbook版本&lt;/strong&gt;: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook uninstall 2.6.7&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;目录结构&quot;&gt;目录结构💦&lt;/h2&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;.
-├── book.json
-├── README.md
-├── SUMMARY.md
-├── chapter-1/
-|   ├── README.md
-|   └── something.md
-└── chapter-2/
-    ├── README.md
-    └── something.md
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;summary&quot;&gt;Summary💦&lt;/h3&gt;
-
-&lt;p&gt;&lt;strong&gt;示例1：&lt;/strong&gt;以后会经常用到的&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Summary
-* [Introduction](README.md)-------------------------------1.1
-----
-### [Part I](folder1/README.md)
-
-* [Writing is nice](folder1/writing.md)-------------------2.1.
-* [GitBook is nice](folder1/gitbook.md)-------------------2.2.
-
-### Part II
-
-* [We love feedback](folder2/feedback_please.md)----------3.1.
-* [Better tools for authors](folder2/better_tools.md)-----3.2.
-
-----
-
-* [Last part without title](title.md)---------------------4.1.
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;示例2：&lt;/strong&gt;以后会用的但不常用的&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Summary
-
-### Part I(part1/README.md)---------------------------1.
-
-* [section1](part1/section1/README.md)----------------1.1.
-	* [Writing is nice](part1/section1/writing.md)----1.1.1
-	* [GitBook is nice](part1/section1/gitbook.md)----1.1.2
-* [We love feedback](part1/title1.md)-----------------1.2
-* [Better tools for authors](part1/title2.md)---------1.3
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;示例3&lt;/strong&gt;：最简版本&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# Summary
-### Part I
-* [Introduction](README.md)
-* [Writing is nice](writing.md)
-* [GitBook is nice](gitbook.md)
-
-### Part II
-
-* [We love feedback](feedback_please.md)
-* [Better tools for authors](better_tools.md)
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;glossary&quot;&gt;Glossary💦&lt;/h3&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GLOSSARY.md&lt;/code&gt;。该文件主要存储词汇信息，如果在其他页面中出现了该文件中的词汇，鼠标放到词汇上会给出词汇示意。&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;GLOSSARY.md&lt;/code&gt; 格式：&lt;/p&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;## Git-----------------词汇
-分散式版本控制软件--------词汇示意
-
-## Markdown
-Aaron Swartz 跟John Gruber共同设计的排版语言
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;bookjson&quot;&gt;book.json💦&lt;/h2&gt;
-
-&lt;p&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;book.json&lt;/code&gt; 最重要，故单独作为一节。&lt;/p&gt;
-
-&lt;h3 id=&quot;title设置书本的标题&quot;&gt;title：设置书本的标题💦&lt;/h3&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;title&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;Gitbook Use&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;author作者的相关信息&quot;&gt;author：作者的相关信息💦&lt;/h3&gt;
-
-&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&quot;author&quot; : &quot;ds&quot;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;description本书的简单描述&quot;&gt;description：本书的简单描述💦&lt;/h3&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;description&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;记录Gitbook的配置和一些插件的使用&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;languagegitbook使用的语言&quot;&gt;language：Gitbook使用的语言💦&lt;/h3&gt;
-
-&lt;p&gt;版本2.6.4中可选的语言如下：&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;en,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ar,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;bn,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;cs,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;de,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;en,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;es,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fa,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fi,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;fr,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;he,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;it,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ja,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ko,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;no,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pl,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;pt,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ro,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;ru,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;sv,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;uk,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;vi,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;zh-hans,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;zh-tw&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;配置使用简体中文:&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;language&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;zh-hans&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;gitbook-指定使用的gitbook版本&quot;&gt;gitbook: 指定使用的gitbook版本💦&lt;/h3&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gitbook&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;3.2.2&quot;&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;gitbook&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&amp;gt;=3.0.0&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;root指定根目录&quot;&gt;root：指定根目录💦&lt;/h3&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;root&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;.&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;links左侧导航栏添加链接信息&quot;&gt;links：左侧导航栏添加链接信息💦&lt;/h3&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;links&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;sidebar&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;个人主页&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;http://www.ds-vip.top&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;styles自定义页面样式&quot;&gt;styles：自定义页面样式💦&lt;/h3&gt;
-
-&lt;p&gt;默认情况下各&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;generator&lt;/code&gt;对应的&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;css&lt;/code&gt;文件：&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;styles&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;website&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/website.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;ebook&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/ebook.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;pdf&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/pdf.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;mobi&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/mobi.css&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;epub&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;styles/epub.css&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;例如使&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;h1&amp;gt; &amp;lt;h2&amp;gt;&lt;/code&gt;标签有下边框， 可以在&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;website.css&lt;/code&gt;中设置，这个可以有。&lt;/p&gt;
-
-&lt;div class=&quot;language-css highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nt&quot;&gt;h1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;h2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-    &lt;span class=&quot;nl&quot;&gt;border-bottom&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1px&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;solid&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#EFEAEA&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;plugins配置使用的插件&quot;&gt;plugins：配置使用的插件💦&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code class=&quot;language-j&amp;#39;so&quot;&gt;&quot;plugins&quot;: [
-    &quot;disqus&quot;
-]
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;例如上面添加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;disqus&lt;/code&gt;插件：之后需要运行&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;gitbook install&lt;/code&gt;来安装新的插件。&lt;/li&gt;
-  &lt;li&gt;Gitbook默认带有5个插件：highlight、search、sharing、font-settings、livereload&lt;/li&gt;
-  &lt;li&gt;如果要去除自带的插件， 可以在插件名称前面加&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;-&lt;/code&gt;：&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;plugins&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;-search&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;pluginsconfig配置插件的属性&quot;&gt;pluginsConfig：配置插件的属性💦&lt;/h3&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nl&quot;&gt;&quot;pluginsConfig&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;fontsettings&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;theme&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sepia&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;family&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;serif&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;size&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;上面就是配置Gitbook界面那个&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;A&lt;/code&gt;按钮的默认属性。&lt;/p&gt;
-
-&lt;h3 id=&quot;structure&quot;&gt;structure💦&lt;/h3&gt;
-
-&lt;p&gt;指定 Readme、Summary、Glossary 和 Languages 对应的文件名，下面是这几个文件对应变量以及默认值：&lt;/p&gt;
-
-&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th&gt;变量&lt;/th&gt;
-      &lt;th&gt;含义和默认值&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;structure.readme&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Readme file name (defaults to README.md)&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;structure.summary&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Summary file name (defaults to SUMMARY.md)&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;structure.glossary&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Glossary file name (defaults to GLOSSARY.md)&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;structure.languages&lt;/code&gt;&lt;/td&gt;
-      &lt;td&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Languages file name (defaults to LANGS.md)&lt;/code&gt;&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;gitbook插件&quot;&gt;GitBook插件💦&lt;/h2&gt;
-
-&lt;p&gt;可以指定插件的版本可以使用 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;plugin@0.3.1&lt;/code&gt; ， 下面的插件在 GitBook 的 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;3.2.3&lt;/code&gt; 版本中可以正常工作，&lt;a href=&quot;https://plugins.gitbook.com/&quot;&gt;插件官网&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;具体介绍看这里：https://github.com/zhangjikai/gitbook-use/blob/master/plugins.md&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Summary插件：&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npm install -g gitbook-summary&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;book sm&lt;/code&gt;，一个完整的目录文件&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;SUMMARY.md&lt;/code&gt;就生成了 ，之后根据自己的需要修改，进一步的命令就不需要了。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;主题&quot;&gt;主题💦&lt;/h2&gt;
-
-&lt;p&gt;我们常用的就是 Book 文档模式，所以只看这部分。&lt;/p&gt;
-
-&lt;h3 id=&quot;theme-default&quot;&gt;theme-default💦&lt;/h3&gt;
-
-&lt;p&gt;默认的 Book 主题。将 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;showLevel&lt;/code&gt; 设为 &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;true&lt;/code&gt;， 就可以显示标题前面的数字索引，默认不显示。&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;theme-default&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;showLevel&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h3 id=&quot;theme-comscore&quot;&gt;theme-comscore💦&lt;/h3&gt;
-
-&lt;p&gt;这个主题为标题添加了颜色&lt;/p&gt;
-
-&lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;plugins&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-        &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;theme-comscore&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;bookjson配置文件&quot;&gt;book.json配置文件💦&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;👉&lt;a href=&quot;https://github.com/ds19991999/useful-file/blob/master/GitBook&quot;&gt;看这里&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</content><author><name>Ke Xiang</name></author><category term="GitBook" /><category term="技术" /><summary type="html">先留链接防丢失： gitbook-use 使用GitBook打造自己的出版平台</summary></entry><entry><title type="html">Emoji😆😆😆</title><link href="http://localhost:4000/%E7%B4%A0%E6%9D%90/interesting/2018/08/25/emojicopy/" rel="alternate" type="text/html" title="Emoji😆😆😆" /><published>2018-08-25T07:29:08+08:00</published><updated>2018-08-25T07:29:08+08:00</updated><id>http://localhost:4000/%E7%B4%A0%E6%9D%90/interesting/2018/08/25/emojicopy</id><content type="html" xml:base="http://localhost:4000/%E7%B4%A0%E6%9D%90/interesting/2018/08/25/emojicopy/">&lt;blockquote&gt;
-  &lt;p&gt;官网地址：&lt;a href=&quot;https://www.emojicopy.com/&quot;&gt;emojicopy&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;声明：此emoji仅限个人使用，绝不涉及商业范畴，如有侵权，可直接联系我，立马删除😇😇😇。&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;😀😃😄😁😆😅😂🤣☺😊😇🙂🙃😉😌😍😘😗😙😚😋😛😝😜🤪🤨🧐🤓😎🤩😏😒😞😔😟😕🙁☹😣😖😫😩😢😭😤😠😡🤬🤯😳😪🤤😴😲😮😧😦😯🙄😬😑😐😶🤥🤫🤭🤔🤗😓😥😰😨😱😵🤐🤢🤮🤧😷🤒🤕🤑🤠😈👿👹👺🤡💩👻💀☠👽👾🤖🎃😺😸😹😻😼😽🙀😿😾🤲👐🙌👏🤝👍👎👊✊🤛🤜🤞✌🤟🤘👌👈👉👆👇☝🤚🖐🖖👋🤙💪🖕✍🙏&lt;/p&gt;
-
-&lt;p&gt;🐤🐣🐥🌞🐒🙊🐶🙉🙈🐵☀⛅🌥☁🌦🌧⛈🌩🌨❄⭐⭐⭐💦💦🦉🦉&lt;/p&gt;
-
-&lt;p&gt;🍉🍑🍌🎻🎖🏅🥉🎸🎺🎷🥁🚲🚗🚔✈🛫🛩🔪🗡⚔🚬💊🔨🎎❤💛🧡💔&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="interesting" /><category term="emoji" /><category term="素材" /><summary type="html">官网地址：emojicopy</summary></entry></feed>
+&lt;p&gt;&lt;img src=&quot;http://image.creat.kim/picgo/20190318214954.png&quot; alt=&quot;null&quot; /&gt;&lt;/p&gt;</content><author><name>Ke Xiang</name></author><category term="jekyll," /><category term="jetlify-cms" /><summary type="html">netlify 后台：https://app.netlify.com/ netlify config 配置文档：https://www.netlifycms.org/docs/intro/ Github OAuth网址：https://github.com/settings/developers</summary></entry></feed>
