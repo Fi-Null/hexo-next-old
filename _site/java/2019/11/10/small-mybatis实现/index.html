@@ -1,0 +1,2281 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/assets/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/assets/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Mybatis," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XK Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="不如写个small-Mybatis">
+<meta name="keywords" content="Mybatis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不如写个small-Mybatis">
+<meta property="og:url" content="http://localhost:4000/java/2019/11/10/small-mybatis%E5%AE%9E%E7%8E%B0/">
+<meta property="og:site_name" content="XK Blog">
+<meta property="og:description" content="不如写个small-Mybatis">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.sonihr.com/e1961348-fb37-4652-ad4d-7609b6f5a82a.jpg">
+<meta property="og:image" content="http://img.sonihr.com/12fe465b-1895-4b5e-ba91-c6625ba8fea6.jpg">
+<meta property="og:updated_time" content="2019-11-10T21:09:00+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="不如写个small-Mybatis">
+<meta name="twitter:description" content="不如写个small-Mybatis">
+<meta name="twitter:image" content="http://img.sonihr.com/e1961348-fb37-4652-ad4d-7609b6f5a82a.jpg">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://localhost:4000/"/>
+
+
+
+
+
+  <title>不如写个small-Mybatis | XK Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-123686345-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c72906569503c06a12a6edc7b7c66149";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-6459493734251675",
+		enable_page_level_ads: true
+	  });
+	</script>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XK Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Less is more.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/pages/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-resume">
+          <a href="http://fi-null.github.io/resumeWeb" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-handshake-o"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/pages/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/pages/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/pages/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-top">
+          <a href="/pages/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br />
+            
+            TopX
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/java/2019/11/10/small-mybatis%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ke Xiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XK Blog">
+    </span>
+    
+      	<!-- 心知天气固定插件 -->
+		<div align="center" id="tp-weather-widget"></div>
+		<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+		<script>tpwidget("init", {
+			"flavor": "slim",
+			"location": "WS0E9D8WN298",
+			"geolocation": "enabled",
+			"language": "en",
+			"unit": "c",
+			"theme": "chameleon",
+			"container": "tp-weather-widget",
+			"bubble": "enabled",
+			"alarmType": "badge",
+			"uid": "U81EB522D4",
+			"hash": "6b972a5f25f3cc4e8beb25e2feab9d4b"
+		});
+		tpwidget("show");</script>  
+
+    
+      <header class="post-header">    
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+          
+          
+            不如写个small-Mybatis
+          
+        </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-10T21:09:00+08:00">
+                2019-11-10
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-11-10">
+                2019-11-10
+              </time>
+            
+          </span>	
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Java" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+          <span class="post-meta-divider">|</span>
+          
+
+          
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  5672
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  28
+                </span>
+              
+            </div>
+          
+
+          
+            
+                <div class="post-description">
+                    不如写个small-Mybatis
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+	<!-- 网易云音乐 -->
+	 
+	
+	<!-- 谷歌广告投放-->
+		<div>
+    
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	
+	
+	<!-- 数学公式插件 -->
+		
+	
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="mybatis框架概论">MyBatis框架概论</h2>
+
+<h3 id="jdbc如何演化到mybatis">JDBC如何演化到MyBatis</h3>
+
+<ul>
+  <li>JDBC查询分析
+    <ul>
+      <li>加载JDBC驱动</li>
+      <li>建立并获取数据库连接</li>
+      <li>创建JDBC statement对象</li>
+      <li>sql语句传入参数</li>
+      <li>执行sql语句并获得查询结果</li>
+      <li>对查询结果进行转换处理并将结果返回</li>
+      <li>释放资源，关闭resultset，statement，connection。</li>
+    </ul>
+  </li>
+  <li>存在哪些问题？</li>
+</ul>
+
+<h4 id="问题与解决思路">问题与解决思路</h4>
+
+<ul>
+  <li>连接的获取和释放
+    <ol>
+      <li>由上可见，JDBC每次查询或其他数据库操作都需要频繁的开启和关闭。要知道，每次连接数据库相当于一次socket通信，因此我们可以通过数据库连接池来解决，即复用数据库连接，当调用connection.close()时，并不关闭连接，而是放回连接池中等待复用，这边和线程池是类似的。本项目采用Druid连接池，QuickStart中会提及。</li>
+    </ol>
+  </li>
+  <li>SQL统一存储
+    <ol>
+      <li>连接池多种多样，可能采用DBCP，也可能用Druid，因此需要通过DataSource进行解耦，我们同一从DataSource中获取数据库连接，至于DataSource中配置的是什么连接池实现，用户不必关心。实现了ORM框架与连接池的解耦</li>
+      <li>在不同的类中进行数据库操作时，不同的类中都散落着SQL语句。我们希望sql语句和具体的java类之间进行解耦，即sql语句单独放在xml配置文件中，或者单独放在某一个java类中。这一步要求我们思考，如何从配置文件中读SQL，Dom4J在一旁摩拳擦掌</li>
+    </ol>
+  </li>
+  <li>传入参数映射和动态sql
+    <ol>
+      <li>即ORM，对象关系映射。传入sql语句中的参数可以是一个对象，sql语句的返回值也可以包装成一个对象</li>
+      <li>所谓动态sql，比如select * from t_dept where name = ? and age = ?，有时候用户只想查询name = huang，age随意的，或者age=10，name随意的。那你怎么解决呢？方法1.在添加两个方法，select语句中只有name和age，但是不够优雅，如果你的表有20列，那你排列组合得多少种情况？方法2.如果只有name或只有age的话，就自动生成只有age和name的语句。怎么实现了呢？通过xml标签，<if>等。</if></li>
+    </ol>
+  </li>
+  <li>结果映射和结果缓存
+    <ol>
+      <li>JDBC的resultSet也太麻烦了，所以要把这里封装起来。返回的除了Boolean外，查询结果还可能是Bean，List，Map。这些值都需要两点1.返回什么类型。2.需要返回的数据结构和执行结果的映射，即ResultSet和结果的转换。</li>
+      <li>可以考虑将结果缓存以提升性能。key值是sql语句和传入参数联合，如果遇到sql和参数相同的，即返回缓存值。</li>
+    </ol>
+  </li>
+  <li>解决sql语句重复问题
+    <ol>
+      <li>可以将重复的sql块独立出来，在其他sql块中引用它。</li>
+    </ol>
+  </li>
+  <li>逆向工程和插件
+    <ol>
+      <li>手写sql语句还是太多了，对于单表而言是否可以自动创建sql语句。</li>
+      <li>对于sql语句生成的前后，可否用拦截器实现插件。</li>
+    </ol>
+  </li>
+</ul>
+
+<h4 id="mybatis功能概述">Mybatis功能概述</h4>
+
+<ol>
+  <li>Mapper接口。mapper.xml对应一个mapper接口，&lt;mapper&gt;节点中的&lt;select&gt;等标签的id对应接口方法，标签内内容对应sql语句。Mybatis通过SqlSession.get(XXXMapper.class)，通过动态代理生成一个
+mapper实例，将connection和statement写sql，获取resultSet等操作织入其中，最后返回list，map，bean或者boolean。<strong>当然，其实MyBatis底层有自己已经封装了一层的select，update等方法。</strong></li>
+  <li>数据处理层。主要用处是<strong>参数映射，动态sql生成</strong>。着重说一下参数映射，包括查询阶段将javaBean转化成JDBC类型数据和将查询结果resultset的jdbcType转化成javaBean。</li>
+  <li>架构支撑层。1.事务管理机制。2.连接池机制。3.缓存机制。</li>
+  <li>引导层。核心组件：
+    <ol>
+      <li>SqlSession，顶层API，交给用户，表示一个和数据库的会话，通过其完成增删查改操作。</li>
+      <li>Executor，MyBaits调度核心，负责SQL语句的生成和查询缓存的维护</li>
+      <li>StatementHandler，封装JDBC Statement操作，负责对JDBC statement设置参数</li>
+      <li>ParamterHandler，负责将用户传递的参数转换成JDBC Statement所需要的参数</li>
+      <li>ResultSetHandler，将JDBC返回的ResultSet结果集对象转换成list类型的集合</li>
+      <li>TypeHandler，负责java数据类型和jdbc数据类型之间的映射和转换</li>
+      <li>MappedStatement，其中维护者select|update|delete|insert节点的封装</li>
+      <li>SqlSource，根据用户传递的parameterObject动态生成SQL语句并封装到BoundSql中</li>
+      <li>BoundSql，动态生成的SQL语句以及相应参数信息</li>
+      <li>Configuration，类似于ApllicationContext，读取配置文件并保存为一个配置类</li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="mybatis流程概述">MyBatis流程概述</h2>
+
+<ol>
+  <li>
+    <p>MyBatis流程图</p>
+
+    <p><img src="http://img.sonihr.com/e1961348-fb37-4652-ad4d-7609b6f5a82a.jpg" alt="img" /></p>
+  </li>
+</ol>
+
+<p>下面将结合代码具体分析。</p>
+
+<ol>
+  <li>MyBatis具体代码分析</li>
+</ol>
+
+<ul>
+  <li>
+    <p>SqlSessionFactoryBuilder根据XML文件流，或者Configuration类实例build出一个SqlSessionFactory。</p>
+  </li>
+  <li>
+    <p>SqlSessionFactory.openSession()相当于从连接池中获取了一个connection,创建Executor实例，创建事务实例。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21</pre></td><td class="code"><pre class="highlight"><code><span class="nc">DefaultSqlSessionFactory</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">private</span> <span class="nc">SqlSession</span> <span class="nf">openSessionFromDataSource</span><span class="o">(</span><span class="nc">ExecutorType</span> <span class="n">execType</span><span class="o">,</span> <span class="nc">TransactionIsolationLevel</span> <span class="n">level</span><span class="o">,</span> <span class="kt">boolean</span> <span class="n">autoCommit</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Transaction</span> <span class="n">tx</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+  
+    <span class="nc">DefaultSqlSession</span> <span class="n">var8</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="nc">Environment</span> <span class="n">environment</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">configuration</span><span class="o">.</span><span class="na">getEnvironment</span><span class="o">();</span>
+        <span class="nc">TransactionFactory</span> <span class="n">transactionFactory</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getTransactionFactoryFromEnvironment</span><span class="o">(</span><span class="n">environment</span><span class="o">);</span>
+        <span class="n">tx</span> <span class="o">=</span> <span class="n">transactionFactory</span><span class="o">.</span><span class="na">newTransaction</span><span class="o">(</span><span class="n">environment</span><span class="o">.</span><span class="na">getDataSource</span><span class="o">(),</span> <span class="n">level</span><span class="o">,</span> <span class="n">autoCommit</span><span class="o">);</span>
+        <span class="nc">Executor</span> <span class="n">executor</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">configuration</span><span class="o">.</span><span class="na">newExecutor</span><span class="o">(</span><span class="n">tx</span><span class="o">,</span> <span class="n">execType</span><span class="o">);</span>
+        <span class="n">var8</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DefaultSqlSession</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">configuration</span><span class="o">,</span> <span class="n">executor</span><span class="o">,</span> <span class="n">autoCommit</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">var12</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">closeTransaction</span><span class="o">(</span><span class="n">tx</span><span class="o">);</span>
+        <span class="k">throw</span> <span class="nc">ExceptionFactory</span><span class="o">.</span><span class="na">wrapException</span><span class="o">(</span><span class="s">"Error opening session.  Cause: "</span> <span class="o">+</span> <span class="n">var12</span><span class="o">,</span> <span class="n">var12</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+        <span class="nc">ErrorContext</span><span class="o">.</span><span class="na">instance</span><span class="o">().</span><span class="na">reset</span><span class="o">();</span>
+    <span class="o">}</span>
+  
+    <span class="k">return</span> <span class="n">var8</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>此时我们只是获得一条connection，session.getMapper(XxxMapper.class)时才进行创建代理实例的过程，后面会介绍。SqlSession.getMapper实际上托付给Configuration去做。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span> <span class="nf">getMapper</span><span class="o">(</span><span class="nc">Class</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">type</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">configuration</span><span class="o">.</span><span class="na">getMapper</span><span class="o">(</span><span class="n">type</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>Configuration交给自己的成员变量mapperRegistry去做。这个成员变量是Map再封装之后的，持有configuration实例和Map&lt;Class<?>, MapperProxyFactory<?>&gt; knownMappers，正如xml文件中写的那样，每个mappee.xml中都有一个namespace，这个namespace就是Class&lt;?&gt;,而后者是对这个接口进行代理的工厂MapperProxyFactory实例，其中封装了被代理接口和缓存。这个knownMappers应该是初始化configuration的时候就已经处理完毕的。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code><span class="nc">MapperRegistry</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">private</span> <span class="kd">final</span> <span class="nc">Configuration</span> <span class="n">config</span><span class="o">;</span>
+<span class="kd">private</span> <span class="kd">final</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">Class</span><span class="o">&lt;?&gt;,</span> <span class="nc">MapperProxyFactory</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">knownMappers</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">();</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>类似于Spring中的getBean方法，MyBatis中用getMapper的方式进行创建。下面代码可以看出，先根据class类型获取代理类工厂，去工厂中newInstance。注意这里是没有Spring中的单例多例的，只要你getMapper，框架就会给你newInstance一个全新的被代理实例。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14</pre></td><td class="code"><pre class="highlight"><code><span class="nc">MapperRegistry</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">public</span> <span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="no">T</span> <span class="nf">getMapper</span><span class="o">(</span><span class="nc">Class</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">type</span><span class="o">,</span> <span class="nc">SqlSession</span> <span class="n">sqlSession</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">MapperProxyFactory</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">mapperProxyFactory</span> <span class="o">=</span> <span class="o">(</span><span class="nc">MapperProxyFactory</span><span class="o">)</span><span class="k">this</span><span class="o">.</span><span class="na">knownMappers</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">type</span><span class="o">);</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">mapperProxyFactory</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="nf">BindingException</span><span class="o">(</span><span class="s">"Type "</span> <span class="o">+</span> <span class="n">type</span> <span class="o">+</span> <span class="s">" is not known to the MapperRegistry."</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="k">return</span> <span class="n">mapperProxyFactory</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">sqlSession</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">var5</span><span class="o">)</span> <span class="o">{</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">BindingException</span><span class="o">(</span><span class="s">"Error getting mapper instance. Cause: "</span> <span class="o">+</span> <span class="n">var5</span><span class="o">,</span> <span class="n">var5</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>newInstance()中做了什么呢？</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code><span class="nc">MapperProxyFactory</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">protected</span> <span class="no">T</span> <span class="nf">newInstance</span><span class="o">(</span><span class="nc">MapperProxy</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">mapperProxy</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="nc">Proxy</span><span class="o">.</span><span class="na">newProxyInstance</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">mapperInterface</span><span class="o">.</span><span class="na">getClassLoader</span><span class="o">(),</span> <span class="k">new</span> <span class="nc">Class</span><span class="o">[]{</span><span class="k">this</span><span class="o">.</span><span class="na">mapperInterface</span><span class="o">},</span> <span class="n">mapperProxy</span><span class="o">);</span>
+<span class="o">}</span>
+  
+<span class="kd">public</span> <span class="no">T</span> <span class="nf">newInstance</span><span class="o">(</span><span class="nc">SqlSession</span> <span class="n">sqlSession</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">MapperProxy</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">mapperProxy</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MapperProxy</span><span class="o">(</span><span class="n">sqlSession</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">mapperInterface</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">methodCache</span><span class="o">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">mapperProxy</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>其实我们知道，Proxy.newProxyInstance()需要三个参数，类加载器，被代理接口和InvocationHnadler，<strong>什么？不知道？快去补习基础。</strong>其中InvocationHandler掌管着invoke方法，正是这个方法中实现了对被代理实例的代码增强（或者叫做代理代码）。那我们就要着重看这个InvocationHandler里面到底有什么，特别是他的invoke方法。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="nc">MapperProxy</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="nc">Object</span> <span class="n">proxy</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+    <span class="o">...</span><span class="err">省略</span><span class="o">...</span>
+    <span class="nc">MapperMethod</span> <span class="n">mapperMethod</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">cachedMapperMethod</span><span class="o">(</span><span class="n">method</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">mapperMethod</span><span class="o">.</span><span class="na">execute</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">sqlSession</span><span class="o">,</span> <span class="n">args</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>invoke方法中，重点是调用了mapperMethod.execute()。这个mapperMethod就是:<strong>被代理接口A，A中有方法a()，代理类实例((A)proxyA).a()中的这个a，就是method,而mapperMethod就是method被包装了一层。</strong>换而言之，(session.getMapper(XxxMapper)).interfaceMethod()时，都在走mapperMethod.execute()这个方法。</p>
+  </li>
+  <li>
+    <p>下面我们来看mapperMethod.execute这个方法。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code><span class="nc">MapperMethod</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">public</span> <span class="nc">Object</span> <span class="nf">execute</span><span class="o">(</span><span class="nc">SqlSession</span> <span class="n">sqlSession</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Object</span> <span class="n">result</span><span class="o">;</span>
+    <span class="nc">Object</span> <span class="n">param</span><span class="o">;</span>
+    <span class="k">switch</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">command</span><span class="o">.</span><span class="na">getType</span><span class="o">())</span> <span class="o">{</span>
+    <span class="o">...</span><span class="err">省略</span><span class="o">...</span>
+    <span class="k">case</span> <span class="nl">SELECT:</span>
+    <span class="o">...</span><span class="err">省略</span><span class="o">...</span>
+    <span class="n">param</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">method</span><span class="o">.</span><span class="na">convertArgsToSqlCommandParam</span><span class="o">(</span><span class="n">args</span><span class="o">);</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">sqlSession</span><span class="o">.</span><span class="na">selectOne</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">command</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span> <span class="n">param</span><span class="o">);</span>
+    <span class="o">...</span><span class="err">省略</span><span class="o">...</span>
+    <span class="o">}</span>
+    <span class="o">...</span><span class="err">省略</span><span class="o">...</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>这个方法做了两件事，1.对参数用参数解析器转化为JDBCType的参数，这边不是重点。2.执行sqlSession.selectOne()，当然我删去了一些代码，为讲清楚，只讲selectOne()即可，其他都是大同小异的。又回到最初的起点，呆呆地望着镜子前。 sqlSession又见面了，发现了么？sqlSession先是把getMapper交给configuration做，然后自己还能执行类似selecOne，update之类的命令，这是因为sqlSession是暴露给用户的接口，如果用户要用传统方式，就可以直接调用selectOne之类的方法，比如Employee employee = session.selectOne(“mybatisDemo.dao.EmployeeMapper.getEmpById”,1);如果用户想用mapper.xml和mapper接口的方法，就getMapper获得代理实例然后调用接口方法即可。所以本质上，所有跟JDBC打交道的还是sqlsession的select、update等方法</p>
+
+    <p>现在还都是表面功夫，直到sqlSession.selectOne才开始真正的辉煌旅程。小结一下，目前我们看到的MyBatis组件包括SqlSessionFactoryBuilder、SqlSessionFactory、SqlSession。还未看到的有，Executor，ParameterHandler，StatementHandler，ResultSetHandler。这几个部件都会在之后出现。</p>
+  </li>
+  <li>
+    <p>下面来分析session.selectOne()。selectOne内部调用的还是selectList，因此直接看SqlSession的实现类DefaultSqlSession中的方法。可以发现，Executor组件终于出现了，而这个组件才是真正执行query()方法的组件。SqlSession真的是领导，getMapper交给config做，select等脏活累活又交给Executor完成。Executor.query的入参有什么？被代理方法参数parameter，ms用于动态sql的。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code><span class="nc">DefaultSqlSession</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">public</span> <span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nf">selectList</span><span class="o">(</span><span class="nc">String</span> <span class="n">statement</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">parameter</span><span class="o">,</span> <span class="nc">RowBounds</span> <span class="n">rowBounds</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">List</span> <span class="n">var5</span><span class="o">;</span>
+    <span class="o">...</span><span class="err">省略</span><span class="o">...</span>
+    <span class="nc">MappedStatement</span> <span class="n">ms</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">configuration</span><span class="o">.</span><span class="na">getMappedStatement</span><span class="o">(</span><span class="n">statement</span><span class="o">);</span>
+    <span class="n">var5</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">executor</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">ms</span><span class="o">,</span> <span class="k">this</span><span class="o">.</span><span class="na">wrapCollection</span><span class="o">(</span><span class="n">parameter</span><span class="o">),</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="nc">Executor</span><span class="o">.</span><span class="na">NO_RESULT_HANDLER</span><span class="o">);</span>
+    <span class="o">...</span><span class="err">省略</span><span class="o">...</span>
+    <span class="k">return</span> <span class="n">var5</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>下面去看query方法,在Executor的一个抽象实现类，其实也就是模板类BaseExecutor中。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="nc">BaseExecutor</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">public</span> <span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nf">query</span><span class="o">(</span><span class="nc">MappedStatement</span> <span class="n">ms</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">parameter</span><span class="o">,</span> <span class="nc">RowBounds</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultsetHandler</span> <span class="n">resultsetHandler</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span> <span class="o">{</span>
+    <span class="nc">BoundSql</span> <span class="n">boundSql</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="na">getBoundSql</span><span class="o">(</span><span class="n">parameter</span><span class="o">);</span>
+    <span class="nc">CacheKey</span> <span class="n">key</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">createCacheKey</span><span class="o">(</span><span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+    <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultsetHandler</span><span class="o">,</span> <span class="n">key</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>BoundSql就是动态sql，key是将sql语句，入参组合起来作为缓存参数，即：如果sql语句相同且参数一样，那可以认为两个sql语句会返回同样的结果（缓存未失效的情况下）。query方法中进一步调用doQuery方法，这个方法在BaseExecutor中只给出抽象方法，交给子类去继承实现。这个子类就是SimpleExecutor。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17</pre></td><td class="code"><pre class="highlight"><code><span class="nc">SimpleExecutor</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">public</span> <span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nf">doQuery</span><span class="o">(</span><span class="nc">MappedStatement</span> <span class="n">ms</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">parameter</span><span class="o">,</span> <span class="nc">RowBounds</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultsetHandler</span> <span class="n">resultsetHandler</span><span class="o">,</span> <span class="nc">BoundSql</span> <span class="n">boundSql</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span> <span class="o">{</span>
+    <span class="nc">Statement</span> <span class="n">stmt</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+  
+    <span class="nc">List</span> <span class="n">var9</span><span class="o">;</span>
+    <span class="k">try</span> <span class="o">{</span>
+        <span class="nc">Configuration</span> <span class="n">configuration</span> <span class="o">=</span> <span class="n">ms</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">();</span>
+        <span class="nc">StatementHandler</span> <span class="n">handler</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="na">newStatementHandler</span><span class="o">(</span><span class="k">this</span><span class="o">.</span><span class="na">wrapper</span><span class="o">,</span> <span class="n">ms</span><span class="o">,</span> <span class="n">parameter</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultsetHandler</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+        <span class="n">stmt</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">handler</span><span class="o">,</span> <span class="n">ms</span><span class="o">.</span><span class="na">getStatementLog</span><span class="o">());</span>
+        <span class="n">var9</span> <span class="o">=</span> <span class="n">handler</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">stmt</span><span class="o">,</span> <span class="n">resultsetHandler</span><span class="o">);</span>
+    <span class="o">}</span> <span class="k">finally</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">closeStatement</span><span class="o">(</span><span class="n">stmt</span><span class="o">);</span>
+    <span class="o">}</span>
+  
+    <span class="k">return</span> <span class="n">var9</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>这里出现了StatementHandler这个组件，先别急着点进newStatementHandler()方法，先看一下StatementHandler接口，发现这个接口有ParameterHandler getParameterHandler();方法和<E> List<E> query(Statement var1, resultsetHandler var2)。这时候，ParmeterHandler和resultsetHandler两大组件也出现了。所以这三个组件的关系是，StatementHandler中需要通过ParamterHandler处理参数，然后将结果通过resultsetHandler处理成要求的JavaBean、Map、List后输出。</E></E></p>
+
+    <p><strong>小结一下：SqlSession将查询等任务交给Executor接口实现类完成，Executor内有StatementHandler，StatementHandler内有ParameterHandler和resultsetHandler，分别进行参数处理和结果处理。</strong></p>
+  </li>
+  <li>
+    <p>还没讲newStatementHandler()这个方法呢，为什么要现在讲？</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19</pre></td><td class="code"><pre class="highlight"><code><span class="nc">Configuration</span><span class="o">.</span><span class="na">class</span>
+  
+<span class="kd">public</span> <span class="nc">ParameterHandler</span> <span class="nf">newParameterHandler</span><span class="o">(</span><span class="nc">MappedStatement</span> <span class="n">mappedStatement</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">parameterObject</span><span class="o">,</span> <span class="nc">BoundSql</span> <span class="n">boundSql</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">ParameterHandler</span> <span class="n">parameterHandler</span> <span class="o">=</span> <span class="n">mappedStatement</span><span class="o">.</span><span class="na">getLang</span><span class="o">().</span><span class="na">createParameterHandler</span><span class="o">(</span><span class="n">mappedStatement</span><span class="o">,</span> <span class="n">parameterObject</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+    <span class="n">parameterHandler</span> <span class="o">=</span> <span class="o">(</span><span class="nc">ParameterHandler</span><span class="o">)</span><span class="k">this</span><span class="o">.</span><span class="na">interceptorChain</span><span class="o">.</span><span class="na">pluginAll</span><span class="o">(</span><span class="n">parameterHandler</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">parameterHandler</span><span class="o">;</span>
+<span class="o">}</span>
+  
+<span class="kd">public</span> <span class="nc">ResultSetHandler</span> <span class="nf">newResultSetHandler</span><span class="o">(</span><span class="nc">Executor</span> <span class="n">executor</span><span class="o">,</span> <span class="nc">MappedStatement</span> <span class="n">mappedStatement</span><span class="o">,</span> <span class="nc">RowBounds</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="nc">ParameterHandler</span> <span class="n">parameterHandler</span><span class="o">,</span> <span class="n">resultsetHandler</span> <span class="n">resultsetHandler</span><span class="o">,</span> <span class="nc">BoundSql</span> <span class="n">boundSql</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">ResultSetHandler</span> <span class="n">resultSetHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DefaultResultSetHandler</span><span class="o">(</span><span class="n">executor</span><span class="o">,</span> <span class="n">mappedStatement</span><span class="o">,</span> <span class="n">parameterHandler</span><span class="o">,</span> <span class="n">resultsetHandler</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">);</span>
+    <span class="nc">ResultSetHandler</span> <span class="n">resultSetHandler</span> <span class="o">=</span> <span class="o">(</span><span class="nc">ResultSetHandler</span><span class="o">)</span><span class="k">this</span><span class="o">.</span><span class="na">interceptorChain</span><span class="o">.</span><span class="na">pluginAll</span><span class="o">(</span><span class="n">resultSetHandler</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">resultSetHandler</span><span class="o">;</span>
+<span class="o">}</span>
+  
+<span class="kd">public</span> <span class="nc">StatementHandler</span> <span class="nf">newStatementHandler</span><span class="o">(</span><span class="nc">Executor</span> <span class="n">executor</span><span class="o">,</span> <span class="nc">MappedStatement</span> <span class="n">mappedStatement</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">parameterObject</span><span class="o">,</span> <span class="nc">RowBounds</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultsetHandler</span> <span class="n">resultsetHandler</span><span class="o">,</span> <span class="nc">BoundSql</span> <span class="n">boundSql</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">StatementHandler</span> <span class="n">statementHandler</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">RoutingStatementHandler</span><span class="o">(</span><span class="n">executor</span><span class="o">,</span> <span class="n">mappedStatement</span><span class="o">,</span> <span class="n">parameterObject</span><span class="o">,</span> <span class="n">rowBounds</span><span class="o">,</span> <span class="n">resultsetHandler</span><span class="o">,</span> <span class="n">boundSql</span><span class="o">);</span>
+    <span class="nc">StatementHandler</span> <span class="n">statementHandler</span> <span class="o">=</span> <span class="o">(</span><span class="nc">StatementHandler</span><span class="o">)</span><span class="k">this</span><span class="o">.</span><span class="na">interceptorChain</span><span class="o">.</span><span class="na">pluginAll</span><span class="o">(</span><span class="n">statementHandler</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">statementHandler</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>值得注意的是interceptorChain，拦截器链，这里的拦截器链通过pluginAll对几个Handler进行织入。织入的是什么代码呢？是你写的拦截器代码。回忆一下MyBatis写拦截器代码的时候要指定哪些呢？1.要指定针对Exector，ParameterHandler，StatementHandler，或者resultsetHandler进行拦截2.要指定针对什么方法拦截。针对拦截器这一部分的原理，建议阅读</p>
+
+    <blockquote>
+      <p>https://www.jianshu.com/p/b82d0a95b2f3</p>
+    </blockquote>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11</pre></td><td class="code"><pre class="highlight"><code><span class="nd">@Intercepts</span><span class="o">({</span><span class="nd">@Signature</span><span class="o">(</span><span class="n">type</span><span class="o">=</span> <span class="nc">Executor</span><span class="o">.</span><span class="na">class</span><span class="o">,</span> <span class="n">method</span> <span class="o">=</span> <span class="s">"update"</span><span class="o">,</span> <span class="n">args</span> <span class="o">=</span> <span class="o">{</span><span class="nc">MappedStatement</span><span class="o">.</span><span class="na">class</span><span class="o">,</span><span class="nc">Object</span><span class="o">.</span><span class="na">class</span><span class="o">})})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExamplePlugin</span> <span class="kd">implements</span> <span class="nc">Interceptor</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">intercept</span><span class="o">(</span><span class="nc">Invocation</span> <span class="n">invocation</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">invocation</span><span class="o">.</span><span class="na">proceed</span><span class="o">();</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">plugin</span><span class="o">(</span><span class="nc">Object</span> <span class="n">target</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">Plugin</span><span class="o">.</span><span class="na">wrap</span><span class="o">(</span><span class="n">target</span><span class="o">,</span> <span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setProperties</span><span class="o">(</span><span class="nc">Properties</span> <span class="n">properties</span><span class="o">)</span> <span class="o">{</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>这边拦截器和前面Mapper接口都是用到了动态代理。前面Mapper接口是通过动态代理技术代理Mapper接口，实现了即使我们不用谢Mapper接口实现类仍然可以调用Mapper接口内方法，因为MyBatis帮我们内部实现了一个代理类实例。这边的拦截器说的是，对于3个Handler和1个Exector接口，他们的所有接口方法都可以被拦截。所以这里拦截器所拦截的只能是这4个接口的实现类。这个拦截器主要的思路就是，被代理的实例叫target，然后把这个实例代理后，返回一个代理类实例叫proxyTarget，然后把这个proxyTarget再赋值给target，然后target再被其他代理，结果就是代理类代理代理类代理代理类。。。。层层包裹。当你调用最外层代理类实例时会从外向内一层一层执行前增强代码，然后再从内向外一层一层执行后增强代码。</p>
+  </li>
+</ul>
+
+<h2 id="快速实现一个mybatis核心功能">快速实现一个MyBatis核心功能</h2>
+
+<ol>
+  <li>
+    <p>DepartmentMapper.xml和DepartmentMapper接口均已完成，是如何完成departmentMapper.getDeptById(1)之后就直接获得Department对象的呢？主要是以下的核心代码：</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26</pre></td><td class="code"><pre class="highlight"><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testDynamicProxy</span><span class="o">(){</span>
+    <span class="nc">Object</span> <span class="n">proxy</span> <span class="o">=</span> <span class="nc">Proxy</span><span class="o">.</span><span class="na">newProxyInstance</span><span class="o">(</span><span class="nc">CoreFunction</span><span class="o">.</span><span class="na">class</span><span class="o">.</span><span class="na">getClassLoader</span><span class="o">(),</span>
+            <span class="k">new</span> <span class="nc">Class</span><span class="o">[]{</span><span class="nc">DepartmentMapper</span><span class="o">.</span><span class="na">class</span><span class="o">},</span> <span class="k">new</span> <span class="nc">InvocationHandler</span><span class="o">()</span> <span class="o">{</span>
+                <span class="nd">@Override</span>
+                <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="nc">Object</span> <span class="n">proxy</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+                    <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="s">"select id,dept_name departmentName from t_dept where id = "</span> <span class="o">+</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">];</span>
+                    <span class="nc">Connection</span> <span class="n">connection</span> <span class="o">=</span> <span class="nc">DBUtil</span><span class="o">.</span><span class="na">getConnection</span><span class="o">();</span>
+                    <span class="nc">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">connection</span><span class="o">.</span><span class="na">createStatement</span><span class="o">();</span>
+                    <span class="nc">ResultSet</span> <span class="n">resultSet</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+                    <span class="k">while</span><span class="o">(</span><span class="n">resultSet</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+                        <span class="kt">int</span> <span class="n">id</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getInt</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+                        <span class="nc">String</span> <span class="n">departmentName</span> <span class="o">=</span> <span class="n">resultSet</span><span class="o">.</span><span class="na">getString</span><span class="o">(</span><span class="s">"departmentName"</span><span class="o">);</span>
+                        <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+                        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"id"</span><span class="o">,</span><span class="n">id</span><span class="o">);</span>
+                        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"departmentName"</span><span class="o">,</span><span class="n">departmentName</span><span class="o">);</span>
+                        <span class="nc">Department</span> <span class="n">department</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Department</span><span class="o">();</span>
+                        <span class="nc">BeanUtils</span><span class="o">.</span><span class="na">populate</span><span class="o">(</span><span class="n">department</span><span class="o">,</span><span class="n">map</span><span class="o">);</span>
+                        <span class="k">return</span> <span class="n">department</span><span class="o">;</span>
+                    <span class="o">}</span>
+                    <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">});</span>
+    <span class="nc">Department</span> <span class="n">department</span> <span class="o">=</span> <span class="o">((</span><span class="nc">DepartmentMapper</span><span class="o">)</span><span class="n">proxy</span><span class="o">).</span><span class="na">getDeptById</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">department</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>核心思路就是这样：用一个动态代理来代理这个接口，然后在invoke中获得数据库连接，调用statement，封装参数，执行sql后将resultSet封装成一个javaBean返回。</p>
+  </li>
+  <li>除了核心代码，还有什么问题要解决？1.sql语句要从xml中获取。2.装配参数要进行转化，从javaBean转化成JDBCType。3.采用连接池，并且可以配置数据源。4.resultSet封装成javaBean。5.用拦截器实现插件。6.缓存功能。7.实现多表查询。8.如何和Spring相结合。</li>
+  <li>针对以上提出解决方案。
+    <ol>
+      <li>Dom4j技术获取。</li>
+      <li>BeanUtils实现Bean向Map的转换，即可获得对象对应属性与属性值之间关系。在xml中比如：<code class="language-plaintext highlighter-rouge">select * from t_employee where id = #{id}</code>#{xxx}中xxx即为map的key，获取值后填充。如果是#{}，则采用PreparedStatement填充占位符？，如果是${}用Statement,以字符串拼接形式完成sql。</li>
+      <li>采用工厂模式可以切换内置的Druid或DBCP数据源，如果用户想自己配置其他的，可以通过setter注入的方式向DefaultSessionFactory中注入数据源。</li>
+      <li>可以通过ResultSetMetaData获取列名，列名和JavaBean的参数名相对应。</li>
+      <li>利用动态代理，对4大组件进代理，在InvocationHandler的invoke方法中调用Interceptor实现类，Interceptor实现类中有intercept(Invocation)方法，invocation.proceed调用被代理实例方法，intercept中其他代码为代理代码。</li>
+      <li>这边可以用grauva实现，或者自己手写一个LRU，然后用定时任务队列实现超时失效。</li>
+      <li>目前没考虑好。</li>
+      <li>整体写完后重构。</li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="getmapper流程">getMapper流程</h2>
+
+<h3 id="getmapper主要流程">getMapper主要流程</h3>
+
+<p><img src="http://img.sonihr.com/12fe465b-1895-4b5e-ba91-c6625ba8fea6.jpg" alt="img" /></p>
+
+<ol>
+  <li>框架目录结构</li>
+  <li>batisDemo包和resource文件夹中xml文件是用于测试框架的，具体框架的实现通过com.sonihr.batis包实现。
+    <ol>
+      <li>具体来说，quickStart包中存放了一些和框架无关的代码，主要是我用于测试一些基础功能的，比如JDBC，连接池，动态代理。</li>
+      <li>session中包括SqlSessionFactory、SqlSession组件，defaults包中是这两个接口的默认实现类。</li>
+      <li>binding中就牵扯到动态代理了。</li>
+    </ol>
+  </li>
+  <li>
+    <p>getMapper流程。和之前分析的Mybatis的流程类似，通过SqlSessionFactorybuilder的build方法获取SqlSessionFactory，并且在这里做configuration的初始化工作，因为目前还没有读取xml文件，因此字符串直接写在configuration的构造函数中。SqlSessionFactory的openSession方法获取sqlSession。SqlSession表示一个会话，其中组合了Conncetion和Configuration，逻辑也很简单，一个回话必然占据一个连接。这个会话又是直接暴露给用户的，因此必须有Configuration参数，通过传递这个参数来分配给其他组件干活。SqlSession.getMapper实际上是交给configuration去做，之前说了configuration是sqlsession的一个成员变量。configuration又交给其成员变量MapperRegistry，这个类目前的功能是调用MapperProxyFactory工厂类创建一个代理类实例。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="n">getMapperTest</span><span class="o">.</span><span class="na">class</span>
+   
+<span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">getMapper</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="nc">SqlSession</span> <span class="n">sqlSession</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">SqlSessionFactoryBuilder</span><span class="o">().</span><span class="na">build</span><span class="o">().</span><span class="na">openSession</span><span class="o">();</span>
+    <span class="nc">DepartmentMapper</span> <span class="n">departmentMapper</span> <span class="o">=</span> <span class="n">sqlSession</span><span class="o">.</span><span class="na">getMapper</span><span class="o">(</span><span class="nc">DepartmentMapper</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="nc">Department</span> <span class="n">department</span> <span class="o">=</span> <span class="n">departmentMapper</span><span class="o">.</span><span class="na">getDeptById</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
+    <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">department</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>getMapper讲到这里，就要去说明，怎么创建的代理的实例。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="nc">MapperProxyFactory</span><span class="o">.</span><span class="na">class</span>
+   
+<span class="kd">private</span> <span class="no">T</span> <span class="nf">newInstance</span><span class="o">(</span><span class="nc">MapperProxy</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="n">mapperProxy</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">return</span> <span class="o">(</span><span class="no">T</span><span class="o">)</span> <span class="nc">Proxy</span><span class="o">.</span><span class="na">newProxyInstance</span><span class="o">(</span><span class="n">configuration</span><span class="o">.</span><span class="na">getMapperInterface</span><span class="o">().</span><span class="na">getClassLoader</span><span class="o">(),</span> <span class="k">new</span> <span class="nc">Class</span><span class="o">[]{</span><span class="k">this</span><span class="o">.</span><span class="na">configuration</span><span class="o">.</span><span class="na">getMapperInterface</span><span class="o">()},</span> <span class="n">mapperProxy</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>由此看见，mapperProxy必然是一个InvocationHandler的实现类。如果实现了InvocationHandler接口，那必然要重写invoke方法。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25</pre></td><td class="code"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="nc">Object</span> <span class="n">proxy</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+    <span class="nc">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="n">sqlSession</span><span class="o">.</span><span class="na">getConnection</span><span class="o">().</span><span class="na">prepareStatement</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+    <span class="n">ps</span><span class="o">.</span><span class="na">setInt</span><span class="o">(</span><span class="mi">1</span><span class="o">,</span> <span class="o">(</span><span class="nc">Integer</span><span class="o">)</span> <span class="n">args</span><span class="o">[</span><span class="mi">0</span><span class="o">]);</span>
+    <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();</span>
+    <span class="nc">ResultSetMetaData</span> <span class="n">rsmd</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getMetaData</span><span class="o">();</span>
+    <span class="nc">Object</span> <span class="n">resBean</span> <span class="o">=</span> <span class="n">resultClazz</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+    <span class="nc">Field</span><span class="o">[]</span> <span class="n">fields</span> <span class="o">=</span> <span class="n">resultClazz</span><span class="o">.</span><span class="na">getDeclaredFields</span><span class="o">();</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+    <span class="k">while</span> <span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+        <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">rsmd</span><span class="o">.</span><span class="na">getColumnCount</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+            <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">rsmd</span><span class="o">.</span><span class="na">getColumnLabel</span><span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span>
+            <span class="k">for</span><span class="o">(</span><span class="nc">Field</span> <span class="nl">field:</span><span class="n">fields</span><span class="o">){</span>
+                <span class="k">if</span><span class="o">(</span><span class="n">field</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">name</span><span class="o">)){</span>
+                    <span class="nc">Object</span> <span class="n">object</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span>
+                    <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">name</span><span class="o">,</span><span class="n">object</span><span class="o">);</span>
+                    <span class="k">break</span><span class="o">;</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+    <span class="nc">BeanUtils</span><span class="o">.</span><span class="na">populate</span><span class="o">(</span><span class="n">resBean</span><span class="o">,</span><span class="n">map</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">resBean</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>这段代码其实就是来自quickStart包的CoreFunction中的testNameSpaceAndSql方法。在这个invoke方法中，我们预设了sql语句要填充的只有1个问号，且为int类型。并且预设了数据库字段名一定和javaBean的成员变量同名。</p>
+  </li>
+</ol>
+
+<h3 id="可配置的数据源">可配置的数据源</h3>
+
+<ol>
+  <li>
+    <p>看一下Spring中是如何配置的</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"sqlSessionFactory"</span> <span class="na">class=</span><span class="s">"org.mybatis.spring.SqlSessionFactoryBean"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!-- 注入数据库连接池 --&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"dataSource"</span> <span class="na">ref=</span><span class="s">"dataSource"</span><span class="nt">/&gt;</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>在Factory中注入了一个DataSource，又因为是面向接口编程，因此datasource在Spring中配置为什么，就是什么。</p>
+  </li>
+  <li>
+    <p>如果没有Spring，我们可以通过set方法进行手动注入。这里我采用静态工厂的形式，支持DBCP与Druid两个数据源。在datasource包中，有一个DataSourceFactory接口，该接口规定了getDataSource方法。DBCPDataSourceFactory和DruidDataSourceFactory都实现了getDatasource方法，并返回相应类型的datasource。为了让configuration中的datasource与具体的datasourceFactory解耦，因此用DefaultDataSourceFactory来生产DBCP和Druid。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefaultDataSourceFactory</span> <span class="kd">implements</span> <span class="nc">DataSourceFactory</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">DataSource</span> <span class="nf">getDataSource</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">DataSource</span> <span class="n">dataSource</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">name</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">"org.apache.commons.dbcp2.BasicDataSource"</span><span class="o">))</span>
+            <span class="n">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DBCPDataSourceFactory</span><span class="o">().</span><span class="na">getDataSource</span><span class="o">();</span>
+        <span class="k">else</span>
+            <span class="n">dataSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">DruidDataSourceFactory</span><span class="o">().</span><span class="na">getDataSource</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">dataSource</span><span class="o">;</span>
+    <span class="o">}</span>
+   
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">DataSource</span> <span class="nf">getDataSource</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="k">this</span><span class="o">.</span><span class="na">getDataSource</span><span class="o">(</span><span class="s">"com.alibaba.druid.pool.DruidDataSource"</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>那用户怎么任意配置数据源呢？在DefaultSqlSession中暴露出database的set方法，用户可以选择创建数据源然后通过set方法注入。</p>
+  </li>
+</ol>
+
+<h2 id="四大组件">四大组件</h2>
+
+<h3 id="四大组件的关系">四大组件的关系</h3>
+
+<ul>
+  <li>Executor中有StatementHandler实例，StatementHandler中有ParameterHandler和resultsetHandler实例。</li>
+  <li>四大组件的初始化，都是在Configuration中进行。</li>
+  <li>四大组件在初始化的时候，都会经过拦截器代理。</li>
+</ul>
+
+<h3 id="executor">Executor</h3>
+
+<ol>
+  <li>getMapper中的核心是MapperProxy，这是InvocationHandler的实现类，因此需要实现invoke方法，在此方法中调用mapperMethod.execute方法，MapperMethod是对method的封装，在MyBatis中需要根据执行的sql语句类型和sql返回值来调用不同的方法，因为本文中目前仅仅针对单条查询，因此这边MapperMethod只是简单地封装了method而已。execute方法调用sqlSession方法的selectOne方法进行查询，而这个方法交给Executor接口的实例去具体的查询，接口方法叫做query()。</li>
+  <li>query()方法中用doQuery方法，这个方法中需要从configuration中获得StatementHandler的实现类，先通过preparedStatement方法（注意这个是方法）完成参数转换（这个方法中调用parameterize方法，这个方法就是利用StatementHandler组件中的ParameterHandler完成的）。</li>
+  <li>参数转换完毕后，statementHandler.query传入resultsetHandler和statement，进行JDBC层面的查询，并通过resultHanler返回封装后的结果。</li>
+</ol>
+
+<h3 id="statementhandler">StatementHandler</h3>
+
+<ol>
+  <li>
+    <p>这个组件在Configuration中初始化，在Executor中被调用。Executor实现类中利用configuration.newStatementHandler创建一个statementHandler。先通过parameterHandler进行参数匹配，然后通过query进行查询。查询的结果通过resultsetHandler进行封装。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">SimpleExecutor</span> <span class="kd">extends</span> <span class="nc">BaseExecutor</span><span class="o">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nf">doQuery</span><span class="o">(</span><span class="nc">Connection</span> <span class="n">connection</span><span class="o">,</span><span class="nc">Configuration</span> <span class="n">conf</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">,</span> <span class="nc">ResultSetHandler</span> <span class="n">resultSetHandler</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="cm">/**
+        * 1. 在Configuration中创建StatementHandler实例handler，StatementHandler中有ParameterHandler和ResultHandler组件实例
+        * 2. Executor实现类调用preparedStatement方法，这个方法中的prepare方法返回Statement或者PreparedStatement
+        * 3. statementHandler调用parameterize方法，调用parameterHandler组件实例处理参数
+        * */</span>
+        <span class="nc">StatementHandler</span> <span class="n">handler</span> <span class="o">=</span> <span class="n">conf</span><span class="o">.</span><span class="na">newStatementHandler</span><span class="o">(</span><span class="n">args</span><span class="o">);</span>
+        <span class="nc">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">preparedStatement</span><span class="o">(</span><span class="n">connection</span><span class="o">,</span><span class="n">handler</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">handler</span><span class="o">.</span><span class="na">query</span><span class="o">(</span><span class="n">statement</span><span class="o">,</span> <span class="n">resultSetHandler</span><span class="o">);</span>
+    <span class="o">}</span>
+   
+    <span class="kd">private</span> <span class="nc">Statement</span> <span class="nf">preparedStatement</span><span class="o">(</span><span class="nc">Connection</span> <span class="n">connection</span><span class="o">,</span><span class="nc">StatementHandler</span> <span class="n">handler</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span> <span class="o">{</span>
+        <span class="nc">Statement</span> <span class="n">statement</span> <span class="o">=</span> <span class="n">handler</span><span class="o">.</span><span class="na">prepare</span><span class="o">(</span><span class="n">connection</span><span class="o">);</span>
+        <span class="n">handler</span><span class="o">.</span><span class="na">parameterize</span><span class="o">(</span><span class="n">statement</span><span class="o">);</span><span class="c1">//对参数进行封装</span>
+        <span class="k">return</span> <span class="n">statement</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>如注释中所示，首先创建一个StatementHandler，然后preparedStatement方法中做了两件事，1是返回statement，但是这个statement既可能是Statement也可能是PreparedStatement，要根据sql语句的类型判断。2.对参数进行封装，如果是preparedStatement就要用setObject(i,obj)的方式注入参数，如果是Statement类型，通过字符串拼接的方式实现。3.最后调用statementHandler的query方法进行查询，这个query方法中有参数resultsetHandler，说明我们会在这个方法中利用resultHandler对结果进行封装。</p>
+  </li>
+  <li>
+    <p>这个接口有一个抽象模板类叫做BaseStatementHandler，他的两个实现类分别是PreparedStatementHandler和SimpleStatementHandler。这里用到了委托设计模式，通过RoutingStatementHandler中方法判断是statement还是ps，然后根据判断结果，委托给不同的实现类去做。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">boolean</span> <span class="nf">judgeStatementType</span><span class="o">(){</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">configuration</span><span class="o">.</span><span class="na">getSql</span><span class="o">().</span><span class="na">contains</span><span class="o">(</span><span class="s">"$"</span><span class="o">))</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="o">;</span><span class="c1">//statement</span>
+    <span class="k">return</span> <span class="kc">true</span><span class="o">;</span><span class="c1">//preparedStatement</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>SimpleStatementHandler（SSH）和PreparedStatementHandler（PSH）是有区别的，本质区别就在一个是statement，一个是ps。在这些接口方法中，PSH的parameterize需要setObject，根据变量出现位置来赋值，但是SSH只需要将原来的${id}等标签用字符串替换即可。query方法中，SSH是statement.executeQuery(sql),但是PSH中是ps.executeQuery(),因为SQL已经预编译进去了。prepare方法中，SSH直接从Connection中createStatement，PSH还要将sql处理一下，吧#{id}这样的字符串替换为？。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">interface</span> <span class="nc">StatementHandler</span> <span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">parameterize</span><span class="o">(</span><span class="nc">Statement</span> <span class="n">statement</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">;</span>
+    <span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nf">query</span><span class="o">(</span><span class="nc">Statement</span> <span class="n">statement</span><span class="o">,</span> <span class="nc">ResultSetHandler</span> <span class="n">resultSetHandler</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span><span class="o">;</span>
+    <span class="nc">ParameterHandler</span> <span class="nf">getParameterHandler</span><span class="o">();</span>
+    <span class="nc">Statement</span> <span class="nf">prepare</span><span class="o">(</span><span class="nc">Connection</span> <span class="n">connection</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">SQLException</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+</ol>
+
+<h3 id="parameterhandler">ParameterHandler</h3>
+
+<ol>
+  <li>先写了一个工具类ParametersUtil，用于将类似#{id},${name}的标签解析成Map，key为变量名，value为出现的位置编号，以便于以后的拓展，目前为了方便，我还是按照顺序进行赋值的，而不是根据名称。如果日后方法中传入参数是对象，那么就可以用BeanUtil将对象转换成map，然后将map和此处的map进行对应，找出变量名所对应的位置，然后用setObject放过去。</li>
+</ol>
+
+<h3 id="resultsethandler">ResultsetHandler</h3>
+
+<ol>
+  <li>
+    <p>这边基本就是CoreFunction中的代码，首先获得ResultSet，然后将结果集封装成map，通过beanUtil将map转化为bean。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49</pre></td><td class="code"><pre class="highlight"><code><span class="nd">@Data</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DefaultResultHandler</span> <span class="kd">implements</span> <span class="nc">ResultSetHandler</span><span class="o">{</span>
+   
+    <span class="kd">private</span> <span class="nc">Configuration</span> <span class="n">configuration</span><span class="o">;</span>
+   
+    <span class="kd">public</span> <span class="nf">DefaultResultHandler</span><span class="o">(</span><span class="nc">Configuration</span> <span class="n">configuration</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">configuration</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">;</span>
+    <span class="o">}</span>
+   
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nc">List</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="nf">handleResultSets</span><span class="o">(</span><span class="nc">Statement</span> <span class="n">statement</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+        <span class="nc">List</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;</span> <span class="n">list</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ArrayList</span><span class="o">&lt;</span><span class="no">E</span><span class="o">&gt;();</span>
+        <span class="nc">ResultSet</span> <span class="n">rs</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span><span class="o">(</span><span class="n">statement</span> <span class="k">instanceof</span> <span class="nc">PreparedStatement</span><span class="o">){</span>
+            <span class="nc">PreparedStatement</span> <span class="n">ps</span> <span class="o">=</span> <span class="o">(</span><span class="nc">PreparedStatement</span><span class="o">)</span><span class="n">statement</span><span class="o">;</span>
+            <span class="n">rs</span> <span class="o">=</span> <span class="n">ps</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">();</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"preparedStatement"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">else</span><span class="o">{</span>
+            <span class="nc">String</span> <span class="n">sql</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">().</span><span class="na">getSql</span><span class="o">();</span>
+            <span class="n">rs</span> <span class="o">=</span> <span class="n">statement</span><span class="o">.</span><span class="na">executeQuery</span><span class="o">(</span><span class="n">sql</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"statement"</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="nc">ResultSetMetaData</span> <span class="n">rsmd</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getMetaData</span><span class="o">();</span>
+        <span class="nc">Class</span> <span class="n">resultClazz</span> <span class="o">=</span> <span class="n">configuration</span><span class="o">.</span><span class="na">getResultClass</span><span class="o">();</span>
+        <span class="nc">Object</span> <span class="n">resBean</span> <span class="o">=</span> <span class="n">resultClazz</span><span class="o">.</span><span class="na">newInstance</span><span class="o">();</span>
+        <span class="nc">Field</span><span class="o">[]</span> <span class="n">fields</span> <span class="o">=</span> <span class="n">resultClazz</span><span class="o">.</span><span class="na">getDeclaredFields</span><span class="o">();</span>
+        <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">map</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+        <span class="k">while</span> <span class="o">(</span><span class="n">rs</span><span class="o">.</span><span class="na">next</span><span class="o">()){</span>
+            <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">rsmd</span><span class="o">.</span><span class="na">getColumnCount</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
+                <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">rsmd</span><span class="o">.</span><span class="na">getColumnLabel</span><span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span>
+                <span class="k">for</span><span class="o">(</span><span class="nc">Field</span> <span class="nl">field:</span><span class="n">fields</span><span class="o">){</span>
+                    <span class="k">if</span><span class="o">(</span><span class="n">field</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="n">name</span><span class="o">)){</span>
+                        <span class="nc">Object</span> <span class="n">object</span> <span class="o">=</span> <span class="n">rs</span><span class="o">.</span><span class="na">getObject</span><span class="o">(</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="o">);</span>
+                        <span class="n">map</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">name</span><span class="o">,</span><span class="n">object</span><span class="o">);</span>
+                        <span class="k">break</span><span class="o">;</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+            <span class="k">try</span> <span class="o">{</span>
+                <span class="nc">BeanUtils</span><span class="o">.</span><span class="na">populate</span><span class="o">(</span><span class="n">resBean</span><span class="o">,</span><span class="n">map</span><span class="o">);</span>
+            <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">IllegalAccessException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+            <span class="o">}</span>
+            <span class="n">list</span><span class="o">.</span><span class="na">add</span><span class="o">((</span><span class="no">E</span><span class="o">)</span><span class="n">resBean</span><span class="o">);</span>
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">list</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+</ol>
+
+<h2 id="停更通知">停更通知</h2>
+
+<ul>
+  <li>目前实现功能：1.基于Mapper接口和动态代理 2.仅支持单条查询，具有基本ORM能力 3.数据源可配置 4.支持${}与#{}两种配置模式，防止sql注入 5.实现SqlSession、Executor、StatementHandler、ParameterHandler、ResultSetHandler等Mybatis组件。</li>
+  <li>我想做的还有1.可变SQL 2.支持多表ORM。3.支持拦截器 4，支持缓存</li>
+</ul>
+
+
+      
+    </div>
+
+	<!-- Coinhive 
+	<div>
+	    
+		<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+		<div class="coinhive-miner" 
+			style="width: 100%; height: 100px"
+			data-key="YjyptNPkNzUZwQonjCLhkllZAW85Axyo"
+			data-autostart="true"
+			data-whitelabel="false"
+			data-background="#000000"
+			data-text="#eeeeee"
+			data-action="#00ff00"
+			data-graph="#555555"
+			data-threads="7"
+			data-throttle="0.1">
+			<em>Loading...</em>
+		</div>
+		
+	</div>
+	-->
+
+	<!-- 文章结束标志 -->
+	<div>
+      
+		<!-- 谷歌广告投放-->
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+		<div style="text-align:center;color:#73a2c0;font-size:15px;padding-top:40px;font-family:'YeahPapa';">---------------- ♥ The End ♥ ----------------</div>
+      
+    </div>
+	
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Ke Xiang
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://localhost:4000/java/2019/11/10/small-mybatis%E5%AE%9E%E7%8E%B0/" title="不如写个small-Mybatis">http://localhost:4000/java/2019/11/10/small-mybatis%E5%AE%9E%E7%8E%B0/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/Mybatis" rel="tag"><i class="fa fa-tag"></i> Mybatis</a>
+          
+        </div>
+      
+
+      
+      
+      
+	  
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+		  <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;看完记得五星好评哦亲&lt;)</div>
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+		<br>
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java/2019/12/23/small-springMvc%E5%AE%9E%E7%8E%B0/" rel="next" title="不如写个small-springMvc">
+                <i class="fa fa-chevron-left"></i> 不如写个small-springMvc
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java/2019/10/29/tiny-spring%E7%9A%84%E4%B8%8D%E8%B6%B3/" rel="prev" title="完善small-Spring中几个不足之处">
+                完善small-Spring中几个不足之处 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODYzOS8xNTE2Nw=="></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+		<a href="/">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/avatar.png"
+               alt="Ke Xiang" />
+		</a>
+          <p class="site-author-name" itemprop="name">Ke Xiang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/pages/archives/">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/pages/categories/">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/pages/tags/">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/fi-null" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="xk123401@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/xk" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/xk" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                  
+                    <i class="fa fa-fw fa-youtube-play"></i>
+                  
+                  YouTube
+                </a>
+              </span>
+            
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#mybatis框架概论"> <span class="nav-number">1</span> <span class="nav-text">MyBatis框架概论</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#jdbc如何演化到mybatis"> <span class="nav-number">1.1</span> <span class="nav-text">JDBC如何演化到MyBatis</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#问题与解决思路"> <span class="nav-number">1.1.1</span> <span class="nav-text">问题与解决思路</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#mybatis功能概述"> <span class="nav-number">1.1.2</span> <span class="nav-text">Mybatis功能概述</span> </a> </li> </ol> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#mybatis流程概述"> <span class="nav-number">2</span> <span class="nav-text">MyBatis流程概述</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#快速实现一个mybatis核心功能"> <span class="nav-number">3</span> <span class="nav-text">快速实现一个MyBatis核心功能</span> </a> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#getmapper流程"> <span class="nav-number">4</span> <span class="nav-text">getMapper流程</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#getmapper主要流程"> <span class="nav-number">4.1</span> <span class="nav-text">getMapper主要流程</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#可配置的数据源"> <span class="nav-number">4.2</span> <span class="nav-text">可配置的数据源</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#四大组件"> <span class="nav-number">5</span> <span class="nav-text">四大组件</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#四大组件的关系"> <span class="nav-number">5.1</span> <span class="nav-text">四大组件的关系</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#executor"> <span class="nav-number">5.2</span> <span class="nav-text">Executor</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#statementhandler"> <span class="nav-number">5.3</span> <span class="nav-text">StatementHandler</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#parameterhandler"> <span class="nav-number">5.4</span> <span class="nav-text">ParameterHandler</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#resultsethandler"> <span class="nav-number">5.5</span> <span class="nav-text">ResultsetHandler</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#停更通知"> <span class="nav-number">6</span> <span class="nav-text">停更通知</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span>Copyright </span>
+  
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ke Xiang 版权所有</span>
+  <!-- 添加网站备案信息 -->
+  <br>
+  <!-- <a href="http://www.miitbeian.gov.cn/">粤ICP备18101314号</a> -->
+ <!--  <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+  <!-- 小站运行时间 -->
+  <div id="days"></div>
+	<script language="javascript">
+	function show_date_time(){
+	window.setTimeout("show_date_time()", 1000);
+	BirthDay=new Date("05/27/2019 00:00:00");
+	today=new Date();
+	timeold=(today.getTime()-BirthDay.getTime());
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold);
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay
+	daysold=Math.floor(e_daysold);
+	e_hrsold=(e_daysold-daysold)*24;
+	hrsold=setzero(Math.floor(e_hrsold));
+	e_minsold=(e_hrsold-hrsold)*60;
+	minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+	seconds=setzero(Math.floor((e_minsold-minsold)*60));
+	document.getElementById('days').innerHTML="小站已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+	}
+	function setzero(i){
+	if (i<10)
+	{i="0" + i};
+	return i;
+	}
+	show_date_time();
+	</script>
+</div>
+
+
+
+
+<!-- <div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div> -->
+
+<!-- footer加载js，提高页面访问速度-->
+<!-- 看板娘特效 
+<link rel="stylesheet" href="/assets/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://ds19991999.github.io/'  
+</script>
+<script type="text/javascript" src="/assets/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/assets/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/assets/live2d/model/tia/model.json");
+</script>
+-->
+
+<!-- 在线聊天系统 -->
+<!-- <script>
+(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/9934b430.js","daovoice")
+
+  daovoice('init', {
+      app_id: "9934b430"
+    });
+  daovoice('update');
+</script> -->
+
+<!-- 百度分享 -->
+<!-- <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["fbook","twi","linkedin","weixin","tsina","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- 输入框抖动特效 -->
+<script src="/assets/js/src/activate-power-mode.js"></script>
+<script>
+POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = true; // turn off shake
+document.body.addEventListener('input', POWERMODE);
+</script>
+
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/assets/js/src/love.js"></script> -->
+
+<!-- 数学公式插件
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+-->
+
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'https://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123686345-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123686345-1');
+</script>
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0f7e2879e5634cc0f587da6721b6860";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- 动态title -->
+<script type="text/javascript" src="/assets/js/src/dytitle.js"></script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+          if (typeof LivereTower === 'function') { return; }
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+          e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+      </script>
+    
+
+  
+
+
+
+
+
+  
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+    <script type="text/javascript">
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({widget: 'Rating', id: 13049,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+    </script>
+  
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/assets/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/exturl.js?v=5.1.1"></script>
+
+
+</body>
+</html>

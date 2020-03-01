@@ -116,10 +116,11 @@
                 <span class="post-meta-item-text">{{ __.post.in }}</span>
               {% endif %}
               {% for cat in post.categories %}
+                {% assign cat_trim = cat | replace: ',', '' %}
                 {% assign cat_url_encode = cat | url_encode | replace: '+', '%20' %}
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="{{ '/category/#/' | relative_url | append: cat_url_encode }}" itemprop="url" rel="index">
-                    <span itemprop="name">{{ cat }}</span>
+                    <span itemprop="name">{{ cat_trim }}</span>
                   </a>
                 </span>
 
@@ -202,22 +203,7 @@
               {% endif %}
             {% endif %}
           {% endif %}
-
-          {% comment %} LeanCould PageView {% endcomment %}
-          {% if site.leancloud_visitors.enable %}
-             <span id="{{ post.url | relative_url }}" class="leancloud_visitors" data-flag-title="{{ post.title }}">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-eye"></i>
-               </span>
-               {% if site.post_meta.item_text %}
-                 <span class="post-meta-item-text">{{__.post.visitors}} </span>
-               {% endif %}
-                 <span class="leancloud-visitors-count"></span>
-				 <span>℃ | </span>
-             </span>
-          {% endif %}
-
+          <span class="post-meta-divider">|</span>
           {% if site.busuanzi_count.enable and site.busuanzi_count.page_pv and is_index == false or is_index == nil%}
             <span class="post-meta-divider">|</span>
             <span class="page-pv">{{ site.busuanzi_count.page_pv_header }}

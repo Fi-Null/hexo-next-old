@@ -343,13 +343,9 @@ post_wordcount:
   separated_meta: true
 
 # Wechat Subscriber
-#wechat_subscriber:
-#  enabled: true
-#  qcode: /assets/images/weipayimg.png
-#  description: 意思意思？
-reward_comment: 意思意思？
-wechatpay: /assets/images/weipayimg.png
-alipay: /assets/images/alipayimg.jpg
+# reward_comment: 意思意思？
+# wechatpay: /assets/images/weipayimg.png
+# alipay: /assets/images/alipayimg.jpg
 # Declare license on posts
 post_copyright:
   enable: true
@@ -383,13 +379,6 @@ highlight_theme: normal
 # Third Party Services Settings
 # ---------------------------------------------------------------
 
-# MathJax Support
-#mathjax:
-#  enable: true
-#  per_page: true
-#  cdn地址已经废弃
-#  cdn: //cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML
-
 # Han Support docs: https://hanzi.pro/
 han: true
 
@@ -398,27 +387,6 @@ han: true
 
 # Baidu Analytics ID
 baidu_analytics: c72906569503c06a12a6edc7b7c66149
-
-# Duoshuo ShortName
-#duoshuo_shortname:
-
-# Disqus
-# 多说评论已经关闭
-#disqus:
-#  enable: false
-#  shortname:
-#  count: true
-  # hide comments (visitors need to click to load the comments)
-  # count need to be false when hide is true
-#  hide: false
-
-# 只能用google账号登录
-# Hypercomments
-#hypercomments_id:
-
-# 网易云跟帖关闭
-# Gentie productKey
-#gentie_productKey:
 
 # changyan
 # 畅言的注册站点要备案
@@ -448,57 +416,11 @@ gitalk:
   owner: ds19991999
   admin: ds19991999
 
-# 百度分享不支持https，但可以自行下载源码
-# 之后直接按照官网给的代码安装就OK了
-# 主要是支持侧边栏按钮分享，不错
-# Baidu Share
-# Available value:
-#    button | slide
-# Warning: Baidu Share does not support https.
-# baidushare: true
-  #type: button
-  #baidushare: true
-
-# 无法访问官网
-# Share
-#jiathis: true
-#add_this_id: ra-5b67f7b9acdf9bee
-# Share
-# duoshuo_share: true
-
-# 没啥用
-# Google Webmaster tools verification setting
-# See: https://www.google.com/webmasters/
-#google_site_verification:
-
 # 可以直接安装代码，不需要配置
 # Google Analytics
 google_analytics: UA-123686345-1
 # 百度分析ID
 # baidu_analytics: e0f7e2879e5634cc0f587da6721b6860
-
-# 俄罗斯的一家搜索引擎公司
-# Yandex Webmaster tools verification setting
-# See: https://webmaster.yandex.ru/
-#yandex_site_verification:
-
-# CNZZ count
-#cnzz_siteid:
-
-# Application Insights
-# See https://azure.microsoft.com/en-us/services/application-insights/
-# application_insights:
-
-# 多说关闭
-# Make duoshuo show UA
-# user_id must NOT be null when admin_enable is true!
-# you can visit http://dev.duoshuo.com get duoshuo user id.
-#duoshuo_info:
-#  ua_enable: true
-#  admin_enable: false
-#  user_id: 0
-#  #admin_nickname: Author
-
 
 # Facebook SDK Support.
 # https://github.com/iissnan/hexo-theme-next/pull/410
@@ -539,7 +461,7 @@ rating:
 # Show number of visitors to each article.
 # You can visit https://leancloud.cn get AppID and AppKey.
 leancloud_visitors:
-  enable: true
+  enable: false
   app_id: dWvyT26drR1HLxgXvGD7Iw7u-gzGzoHsz
   app_key: 3jKYv5jwUQdUe8DwXIDM54Xb
 
@@ -572,23 +494,6 @@ busuanzi_count:
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: true
-
-# Google Calendar
-# Share your recent schedule to others via calendar page
-#
-# API Documentation:
-# https://developers.google.com/google-apps/calendar/v3/reference/events/list
-calendar:
-  enable: true
-  calendar_id: 510249671790-amhf5dd2br1532otlqd1mb83knumuohe.apps.googleusercontent.com
-  api_key: AIzaSyB09TEoFyyc2SVBI23YKfNe5AI2CQlqJK8
-  orderBy: startTime
-  offsetMax: 24
-  offsetMin: 4
-  timeZone:
-  showDeleted: true
-  singleEvents: true
-  maxResults: 250
 
 # Algolia Search
 algolia_search:

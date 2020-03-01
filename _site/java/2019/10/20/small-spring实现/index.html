@@ -1,0 +1,2778 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/assets/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/assets/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Spring," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XK Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="不如写个small-Spring">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="不如写个small-Spring">
+<meta property="og:url" content="http://localhost:4000/java/2019/10/20/small-spring%E5%AE%9E%E7%8E%B0/">
+<meta property="og:site_name" content="XK Blog">
+<meta property="og:description" content="不如写个small-Spring">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-ee924f8693cff51785ad6637ac5b21c1_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-5ca61395f37cef73c7bbe7808f9ea219_hd.jpg">
+<meta property="og:image" content="http://img.sonihr.com/569827b6-a901-4dcc-85fa-995cbec41bad.jpg">
+<meta property="og:image" content="http://img.sonihr.com/bdde3869-1351-4c8c-9600-995abaeedc47.jpg">
+<meta property="og:image" content="http://img.sonihr.com/436c76f8-19ee-43f1-b85a-2bbdc78b01f6.jpg">
+<meta property="og:image" content="http://img.sonihr.com/c70dd11c-cd92-47b9-9e5f-95f720fd4f19.jpg">
+<meta property="og:image" content="http://img.sonihr.com/f44ab922-d307-4941-be0a-c8cdcc3612d1.jpg">
+<meta property="og:image" content="http://img.sonihr.com/80033646-9d4d-46b8-8763-065ccc7e8cdb.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-6aacbe1e9df4fe982a68fe142401952e_hd.jpg">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-b5fc8b279a6152889afdfedbb0f611cc_hd.jpg">
+<meta property="og:image" content="https://pic1.zhimg.com/80/v2-d187a82b1eb9c088fe60327828ee63aa_hd.jpg">
+<meta property="og:image" content="https://img-blog.csdn.net/20170215092953013?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamF2YXplamlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img-blog.csdn.net/20170216232225542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamF2YXplamlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="https://img-blog.csdn.net/20170219102612181?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamF2YXplamlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast">
+<meta property="og:image" content="http://img.sonihr.com/10e630fd-31d8-4d9d-bac0-d67d5b21489d.jpg">
+<meta property="og:image" content="http://img.sonihr.com/b8d68ae2-2960-46a9-8c83-0da605d691ed.jpg">
+<meta property="og:image" content="http://img.sonihr.com/6d6a98ca-29a7-4489-980f-1e457c85cbd2.jpg">
+<meta property="og:image" content="http://img.sonihr.com/07c0d70a-7c24-49e4-8f06-8e1868f9ee6b.jpg">
+<meta property="og:image" content="http://img.sonihr.com/390aa080-f94f-442a-9186-02321dc262a4.jpg">
+<meta property="og:image" content="http://img.sonihr.com/d1c92690-f77a-4744-86fd-28d2ade2cc04.jpg">
+<meta property="og:image" content="http://img.sonihr.com/5d849447-bb8b-47ce-8312-87dabe5dd45b.jpg">
+<meta property="og:image" content="http://img.sonihr.com/42a39f55-dfe2-4697-ade1-254866ac3405.jpg">
+<meta property="og:image" content="http://img.sonihr.com/34dae1ef-6be8-4f0c-986c-b0cae1cda9e9.jpg">
+<meta property="og:image" content="http://img.sonihr.com/d99f9ae6-fe36-4e05-89cb-78d7eb07bc73.jpg">
+<meta property="og:image" content="https://user-images.githubusercontent.com/33364674/57900343-0c18fa80-7893-11e9-9204-98e4cb41779b.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/33364674/57911983-c45a9900-78bb-11e9-9dd8-4a8b2fb60560.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/33364674/57912090-097ecb00-78bc-11e9-8e4a-8ef85f465804.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/33364674/57912133-24513f80-78bc-11e9-8135-963f0da2c21d.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/33364674/57912192-42b73b00-78bc-11e9-86cf-6e83e3e29b8c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/33364674/57912225-5ebadc80-78bc-11e9-8400-af9dd4218f38.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/33364674/57912821-d63d3b80-78bd-11e9-8ecb-4966e1b7106c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/33364674/57912884-f8cf5480-78bd-11e9-90d4-d5d12b554c50.png">
+<meta property="og:image" content="http://img.sonihr.com/7f2f38e0-d02d-45aa-9c45-d9245a1653ba.jpg">
+<meta property="og:updated_time" content="2019-10-20T20:29:08+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="不如写个small-Spring">
+<meta name="twitter:description" content="不如写个small-Spring">
+<meta name="twitter:image" content="https://pic1.zhimg.com/80/v2-ee924f8693cff51785ad6637ac5b21c1_hd.jpg">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://localhost:4000/"/>
+
+
+
+
+
+  <title>不如写个small-Spring | XK Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-123686345-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c72906569503c06a12a6edc7b7c66149";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-6459493734251675",
+		enable_page_level_ads: true
+	  });
+	</script>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XK Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Less is more.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/pages/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-resume">
+          <a href="http://fi-null.github.io/resumeWeb" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-handshake-o"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/pages/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/pages/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/pages/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-top">
+          <a href="/pages/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br />
+            
+            TopX
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/java/2019/10/20/small-spring%E5%AE%9E%E7%8E%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ke Xiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XK Blog">
+    </span>
+    
+      	<!-- 心知天气固定插件 -->
+		<div align="center" id="tp-weather-widget"></div>
+		<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+		<script>tpwidget("init", {
+			"flavor": "slim",
+			"location": "WS0E9D8WN298",
+			"geolocation": "enabled",
+			"language": "en",
+			"unit": "c",
+			"theme": "chameleon",
+			"container": "tp-weather-widget",
+			"bubble": "enabled",
+			"alarmType": "badge",
+			"uid": "U81EB522D4",
+			"hash": "6b972a5f25f3cc4e8beb25e2feab9d4b"
+		});
+		tpwidget("show");</script>  
+
+    
+      <header class="post-header">    
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+          
+          
+            不如写个small-Spring
+          
+        </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-20T20:29:08+08:00">
+                2019-10-20
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-20">
+                2019-10-20
+              </time>
+            
+          </span>	
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Java" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+          <span class="post-meta-divider">|</span>
+          
+
+          
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  8711
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  43
+                </span>
+              
+            </div>
+          
+
+          
+            
+                <div class="post-description">
+                    不如写个small-Spring
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+	<!-- 网易云音乐 -->
+	 
+	
+	<!-- 谷歌广告投放-->
+		<div>
+    
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	
+	
+	<!-- 数学公式插件 -->
+		
+	
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2 id="ioc">IOC</h2>
+
+<blockquote>
+  <p>https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&amp;mid=2247484247&amp;idx=1&amp;sn=e228e29e344559e469ac3ecfa9715217&amp;chksm=ebd74256dca0cb40059f3f627fc9450f916c1e1b39ba741842d91774f5bb7f518063e5acf5a0#rd</p>
+</blockquote>
+
+<h3 id="为什么要有ioc">为什么要有IOC？</h3>
+
+<blockquote>
+  <p>https://www.zhihu.com/question/23277575</p>
+</blockquote>
+
+<ul>
+  <li><strong>什么是依赖？</strong></li>
+</ul>
+
+<blockquote>
+  <p>依赖，可以粗暴地理解为import，如果代码中import了某个类，那这段代码就依赖了这个类。面向接口编程时，逻辑都是接口逻辑（例如接口IA，有方法doX，doY，接口逻辑例如是main中实例化了IA后，顺序执行了doX和doY），但具体实例化的对象是IA接口的实现（例如类CA实现了IA，重写了方法doX，doY）。如果不用工厂，直接new，那么main文件里面就必须import了CA，也就是main“依赖”了CA这个实现。而面向接口编程中，main应该跟CA解耦（就是不直接依赖CA，不会看到import CA）。工厂方法就是解决这种import CA的解决途径之一，简单工厂为例，原本main里面的IA a = new CA()，就变成了IA a = AFactory.getA(“CA”)，并且getA的具体实现中，可以通过如果是字符串“CA”就new CA()返回了。这样子的话，main里面就不用import CA了（但是要import AFactory），也即是不“依赖”CA，与CA解耦了。依赖注入，就是把上面的工厂，获取CA对象的方式，变成反射（也还是根据字符串来生成对象，不过就不用简单工厂if-else那么粗暴了，多一个if又要改一遍工厂的实现，多累啊），根据配置来生成对象。不用import某个实际类，但是也把依赖（逻辑过程实际执行还是CA来做的）给注入（放到main中）了。（上述的main指代任意一个逻辑执行过程，不一定是main函数）</p>
+</blockquote>
+
+<p><img src="https://pic1.zhimg.com/80/v2-ee924f8693cff51785ad6637ac5b21c1_hd.jpg" alt="img" /></p>
+
+<ul>
+  <li>
+    <p>依赖注入，把底层类作为参数传入上层类，实现上层类对下层类的控制。A类中：@Autowird B b;那不论B类怎么改变，都不需要改变A类中的代码。比如构造函数创建A(B b),还有Setter创建。反转A类中不应该B b=new b()，而是应该从外界注入。</p>
+
+    <ul>
+      <li>
+        <p>从哪个外界注入呢？Spring设计的是IOC容器，相当于是框架本身管理注入过程。相当于A需要B b的时候，框架就getBean（“b”）给A类。</p>
+      </li>
+      <li>
+        <p>如果A需要b，B需要a，怎么注入？控制反转，交给IOC容器去解决。tiny-spring的实现思路：先根据xml获得全部bean标签内容，然后在getBean的时候再lazy-init。这样A需要b时，会先创建A，当遇到b时转而去创建b，最后在创建出完成的A。整个类似于一个递归（dfs）的过程。</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>IOC,控制反转，通过配置文件/注解自动对对象进行初始化</p>
+
+    <ul>
+      <li>
+        <p>控制反转解决了对象层级嵌套的问题，在创建一个对象时可以自动创建依赖对象并注入，Spring的IOC容器实现了从xml或注解中进行自动初始化。</p>
+      </li>
+      <li>
+        <p>控制反转容器因为是自上而下创建实例的，因此不需要知道其依赖类的创建方法，屏蔽了内部的细节,从外部看像一个工厂。</p>
+      </li>
+    </ul>
+
+    <p><img src="https://pic1.zhimg.com/80/v2-5ca61395f37cef73c7bbe7808f9ea219_hd.jpg" alt="img" /></p>
+  </li>
+</ul>
+
+<h3 id="ioc部分要实现什么功能">IOC部分要实现什么功能？</h3>
+
+<ol>
+  <li>读取XML文件，标签为beans和property</li>
+  <li>property内标签可为value或ref，即支持依赖注入</li>
+  <li>封装成ApplicationContext创建所有的bean，并且解决循环依赖</li>
+  <li>TODO：注解版和Java配置版</li>
+</ol>
+
+<h3 id="第0步下载项目">第0步：下载项目</h3>
+
+<blockquote>
+  <p>https://github.com/code4craft/tiny-spring</p>
+</blockquote>
+
+<ul>
+  <li>请用git clone下载，这样才能够通过git checkout step-1-container-register-and-get一步一步的查看不同版本。</li>
+</ul>
+
+<h3 id="第1步最基本的容器">第1步：最基本的容器</h3>
+
+<ul>
+  <li>最基本的容器是指BeanFactory和BeanDefinition。前者有一个ConcurrentHashMap&lt;String，BeanDefinition&gt;，因为实现xml中字符串id对对象实例的映射。BeanDefinition包装了Bean。</li>
+</ul>
+
+<h3 id="第2步将bean创建放入工厂">第2步：将bean创建放入工厂</h3>
+
+<ul>
+  <li>Spring中Bean实例的生成是由容器控制的，而不是由用户，因此Bean对象的创建要放在BeanFactory中。为了仿照Spring，因此抽象出FactoryBean接口，AbstractBeanFactory模板类。模板类中最重要的是protected doCreateBean()。</li>
+  <li>在注册的时候通过反射调用doCreateBean方法创建对象，并放入BeanDefinition包装类中。doCreateBean相当于是个动态工厂，根据string类型的全类名反射出一个Object对象。</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">registerBeanDefinition</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span><span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span><span class="o">){</span>
+    <span class="nc">Object</span> <span class="n">bean</span> <span class="o">=</span>  <span class="n">doCreateBean</span><span class="o">(</span><span class="n">beanDefinition</span><span class="o">);</span>
+    <span class="n">beanDefinition</span><span class="o">.</span><span class="na">setBean</span><span class="o">(</span><span class="n">bean</span><span class="o">);</span>
+    <span class="n">beanDefinitionMap</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">name</span><span class="o">,</span><span class="n">beanDefinition</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<ul>
+  <li>到这一步就实现了BeanFactory的实现类可以通过全类名创建一个对象。</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BeanFactoryTest</span> <span class="o">{</span>
+    <span class="nd">@Test</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">test</span><span class="o">(){</span>
+        <span class="nc">BeanFactory</span> <span class="n">beanFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AutowireCapableBeanFactory</span><span class="o">();</span>
+        <span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BeanDefinition</span><span class="o">();</span><span class="c1">//创建一个包装类</span>
+        <span class="n">beanDefinition</span><span class="o">.</span><span class="na">setBeanClassName</span><span class="o">(</span><span class="s">"beans.Car"</span><span class="o">);</span><span class="c1">//通过反射创建，要求必须有无参构造函数</span>
+        <span class="n">beanFactory</span><span class="o">.</span><span class="na">registerBeanDefinition</span><span class="o">(</span><span class="s">"audi"</span><span class="o">,</span><span class="n">beanDefinition</span><span class="o">);</span><span class="c1">//注册到hashmap中，注册之前先调用doCreateObject方法创建对象，实现了在Facoty中创建对象</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">((</span><span class="nc">Car</span><span class="o">)</span><span class="n">beanFactory</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"audi"</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<ul>
+  <li>在看上述代码，我们要传给factory什么？1.全类名，即beans.Car。2.实例化后的实例名称，即audi。这两项显然我们都能在配置的xml中获取，这在第四步中完成。其次，我们目前创建出的对象还是一个依靠无参构造函数创建的，因此内部成员变量均为null，所以下一步是对成员变量进行赋值。</li>
+</ul>
+
+<h3 id="第3步为bean注入属性">第3步：为Bean注入属性</h3>
+
+<p><img src="http://img.sonihr.com/569827b6-a901-4dcc-85fa-995cbec41bad.jpg" alt="img" /></p>
+
+<ul>
+  <li>这一步有两个类，PropertyValues和PropertyValue。PV类相当于是C++中的Pair&lt;String fieldName,Object Value&gt;类，保存字段和字段对应的值。PVS中保存了一个对象中所有字段和值的对应关系，即保存了一个List。每个BeanDefinition中都有一个PVS,因此每个BeanDefinition在创建完空Bean后可以遍历PVS，通过反射实现Setter。</li>
+</ul>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">applyPropertyValues</span><span class="o">(</span><span class="nc">Object</span> <span class="n">bean</span><span class="o">,</span><span class="nc">BeanDefinition</span> <span class="n">mbd</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">NoSuchFieldException</span><span class="o">,</span> <span class="nc">IllegalAccessException</span> <span class="o">{</span>
+   <span class="k">for</span><span class="o">(</span><span class="nc">PropertyValue</span> <span class="nl">propertyValue:</span><span class="n">mbd</span><span class="o">.</span><span class="na">getPropertyValues</span><span class="o">().</span><span class="na">getPropertyValues</span><span class="o">()){</span>
+       <span class="nc">Field</span> <span class="n">declaredField</span> <span class="o">=</span> <span class="n">bean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getDeclaredField</span><span class="o">(</span><span class="n">propertyValue</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+       <span class="n">declaredField</span><span class="o">.</span><span class="na">setAccessible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+       <span class="n">declaredField</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">bean</span><span class="o">,</span><span class="n">propertyValue</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+<h3 id="第4步读取xml配置来初始化bean">第4步：读取xml配置来初始化bean</h3>
+
+<p><img src="http://img.sonihr.com/bdde3869-1351-4c8c-9600-995abaeedc47.jpg" alt="img" /></p>
+
+<ul>
+  <li>解决获取IO流的问题？URL类定位xml文件，url.openConnect().connect()即可定位并打开文件，利用getInputStream获得文件输入流。</li>
+  <li>通过XMLBeanDefinitionReader类和DocumentBuilder对xml进行解析。先根据bean定位到所有的bean，根据类名和实例名构建一个空实例，然后每一个bean中定位property，利用PVS类和PV类实现对bean属性的赋值</li>
+  <li>官方结构</li>
+</ul>
+
+<p><img src="http://img.sonihr.com/436c76f8-19ee-43f1-b85a-2bbdc78b01f6.jpg" alt="img" /></p>
+
+<h3 id="第5步为bean注入bean">第5步：为bean注入bean</h3>
+
+<ul>
+  <li>核心解决三个问题1.ref怎么实现？2.怎么解决xml中顺序问题？2.怎么避免循环依赖？</li>
+</ul>
+
+<ol>
+  <li>
+    <p>怎么实现ref？</p>
+
+    <ol>
+      <li>
+        <p>这个问题好解决。判断xml中是ref还是value，如果是value（本项目目前value如果是基本类型，只允许是String）则直接用PV（PropertyValue）封装，如果是ref，就用BeanReference{name,bean}封装一下然后再用PV封装。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22</pre></td><td class="code"><pre class="highlight"><code><span class="kd">private</span> <span class="kt">void</span> <span class="nf">processProperty</span><span class="o">(</span><span class="nc">Element</span> <span class="n">ele</span><span class="o">,</span> <span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">NodeList</span> <span class="n">propertyNode</span> <span class="o">=</span> <span class="n">ele</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span><span class="s">"property"</span><span class="o">);</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="o">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">propertyNode</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+        <span class="nc">Node</span> <span class="n">node</span> <span class="o">=</span> <span class="n">propertyNode</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">node</span> <span class="k">instanceof</span> <span class="nc">Element</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">Element</span> <span class="n">propertyEle</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Element</span><span class="o">)</span> <span class="n">node</span><span class="o">;</span>
+            <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">propertyEle</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"name"</span><span class="o">);</span>
+            <span class="nc">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">propertyEle</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"value"</span><span class="o">);</span>
+            <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="o">!=</span> <span class="kc">null</span> <span class="o">&amp;&amp;</span> <span class="n">value</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                <span class="n">beanDefinition</span><span class="o">.</span><span class="na">getPropertyValues</span><span class="o">().</span><span class="na">addPropertyValue</span><span class="o">(</span><span class="k">new</span> <span class="nc">PropertyValue</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">value</span><span class="o">));</span>
+            <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+                <span class="nc">String</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">propertyEle</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"ref"</span><span class="o">);</span>
+                <span class="k">if</span> <span class="o">(</span><span class="n">ref</span> <span class="o">==</span> <span class="kc">null</span> <span class="o">||</span> <span class="n">ref</span><span class="o">.</span><span class="na">length</span><span class="o">()</span> <span class="o">==</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+                    <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"Configuration problem: &lt;property&gt; element for property '"</span>
+                            <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">"' must specify a ref or value"</span><span class="o">);</span>
+                <span class="o">}</span>
+                <span class="nc">BeanReference</span> <span class="n">beanReference</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BeanReference</span><span class="o">(</span><span class="n">ref</span><span class="o">);</span>
+                <span class="n">beanDefinition</span><span class="o">.</span><span class="na">getPropertyValues</span><span class="o">().</span><span class="na">addPropertyValue</span><span class="o">(</span><span class="k">new</span> <span class="nc">PropertyValue</span><span class="o">(</span><span class="n">name</span><span class="o">,</span> <span class="n">beanReference</span><span class="o">));</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>
+        <p>在调用applyPropertyValues()方法——通过反射装填实例的成员变量时，如果该变量是BeanReference，则该变量有可能需要创建一下。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">applyPropertyValues</span><span class="o">(</span><span class="nc">Object</span> <span class="n">bean</span><span class="o">,</span> <span class="nc">BeanDefinition</span> <span class="n">mbd</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">PropertyValue</span> <span class="n">propertyValue</span> <span class="o">:</span> <span class="n">mbd</span><span class="o">.</span><span class="na">getPropertyValues</span><span class="o">().</span><span class="na">getPropertyValues</span><span class="o">())</span> <span class="o">{</span>
+        <span class="nc">Field</span> <span class="n">declaredField</span> <span class="o">=</span> <span class="n">bean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getDeclaredField</span><span class="o">(</span><span class="n">propertyValue</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="n">declaredField</span><span class="o">.</span><span class="na">setAccessible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+        <span class="nc">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">propertyValue</span><span class="o">.</span><span class="na">getValue</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">value</span> <span class="k">instanceof</span> <span class="nc">BeanReference</span><span class="o">)</span> <span class="o">{</span>
+            <span class="nc">BeanReference</span> <span class="n">beanReference</span> <span class="o">=</span> <span class="o">(</span><span class="nc">BeanReference</span><span class="o">)</span> <span class="n">value</span><span class="o">;</span>
+            <span class="n">value</span> <span class="o">=</span> <span class="n">getBean</span><span class="o">(</span><span class="n">beanReference</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+        <span class="o">}</span>
+        <span class="n">declaredField</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">bean</span><span class="o">,</span> <span class="n">value</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>
+        <p>注意上述代码中的value=getBean(beanReference.getName())。实例的创建过程有可能就在此刻完成。这里需要明确的是下图：</p>
+
+        <p><img src="http://img.sonihr.com/c70dd11c-cd92-47b9-9e5f-95f720fd4f19.jpg" alt="img" /></p>
+
+        <p><strong>读取xml后，所有的类信息都在XmlBeanDefinitionReader实例中，但是XmlBDFR中的beanDefinition们并没有创建实例，即空有类信息（className，PropertyValues），但是bean为null。此时，如果遇到A实例a的b字段ref C实例c，但是此刻C实例c还未初始化，在装配A实例a的b字段的时候，就会用getBean创建c。（为什么能创建c呢？因为在创建工厂后，紧接着的操作就是把xmlBDFR中的所有beanDefinition写入工厂的ConcurrentHashMap中，即工厂也有了全部的信息，因此可以创建c。）</strong></p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code><span class="nc">BeanFactory</span> <span class="n">beanFactory</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AutowireCapableBeanFactory</span><span class="o">();</span>
+<span class="k">for</span><span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">BeanDefinition</span><span class="o">&gt;</span> <span class="nl">beanDefinitionEntry:</span><span class="n">xmlBeanDefinitionReader</span><span class="o">.</span><span class="na">getRegistry</span><span class="o">().</span><span class="na">entrySet</span><span class="o">()){</span>
+    <span class="n">beanFactory</span><span class="o">.</span><span class="na">registerBeanDefinition</span><span class="o">(</span><span class="n">beanDefinitionEntry</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span><span class="n">beanDefinitionEntry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+<span class="o">}</span>
+<span class="o">((</span><span class="nc">AutowireCapableBeanFactory</span><span class="o">)</span> <span class="n">beanFactory</span><span class="o">).</span><span class="na">preInstantiateSingletons</span><span class="o">();</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>通过getBean时创建实例的这种lazy-init方式，实现了不依靠xml中顺序。这样再创建实例的时候如果实例的依赖还没有创建，就先创建依赖。</p>
+  </li>
+  <li>
+    <p>所谓循环依赖是类似以下的情况</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>&lt;bean name="outputService" class="com.sonihr.beans.OutputService"&gt;
+    &lt;property name="helloWorldService" ref="helloWorldService"&gt;&lt;/property&gt;
+&lt;/bean&gt;
+   
+&lt;bean name="helloWorldService" class="com.sonihr.beans.HelloWorldServiceImpl"&gt;
+    &lt;property name="text" value="Hello World!"&gt;&lt;/property&gt;
+    &lt;property name="outputService" ref="outputService"&gt;&lt;/property&gt;
+&lt;/bean&gt;
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>在doCreateBean中，创建完空的bean(空的bean表示空构造函数构造出的bean)后，就放入beanDefinition中，这样a ref b，b ref a时，a ref b因此b先创建并指向a，此时的a还不是完全体，但是引用已经连上了，然后创建好了b。然后b ref a的时候，a已经创建完毕。</p>
+  </li>
+</ol>
+
+<h3 id="第6步applicationcontext登场">第6步：ApplicationContext登场</h3>
+
+<ul>
+  <li>
+    <p>这一步就是用ApplicationContext包装之前的代码</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kt">void</span> <span class="nf">refresh</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="nc">XmlBeanDefinitionReader</span> <span class="n">xmlBeanDefinitionReader</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">XmlBeanDefinitionReader</span><span class="o">(</span><span class="k">new</span> <span class="nc">ResourceLoader</span><span class="o">());</span>
+    <span class="n">xmlBeanDefinitionReader</span><span class="o">.</span><span class="na">loadBeanDefinitions</span><span class="o">(</span><span class="n">configLocation</span><span class="o">);</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span> <span class="nc">BeanDefinition</span><span class="o">&gt;</span> <span class="n">beanDefinitionEntry</span> <span class="o">:</span> <span class="n">xmlBeanDefinitionReader</span><span class="o">.</span><span class="na">getRegistry</span><span class="o">().</span><span class="na">entrySet</span><span class="o">())</span> <span class="o">{</span>
+        <span class="n">beanFactory</span><span class="o">.</span><span class="na">registerBeanDefinition</span><span class="o">(</span><span class="n">beanDefinitionEntry</span><span class="o">.</span><span class="na">getKey</span><span class="o">(),</span> <span class="n">beanDefinitionEntry</span><span class="o">.</span><span class="na">getValue</span><span class="o">());</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>这样只要如下调用即可</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code> <span class="nc">ApplicationContext</span> <span class="n">applicationContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">"tinyioc.xml"</span><span class="o">);</span>
+<span class="o">((</span><span class="nc">ClassPathXmlApplicationContext</span><span class="o">)</span> <span class="n">applicationContext</span><span class="o">).</span><span class="na">refresh</span><span class="o">();</span>
+<span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">applicationContext</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"car2"</span><span class="o">));</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+</ul>
+
+<h2 id="aop">AOP</h2>
+<blockquote>
+  <p>https://mp.weixin.qq.com/s?__biz=MzI4Njg5MDA5NA==&amp;mid=2247483954&amp;idx=1&amp;sn=b34e385ed716edf6f58998ec329f9867&amp;chksm=ebd74333dca0ca257a77c02ab458300ef982adff3cf37eb6d8d2f985f11df5cc07ef17f659d4#rd</p>
+</blockquote>
+
+<h3 id="理解动态代理设计模式">理解动态代理设计模式</h3>
+
+<ul>
+  <li>
+    <p>静态代理模式</p>
+
+    <p><img src="http://img.sonihr.com/f44ab922-d307-4941-be0a-c8cdcc3612d1.jpg" alt="img" /></p>
+
+    <p>通过构造函数注入的方式，将被代理类B的实例b注入Proxy中，然后Proxy实现A接口a方法时，在调用b.a()之前之后				都可以写自己的代理逻辑代码。</p>
+  </li>
+  <li>
+    <p>动态代理模式</p>
+
+    <p><img src="http://img.sonihr.com/80033646-9d4d-46b8-8763-065ccc7e8cdb.jpg" alt="img" /></p>
+
+    <p>将接口A的字节码文件+一个构造器，这个构造器继承自Proxy，就构成了代理类的基本字节码。Prxoy构造器中必然依赖InvocationHandler实例，这个InovocationHandler实例要重写invoke方法以实现1.Proxy中所有A接口方法全部使用handler.invoke。2.hanler.invoke()调用被代理实例的a(),并且可以在其中写代理逻辑。3.Proxy的a方法调用的invoke，则内部就代理a方法。</p>
+
+    <p><img src="https://pic4.zhimg.com/80/v2-6aacbe1e9df4fe982a68fe142401952e_hd.jpg" alt="img" /></p>
+
+    <p>分解操作：</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">NoSuchMethodException</span><span class="o">,</span> <span class="nc">IllegalAccessException</span><span class="o">,</span> <span class="nc">InvocationTargetException</span><span class="o">,</span> <span class="nc">InstantiationException</span> <span class="o">{</span>
+    <span class="c1">//指定被代理类实例</span>
+    <span class="nc">Car</span> <span class="n">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">();</span>
+    <span class="c1">//指定类加载器和接口</span>
+    <span class="nc">Class</span> <span class="n">carClazz</span> <span class="o">=</span> <span class="nc">Proxy</span><span class="o">.</span><span class="na">getProxyClass</span><span class="o">(</span><span class="n">target</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getClassLoader</span><span class="o">(),</span><span class="nc">Drivebale</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="c1">//创建构造函数</span>
+    <span class="nc">Constructor</span> <span class="n">constructor</span> <span class="o">=</span> <span class="n">carClazz</span><span class="o">.</span><span class="na">getConstructor</span><span class="o">(</span><span class="nc">InvocationHandler</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="c1">//反射创建代理类实例</span>
+    <span class="nc">Drivebale</span> <span class="n">car</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Drivebale</span><span class="o">)</span> <span class="n">constructor</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="k">new</span> <span class="nc">InvocationHandler</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="nc">Object</span> <span class="n">proxy</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"前"</span><span class="o">);</span>
+            <span class="n">method</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">target</span><span class="o">,</span><span class="n">args</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"后"</span><span class="o">);</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
+    <span class="n">car</span><span class="o">.</span><span class="na">running</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>一句话版本：</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="nc">Car</span> <span class="n">target</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">();</span>
+    <span class="nc">Drivebale</span> <span class="n">car</span> <span class="o">=</span>  <span class="o">(</span><span class="nc">Drivebale</span><span class="o">)</span> <span class="nc">Proxy</span><span class="o">.</span><span class="na">newProxyInstance</span><span class="o">(</span><span class="n">target</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getClassLoader</span><span class="o">(),</span> <span class="n">target</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getInterfaces</span><span class="o">(),</span> <span class="k">new</span> <span class="nc">InvocationHandler</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nd">@Override</span>
+        <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="nc">Object</span> <span class="n">proxy</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"这就是JDK动态代理的正确用法"</span><span class="o">);</span>
+            <span class="n">method</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">target</span><span class="o">,</span><span class="n">args</span><span class="o">);</span>
+            <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"结束"</span><span class="o">);</span>
+            <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="o">}</span>
+    <span class="o">});</span>
+    <span class="n">car</span><span class="o">.</span><span class="na">running</span><span class="o">();</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>静态代理和动态代理的区别</p>
+
+    <p><img src="https://pic4.zhimg.com/80/v2-b5fc8b279a6152889afdfedbb0f611cc_hd.jpg" alt="img" /></p>
+
+    <p><img src="https://pic1.zhimg.com/80/v2-d187a82b1eb9c088fe60327828ee63aa_hd.jpg" alt="img" /></p>
+
+    <p><strong>本质区别，静态代理是在运行期之前就编译好的class文件，动态代理是运行期中生成的class文件。</strong></p>
+  </li>
+  <li>
+    <p>代理模式和装饰模式的区别</p>
+
+    <ul>
+      <li>相同点都是返回一个功能更丰富的类。</li>
+      <li>代理模式强调与被代理类无关的功能，比如被代理类是核心业务逻辑代码，代理模式增加日志等辅助功能。包装模式强调对被包装类进行功能性的加强。</li>
+      <li>代理模式控制对方法的访问，可以不让访问者知道被代理的对象，Thread（Runnable target），MyBatis的Mapper。装饰着模式为方法添加额外的行为，一般通过构造函数注入，IO流。</li>
+    </ul>
+  </li>
+  <li>
+    <p>代理模式的应用</p>
+
+    <ul>
+      <li>
+        <p>静态代理：Thread implements Runnable，Thread(Runnable target)，thread.run{target.run}。我们只用关心Runnable的业务逻辑，而不用关系线程创建，销毁等具体的事情。</p>
+      </li>
+      <li>
+        <p>动态代理：MyBatis中的Mapper。</p>
+      </li>
+    </ul>
+
+    <blockquote>
+      <p>https://blog.csdn.net/xiaokang123456kao/article/details/76228684</p>
+    </blockquote>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1</pre></td><td class="code"><pre class="highlight"><code>   ```java SqlSession session = sqlSessionFactory.openSession();   //获取mapper接口的代理对象   UserMapper userMapper = session.getMapper(UserMapper.class);   //调用代理对象方法   User user = userMapper.findUserById(27);  ​       ```
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>比如UserMapper这个接口，如果要用静态代理，就必须手动写一个实现该接口的代理类，如果你有很多个接口，就要写很多个代理类，工作量很大。但是采用动态代理后，XXXMapperProxy通过反射实现XxxMapper接口内方法并创建构造函数，创建后在invoke中实现逻辑。</p>
+  </li>
+</ul>
+
+<h3 id="理解aop">理解AOP</h3>
+
+<blockquote>
+  <p>https://blog.csdn.net/javazejian/article/details/56267036</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>为什么要有AOP？</p>
+
+    <ul>
+      <li>
+        <p>在面向对象编程的这些年，我们遇到了一些问题。</p>
+
+        <p><img src="https://img-blog.csdn.net/20170215092953013?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamF2YXplamlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img" /></p>
+      </li>
+    </ul>
+
+    <p>参数检查，日志，异常处理，事务开始和提交，这些都是重复代码，怎么解决呢？面向切面编程，将这些功能抽取出来，然后定义point cut（切入点），在point cut上进功能的weaving织入，从而形成一个aspect切面。</p>
+  </li>
+  <li>
+    <p>专属名词</p>
+
+    <ul>
+      <li>
+        <p>join point：Spring中每个方法都可以是join point</p>
+      </li>
+      <li>
+        <p>point cut：我们想要切入的那些join point</p>
+      </li>
+      <li>
+        <p>advice：通知，即代理逻辑代码</p>
+      </li>
+      <li>
+        <p>aspect：point cut+advice等于一个切面</p>
+      </li>
+      <li>
+        <p>weaving:切面应用到目标函数的过程</p>
+
+        <p><img src="https://img-blog.csdn.net/20170216232225542?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamF2YXplamlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="spring-aop与aspect">Spring AOP与Aspect</h3>
+
+<blockquote>
+  <p>https://zhuanlan.zhihu.com/p/24565766</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>Spring aop和Aspect不是一个东西</p>
+  </li>
+  <li>
+    <p>Aspect是一套独立的面向切面编程的实现方案，通过编译器实现静态织入.</p>
+
+    <p><img src="https://img-blog.csdn.net/20170219102612181?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvamF2YXplamlhbg==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" alt="img" /></p>
+  </li>
+  <li>
+    <p>Spring AOP基于动态代理设计模式的动态织入，基础技术为jdk动态代理和CGLIB技术，前者基于反射技术且只应用于接口，后者基于继承了用于类。</p>
+  </li>
+  <li>
+    <p>Spring AOP使用了Aspect的部分内容(主要是实现XML配置解析和类似 Aspectj 注解方式的时候，借用了 aspectjweaver.jar 中定义的一些annotation 和 class)，但是并没有使用其编译器和织入器，可以认为是Aspect风格的，但是实现完全不同。</p>
+  </li>
+  <li>
+    <p>AOP Alliance 是AOP的接口标准，定义了 AOP 中的基础概念(Advice、CutPoint、Advisor等)，目标是为各种AOP实现提供统一的接口，本身并不是一种 AOP 的实现。Spring AOP, GUICE等都采用了AOP Alliance中定义的接口，因而这些lib都需要依赖 aopalliance.jar。</p>
+  </li>
+</ul>
+
+<h3 id="第7步使用jdk动态代理实现aop织入">第7步：使用JDK动态代理实现AOP织入</h3>
+
+<ul>
+  <li>
+    <p>这一步我们就是利用之前说到的动态代理模式，几乎一模一样的完成织入。想一下，我们实现动态代理要用Proxy.newInstance，我们可以封装一个动态代理类，就叫做JdkDynamicAopProxy implements InvocationHandler。由之前的动态代理知识可知，实现了InvocationHandler就必须实现invoke方法，那我们这样写：</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9</pre></td><td class="code"><pre class="highlight"><code><span class="nd">@Override</span>
+<span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="nc">Object</span> <span class="n">proxy</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+    <span class="c1">//        MethodInterceptor methodInterceptor = advised.getMethodInterceptor();</span>
+    <span class="c1">//        return methodInterceptor.invoke(new ReflectiveMethodInvocation(advised.getTargetSource().getTarget(),method,args));</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"方法开始"</span><span class="o">);</span>
+        <span class="nc">Object</span> <span class="n">result</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">advised</span><span class="o">.</span><span class="na">getTargetSource</span><span class="o">().</span><span class="na">getTarget</span><span class="o">(),</span><span class="n">args</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"方法结束"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">result</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>这样就可以将所有代理方法前后打印两句话了。我们通过getProxy返回构造好的代理类：return Proxy(getClass.getClassLoader,new Class[]{target.getClass},this。因为本类就是InvocationHandler的实现类，因此最后一个用this即可。</p>
+  </li>
+  <li>
+    <p>我们知道想成功代理一个实例需要2个要素1.被代理的实例2.被代理的接口。我们用AdvisedSupport进行封装，包括target、targetClass（其实应该是targetInterface）（前两个被封装进TargetSource，而TargetSource被封装进AdvisedSupport）、methodInterceptor.等一下，methodInterceptor是个什么吊参数？</p>
+  </li>
+  <li>
+    <p>按照我们这样写，功能只能是对被代理的方法前后加一句话而已，那有没有一种方式能让我们能定制对方法调用时进行的控制？有，就是MethodInterceptor，即方法拦截器类。</p>
+
+    <blockquote>
+      <p>http://aopalliance.sourceforge.net/doc/org/aopalliance/intercept/MethodInterceptor.html</p>
+    </blockquote>
+
+    <ul>
+      <li>
+        <p>MethodInterceptor,环绕切点进行织入</p>
+      </li>
+      <li>
+        <p>MethodBeforeAdvice，切点前侧织入</p>
+      </li>
+      <li>
+        <p>MethodAfterAdvice,切点后侧织入</p>
+      </li>
+      <li>
+        <p>ThrowsAdvice,切点的目标方法出现异常时调用</p>
+
+        <p><img src="http://img.sonihr.com/10e630fd-31d8-4d9d-bac0-d67d5b21489d.jpg" alt="img" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>与上文采用的动态代理不同，我们可以通过配置拦截器来配置不同的代理逻辑。但是注意methodInterceptor.invoke方法中还有个methodInvovation，这个类用于调用我们的target的方法，因此这个类需要target实例，method和args。</p>
+  </li>
+  <li>
+    <p>所以其实啊MethodInvocation就是point cut，而MethodInterceptor就是advice，Invocation负责调用target方法即切点方法，Interceptor负责代理逻辑即advice。</p>
+  </li>
+  <li>
+    <p>这一步到此为止可以做到：1.写一个实现MethodInterceptor的实现类，实现增强功能。2.实现对接口方法的代理。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16</pre></td><td class="code"><pre class="highlight"><code><span class="c1">// 1. 设置被代理对象(Joinpoint)</span>
+<span class="nc">AdvisedSupport</span> <span class="n">advisedSupport</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AdvisedSupport</span><span class="o">();</span>
+<span class="nc">TargetSource</span> <span class="n">targetSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TargetSource</span><span class="o">(</span><span class="n">car</span><span class="o">,</span><span class="nc">Driveable</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+<span class="n">advisedSupport</span><span class="o">.</span><span class="na">setTargetSource</span><span class="o">(</span><span class="n">targetSource</span><span class="o">);</span>
+  
+<span class="c1">// 2. 设置拦截器(Advice)</span>
+<span class="nc">TimerInterceptor</span> <span class="n">timerInterceptor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TimerInterceptor</span><span class="o">();</span>
+<span class="n">advisedSupport</span><span class="o">.</span><span class="na">setMethodInterceptor</span><span class="o">(</span><span class="n">timerInterceptor</span><span class="o">);</span>
+  
+<span class="c1">// 3. 创建代理(Proxy)</span>
+<span class="nc">JdkDynamicAopProxy</span> <span class="n">jdkDynamicAopProxy</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">JdkDynamicAopProxy</span><span class="o">(</span><span class="n">advisedSupport</span><span class="o">);</span>
+<span class="nc">Driveable</span> <span class="n">carProxy</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Driveable</span><span class="o">)</span><span class="n">jdkDynamicAopProxy</span><span class="o">.</span><span class="na">getProxy</span><span class="o">();</span>
+  
+  
+<span class="c1">// 4. 基于AOP的调用</span>
+<span class="n">carProxy</span><span class="o">.</span><span class="na">running</span><span class="o">();</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>给出一个AOP采用的动态代理方式的小demo</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45<br/>46<br/>47<br/>48<br/>49<br/>50<br/>51<br/>52<br/>53<br/>54<br/>55<br/>56<br/>57</pre></td><td class="code"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">ReflectMethodInvocation</span> <span class="kd">implements</span> <span class="nc">MethodInvocation</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Object</span> <span class="n">target</span><span class="o">;</span>
+    <span class="kd">private</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">;</span>
+    <span class="kd">public</span> <span class="nf">ReflectMethodInvocation</span><span class="o">(</span><span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span> <span class="n">target</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">method</span> <span class="o">=</span> <span class="n">method</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">target</span> <span class="o">=</span> <span class="n">target</span><span class="o">;</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">args</span> <span class="o">=</span> <span class="n">args</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Method</span> <span class="nf">getMethod</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">method</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span><span class="o">[]</span> <span class="nf">getArguments</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">args</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">proceed</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">method</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">target</span><span class="o">,</span><span class="n">args</span><span class="o">);</span>
+    <span class="o">}</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">getThis</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">target</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">AccessibleObject</span> <span class="nf">getStaticPart</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">method</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+  
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JdkAopNew</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">Car</span> <span class="n">car</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Car</span><span class="o">();</span>
+        <span class="nc">MethodInterceptor</span> <span class="n">methodInterceptor</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">MethodInterceptor</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="nc">MethodInvocation</span> <span class="n">methodInvocation</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"拦截器方式动态代理前"</span><span class="o">);</span>
+                <span class="n">methodInvocation</span><span class="o">.</span><span class="na">proceed</span><span class="o">();</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"后"</span><span class="o">);</span>
+                <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+            <span class="o">}</span>
+        <span class="o">};</span>
+        <span class="nc">Drivebale</span> <span class="n">drivebale</span> <span class="o">=</span>  <span class="o">(</span><span class="nc">Drivebale</span><span class="o">)</span> <span class="nc">Proxy</span><span class="o">.</span><span class="na">newProxyInstance</span><span class="o">(</span><span class="n">car</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getClassLoader</span><span class="o">(),</span> <span class="n">car</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getInterfaces</span><span class="o">(),</span> <span class="k">new</span> <span class="nc">InvocationHandler</span><span class="o">()</span> <span class="o">{</span>
+            <span class="nd">@Override</span>
+            <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="nc">Object</span> <span class="n">proxy</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+                <span class="k">return</span> <span class="n">methodInterceptor</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="k">new</span> <span class="nc">ReflectMethodInvocation</span><span class="o">(</span><span class="n">method</span><span class="o">,</span><span class="n">car</span><span class="o">,</span><span class="n">args</span><span class="o">));</span>
+            <span class="o">}</span>
+        <span class="o">});</span>
+        <span class="n">drivebale</span><span class="o">.</span><span class="na">running</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+</ul>
+
+<h3 id="第8步使用aspectj管理切面">第8步：使用AspectJ管理切面</h3>
+
+<ul>
+  <li>
+    <p>第7步解决了怎么织入的问题，下面就是在哪里织入？Spring采用了AspectJ风格的标示性语句来表示在哪些位置进行织入，即哪些位置是point cut。类似下面的语句<aop:pointcut id="pointcut" expression="execution(public int aopxml.Calculator.*(int, int ))"></aop:pointcut>。Spring可以对类和方法做插入，因此我们也要实现对类和方法表示point cut的功能。</p>
+  </li>
+  <li>
+    <p>先写出ClassFilter接口和MethodMathcer接口，望文生义的说前者是类过滤器，后者是方法匹配器。具体怎么匹配呢？就在我们的AspectJExpressionPointcut中。</p>
+  </li>
+  <li>
+    <p>AspectJExpressionPintcut中要做这样几件事1.获得String expression即AspectJ风格表达式2.创建PonitcutParser，即解析AspectJ风格表达式的解析器。3.expression被解析后就变成了pointcutExpression。即expression是输入，pointcutParser是输出，pointcutParser是解析器，将输入解析成输出。这个解析器怎么创建呢？直接new一个行不行啊？不行。正确的创建方式为：pointcutParser = PointcutParser.getPointcutParserSupportingSpecifiedPrimitivesAndUsingContextClassloaderForResolution(supportedPrimitives);后面的supportedPrimitives指的是执行的AspectJ语言风格的关键字，是一个set。那请问支持哪些关键字呢？去org.aspectj.weaver.tools包内的PointPrimitive就可以看奥。</p>
+
+    <p><img src="http://img.sonihr.com/b8d68ae2-2960-46a9-8c83-0da605d691ed.jpg" alt="img" /></p>
+
+    <p>可以看出pointcutExpression是对expression的封装。</p>
+  </li>
+  <li>
+    <p>pointcutExpression是创建好了，但是有什么用呢？这个类可以用于匹配方法和类。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code><span class="c1">//匹配类</span>
+<span class="n">pointcutExpression</span><span class="o">.</span><span class="na">couldMatchJoinPointsInType</span><span class="o">(</span><span class="n">targetClass</span><span class="o">);</span>
+<span class="c1">//匹配方法</span>
+<span class="nc">ShadowMatch</span> <span class="n">shadowMatch</span> <span class="o">=</span> <span class="n">pointcutExpression</span><span class="o">.</span><span class="na">matchesMethodExecution</span><span class="o">(</span><span class="n">method</span><span class="o">);</span> 
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>所以其实AspectJ包已经帮你做好了解析和匹配的事儿，只不过你不会用他的编译器，你用动态代理的方式实现了织入。</p>
+
+    <p><img src="http://img.sonihr.com/6d6a98ca-29a7-4489-980f-1e457c85cbd2.jpg" alt="img" /></p>
+  </li>
+  <li>
+    <p>AspectJExpressionPointcutAdvisor封装了pointcut和advice，实现了一个完整的切面，切面=切点+advice。p.s.advice就是代理逻辑代码。</p>
+  </li>
+</ul>
+
+<h3 id="第91步完善bean的生命周期">第9.1步：完善Bean的生命周期</h3>
+
+<p><img src="http://img.sonihr.com/07c0d70a-7c24-49e4-8f06-8e1868f9ee6b.jpg" alt="img" /></p>
+
+<ul>
+  <li>
+    <p>生命周期，最后还有一个destroy没有显示出来。</p>
+  </li>
+  <li>
+    <p>BeanPostProcessor接口（下称BPP接口）是AOP在Bean创建方面的应用——根据Spring的生命周期，BeanPostProcessor是在创建Bean的构造函数，setter方法后。并且所有BPP接口实例都不会受到BPP影响，即BPP的实例过程不会有before和after的影响。</p>
+
+    <p><img src="http://img.sonihr.com/390aa080-f94f-442a-9186-02321dc262a4.jpg" alt="img" /></p>
+  </li>
+  <li>
+    <p>BPP接口实例要率先被实例化，并且实例化过程几乎不会存在依赖ref。</p>
+  </li>
+  <li>
+    <p>一般实例的创建过程</p>
+
+    <p><img src="http://img.sonihr.com/d1c92690-f77a-4744-86fd-28d2ade2cc04.jpg" alt="img" /></p>
+  </li>
+</ul>
+
+<h3 id="第92步将aop融入bean的创建过程">第9.2步：将AOP融入Bean的创建过程</h3>
+
+<ul>
+  <li>
+    <p>第7和第8步我们已经完成了AOP的point识别和识别后的织入，但是两个功能没有整合，同时也没有和Spring的IOC整合起来。目的是为了，IOC给我们的容器已经不再是我们自己写的实例，而是被织入了advice的实例——如果该类在pointcut则返回new JdkDynamicAopProxy，否则返回bean。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="nc">Object</span> <span class="nf">postProcessAfterInitialization</span><span class="o">(</span><span class="nc">Object</span> <span class="n">bean</span><span class="o">,</span> <span class="nc">String</span> <span class="n">beanName</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+	<span class="k">if</span> <span class="o">(</span><span class="n">bean</span> <span class="k">instanceof</span> <span class="nc">AspectJExpressionPointcutAdvisor</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="n">bean</span><span class="o">;</span>
+	<span class="o">}</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">bean</span> <span class="k">instanceof</span> <span class="nc">MethodInterceptor</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="n">bean</span><span class="o">;</span>
+    <span class="o">}</span>
+	<span class="nc">List</span><span class="o">&lt;</span><span class="nc">AspectJExpressionPointcutAdvisor</span><span class="o">&gt;</span> <span class="n">advisors</span> <span class="o">=</span> <span class="n">beanFactory</span>
+			<span class="o">.</span><span class="na">getBeansForType</span><span class="o">(</span><span class="nc">AspectJExpressionPointcutAdvisor</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+	<span class="k">for</span> <span class="o">(</span><span class="nc">AspectJExpressionPointcutAdvisor</span> <span class="n">advisor</span> <span class="o">:</span> <span class="n">advisors</span><span class="o">)</span> <span class="o">{</span>
+		<span class="k">if</span> <span class="o">(</span><span class="n">advisor</span><span class="o">.</span><span class="na">getPointcut</span><span class="o">().</span><span class="na">getClassFilter</span><span class="o">().</span><span class="na">matches</span><span class="o">(</span><span class="n">bean</span><span class="o">.</span><span class="na">getClass</span><span class="o">()))</span> <span class="o">{</span>
+			<span class="nc">AdvisedSupport</span> <span class="n">advisedSupport</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AdvisedSupport</span><span class="o">();</span>
+			<span class="n">advisedSupport</span><span class="o">.</span><span class="na">setMethodInterceptor</span><span class="o">((</span><span class="nc">MethodInterceptor</span><span class="o">)</span> <span class="n">advisor</span><span class="o">.</span><span class="na">getAdvice</span><span class="o">());</span>
+			<span class="n">advisedSupport</span><span class="o">.</span><span class="na">setMethodMatcher</span><span class="o">(</span><span class="n">advisor</span><span class="o">.</span><span class="na">getPointcut</span><span class="o">().</span><span class="na">getMethodMatcher</span><span class="o">());</span>
+  
+			<span class="nc">TargetSource</span> <span class="n">targetSource</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">TargetSource</span><span class="o">(</span><span class="n">bean</span><span class="o">,</span> <span class="n">bean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getInterfaces</span><span class="o">());</span>
+			<span class="n">advisedSupport</span><span class="o">.</span><span class="na">setTargetSource</span><span class="o">(</span><span class="n">targetSource</span><span class="o">);</span>
+  
+			<span class="k">return</span> <span class="k">new</span> <span class="nf">JdkDynamicAopProxy</span><span class="o">(</span><span class="n">advisedSupport</span><span class="o">).</span><span class="na">getProxy</span><span class="o">();</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+	<span class="k">return</span> <span class="n">bean</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p><img src="http://img.sonihr.com/5d849447-bb8b-47ce-8312-87dabe5dd45b.jpg" alt="img" /></p>
+  </li>
+  <li>
+    <p>第一幕：和9.1非常类似的，仅有标红出不同。因为AspectJAwareAdvisorAutoProxyCreator implements BBP，BeanFactoryWare，因此不同仅仅是，因为实现了BeanFactoryAware接口，因此调用setFactory方法。这一步的目的是为了是的AspectAwareAdvisorAutoProxyCreator中具有beanFactory，方便从中获取AspectJExpressionPointcutAdvisor.class类的实例。</p>
+
+    <p><img src="http://img.sonihr.com/42a39f55-dfe2-4697-ade1-254866ac3405.jpg" alt="img" /></p>
+  </li>
+  <li>
+    <p>第二幕：这一幕是目前为止最复杂也最重量级的。相当于把第9.1步和7,8两步合起来了，归纳如下：</p>
+
+    <ol>
+      <li>
+        <p>首先因为autoProxyCreator implements BBP,BeanFactoryAware，因此其必然先于所有一般实例和AOP实例创建，而且<strong>所有一般实例和AOP实例都必然要经过autoProxyCreator的before和after处理。</strong></p>
+      </li>
+      <li>
+        <p>当实例化一般实例和AOP实例时，after中对实例进行检查，如果其肯定不需要代理，比如说是提供代理pointcut与advice的AspectJExpressionPointcutAdvisor或是提供advice的methodInterceptor。如果和expression给出的表达式不匹配的类也不进行代理。对那些对expression匹配的类，就返回proxy类实例代替原来的bean。</p>
+      </li>
+      <li>
+        <p><strong>小结：1.先通过BBP接口特性实现每个非BBP实例都必须经过BBP实例的before和after方法。2.正是因为BBP的这种特性，因此after方法中对非BBP实例进行检查，如果和expression表示的point cut匹配则返回代理对象，否则返回原对象。</strong></p>
+
+        <p><img src="http://img.sonihr.com/34dae1ef-6be8-4f0c-986c-b0cae1cda9e9.jpg" alt="img" /></p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p><strong>第一幕创建BBP实例，以编译对所有非BBP实例进行before、after操作。第二幕通过判断该类是否为point cut从而确认返回原实例还是代理实例，到第二幕已经将实例创建完毕。第三幕指的是，当实例调用接口方法时，如果该方法是pointcut，则会调用如下流程：</strong></p>
+
+    <p>invocationHandler.invoke(proxy,method,args)调用methodInterceptor.invoke(methodInvocation)，methodInterceptor内部进行1.代理编码的实现2.函数参数methodInvocation调用proceed，从而执行被代理实例的method方法。因为methodInvocation要可以调用被代理实例的method，因此methodInvocation当你想要实现这个接口时，必须要指定被代理实例target，被代理实例的方法method和参数args。</p>
+  </li>
+</ul>
+
+<h3 id="第93步目前还存在的问题">第9.3步：目前还存在的问题</h3>
+
+<h4 id="原作者代码中的一个错误">原作者代码中的一个错误</h4>
+
+<ul>
+  <li>来自Github原项目的Issues中：</li>
+</ul>
+
+<blockquote>
+  <p>https://github.com/code4craft/tiny-spring/issues/10
+问题是：在进行测试的时候，发现调用非BPP实例的接口方法时，并没有被代理。</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>什么原因呢？原Issues里面也说了，要加上一句beanDefinition.setBean(bean).这句话是不是有些眼熟？逻辑是这样的：</p>
+
+    <ul>
+      <li>
+        <p>先给出非AOP实例（即实例没有pointcut）情况下，这部分的详细逻辑</p>
+
+        <p><img src="http://img.sonihr.com/d99f9ae6-fe36-4e05-89cb-78d7eb07bc73.jpg" alt="img" /></p>
+      </li>
+      <li>
+        <p>再给出有AOP（即有pointcut，需要代理）情况下，这部分的详细逻辑</p>
+
+        <p><img src="https://user-images.githubusercontent.com/33364674/57900343-0c18fa80-7893-11e9-9204-98e4cb41779b.png" alt="img" /></p>
+
+        <p>可以看到，第一次setBean实现了将beanDefinition.bean指向内存空间a。此时bean和beanDefinition.bean指向了同一块内存区域，因此对bean的操作本质上是对内存空间a的操作，而beanDefinition.bean也指向这块内存区域，因此对这块区域propertyvalue的赋值不影响beanDefinition.bean的引用关系。
+<strong>但是！</strong>当return new之后，bean已经指向了不同的内存空间b，beanDefinition.bean仍然指向内存空间a，因此需要重新set。</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="修正错误后带来的新问题">修正错误后带来的新问题</h4>
+
+<ul>
+  <li>来自Github原项目的Issues中：</li>
+</ul>
+
+<blockquote>
+  <p>https://github.com/code4craft/tiny-spring/issues/17
+问题是：如果a ref b,b ref a，且顺序也是这样。</p>
+</blockquote>
+
+<ul>
+  <li>
+    <p>这个问题很奇怪。我们看看在实际Spring中的实验效果：</p>
+
+    <ul>
+      <li>
+        <p>实验准备：</p>
+
+        <p><img src="https://user-images.githubusercontent.com/33364674/57911983-c45a9900-78bb-11e9-9dd8-4a8b2fb60560.png" alt="image" /></p>
+      </li>
+      <li>
+        <p>实验过程：</p>
+
+        <p><img src="https://user-images.githubusercontent.com/33364674/57912090-097ecb00-78bc-11e9-8e4a-8ef85f465804.png" alt="image" /></p>
+      </li>
+      <li>
+        <p>实验一：</p>
+
+        <p><img src="https://user-images.githubusercontent.com/33364674/57912133-24513f80-78bc-11e9-8135-963f0da2c21d.png" alt="image" /></p>
+
+        <p><img src="https://user-images.githubusercontent.com/33364674/57912192-42b73b00-78bc-11e9-86cf-6e83e3e29b8c.png" alt="image" /></p>
+
+        <p>可以看出，单独的calculator和book都可以被正常代理。当然，在TinySpring中也是符合的。</p>
+      </li>
+      <li>
+        <p>实验二：</p>
+
+        <p><img src="https://user-images.githubusercontent.com/33364674/57912225-5ebadc80-78bc-11e9-8400-af9dd4218f38.png" alt="image" /></p>
+
+        <p>在Spring中，接口实现类根本不用考虑这个问题，因为根本无法运行。逻辑在于，你获得的A和B本质上都是代理类，代理类只实现了代理接口，因此无法强转为某一个具体的实现类。所以A.B.b()和B.A.a()从本质上根本就不会强转成功。</p>
+      </li>
+      <li>
+        <p>实验三：</p>
+
+        <p>怎么样才能正确进行这个实验呢？上一个回答说到，不能进行实验的本质是因为只能代理接口而不能代理类，所以Spring通过Cglib实现类代理。</p>
+
+        <p><img src="https://user-images.githubusercontent.com/33364674/57912821-d63d3b80-78bd-11e9-8ecb-4966e1b7106c.png" alt="image" /></p>
+
+        <p>通过proxy-target-class标记为true后，强制开启cglib，此时再看实验结果。</p>
+
+        <p><img src="https://user-images.githubusercontent.com/33364674/57912884-f8cf5480-78bd-11e9-90d4-d5d12b554c50.png" alt="image" /></p>
+
+        <p>成功！</p>
+      </li>
+      <li>
+        <p><strong>小结论</strong>实验三证明，强制开启Chlib后，可以进行本实验，且Spring解决了循环依赖的问题。<strong>那原作者的tiny spring是不是进行第10步之后，就解决了呢？答案是没有，因为Cglib只是让我们的实验可以正常进行，不代表能解决这个问题。Spring是通过三级缓存解决的。</strong></p>
+
+        <p><img src="http://img.sonihr.com/7f2f38e0-d02d-45aa-9c45-d9245a1653ba.jpg" alt="img" /></p>
+
+        <p>上图是第10步做完后的效果，发现问题还未解决。</p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="只能对接口代理">只能对接口代理</h4>
+
+<ul>
+  <li>只能对接口代理，为了对这个问题有深入的认识，我们举出以下两个例子：
+    <ul>
+      <li>例子1：CA implements A。CA类中出了有A接口的a()以外，还有c()，当动态代理后，返回的CA类实例是proxy，因此只能转换为A类型，所以永远无法使用c()。这要求，CA中所有方法必须实现A。</li>
+      <li>例子2：CA implements A,CB implements B。CA中有CB类型的成员变量，CB中有CA类型的成员变量。抱歉，不行。为什么？因为CA类型实例正在创建的过程中因为ca ref cb会先创建cb，但是cb返回的是proxy实例而不是CB实例，因此proxy实例无法赋值给cb。</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="第94步万恶之源">第9.4步：万恶之源</h3>
+
+<ul>
+  <li>万恶之源就是，AOP如果用动态代理实现，从根本上就意味着只能代理接口方法。有没有一种方式可以代理类，而不仅仅是借口呢？抱歉，还真的有。</li>
+</ul>
+
+<h3 id="第10步使用cglib进行类的织入">第10步：使用CGLib进行类的织入</h3>
+
+<h4 id="如何使用cglib实现动态代理">如何使用CGLib实现动态代理</h4>
+
+<ul>
+  <li>
+    <p>CGlib的原理是通过对字节码的操作，可以动态的生成一个目标实例类的子类，这个子类和目标实例的子类相同的基础上，还增加了代理代码或者叫advice。代理类 = 被代理类+增强逻辑</p>
+
+    <ul>
+      <li>CGlib动态代理</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35</pre></td><td class="code"><pre class="highlight"><code><span class="kd">class</span> <span class="nc">Student</span><span class="o">{</span>
+    <span class="kd">private</span> <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="s">"zhang san"</span><span class="o">;</span>
+  
+    <span class="kd">public</span> <span class="nc">String</span> <span class="nf">getName</span><span class="o">()</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">name</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setName</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">name</span> <span class="o">=</span> <span class="n">name</span><span class="o">;</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CglibMthodTwo</span> <span class="kd">implements</span> <span class="nc">MethodInterceptor</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">getProxy</span><span class="o">(</span><span class="nc">Class</span> <span class="n">clazz</span><span class="o">){</span>
+        <span class="nc">Enhancer</span> <span class="n">en</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Enhancer</span><span class="o">();</span>
+        <span class="n">en</span><span class="o">.</span><span class="na">setSuperclass</span><span class="o">(</span><span class="n">clazz</span><span class="o">);</span>
+        <span class="n">en</span><span class="o">.</span><span class="na">setCallback</span><span class="o">(</span><span class="k">this</span><span class="o">);</span>
+        <span class="nc">Object</span> <span class="n">proxy</span> <span class="o">=</span> <span class="n">en</span><span class="o">.</span><span class="na">create</span><span class="o">();</span>
+        <span class="k">return</span> <span class="n">proxy</span><span class="o">;</span>
+    <span class="o">}</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">intercept</span><span class="o">(</span><span class="nc">Object</span> <span class="n">o</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">objects</span><span class="o">,</span> <span class="nc">MethodProxy</span> <span class="n">methodProxy</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"前"</span><span class="o">);</span>
+        <span class="nc">Object</span> <span class="n">res</span> <span class="o">=</span>  <span class="n">methodProxy</span><span class="o">.</span><span class="na">invokeSuper</span><span class="o">(</span><span class="n">o</span><span class="o">,</span><span class="n">objects</span><span class="o">);</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"后"</span><span class="o">);</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="nc">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+        <span class="nc">CglibMthodTwo</span> <span class="n">cglibMthodTwo</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CglibMthodTwo</span><span class="o">();</span>
+        <span class="o">((</span><span class="nc">Student</span><span class="o">)</span><span class="n">cglibMthodTwo</span><span class="o">.</span><span class="na">getProxy</span><span class="o">(</span><span class="nc">Student</span><span class="o">.</span><span class="na">class</span><span class="o">)).</span><span class="na">getName</span><span class="o">();</span>
+  
+    <span class="o">}</span>
+  
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <ul>
+      <li>JDK动态代理。</li>
+    </ul>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27</pre></td><td class="code"><pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="nc">JdkDynamicAopProxy</span> <span class="kd">extends</span> <span class="nc">AbstractAopProxy</span> <span class="kd">implements</span> <span class="nc">InvocationHandler</span> <span class="o">{</span>
+  
+    <span class="kd">public</span> <span class="nf">JdkDynamicAopProxy</span><span class="o">(</span><span class="nc">AdvisedSupport</span> <span class="n">advised</span><span class="o">)</span> <span class="o">{</span>
+        <span class="kd">super</span><span class="o">(</span><span class="n">advised</span><span class="o">);</span>
+    <span class="o">}</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">getProxy</span><span class="o">()</span> <span class="o">{</span>
+        <span class="k">return</span> <span class="nc">Proxy</span><span class="o">.</span><span class="na">newProxyInstance</span><span class="o">(</span><span class="n">getClass</span><span class="o">().</span><span class="na">getClassLoader</span><span class="o">(),</span> <span class="n">advised</span><span class="o">.</span><span class="na">getTargetSource</span><span class="o">().</span><span class="na">getInterfaces</span><span class="o">(),</span> <span class="k">this</span><span class="o">);</span>
+    <span class="o">}</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">invoke</span><span class="o">(</span><span class="kd">final</span> <span class="nc">Object</span> <span class="n">proxy</span><span class="o">,</span> <span class="kd">final</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="kd">final</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+        <span class="nc">MethodInterceptor</span> <span class="n">methodInterceptor</span> <span class="o">=</span> <span class="n">advised</span><span class="o">.</span><span class="na">getMethodInterceptor</span><span class="o">();</span>
+        <span class="nc">Object</span> <span class="n">res</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">advised</span><span class="o">.</span><span class="na">getMethodMatcher</span><span class="o">()</span> <span class="o">!=</span> <span class="kc">null</span>
+                <span class="o">&amp;&amp;</span> <span class="n">advised</span><span class="o">.</span><span class="na">getMethodMatcher</span><span class="o">().</span><span class="na">matches</span><span class="o">(</span><span class="n">method</span><span class="o">,</span> <span class="n">advised</span><span class="o">.</span><span class="na">getTargetSource</span><span class="o">().</span><span class="na">getTarget</span><span class="o">().</span><span class="na">getClass</span><span class="o">()))</span> <span class="o">{</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">methodInterceptor</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="k">new</span> <span class="nc">ReflectiveMethodInvocation</span><span class="o">(</span><span class="n">advised</span><span class="o">.</span><span class="na">getTargetSource</span><span class="o">().</span><span class="na">getTarget</span><span class="o">(),</span>
+                    <span class="n">method</span><span class="o">,</span> <span class="n">args</span><span class="o">));</span>
+        <span class="o">}</span> <span class="k">else</span> <span class="o">{</span>
+            <span class="n">res</span> <span class="o">=</span> <span class="n">method</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">advised</span><span class="o">.</span><span class="na">getTargetSource</span><span class="o">().</span><span class="na">getTarget</span><span class="o">(),</span> <span class="n">args</span><span class="o">);</span>
+  
+        <span class="o">}</span>
+        <span class="k">return</span> <span class="n">res</span><span class="o">;</span>
+    <span class="o">}</span>
+  
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>与JDK动态代理的区别
+    <ul>
+      <li>原理上JDK没有修改字节码，而是采用$proxyn extend Proxy implements InterfaceXXX的方式创建了一个被代理接口的实现类，然后在运行期写class文件，再用classloader加载。而CGlib却是操作字节码，将被代理类的字节码增强成一个子类，因此要导入ASM包。</li>
+      <li>操作上，JDK动态代理创建为Proxy类实例，且必须要传入InvocationHandler类，而Cglib创建为Enhancer类实例，且必须传入MethodInterceptor类（注意包的问题，这个MethodInterceptor是CGlib中的）。</li>
+      <li>Advice即代理代码的实现上，JDK动态代理可以在InvocationHandler中重写invoke实现，或者在InvocationHandler.invoke中调用methodInterceptor.invoke（methodInvocation），将代理的业务代码交给methodInterceptor去做，被代理实例方法的运行通过参数methodInvocation.proceed()实现。而在CGlib中，通过methodInterceptor.intercept()实现代理增强，值得注意的是，这个方法内部有四个参数，包括一个被代理实例，而JDK的InvocationHandler.invoke却不包含被代理实例。</li>
+      <li>在运行方法上，JDK代理类实例.a()的运行流程为先运行InvocationHandler.invoke,在invoke中运行methodInterceptor.invoke，在这个invoke中有代理逻辑代码和methodInvocation.proceed()，从而实现代理逻辑与被代理实例方法的两开花。而CGlib则是直接运行methodInterceptor.interceptor方法。注意，这一条很重要。</li>
+    </ul>
+  </li>
+  <li>
+    <p>为什么说运行方法上的差异很重要呢，因为这会导致步骤9的代码不可复用。因为我们原来写的都是JDK代理类实例的那一套代码，如果用CGlib的话，就无法通过注入org.aopalliance.intercept.MethodInterceptor的方式实现增强，而是注入cglib的MethodInterceptor，通过setCallback可以设置不同methodInterceptor。有没有一种办法，让我们配置一种org.aopalliance.intercept.MethodInterceptor，在CGlib的情况下也可以调用它呢？</p>
+  </li>
+  <li>
+    <p>有啊，只要我们在cglib的methodInterceptor接口实现的intercept方法中调用org.aopalliance.intercept.MethodInterceptor不就好了。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22</pre></td><td class="code"><pre class="highlight"><code><span class="kd">private</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">DynamicAdvisedInterceptor</span> <span class="kd">implements</span> <span class="nc">MethodInterceptor</span> <span class="o">{</span>
+  
+    <span class="kd">private</span> <span class="nc">AdvisedSupport</span> <span class="n">advised</span><span class="o">;</span>
+  
+    <span class="kd">private</span> <span class="n">org</span><span class="o">.</span><span class="na">aopalliance</span><span class="o">.</span><span class="na">intercept</span><span class="o">.</span><span class="na">MethodInterceptor</span> <span class="n">delegateMethodInterceptor</span><span class="o">;</span>
+  
+    <span class="kd">private</span> <span class="nf">DynamicAdvisedInterceptor</span><span class="o">(</span><span class="nc">AdvisedSupport</span> <span class="n">advised</span><span class="o">)</span> <span class="o">{</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">advised</span> <span class="o">=</span> <span class="n">advised</span><span class="o">;</span>
+        <span class="k">this</span><span class="o">.</span><span class="na">delegateMethodInterceptor</span> <span class="o">=</span> <span class="n">advised</span><span class="o">.</span><span class="na">getMethodInterceptor</span><span class="o">();</span>
+    <span class="o">}</span>
+  
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="nc">Object</span> <span class="nf">intercept</span><span class="o">(</span><span class="nc">Object</span> <span class="n">obj</span><span class="o">,</span> <span class="nc">Method</span> <span class="n">method</span><span class="o">,</span> <span class="nc">Object</span><span class="o">[]</span> <span class="n">args</span><span class="o">,</span> <span class="nc">MethodProxy</span> <span class="n">proxy</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Throwable</span> <span class="o">{</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">advised</span><span class="o">.</span><span class="na">getMethodMatcher</span><span class="o">()</span> <span class="o">==</span> <span class="kc">null</span>
+                <span class="o">||</span> <span class="n">advised</span><span class="o">.</span><span class="na">getMethodMatcher</span><span class="o">().</span><span class="na">matches</span><span class="o">(</span><span class="n">method</span><span class="o">,</span> <span class="n">advised</span><span class="o">.</span><span class="na">getTargetSource</span><span class="o">().</span><span class="na">getTargetClass</span><span class="o">()))</span> <span class="o">{</span>
+            <span class="c1">// return delegateMethodInterceptor.invoke(new ReflectiveMethodInvocation(advised.getTargetSource().getTarget()，method, args));</span>
+            <span class="k">return</span> <span class="n">delegateMethodInterceptor</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="k">new</span> <span class="nc">CglibMethodInvocation</span><span class="o">(</span><span class="n">advised</span><span class="o">.</span><span class="na">getTargetSource</span><span class="o">().</span><span class="na">getTarget</span><span class="o">(),</span> <span class="n">method</span><span class="o">,</span> <span class="n">args</span><span class="o">,</span> <span class="n">proxy</span><span class="o">));</span>
+        <span class="o">}</span>
+        <span class="c1">// return method.invoke(advised.getTargetSource().getTarget(),args);可以这么写，</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">CglibMethodInvocation</span><span class="o">(</span><span class="n">advised</span><span class="o">.</span><span class="na">getTargetSource</span><span class="o">().</span><span class="na">getTarget</span><span class="o">(),</span> <span class="n">method</span><span class="o">,</span> <span class="n">args</span><span class="o">,</span> <span class="n">proxy</span><span class="o">).</span><span class="na">proceed</span><span class="o">();</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>现在只剩下一个疑问了，因为么要写一个ReflectMothodInvocation的子类？因为intercept有4个入参，所以我们交给下一步处理的时候也要有4个入参，相当于增强了一下功能，当然你这边不改也没问题，就当做JDK那个版本就行。</p>
+  </li>
+</ul>
+
+<h3 id="第11步通过三级缓存彻底解决循环依赖">第11步：通过三级缓存彻底解决循环依赖</h3>
+
+<ul>
+  <li>
+    <p>废话少说，先看结果</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20</pre></td><td class="code"><pre class="highlight"><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testXuhuanyilai</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="c1">// --------- helloWorldService without AOP</span>
+    <span class="nc">ApplicationContext</span> <span class="n">applicationContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">"tinyioc.xml"</span><span class="o">);</span>
+    <span class="nc">Car</span> <span class="n">car</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Car</span><span class="o">)</span> <span class="n">applicationContext</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"car"</span><span class="o">);</span>
+    <span class="n">car</span><span class="o">.</span><span class="na">getAddress</span><span class="o">().</span><span class="na">living</span><span class="o">();</span>
+    <span class="nc">Address</span> <span class="n">address</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Address</span><span class="o">)</span><span class="n">applicationContext</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"address"</span><span class="o">);</span>
+    <span class="n">address</span><span class="o">.</span><span class="na">getCar</span><span class="o">().</span><span class="na">running</span><span class="o">();</span>
+<span class="o">}</span>
+<span class="c1">//测试结果</span>
+<span class="nc">Invocation</span> <span class="n">of</span> <span class="nc">Method</span> <span class="n">setCar</span> <span class="n">start</span><span class="o">!</span>
+<span class="nc">Invocation</span> <span class="n">of</span> <span class="nc">Method</span> <span class="n">setCar</span> <span class="n">end</span><span class="o">!</span> <span class="n">takes</span> <span class="mi">123111</span> <span class="n">nanoseconds</span><span class="o">.</span>
+<span class="nc">Invocation</span> <span class="n">of</span> <span class="nc">Method</span> <span class="n">setAddress</span> <span class="n">start</span><span class="o">!</span>
+<span class="nc">Invocation</span> <span class="n">of</span> <span class="nc">Method</span> <span class="n">setAddress</span> <span class="n">end</span><span class="o">!</span> <span class="n">takes</span> <span class="mi">38666</span> <span class="n">nanoseconds</span><span class="o">.</span>
+<span class="nc">Invocation</span> <span class="n">of</span> <span class="nc">Method</span> <span class="n">running</span> <span class="n">start</span><span class="o">!</span>
+<span class="n">car</span> <span class="n">is</span> <span class="n">running</span>
+<span class="nc">Invocation</span> <span class="n">of</span> <span class="nc">Method</span> <span class="n">running</span> <span class="n">end</span><span class="o">!</span> <span class="n">takes</span> <span class="mi">45777</span> <span class="n">nanoseconds</span><span class="o">.</span>
+<span class="nc">Invocation</span> <span class="n">of</span> <span class="nc">Method</span> <span class="n">living</span> <span class="n">start</span><span class="o">!</span>
+<span class="n">address</span> <span class="n">is</span> <span class="n">living</span>
+<span class="nc">Invocation</span> <span class="n">of</span> <span class="nc">Method</span> <span class="n">living</span> <span class="n">end</span><span class="o">!</span> <span class="n">takes</span> <span class="mi">56000</span> <span class="n">nanoseconds</span><span class="o">.</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>实验结果表示，我已经解决了第9.3步中说到的AOP情况下，循环依赖导致a ref b, b ref a时，创建实例时，b.a指向的是空实例a，而不是代理实例a。</p>
+  </li>
+  <li>
+    <p>解决方法。</p>
+
+    <ul>
+      <li>
+        <p>三层缓存。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3</pre></td><td class="code"><pre class="highlight"><code><span class="kd">protected</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">secondCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">();</span>
+<span class="kd">protected</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">thirdCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+<span class="kd">protected</span> <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">firstCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">HashMap</span><span class="o">&lt;&gt;();</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>
+        <p>thirdCache是当空构造函数创建一个实例时，就放入其中。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code><span class="kd">protected</span> <span class="nc">Object</span> <span class="nf">doCreateBean</span><span class="o">(</span><span class="nc">String</span> <span class="n">name</span><span class="o">,</span><span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="nc">Object</span> <span class="n">bean</span> <span class="o">=</span> <span class="n">createBeanInstance</span><span class="o">(</span><span class="n">beanDefinition</span><span class="o">);</span>
+    <span class="n">thirdCache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">name</span><span class="o">,</span><span class="n">bean</span><span class="o">);</span><span class="c1">//thirdCache中放置的全是空构造方法构造出的实例</span>
+    <span class="n">beanDefinition</span><span class="o">.</span><span class="na">setBean</span><span class="o">(</span><span class="n">bean</span><span class="o">);</span>
+    <span class="n">applyPropertyValues</span><span class="o">(</span><span class="n">bean</span><span class="o">,</span><span class="n">beanDefinition</span><span class="o">);</span>
+    <span class="k">return</span> <span class="n">bean</span><span class="o">;</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>
+        <p>a ref b, b ref a情况下，在b创建时，a还只是空构造实例，因此用secondCache去保存所有field中指向空实例的那些实例，即保存b。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code><span class="k">for</span><span class="o">(</span><span class="nc">PropertyValue</span> <span class="nl">propertyValue:</span><span class="n">mbd</span><span class="o">.</span><span class="na">getPropertyValues</span><span class="o">().</span><span class="na">getPropertyValues</span><span class="o">()){</span>
+<span class="nc">Object</span> <span class="n">value</span> <span class="o">=</span> <span class="n">propertyValue</span><span class="o">.</span><span class="na">getValue</span><span class="o">();</span>
+<span class="k">if</span><span class="o">(</span><span class="n">value</span> <span class="k">instanceof</span> <span class="nc">BeanReference</span><span class="o">){</span><span class="c1">//如果是ref，就创建这个ref</span>
+    <span class="nc">BeanReference</span> <span class="n">beanReference</span> <span class="o">=</span> <span class="o">(</span><span class="nc">BeanReference</span><span class="o">)</span><span class="n">value</span><span class="o">;</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="n">getBean</span><span class="o">(</span><span class="n">beanReference</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+    <span class="nc">String</span> <span class="n">refName</span> <span class="o">=</span> <span class="n">beanReference</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+    <span class="k">if</span><span class="o">(</span><span class="n">thirdCache</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">refName</span><span class="o">)&amp;&amp;!</span><span class="n">firstCache</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">refName</span><span class="o">)){</span><span class="c1">//说明当前是循环依赖状态</span>
+        <span class="n">secondCache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">beanReference</span><span class="o">.</span><span class="na">getName</span><span class="o">(),</span><span class="n">bean</span><span class="o">);</span><span class="c1">//标注a ref b,b ref a中，b是后被循环引用的</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>
+        <p>firstCache用于保存所有最终被生成的实例.</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code><span class="n">initializeBean</span><span class="o">():</span>
+<span class="k">if</span><span class="o">(</span><span class="n">thirdCache</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">name</span><span class="o">)){</span><span class="c1">//空构造实例如果被AOP成代理实例，则放入三级缓存，说明已经构建完毕</span>
+    <span class="n">firstCache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">name</span><span class="o">,</span><span class="n">bean</span><span class="o">);</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>
+        <p>因此，当执行完方法beanFactory.preInstantiateSingletons();后，thirdCache保存了所有空构造实例及名称，secondCache保存了所有可能需要重新设置ref的实例及名称，first保存了所有最终生成的实例和名称。在firstcache与third中，必然存放了所有的bean，在second中只存放因循环依赖所以创建时ref了不完整对象的那些。在创建了所有实力后，通过checkoutAll方法对secondCache中的实例进行重置依赖。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29<br/>30<br/>31<br/>32<br/>33<br/>34<br/>35<br/>36<br/>37<br/>38<br/>39<br/>40<br/>41<br/>42<br/>43<br/>44<br/>45</pre></td><td class="code"><pre class="highlight"><code><span class="kd">protected</span> <span class="kt">void</span> <span class="nf">onRefresh</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span><span class="o">{</span>
+    <span class="n">beanFactory</span><span class="o">.</span><span class="na">preInstantiateSingletons</span><span class="o">();</span>
+    <span class="n">checkoutAll</span><span class="o">();</span>
+<span class="o">}</span>
+    
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">checkoutAll</span><span class="o">(){</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">secondCache</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getSecondCache</span><span class="o">();</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">BeanDefinition</span><span class="o">&gt;</span> <span class="n">beanDefinitionMap</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getBeanDefinitionMap</span><span class="o">();</span>
+    <span class="k">for</span><span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="nl">entry:</span><span class="n">secondCache</span><span class="o">.</span><span class="na">entrySet</span><span class="o">()){</span>
+        <span class="nc">String</span> <span class="n">invokeBeanName</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+        <span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span> <span class="o">=</span> <span class="n">beanDefinitionMap</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">invokeBeanName</span><span class="o">);</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">resetReference</span><span class="o">(</span><span class="n">invokeBeanName</span><span class="o">,</span><span class="n">beanDefinition</span><span class="o">);</span>
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">e</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+<span class="c1">//重置依赖，这边用到了动态类型转换。因为原类型的setter在代理类中已经无法使用了。</span>
+<span class="kd">private</span> <span class="kt">void</span> <span class="nf">resetReference</span><span class="o">(</span><span class="nc">String</span> <span class="n">invokeBeanName</span><span class="o">,</span><span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">thirdCache</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getThirdCache</span><span class="o">();</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">secondCache</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getSecondCache</span><span class="o">();</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">firstCache</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getFirstCache</span><span class="o">();</span>
+    <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">BeanDefinition</span><span class="o">&gt;</span> <span class="n">beanDefinitionMap</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getBeanDefinitionMap</span><span class="o">();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="nc">PropertyValue</span> <span class="n">propertyValue</span> <span class="o">:</span> <span class="n">beanDefinition</span><span class="o">.</span><span class="na">getPropertyValues</span><span class="o">().</span><span class="na">getPropertyValues</span><span class="o">())</span> <span class="o">{</span>
+        <span class="nc">String</span> <span class="n">refName</span> <span class="o">=</span> <span class="n">propertyValue</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">firstCache</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">refName</span><span class="o">))</span> <span class="o">{</span><span class="c1">//如果是ref，就创建这个ref</span>
+            <span class="nc">Object</span> <span class="n">exceptedValue</span> <span class="o">=</span> <span class="n">firstCache</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">refName</span><span class="o">);</span>
+            <span class="nc">Object</span> <span class="n">invokeBean</span> <span class="o">=</span> <span class="n">beanDefinition</span><span class="o">.</span><span class="na">getBean</span><span class="o">();</span>
+            <span class="nc">Object</span> <span class="n">realClassInvokeBean</span> <span class="o">=</span> <span class="n">thirdCache</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">invokeBeanName</span><span class="o">);</span>
+            <span class="nc">Object</span> <span class="n">realClassRefBean</span> <span class="o">=</span> <span class="n">thirdCache</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">refName</span><span class="o">);</span>
+            <span class="k">try</span><span class="o">{</span>
+                <span class="nc">Method</span> <span class="n">declaredMethod</span> <span class="o">=</span> <span class="n">realClassInvokeBean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getDeclaredMethod</span><span class="o">(</span><span class="s">"set"</span> <span class="o">+</span> <span class="n">propertyValue</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">substring</span><span class="o">(</span><span class="mi">0</span><span class="o">,</span> <span class="mi">1</span><span class="o">).</span><span class="na">toUpperCase</span><span class="o">()</span>
+                        <span class="o">+</span> <span class="n">propertyValue</span><span class="o">.</span><span class="na">getName</span><span class="o">().</span><span class="na">substring</span><span class="o">(</span><span class="mi">1</span><span class="o">),</span> <span class="n">realClassRefBean</span><span class="o">.</span><span class="na">getClass</span><span class="o">());</span>
+                <span class="n">declaredMethod</span><span class="o">.</span><span class="na">setAccessible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+                <span class="n">declaredMethod</span><span class="o">.</span><span class="na">invoke</span><span class="o">((</span><span class="n">realClassInvokeBean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">cast</span><span class="o">(</span><span class="n">invokeBean</span><span class="o">)),</span> <span class="o">(</span><span class="n">realClassRefBean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">cast</span><span class="o">(</span><span class="n">exceptedValue</span><span class="o">)));</span>
+            <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="nc">NoSuchMethodException</span> <span class="n">e</span><span class="o">){</span>
+                <span class="nc">Field</span> <span class="n">declaredField</span> <span class="o">=</span> <span class="n">realClassInvokeBean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getDeclaredField</span><span class="o">(</span><span class="n">propertyValue</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span>
+                <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">declaredField</span><span class="o">);</span>
+                <span class="n">declaredField</span><span class="o">.</span><span class="na">setAccessible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+                <span class="n">declaredField</span><span class="o">.</span><span class="na">set</span><span class="o">((</span><span class="n">realClassInvokeBean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">cast</span><span class="o">(</span><span class="n">invokeBean</span><span class="o">)),</span> <span class="o">(</span><span class="n">realClassRefBean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">cast</span><span class="o">(</span><span class="n">exceptedValue</span><span class="o">)));</span>
+            <span class="o">}</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>正如在9.3中说的那样，只有在开启全局cglib的情况下才可以完成本实验，如果开启jdk代理模式或者jdk代理+cglib都不会解决本bug。</p>
+  </li>
+</ul>
+
+<h2 id="小结">小结</h2>
+
+<ul>
+  <li>IOC中通过读xml用一个map，读完才赋值给beanFactory的map的方式避免了xml因顺序问题而导致的注入失败。</li>
+  <li>IOC中通过getBean懒加载+先空构造器创建实例的方式解决了循环依赖的问题（简单解决而已，还未能解决增加AOP功能后循环依赖的问题。）。</li>
+  <li>IOC本身1.因为都是注入，而不是在某一个类中new，因此系统耦合降低，所有的创建交给第三方容器，类似工厂模式2.IOC类的提供只需要xml注册，创建的具体细节不需要你知道，程序更易维护和使用，因为你写的代码别人只要xml里注册一下就能用你的实例。3.解决了对象层级嵌套的问题，a ref b,b ref c,c ref a,d ref b这样复杂的嵌套关系，应该如何初始化？交给Spring！</li>
+  <li>AOP中通过jdk动态代理模式实现了被代理实例代理方法的织入。</li>
+  <li>AOP中通过AspectJ包完成了对AspectJ风格expression的解析，进一步完成了对类和方法ponitcut的判断。</li>
+  <li>AOP中通过BeanPostProcessor接口实现了一个完成的bean的生命周期中after和before的工作，这个并不是通过AOP完成的，而是通过逻辑代码的流程控制完成的：确保所有实现BeanPostProcessor接口的实例都率先实例化。</li>
+  <li>AOP中，所有ProxyCreator都实现BeanPostProcessor接口和BeanFactoryAware接口。前者接口保证自己率先被实例化，以保证对非AOP实例的before和after处理，后者接口保证在初始化自己的时候，会setBeanFactory，以用于后面获取切面。</li>
+  <li>AOP中，所有非AOP实例都必须经过ProxyCreator的after方法，proxyCreator中已经有了beanFactory，因此可以获得所有expression对应的类pointcut，只要实例对应的类匹配类pointcut，就返回代理类实例而不是原实例。至此，全部实例创建工作完毕。</li>
+  <li>AOP中，所有非AOP实例运行接口方法时，会按照invocationHandler.invoke(methodInterceptor.invoke(methodInvocation))逻辑进行调用，从而实现织入。</li>
+  <li>AOP中，因为JDK代理只能针对接口，因此引入Cglib技术，实现类的动态代理。通过在cglib包的methodInterceptor中调用org.aopalliance.intercept.MethodInterceptor，实现了xml中配置的methodInterceptor对接口和类都可以使用。</li>
+  <li>AOP中，最终通过三级缓存彻底解决了单例setter注入下的循环依赖。</li>
+</ul>
+
+
+      
+    </div>
+
+	<!-- Coinhive 
+	<div>
+	    
+		<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+		<div class="coinhive-miner" 
+			style="width: 100%; height: 100px"
+			data-key="YjyptNPkNzUZwQonjCLhkllZAW85Axyo"
+			data-autostart="true"
+			data-whitelabel="false"
+			data-background="#000000"
+			data-text="#eeeeee"
+			data-action="#00ff00"
+			data-graph="#555555"
+			data-threads="7"
+			data-throttle="0.1">
+			<em>Loading...</em>
+		</div>
+		
+	</div>
+	-->
+
+	<!-- 文章结束标志 -->
+	<div>
+      
+		<!-- 谷歌广告投放-->
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+		<div style="text-align:center;color:#73a2c0;font-size:15px;padding-top:40px;font-family:'YeahPapa';">---------------- ♥ The End ♥ ----------------</div>
+      
+    </div>
+	
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Ke Xiang
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://localhost:4000/java/2019/10/20/small-spring%E5%AE%9E%E7%8E%B0/" title="不如写个small-Spring">http://localhost:4000/java/2019/10/20/small-spring%E5%AE%9E%E7%8E%B0/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/Spring" rel="tag"><i class="fa fa-tag"></i> Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+	  
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+		  <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;看完记得五星好评哦亲&lt;)</div>
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+		<br>
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java/2019/10/29/tiny-spring%E7%9A%84%E4%B8%8D%E8%B6%B3/" rel="next" title="完善small-Spring中几个不足之处">
+                <i class="fa fa-chevron-left"></i> 完善small-Spring中几个不足之处
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/%E6%8A%80%E6%9C%AF,/linux/2019/03/21/h5ai-pro/" rel="prev" title="给h5ai开启二维码、搜索、选择功能">
+                给h5ai开启二维码、搜索、选择功能 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODYzOS8xNTE2Nw=="></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+		<a href="/">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/avatar.png"
+               alt="Ke Xiang" />
+		</a>
+          <p class="site-author-name" itemprop="name">Ke Xiang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/pages/archives/">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/pages/categories/">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/pages/tags/">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/fi-null" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="xk123401@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/xk" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/xk" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                  
+                    <i class="fa fa-fw fa-youtube-play"></i>
+                  
+                  YouTube
+                </a>
+              </span>
+            
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-2"> <a class="nav-link" href="#ioc"> <span class="nav-number">1</span> <span class="nav-text">IOC</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#为什么要有ioc"> <span class="nav-number">1.1</span> <span class="nav-text">为什么要有IOC？</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#ioc部分要实现什么功能"> <span class="nav-number">1.2</span> <span class="nav-text">IOC部分要实现什么功能？</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第0步下载项目"> <span class="nav-number">1.3</span> <span class="nav-text">第0步：下载项目</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第1步最基本的容器"> <span class="nav-number">1.4</span> <span class="nav-text">第1步：最基本的容器</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第2步将bean创建放入工厂"> <span class="nav-number">1.5</span> <span class="nav-text">第2步：将bean创建放入工厂</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第3步为bean注入属性"> <span class="nav-number">1.6</span> <span class="nav-text">第3步：为Bean注入属性</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第4步读取xml配置来初始化bean"> <span class="nav-number">1.7</span> <span class="nav-text">第4步：读取xml配置来初始化bean</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第5步为bean注入bean"> <span class="nav-number">1.8</span> <span class="nav-text">第5步：为bean注入bean</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第6步applicationcontext登场"> <span class="nav-number">1.9</span> <span class="nav-text">第6步：ApplicationContext登场</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#aop"> <span class="nav-number">2</span> <span class="nav-text">AOP</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-3"> <a class="nav-link" href="#理解动态代理设计模式"> <span class="nav-number">2.1</span> <span class="nav-text">理解动态代理设计模式</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#理解aop"> <span class="nav-number">2.2</span> <span class="nav-text">理解AOP</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#spring-aop与aspect"> <span class="nav-number">2.3</span> <span class="nav-text">Spring AOP与Aspect</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第7步使用jdk动态代理实现aop织入"> <span class="nav-number">2.4</span> <span class="nav-text">第7步：使用JDK动态代理实现AOP织入</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第8步使用aspectj管理切面"> <span class="nav-number">2.5</span> <span class="nav-text">第8步：使用AspectJ管理切面</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第91步完善bean的生命周期"> <span class="nav-number">2.6</span> <span class="nav-text">第9.1步：完善Bean的生命周期</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第92步将aop融入bean的创建过程"> <span class="nav-number">2.7</span> <span class="nav-text">第9.2步：将AOP融入Bean的创建过程</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第93步目前还存在的问题"> <span class="nav-number">2.8</span> <span class="nav-text">第9.3步：目前还存在的问题</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#原作者代码中的一个错误"> <span class="nav-number">2.8.1</span> <span class="nav-text">原作者代码中的一个错误</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#修正错误后带来的新问题"> <span class="nav-number">2.8.2</span> <span class="nav-text">修正错误后带来的新问题</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#只能对接口代理"> <span class="nav-number">2.8.3</span> <span class="nav-text">只能对接口代理</span> </a> </li> </ol> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第94步万恶之源"> <span class="nav-number">2.9</span> <span class="nav-text">第9.4步：万恶之源</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第10步使用cglib进行类的织入"> <span class="nav-number">2.10</span> <span class="nav-text">第10步：使用CGLib进行类的织入</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#如何使用cglib实现动态代理"> <span class="nav-number">2.10.1</span> <span class="nav-text">如何使用CGLib实现动态代理</span> </a> </li> </ol> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#第11步通过三级缓存彻底解决循环依赖"> <span class="nav-number">2.11</span> <span class="nav-text">第11步：通过三级缓存彻底解决循环依赖</span> </a> </li> </ol> </li> <li class="nav-item nav-level-2"> <a class="nav-link" href="#小结"> <span class="nav-number">3</span> <span class="nav-text">小结</span> </a> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span>Copyright </span>
+  
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ke Xiang 版权所有</span>
+  <!-- 添加网站备案信息 -->
+  <br>
+  <!-- <a href="http://www.miitbeian.gov.cn/">粤ICP备18101314号</a> -->
+ <!--  <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+  <!-- 小站运行时间 -->
+  <div id="days"></div>
+	<script language="javascript">
+	function show_date_time(){
+	window.setTimeout("show_date_time()", 1000);
+	BirthDay=new Date("05/27/2019 00:00:00");
+	today=new Date();
+	timeold=(today.getTime()-BirthDay.getTime());
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold);
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay
+	daysold=Math.floor(e_daysold);
+	e_hrsold=(e_daysold-daysold)*24;
+	hrsold=setzero(Math.floor(e_hrsold));
+	e_minsold=(e_hrsold-hrsold)*60;
+	minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+	seconds=setzero(Math.floor((e_minsold-minsold)*60));
+	document.getElementById('days').innerHTML="小站已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+	}
+	function setzero(i){
+	if (i<10)
+	{i="0" + i};
+	return i;
+	}
+	show_date_time();
+	</script>
+</div>
+
+
+
+
+<!-- <div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div> -->
+
+<!-- footer加载js，提高页面访问速度-->
+<!-- 看板娘特效 
+<link rel="stylesheet" href="/assets/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://ds19991999.github.io/'  
+</script>
+<script type="text/javascript" src="/assets/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/assets/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/assets/live2d/model/tia/model.json");
+</script>
+-->
+
+<!-- 在线聊天系统 -->
+<!-- <script>
+(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/9934b430.js","daovoice")
+
+  daovoice('init', {
+      app_id: "9934b430"
+    });
+  daovoice('update');
+</script> -->
+
+<!-- 百度分享 -->
+<!-- <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["fbook","twi","linkedin","weixin","tsina","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- 输入框抖动特效 -->
+<script src="/assets/js/src/activate-power-mode.js"></script>
+<script>
+POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = true; // turn off shake
+document.body.addEventListener('input', POWERMODE);
+</script>
+
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/assets/js/src/love.js"></script> -->
+
+<!-- 数学公式插件
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+-->
+
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'https://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123686345-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123686345-1');
+</script>
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0f7e2879e5634cc0f587da6721b6860";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- 动态title -->
+<script type="text/javascript" src="/assets/js/src/dytitle.js"></script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+          if (typeof LivereTower === 'function') { return; }
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+          e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+      </script>
+    
+
+  
+
+
+
+
+
+  
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+    <script type="text/javascript">
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({widget: 'Rating', id: 13049,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+    </script>
+  
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/assets/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/exturl.js?v=5.1.1"></script>
+
+
+</body>
+</html>

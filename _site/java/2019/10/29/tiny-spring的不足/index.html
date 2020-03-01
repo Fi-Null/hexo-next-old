@@ -1,0 +1,2022 @@
+
+<!doctype html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+  
+  
+  <link rel="stylesheet" media="all" href="/assets/lib/Han/dist/han.min.css?v=3.3">
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/assets/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/assets/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/assets/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Spring," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="XK Blog" type="application/atom+xml" />
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.png?v=5.1.1" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="完善small-Spring中几个不足之处">
+<meta name="keywords" content="Spring">
+<meta property="og:type" content="article">
+<meta property="og:title" content="完善small-Spring中几个不足之处">
+<meta property="og:url" content="http://localhost:4000/java/2019/10/29/tiny-spring%E7%9A%84%E4%B8%8D%E8%B6%B3/">
+<meta property="og:site_name" content="XK Blog">
+<meta property="og:description" content="完善small-Spring中几个不足之处">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.sonihr.com/02ead9b0-96b2-483f-9ba8-725f5f927b6d.jpg">
+<meta property="og:image" content="http://img.sonihr.com/69141387-2506-4bd9-8d3c-8e80e6f83546.jpg">
+<meta property="og:updated_time" content="2019-10-29T21:09:00+08:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="完善small-Spring中几个不足之处">
+<meta name="twitter:description" content="完善small-Spring中几个不足之处">
+<meta name="twitter:image" content="http://img.sonihr.com/02ead9b0-96b2-483f-9ba8-725f5f927b6d.jpg">
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"hide","offset":12,"offset_float":0,"b2t":false,"scrollpercent":true},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://localhost:4000/"/>
+
+
+
+
+
+  <title>完善small-Spring中几个不足之处 | XK Blog</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-123686345-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?c72906569503c06a12a6edc7b7c66149";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<script>
+	  (adsbygoogle = window.adsbygoogle || []).push({
+		google_ad_client: "ca-pub-6459493734251675",
+		enable_page_level_ads: true
+	  });
+	</script>
+</head>
+
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">XK Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">Less is more.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/pages/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-resume">
+          <a href="http://fi-null.github.io/resumeWeb" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-handshake-o"></i> <br />
+            
+            简历
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/pages/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/pages/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/pages/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        
+        
+        <li class="menu-item menu-item-top">
+          <a href="/pages/top/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-signal"></i> <br />
+            
+            TopX
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+<div id="posts" class="posts-expand">
+  
+  
+
+  
+
+  
+  
+  
+
+  <article class="post post-type- " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://localhost:4000/java/2019/10/29/tiny-spring%E7%9A%84%E4%B8%8D%E8%B6%B3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Ke Xiang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/assets/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="XK Blog">
+    </span>
+    
+      	<!-- 心知天气固定插件 -->
+		<div align="center" id="tp-weather-widget"></div>
+		<script>(function(T,h,i,n,k,P,a,g,e){g=function(){P=h.createElement(i);a=h.getElementsByTagName(i)[0];P.src=k;P.charset="utf-8";P.async=1;a.parentNode.insertBefore(P,a)};T["ThinkPageWeatherWidgetObject"]=n;T[n]||(T[n]=function(){(T[n].q=T[n].q||[]).push(arguments)});T[n].l=+new Date();if(T.attachEvent){T.attachEvent("onload",g)}else{T.addEventListener("load",g,false)}}(window,document,"script","tpwidget","//widget.seniverse.com/widget/chameleon.js"))</script>
+		<script>tpwidget("init", {
+			"flavor": "slim",
+			"location": "WS0E9D8WN298",
+			"geolocation": "enabled",
+			"language": "en",
+			"unit": "c",
+			"theme": "chameleon",
+			"container": "tp-weather-widget",
+			"bubble": "enabled",
+			"alarmType": "badge",
+			"uid": "U81EB522D4",
+			"hash": "6b972a5f25f3cc4e8beb25e2feab9d4b"
+		});
+		tpwidget("show");</script>  
+
+    
+      <header class="post-header">    
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+          
+          
+            完善small-Spring中几个不足之处
+          
+        </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-29T21:09:00+08:00">
+                2019-10-29
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">更新于</span>
+              
+              <time title="更新于" itemprop="dateModified" datetime="2019-10-29">
+                2019-10-29
+              </time>
+            
+          </span>	
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                
+                
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/category/#/Java" itemprop="url" rel="index">
+                    <span itemprop="name">Java</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+          <span class="post-meta-divider">|</span>
+          
+
+          
+            
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  3325
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+            
+                <div class="post-description">
+                    完善small-Spring中几个不足之处
+                </div>
+            
+          
+
+        </div>
+      </header>
+    
+
+	<!-- 网易云音乐 -->
+	 
+	
+	<!-- 谷歌广告投放-->
+		<div>
+    
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>
+	
+	
+	<!-- 数学公式插件 -->
+		
+	
+    <div class="post-body han-init-context" itemprop="articleBody">
+
+      
+      
+
+      
+        
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  <h3 id="不足一未实现构造器注入">不足一：未实现构造器注入</h3>
+
+<ul>
+  <li>
+    <p>实现功能：</p>
+
+    <div class="language-xml highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4</pre></td><td class="code"><pre class="highlight"><code>  <span class="nt">&lt;bean</span> <span class="na">id=</span><span class="s">"carByConstructor"</span> <span class="na">class=</span><span class="s">"com.sonihr.Car"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">value=</span><span class="s">"constructor"</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;constructor-arg</span> <span class="na">ref=</span><span class="s">"address2"</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/bean&gt;</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>  <span class="nd">@Test</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testConstructor</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+      <span class="nc">ApplicationContext</span> <span class="n">applicationContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">"tinyioc.xml"</span><span class="o">);</span>
+      <span class="nc">Driveable</span> <span class="n">car</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Driveable</span><span class="o">)</span> <span class="n">applicationContext</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"carByConstructor"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">car</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="c1">//输出：Car{name='constructor', address=Address{local='beijingByConstructor', car=null}}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <ul>
+      <li>本demo暂时未实现对构造器类型的判断，只是简单按照构造器参数个数来匹配，当然想判断也很简单，都是逻辑代码而已。</li>
+      <li>构造器注入无法解决循环依赖的问题，A构造器ref b，B构造器 ref a，当A构造器ref b的时候，转而去构造b，但是b的构造器要用到a，a因为还未构造成功，因此b构造失败。Spring官方推荐使用构造器注入方法，因为这样可以避免循环依赖，会抛出异常提示，保证了注入对象不为空，保证客户端调用时返回的是已经构造完毕的对象（因为构造器注入时，依赖对象建议用final修饰，final的内存语义保证构造函数构造完毕后外界才能访问变量）</li>
+    </ul>
+  </li>
+  <li>
+    <p>解决方案：</p>
+
+    <ul>
+      <li>
+        <p>核心类：ConstructorArgument类，ValueHolder类，后者是前者的内部类，封装了value，type和name，前者内部有一个List成员变量。两者关系类似PropertyValue和PropertyValues,每一个实例的name都对应着一个beanDefinition，每个beanDefinition中都有一个ConstructorArgument，每个ConstructorArgument中都有一个list&lt;valueHolder&gt;</p>
+      </li>
+      <li>
+        <p>读取XML，根据constructor-arg子标签获取ref/value,type,name值放入beanDefinition.getConstrustorArgument.valueholder中。此时要注意，如果是ref，就要考虑如下内容：</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23</pre></td><td class="code"><pre class="highlight"><code>  <span class="kd">private</span> <span class="kt">void</span> <span class="nf">processConstructorArgument</span><span class="o">(</span><span class="nc">Element</span> <span class="n">element</span><span class="o">,</span><span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span><span class="o">){</span>
+      <span class="nc">NodeList</span> <span class="n">constructorNodes</span> <span class="o">=</span> <span class="n">element</span><span class="o">.</span><span class="na">getElementsByTagName</span><span class="o">(</span><span class="s">"constructor-arg"</span><span class="o">);</span>
+      <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">constructorNodes</span><span class="o">.</span><span class="na">getLength</span><span class="o">();</span><span class="n">i</span><span class="o">++){</span>
+          <span class="nc">Node</span> <span class="n">node</span> <span class="o">=</span> <span class="n">constructorNodes</span><span class="o">.</span><span class="na">item</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">node</span> <span class="k">instanceof</span> <span class="nc">Element</span><span class="o">){</span>
+              <span class="nc">Element</span> <span class="n">constructorElement</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Element</span><span class="o">)</span><span class="n">node</span><span class="o">;</span>
+              <span class="nc">String</span> <span class="n">name</span> <span class="o">=</span> <span class="n">constructorElement</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"name"</span><span class="o">);</span>
+              <span class="nc">String</span> <span class="n">type</span> <span class="o">=</span> <span class="n">constructorElement</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"type"</span><span class="o">);</span>
+              <span class="nc">String</span> <span class="n">value</span> <span class="o">=</span> <span class="n">constructorElement</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"value"</span><span class="o">);</span>
+              <span class="k">if</span><span class="o">(</span><span class="n">value</span><span class="o">!=</span><span class="kc">null</span><span class="o">&amp;&amp;</span><span class="n">value</span><span class="o">.</span><span class="na">length</span><span class="o">()&gt;</span><span class="mi">0</span><span class="o">){</span><span class="c1">//有value标签</span>
+                  <span class="n">beanDefinition</span><span class="o">.</span><span class="na">getConstructorArgument</span><span class="o">().</span><span class="na">addArgumentValue</span><span class="o">(</span><span class="k">new</span> <span class="nc">ConstructorArgument</span><span class="o">.</span><span class="na">ValueHolder</span><span class="o">(</span><span class="n">value</span><span class="o">,</span><span class="n">type</span><span class="o">,</span><span class="n">name</span><span class="o">));</span>
+              <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                  <span class="nc">String</span> <span class="n">ref</span> <span class="o">=</span> <span class="n">constructorElement</span><span class="o">.</span><span class="na">getAttribute</span><span class="o">(</span><span class="s">"ref"</span><span class="o">);</span>
+                  <span class="k">if</span><span class="o">(</span><span class="n">ref</span><span class="o">==</span><span class="kc">null</span><span class="o">||</span><span class="n">ref</span><span class="o">.</span><span class="na">length</span><span class="o">()==</span><span class="mi">0</span><span class="o">){</span>
+                      <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalArgumentException</span><span class="o">(</span><span class="s">"Configuration problem: &lt;constructor-arg&gt; element for property '"</span>
+                              <span class="o">+</span> <span class="n">name</span> <span class="o">+</span> <span class="s">"' must specify a ref or value"</span><span class="o">);</span>
+                  <span class="o">}</span>
+                  <span class="nc">BeanReference</span> <span class="n">beanReference</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">BeanReference</span><span class="o">(</span><span class="n">ref</span><span class="o">);</span>
+                  <span class="n">beanDefinition</span><span class="o">.</span><span class="na">getConstructorArgument</span><span class="o">().</span><span class="na">addArgumentValue</span><span class="o">(</span><span class="k">new</span> <span class="nc">ConstructorArgument</span><span class="o">.</span><span class="na">ValueHolder</span><span class="o">(</span><span class="n">beanReference</span><span class="o">,</span><span class="n">type</span><span class="o">,</span><span class="n">name</span><span class="o">));</span>
+              <span class="o">}</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>getBean会触发创建-&gt;doCreateBean-&gt;createBeanInstance，此时根据是否配置constructor-arg判断是调用有参构造还是无参构造，通过反射构建实例。</p>
+
+    <ul>
+      <li>
+        <p>ref对象name是否在三级缓存但是不在一级缓存？回顾一下，三级缓存的作用是存放所有还未进行before和after操作的实例，一级缓存是存放所有已经完全构建完毕的实例。如果在三级不在一级，说明ref的对象还没有被完全构建完毕，这在构造器注入中会造成循环依赖，无法解决，因此需要抛出异常进行提示。</p>
+      </li>
+      <li>
+        <p>ref如果不在三级缓存，说明ref的实例还未创建，用getbean进行创建即可。在ref的实例创建的过程中，如果未发生循环依赖则创建成功，如果发生循环依赖则抛出异常（就是上一点说到的）</p>
+      </li>
+      <li>
+        <p>ref如果即在三级缓存，又在一级缓存，说明ref的实例已经创建，用getbean获取即可。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26<br/>27<br/>28<br/>29</pre></td><td class="code"><pre class="highlight"><code>  <span class="c1">//增加构造函数版本1.0，只判断参数数量相同</span>
+  <span class="kd">private</span> <span class="nc">Object</span> <span class="nf">createBeanInstance</span><span class="o">(</span><span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">beanDefinition</span><span class="o">.</span><span class="na">getConstructorArgument</span><span class="o">().</span><span class="na">isEmpty</span><span class="o">()){</span><span class="c1">//如果没有constructor-arg标签，则调用无参构造函数</span>
+          <span class="k">return</span> <span class="n">beanDefinition</span><span class="o">.</span><span class="na">getBeanClass</span><span class="o">().</span><span class="na">newInstance</span><span class="o">();</span>
+      <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+          <span class="nc">List</span><span class="o">&lt;</span><span class="nc">ConstructorArgument</span><span class="o">.</span><span class="na">ValueHolder</span><span class="o">&gt;</span> <span class="n">valueHolders</span> <span class="o">=</span> <span class="n">beanDefinition</span><span class="o">.</span><span class="na">getConstructorArgument</span><span class="o">().</span><span class="na">getArgumentValues</span><span class="o">();</span>
+          <span class="nc">Class</span> <span class="n">clazz</span> <span class="o">=</span> <span class="nc">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="n">beanDefinition</span><span class="o">.</span><span class="na">getBeanClassName</span><span class="o">());</span><span class="c1">//获取变量类的class对象</span>
+          <span class="nc">Constructor</span><span class="o">[]</span> <span class="n">cons</span> <span class="o">=</span> <span class="n">clazz</span><span class="o">.</span><span class="na">getConstructors</span><span class="o">();</span><span class="c1">//获取所有构造器</span>
+          <span class="k">for</span><span class="o">(</span><span class="nc">Constructor</span> <span class="nl">constructor:</span><span class="n">cons</span><span class="o">){</span>
+              <span class="k">if</span><span class="o">(</span><span class="n">constructor</span><span class="o">.</span><span class="na">getParameterCount</span><span class="o">()==</span><span class="n">valueHolders</span><span class="o">.</span><span class="na">size</span><span class="o">()){</span><span class="c1">//这里只匹配了参数数量相同的</span>
+                  <span class="nc">Object</span><span class="o">[]</span> <span class="n">params</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Object</span><span class="o">[</span><span class="n">valueHolders</span><span class="o">.</span><span class="na">size</span><span class="o">()];</span>
+                  <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="n">params</span><span class="o">.</span><span class="na">length</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+                      <span class="n">params</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">valueHolders</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">i</span><span class="o">).</span><span class="na">getValue</span><span class="o">();</span>
+                      <span class="k">if</span><span class="o">(</span><span class="n">params</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="k">instanceof</span> <span class="nc">BeanReference</span><span class="o">){</span>
+                          <span class="nc">BeanReference</span> <span class="n">ref</span> <span class="o">=</span> <span class="o">(</span><span class="nc">BeanReference</span><span class="o">)</span><span class="n">params</span><span class="o">[</span><span class="n">i</span><span class="o">];</span>
+                          <span class="nc">String</span> <span class="n">refName</span> <span class="o">=</span> <span class="n">ref</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+                          <span class="k">if</span><span class="o">(</span><span class="n">thirdCache</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">refName</span><span class="o">)&amp;&amp;!</span><span class="n">firstCache</span><span class="o">.</span><span class="na">containsKey</span><span class="o">(</span><span class="n">refName</span><span class="o">)){</span>
+                              <span class="k">throw</span> <span class="k">new</span> <span class="nf">IllegalAccessException</span><span class="o">(</span><span class="s">"构造函数循环依赖"</span><span class="o">+</span><span class="n">refName</span><span class="o">);</span>
+                          <span class="o">}</span><span class="k">else</span><span class="o">{</span>
+                              <span class="n">params</span><span class="o">[</span><span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">getBean</span><span class="o">(</span><span class="n">refName</span><span class="o">);</span>
+                          <span class="o">}</span>
+                      <span class="o">}</span>
+                  <span class="o">}</span>
+                  <span class="k">return</span> <span class="n">constructor</span><span class="o">.</span><span class="na">newInstance</span><span class="o">(</span><span class="n">params</span><span class="o">);</span>
+              <span class="o">}</span>
+          <span class="o">}</span>
+      <span class="o">}</span>
+      <span class="k">return</span> <span class="kc">null</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="不足二基本类型只能传递string类型参数">不足二：基本类型只能传递String类型参数</h3>
+
+<ul>
+  <li>
+    <p>实现功能：不仅可以完成基本类型+Spring的赋值，还可以通过实现Converter接口的方式，自由配置String类型转任意类型。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8</pre></td><td class="code"><pre class="highlight"><code>  <span class="nd">@Test</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">testConvert</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+      <span class="nc">ApplicationContext</span> <span class="n">applicationContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">"tinyioc.xml"</span><span class="o">);</span>
+      <span class="nc">Driveable</span> <span class="n">car</span> <span class="o">=</span> <span class="o">(</span><span class="nc">Driveable</span><span class="o">)</span> <span class="n">applicationContext</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"carByConvert"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">car</span><span class="o">);</span>
+  <span class="o">}</span>
+    
+  <span class="c1">//结果：Car{name='notOnlySpring', price=1000, address=null}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12</pre></td><td class="code"><pre class="highlight"><code>  <span class="o">&lt;</span><span class="n">bean</span> <span class="n">id</span><span class="o">=</span><span class="s">"anything"</span> <span class="kd">class</span><span class="err">="</span><span class="nc">com</span><span class="o">.</span><span class="na">sonihr</span><span class="o">.</span><span class="na">Anything</span><span class="s">"&gt;
+      &lt;property name="</span><span class="n">point</span><span class="s">" value="</span><span class="mi">22</span><span class="o">;</span><span class="mi">99</span><span class="s">"&gt;&lt;/property&gt;
+  &lt;/bean&gt;
+  &lt;bean id="</span><span class="n">pointConverter</span><span class="s">" class="</span><span class="n">com</span><span class="o">.</span><span class="na">sonihr</span><span class="o">.</span><span class="na">beans</span><span class="o">.</span><span class="na">converter</span><span class="o">.</span><span class="na">PointConverter</span><span class="s">"&gt;&lt;/bean&gt;
+    
+  @Test
+  public void testConvert2() throws Exception {
+      ApplicationContext applicationContext = new ClassPathXmlApplicationContext("</span><span class="n">tinyioc</span><span class="o">.</span><span class="na">xml</span><span class="s">");
+      Anything anything = (Anything) applicationContext.getBean("</span><span class="n">anything</span><span class="err">"</span><span class="o">);</span>
+      <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">anything</span><span class="o">);</span>
+  <span class="o">}</span>
+  <span class="c1">//结果：Anything{point=Point{x=22, y=99}}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>实现思路：接口为Converter，工厂类为ConverterFactory。接口中规定了getType方法，用于获得该接口是string与什么type之间的转换关系。还规定了string与type之间的转换方法，print和parse。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">interface</span> <span class="nc">Converter</span><span class="o">&lt;</span><span class="no">T</span><span class="o">&gt;</span> <span class="o">{</span>
+      <span class="nc">Type</span> <span class="nf">getType</span><span class="o">();</span>
+      <span class="nc">String</span> <span class="nf">print</span><span class="o">(</span><span class="no">T</span> <span class="n">fieldValue</span><span class="o">);</span>
+      <span class="no">T</span> <span class="nf">parse</span><span class="o">(</span><span class="nc">String</span> <span class="n">clientValue</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>给出一个实现类：</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20<br/>21<br/>22<br/>23<br/>24<br/>25<br/>26</pre></td><td class="code"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kd">class</span> <span class="nc">PointConverter</span> <span class="kd">implements</span> <span class="nc">Converter</span><span class="o">&lt;</span><span class="nc">Point</span><span class="o">&gt;</span> <span class="o">{</span>
+      <span class="kd">private</span> <span class="nc">Type</span> <span class="n">type</span><span class="o">;</span>
+    
+      <span class="kd">public</span> <span class="nf">PointConverter</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">this</span><span class="o">.</span><span class="na">type</span> <span class="o">=</span> <span class="nc">Point</span><span class="o">.</span><span class="na">class</span><span class="o">;</span>
+      <span class="o">}</span>
+    
+      <span class="kd">public</span> <span class="nc">Type</span> <span class="nf">getType</span><span class="o">()</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">type</span><span class="o">;</span>
+      <span class="o">}</span>
+    
+    
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="nc">String</span> <span class="nf">print</span><span class="o">(</span><span class="nc">Point</span> <span class="n">fieldValue</span><span class="o">)</span> <span class="o">{</span>
+          <span class="k">return</span> <span class="n">fieldValue</span><span class="o">.</span><span class="na">getX</span><span class="o">()+</span><span class="s">";"</span><span class="o">+</span><span class="n">fieldValue</span><span class="o">.</span><span class="na">getY</span><span class="o">();</span>
+      <span class="o">}</span>
+    
+      <span class="nd">@Override</span>
+      <span class="kd">public</span> <span class="nc">Point</span> <span class="nf">parse</span><span class="o">(</span><span class="nc">String</span> <span class="n">clientValue</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+          <span class="nc">String</span><span class="o">[]</span> <span class="n">xy</span> <span class="o">=</span> <span class="n">clientValue</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">";"</span><span class="o">);</span>
+          <span class="nc">Point</span> <span class="n">point</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">Point</span><span class="o">();</span>
+          <span class="n">point</span><span class="o">.</span><span class="na">setX</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">xy</span><span class="o">[</span><span class="mi">0</span><span class="o">]));</span>
+          <span class="n">point</span><span class="o">.</span><span class="na">setY</span><span class="o">(</span><span class="nc">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">xy</span><span class="o">[</span><span class="mi">1</span><span class="o">]));</span>
+          <span class="k">return</span> <span class="n">point</span><span class="o">;</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+
+    <p>工厂类中封装了一个Map，用于保存type和相对应的converter。</p>
+  </li>
+  <li>
+    <p>在applyPropertyValues方法中，如果是非ref，则说明获取到的是string类型，应该进行转换。如果字段类型是String就不用转换，否则 先用CoverterFactory获取到ConverterMap，然后根据字段的type获取转换器。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>  <span class="k">else</span><span class="o">{</span>
+      <span class="nc">Field</span> <span class="n">field</span> <span class="o">=</span> <span class="n">field</span> <span class="o">=</span> <span class="n">bean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getDeclaredField</span><span class="o">(</span><span class="n">propertyValue</span><span class="o">.</span><span class="na">getName</span><span class="o">());</span><span class="c1">//获得name对应的字段</span>
+      <span class="k">if</span><span class="o">(</span><span class="n">field</span><span class="o">.</span><span class="na">getType</span><span class="o">().</span><span class="na">toString</span><span class="o">().</span><span class="na">equals</span><span class="o">(</span><span class="s">"class java.lang.String"</span><span class="o">))</span>
+          <span class="n">convertedValue</span> <span class="o">=</span> <span class="n">value</span><span class="o">;</span>
+      <span class="k">else</span>
+          <span class="n">convertedValue</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">converterFactory</span><span class="o">.</span><span class="na">getConverterMap</span><span class="o">().</span><span class="na">get</span><span class="o">(</span><span class="n">field</span><span class="o">.</span><span class="na">getType</span><span class="o">()).</span><span class="na">parse</span><span class="o">((</span><span class="nc">String</span><span class="o">)</span><span class="n">value</span><span class="o">);</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+  <li>
+    <p>在AbstractAoolicationContext中，因为Converter实现类都不需要进行AOP，所以要在BeanPostProcessor之前被创建，即在refresh中，在registerBeanPostProcessor之前，先registerConverter，通过beanFactory。getBeansForType获取到所有实现Concerter的实例，并创建好,然后把对应的类型和转换器加入到map中。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7</pre></td><td class="code"><pre class="highlight"><code>  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">registerBeanPostProcessors</span><span class="o">(</span><span class="nc">AbstractBeanFactory</span> <span class="n">beanFactory</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+      <span class="c1">//返回的实例都是已经创建完毕的，参数都已经赋值完毕了</span>
+      <span class="nc">List</span> <span class="n">beanPostProcessors</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getBeansForType</span><span class="o">(</span><span class="nc">BeanPostProcessor</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+      <span class="k">for</span> <span class="o">(</span><span class="nc">Object</span> <span class="n">beanPostProcessor</span> <span class="o">:</span> <span class="n">beanPostProcessors</span><span class="o">)</span> <span class="o">{</span>
+          <span class="n">beanFactory</span><span class="o">.</span><span class="na">addBeanPostProcessor</span><span class="o">((</span><span class="nc">BeanPostProcessor</span><span class="o">)</span> <span class="n">beanPostProcessor</span><span class="o">);</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+</ul>
+
+<h3 id="不足三未实现完整的生命周期">不足三：未实现完整的生命周期</h3>
+
+<ul>
+  <li>总结一下bean的生命周期，构造函数实例化bean——&gt;setter-&gt;BPP.before-&gt;InitializingBean.afterPropertiesSet方法-&gt;init-method-&gt;BBP.after-&gt;disposableBean.destory-&gt;destroy-Method.</li>
+  <li>
+    <p>init-method和destory-method，在xml中指定其所对应的方法，在我的demo中，就没有写xml了，而是所有想要实现init-method和destory-method的，都必须叫这两个名字。afterPropertiesSet方法和destroy方法需要分别继承InitializingBean接口和disposableBean方法。
+  <img src="http://img.sonihr.com/02ead9b0-96b2-483f-9ba8-725f5f927b6d.jpg" alt="img" /></p>
+  </li>
+  <li>
+    <p>实现方法</p>
+
+    <ul>
+      <li>
+        <p>init_method和destroy_method放在try块中，如果反射时报错noSuchMethod，这说明该类没有这个方法，那么就catch，否则就反射运行。一定是无参的。</p>
+      </li>
+      <li>
+        <p>编写两个接口，InitalizingBean和Disposable接口。在ApplyPeopertyValues方法后，如果bean instanceof InitializingBean，则调用其afterpropertiesSet方法。在close方法中，一样的，instanceof Disposable就destroy。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17</pre></td><td class="code"><pre class="highlight"><code>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">(){</span>
+      <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">thirdCache</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getThirdCache</span><span class="o">();</span>
+      <span class="nc">Map</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">Object</span><span class="o">&gt;</span> <span class="n">firstCache</span> <span class="o">=</span> <span class="n">beanFactory</span><span class="o">.</span><span class="na">getFirstCache</span><span class="o">();</span>
+      <span class="k">for</span><span class="o">(</span><span class="nc">Map</span><span class="o">.</span><span class="na">Entry</span><span class="o">&lt;</span><span class="nc">String</span><span class="o">,</span><span class="nc">BeanDefinition</span><span class="o">&gt;</span> <span class="nl">entry:</span><span class="n">beanFactory</span><span class="o">.</span><span class="na">getBeanDefinitionMap</span><span class="o">().</span><span class="na">entrySet</span><span class="o">()){</span>
+          <span class="nc">String</span> <span class="n">beanName</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getKey</span><span class="o">();</span>
+          <span class="nc">Object</span> <span class="n">invokeBeanName</span> <span class="o">=</span> <span class="n">entry</span><span class="o">.</span><span class="na">getValue</span><span class="o">().</span><span class="na">getBean</span><span class="o">();</span>
+          <span class="nc">Object</span> <span class="n">realClassInvokeBean</span> <span class="o">=</span> <span class="n">thirdCache</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">beanName</span><span class="o">);</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">realClassInvokeBean</span> <span class="k">instanceof</span> <span class="nc">DisposableBean</span><span class="o">){</span>
+              <span class="o">((</span><span class="nc">DisposableBean</span><span class="o">)</span> <span class="n">realClassInvokeBean</span><span class="o">).</span><span class="na">destroy</span><span class="o">();</span>
+          <span class="o">}</span>
+          <span class="k">try</span><span class="o">{</span>
+              <span class="nc">Method</span> <span class="n">method</span> <span class="o">=</span>  <span class="n">realClassInvokeBean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getMethod</span><span class="o">(</span><span class="s">"destroy_method"</span><span class="o">,</span><span class="kc">null</span><span class="o">);</span>
+              <span class="n">method</span><span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="n">realClassInvokeBean</span><span class="o">,</span><span class="kc">null</span><span class="o">);</span>
+          <span class="o">}</span><span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">e</span><span class="o">){</span>
+        
+      <span class="o">}</span>
+  <span class="o">}</span> 
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>
+        <p>实现效果</p>
+
+        <p><img src="http://img.sonihr.com/69141387-2506-4bd9-8d3c-8e80e6f83546.jpg" alt="img" /></p>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="不足四只实现了单例模式">不足四：只实现了单例模式</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10</pre></td><td class="code"><pre class="highlight"><code><span class="nd">@Test</span>
+<span class="kd">public</span> <span class="kt">void</span> <span class="nf">testPrototype</span><span class="o">()</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="nc">ApplicationContext</span> <span class="n">applicationContext</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">ClassPathXmlApplicationContext</span><span class="o">(</span><span class="s">"prototype.xml"</span><span class="o">);</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">;</span><span class="n">i</span><span class="o">++){</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">applicationContext</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"carPrototype"</span><span class="o">).</span><span class="na">hashCode</span><span class="o">());</span>
+
+    <span class="o">}</span>
+    <span class="k">for</span><span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="o">;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">3</span><span class="o">;</span><span class="n">i</span><span class="o">++)</span>
+        <span class="nc">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">applicationContext</span><span class="o">.</span><span class="na">getBean</span><span class="o">(</span><span class="s">"carSingleton"</span><span class="o">).</span><span class="na">hashCode</span><span class="o">());</span>
+<span class="o">}</span>
+</code></pre></td></tr></tbody></table></div></div>
+
+<ul>
+  <li>解决方案：读xml的时候，读取scope属性下内容，如果是singleton或者没有这个属性，就说明是单例，否则就是prototype，然后将这个属性赋值给对应的beanDefinition，isSingleton属性用来判断该beanDefinition是否为单例。如果是prototype，只需要改动创建语句，将getbean方法中的判断语句改为：if(bean==null||!beanDefinition.isSingleton())。如果不是单例，那每次都要创建，不管缓存中有没有，每次缓存中都保存一个最新的，不过保存不保存也没啥区别，反正都是返回最新的。prototype其实就是每次都走一遍getBean的创建流程而已。值得注意的是，如果单例内注入多例，单例里保存的永远是那个第一次创建时指向的多例。</li>
+</ul>
+
+<h3 id="不足五未实现注解和auto-scan">不足五：未实现注解和auto-scan</h3>
+
+<h4 id="注解">注解</h4>
+
+<ul>
+  <li>写个编译器或JVM看的信息，如果想处理这个信息，就需要自己写处理器，对于编译器编译期的注解(source和class)，继承AbstractProcessor类实现方法即可，用于自动生成代码等，相当于java——&gt;class转化时可以根据注解来进行一定的操作。对于运行期的注解(runtime)，即写给JVM看的，需要通过反射解析，然后程序员可以根据获得的注解信息进行相关操作。</li>
+  <li>元注解，即可以对注解进行注解的注解，理解成最基础的注解。
+    <ul>
+      <li>@Retention，给定了被注解注解的保留范围，source编译时进行操作，不会写入class文件，class类加载阶段丢弃，会写入class，runtime保存到运行期，可以反射获取。source和class的区别是，source强调单个java的编译期间，因此编译完成后可以丢弃。但是B.java编译时，需要依赖A.class,并且B想到看A的注解，此时就要用class（这个过程是定制开发编译过程的开发人员做的，即规定先编译B.java再编译A.java，但是编译完成后还没有运行）。保留情况：.java（source）-&gt;.class字节码（class）-&gt;内存中字节码（runtime）</li>
+      <li>@target，指定注解可以放在那些元素上，元素包括注解，构造器，成员变量，局部变量，方法等。</li>
+      <li>@Inherited，默认情况下父类注解不会被自类继承，但是如果注解了inherited则注解会默认继承。但是注解本身是无法继承的，即A注解无法派生出ASon注解。这里@Inherited的意思是被修饰的类的注解，可以继承给子类，注意区别</li>
+      <li>@Documented，被注解的注解会出现javadoc产生的文档中的内容，比如你定义的@A method(){}，如果没有加@Documented注解，则文档中只会出现method()</li>
+      <li>@Repeatable，被注解的注解可以在一个程序元素上重复出现，表达即是又是的含义</li>
+    </ul>
+  </li>
+  <li>
+    <p>如何自定义一个注解，内部参数长得很像接口方法，“返回值”其实是设定值类型，类型可以使基本类型，String，class，枚举，注释，上述类型的数组。注意，不得为包装类或其他类实例。class类型指的是Clss&lt;?&gt;类型。</p>
+
+    <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>  <span class="kd">public</span> <span class="nd">@interface</span> <span class="nc">MyAnnotation</span><span class="o">{</span>
+      <span class="kt">int</span> <span class="nf">getId</span><span class="o">();</span>
+      <span class="nc">String</span> <span class="nf">getName</span><span class="o">();</span>
+      <span class="nc">String</span><span class="o">[]</span> <span class="nf">getTeacherNames</span><span class="o">();</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>    </div>
+  </li>
+</ul>
+
+<h4 id="实现注解">实现注解</h4>
+
+<ul>
+  <li>
+    <p>在spring中，对同一个bean混用注解和xml会出现错误，因此我们的需求是：对单一bean只能采用注解或者xml二选一的方式，实现@Autowired根据id而不是类型进行注入，类似@resource，如果没有指定id则默认与变量同名。（P.S.其实我就是想实现@resource）</p>
+  </li>
+  <li>
+    <p>实现目标：1.在xml中配置bean，但是bean的依赖不需要写ref，而是通过@Autowired进行自动注入。2.xml中写上&lt;component-scan base-package=”com.sonihr”\/\&gt;即可对相应的包进行自动的实例化和注入，并且此时如果xml中有其他配置的实例，可以实现注解和xml实例均创建成功。</p>
+  </li>
+  <li>
+    <p>实现目标1的解决思路</p>
+
+    <ul>
+      <li>
+        <p>这个思路很简单，首先设计@Autowired注解。id参数表示被注解的字段ref实例的id，比如a ref b，那@Autowird的id就是b。如果没有指定id，那么默认是被修饰的字段变量名。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5</pre></td><td class="code"><pre class="highlight"><code>  <span class="nd">@Retention</span><span class="o">(</span><span class="nc">RetentionPolicy</span><span class="o">.</span><span class="na">RUNTIME</span><span class="o">)</span>
+  <span class="nd">@Target</span><span class="o">({</span><span class="nc">ElementType</span><span class="o">.</span><span class="na">METHOD</span><span class="o">,</span><span class="nc">ElementType</span><span class="o">.</span><span class="na">FIELD</span><span class="o">})</span>
+  <span class="kd">public</span> <span class="nd">@interface</span> <span class="nc">Autowired</span> <span class="o">{</span>
+      <span class="nc">String</span> <span class="nf">getId</span><span class="o">()</span> <span class="k">default</span> <span class="s">""</span><span class="o">;</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+      <li>
+        <p>然后通过xml已经可以实例化出没有ref依赖的实例了，在doCreateBean方法中，在applyPropertyValues方法后，即设置完变量的字段值后，调用injectAnnotation方法，进行注解注入。在这个方法中，判断类中所有字段是否有Autowired注解，如果有就获取autowird的值和对应的字段变量名，将其设置。因为设置的一定是ref的，即@Autowired注入的必然是依赖实例，因此通过getBean方法直接生成即可，不需要像之前还要用BeanReference类型包装。为什么要放入secondCache中呢？因为如果在注解中产生循环依赖，a ref b, b ref a，此时b中存储的对象a可能是不完整的（因为AOP的存在，a可能最终变成一个代理类实例）。因此通过secondCache保存所有有可能注入了不完美实例的实例。</p>
+
+        <div class="language-java highlighter-rouge"><div class="highlight"><table style="margin: 0px"><tbody><tr><td class="gutter"><pre>1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15</pre></td><td class="code"><pre class="highlight"><code>  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">injectAnnotation</span><span class="o">(</span><span class="nc">Object</span> <span class="n">bean</span><span class="o">,</span><span class="nc">BeanDefinition</span> <span class="n">beanDefinition</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span><span class="o">{</span>
+      <span class="nc">Field</span><span class="o">[]</span> <span class="n">fields</span> <span class="o">=</span> <span class="n">bean</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getDeclaredFields</span><span class="o">();</span>
+      <span class="k">for</span><span class="o">(</span><span class="nc">Field</span> <span class="nl">field:</span><span class="n">fields</span><span class="o">){</span>
+          <span class="nc">Autowired</span> <span class="n">autowired</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="na">getAnnotation</span><span class="o">(</span><span class="nc">Autowired</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">autowired</span><span class="o">==</span><span class="kc">null</span><span class="o">)</span>
+              <span class="k">continue</span><span class="o">;</span>
+          <span class="nc">String</span> <span class="n">refName</span> <span class="o">=</span> <span class="n">autowired</span><span class="o">.</span><span class="na">getId</span><span class="o">();</span>
+          <span class="k">if</span><span class="o">(</span><span class="n">refName</span><span class="o">.</span><span class="na">equals</span><span class="o">(</span><span class="s">""</span><span class="o">)){</span>
+              <span class="n">refName</span> <span class="o">=</span> <span class="n">field</span><span class="o">.</span><span class="na">getName</span><span class="o">();</span>
+          <span class="o">}</span>
+          <span class="n">secondCache</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">refName</span><span class="o">,</span><span class="n">bean</span><span class="o">);</span>
+          <span class="n">field</span><span class="o">.</span><span class="na">setAccessible</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+          <span class="n">field</span><span class="o">.</span><span class="na">set</span><span class="o">(</span><span class="n">bean</span><span class="o">,</span><span class="n">getBean</span><span class="o">(</span><span class="n">refName</span><span class="o">));</span>
+      <span class="o">}</span>
+  <span class="o">}</span>
+</code></pre></td></tr></tbody></table></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>实现目标2的解决思路：xml中配置&lt;component-scan base-package=”com.sonihr”/&gt;，然后通过XmlBeanDefinitionReader可以读取到该标签的包名packageName。核心是，如果遍历这个包，然后找到对应的注解并进行处理呢？</p>
+    <ul>
+      <li>AnnotationParser类，这个类的作用是读取packageName包下（com.sonihr的路径是com/sonihr/）的所有.class文件，然后去掉.class前面的字符就是类名。这个过程是递归的，直到当钱file的子files中没有目录为止。然后将获得的set classNames（用set就是为了去重）反射获得类对象，然后就可以开心的操作其中的field了。</li>
+      <li>有两种注释，第一种是类似@Component，@Service的注解，表示该类需要被创建实例。第二种是@Value，代表该类字段值，类似于xml中property name=xxx value=xxx中的value。节省版面，可以看我项目中的代码，挺简单的。</li>
+      <li>获取到要创建的类，其名称，还有value值，就可以放入一个map&lt;String name,BeanDefinition beanDefinition&gt;中了，当所有的注解查找完成后，再交给beanFactory的registry即可，后面的创建过程倒是和xml中完全一样。本来嘛，一个是xml读取配置，一个是注解读取配置。</li>
+    </ul>
+  </li>
+</ul>
+
+
+      
+    </div>
+
+	<!-- Coinhive 
+	<div>
+	    
+		<script src="https://authedmine.com/lib/simple-ui.min.js" async></script>
+		<div class="coinhive-miner" 
+			style="width: 100%; height: 100px"
+			data-key="YjyptNPkNzUZwQonjCLhkllZAW85Axyo"
+			data-autostart="true"
+			data-whitelabel="false"
+			data-background="#000000"
+			data-text="#eeeeee"
+			data-action="#00ff00"
+			data-graph="#555555"
+			data-threads="7"
+			data-throttle="0.1">
+			<em>Loading...</em>
+		</div>
+		
+	</div>
+	-->
+
+	<!-- 文章结束标志 -->
+	<div>
+      
+		<!-- 谷歌广告投放-->
+		<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+		<!-- test -->
+		<ins class="adsbygoogle"
+			 style="display:block"
+			 data-ad-client="ca-pub-6459493734251675"
+			 data-ad-slot="7780747247"
+			 data-ad-format="auto"
+			 data-full-width-responsive="true"></ins>
+		<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+		</script>	
+		<div style="text-align:center;color:#73a2c0;font-size:15px;padding-top:40px;font-family:'YeahPapa';">---------------- ♥ The End ♥ ----------------</div>
+      
+    </div>
+	
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+    <div>
+      
+        
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      Ke Xiang
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="http://localhost:4000/java/2019/10/29/tiny-spring%E7%9A%84%E4%B8%8D%E8%B6%B3/" title="完善small-Spring中几个不足之处">http://localhost:4000/java/2019/10/29/tiny-spring%E7%9A%84%E4%B8%8D%E8%B6%B3/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            
+            <a href="/tag/#/Spring" rel="tag"><i class="fa fa-tag"></i> Spring</a>
+          
+        </div>
+      
+
+      
+      
+      
+	  
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+		  <div style="color: rgba(0, 0, 0, 0.75); font-size:13px; letter-spacing:3px">(&gt;看完记得五星好评哦亲&lt;)</div>
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+        </div>
+		<br>
+      
+      
+
+      
+      
+        <div class="post-nav" id="post-nav-id">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/java/2019/11/10/small-mybatis%E5%AE%9E%E7%8E%B0/" rel="next" title="不如写个small-Mybatis">
+                <i class="fa fa-chevron-left"></i> 不如写个small-Mybatis
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/java/2019/10/20/small-spring%E5%AE%9E%E7%8E%B0/" rel="prev" title="不如写个small-Spring">
+                不如写个small-Spring <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+      
+
+      
+    </footer>
+  </article>
+
+  <div class="post-spread">
+    
+  </div>
+</div>
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zODYzOS8xNTE2Nw=="></div>
+    
+  </div>
+
+
+        </div>
+        
+          
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+        
+        
+        
+
+
+
+
+
+
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+		<a href="/">
+          <img class="site-author-image" itemprop="image"
+               src="/assets/avatar.png"
+               alt="Ke Xiang" />
+		</a>
+          <p class="site-author-name" itemprop="name">Ke Xiang</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+           
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/pages/archives/">
+                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/pages/categories/">
+                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/pages/tags/">
+                <span class="site-state-item-count">33</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        <div class="links-of-author motion-element">
+          
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://github.com/fi-null" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="xk123401@gmail.com" target="_blank" title="Email">
+                  
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                  
+                  Email
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.facebook.com/xk" target="_blank" title="Facebook">
+                  
+                    <i class="fa fa-fw fa-facebook"></i>
+                  
+                  Facebook
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/xk" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-fw fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              
+              
+              <span class="links-of-author-item">
+                <a href="https://www.youtube.com" target="_blank" title="YouTube">
+                  
+                    <i class="fa fa-fw fa-youtube-play"></i>
+                  
+                  YouTube
+                </a>
+              </span>
+            
+          
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+
+
+
+
+
+
+
+            
+              <div class="post-toc-content">
+    <ol class=nav>
+      <li class="nav-item nav-level-3"> <a class="nav-link" href="#不足一未实现构造器注入"> <span class="nav-number">1</span> <span class="nav-text">不足一：未实现构造器注入</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#不足二基本类型只能传递string类型参数"> <span class="nav-number">2</span> <span class="nav-text">不足二：基本类型只能传递String类型参数</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#不足三未实现完整的生命周期"> <span class="nav-number">3</span> <span class="nav-text">不足三：未实现完整的生命周期</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#不足四只实现了单例模式"> <span class="nav-number">4</span> <span class="nav-text">不足四：只实现了单例模式</span> </a> </li> <li class="nav-item nav-level-3"> <a class="nav-link" href="#不足五未实现注解和auto-scan"> <span class="nav-number">5</span> <span class="nav-text">不足五：未实现注解和auto-scan</span> </a> <ol class="nav-child"> <li class="nav-item nav-level-4"> <a class="nav-link" href="#注解"> <span class="nav-number">5.1</span> <span class="nav-text">注解</span> </a> </li> <li class="nav-item nav-level-4"> <a class="nav-link" href="#实现注解"> <span class="nav-number">5.2</span> <span class="nav-text">实现注解</span> </a> </li> </ol> </li>
+    </ol>
+  </div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  <span>Copyright </span>
+  
+  
+  &copy;  2018 - 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Ke Xiang 版权所有</span>
+  <!-- 添加网站备案信息 -->
+  <br>
+  <!-- <a href="http://www.miitbeian.gov.cn/">粤ICP备18101314号</a> -->
+ <!--  <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+  <!-- 小站运行时间 -->
+  <div id="days"></div>
+	<script language="javascript">
+	function show_date_time(){
+	window.setTimeout("show_date_time()", 1000);
+	BirthDay=new Date("05/27/2019 00:00:00");
+	today=new Date();
+	timeold=(today.getTime()-BirthDay.getTime());
+	sectimeold=timeold/1000
+	secondsold=Math.floor(sectimeold);
+	msPerDay=24*60*60*1000
+	e_daysold=timeold/msPerDay
+	daysold=Math.floor(e_daysold);
+	e_hrsold=(e_daysold-daysold)*24;
+	hrsold=setzero(Math.floor(e_hrsold));
+	e_minsold=(e_hrsold-hrsold)*60;
+	minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+	seconds=setzero(Math.floor((e_minsold-minsold)*60));
+	document.getElementById('days').innerHTML="小站已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+	}
+	function setzero(i){
+	if (i<10)
+	{i="0" + i};
+	return i;
+	}
+	show_date_time();
+	</script>
+</div>
+
+
+
+
+<!-- <div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div> -->
+
+<!-- footer加载js，提高页面访问速度-->
+<!-- 看板娘特效 
+<link rel="stylesheet" href="/assets/live2d/css/live2d.css" />
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://ds19991999.github.io/'  
+</script>
+<script type="text/javascript" src="/assets/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/assets/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/assets/live2d/model/tia/model.json");
+</script>
+-->
+
+<!-- 在线聊天系统 -->
+<!-- <script>
+(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/9934b430.js","daovoice")
+
+  daovoice('init', {
+      app_id: "9934b430"
+    });
+  daovoice('update');
+</script> -->
+
+<!-- 百度分享 -->
+<!-- <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":["fbook","twi","linkedin","weixin","tsina","sqq"],"bdPic":"","bdStyle":"0","bdSize":"16"},"slide":{"type":"slide","bdImg":"5","bdPos":"left","bdTop":"250"}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script> -->
+
+<!-- 输入框抖动特效 -->
+<script src="/assets/js/src/activate-power-mode.js"></script>
+<script>
+POWERMODE.colorful = true; // make power mode colorful
+POWERMODE.shake = true; // turn off shake
+document.body.addEventListener('input', POWERMODE);
+</script>
+
+
+<!-- 页面点击小红心 -->
+<!-- <script type="text/javascript" src="/assets/js/src/love.js"></script> -->
+
+<!-- 数学公式插件
+<script type="text/javascript"
+   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+-->
+
+<!-- 百度自动推送 -->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'https://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-123686345-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-123686345-1');
+</script>
+
+<!-- 百度统计 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?e0f7e2879e5634cc0f587da6721b6860";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+
+<!-- 动态title -->
+<script type="text/javascript" src="/assets/js/src/dytitle.js"></script>
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+   
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  
+  
+  
+  
+  <script type="text/javascript" src="/assets/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/assets/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  <script type="text/javascript" src="/assets/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/assets/js/src/post-details.js?v=5.1.1"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/assets/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+    
+      <script type="text/javascript">
+        (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+          if (typeof LivereTower === 'function') { return; }
+          j = d.createElement(s);
+          j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+          j.async = true;
+          e.parentNode.insertBefore(j, e);
+        })(document, 'script');
+      </script>
+    
+
+  
+
+
+
+
+
+  
+
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+    <script type="text/javascript">
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({widget: 'Rating', id: 13049,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+    </script>
+  
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/js.cookie.js?v=5.1.1"></script>
+  <script type="text/javascript" src="/assets/js/src/scroll-cookie.js?v=5.1.1"></script>
+
+
+  
+  <script type="text/javascript" src="/assets/js/src/exturl.js?v=5.1.1"></script>
+
+
+</body>
+</html>
